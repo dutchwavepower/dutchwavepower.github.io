@@ -1,2 +1,2 @@
-# dwpv7
+# dutchwavepower.github.io
 
