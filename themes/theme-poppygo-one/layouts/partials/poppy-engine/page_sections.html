@@ -1,0 +1,74 @@
+{{- $page := . -}}
+{{- $page_sections := slice -}}
+{{- $sorted_sections := slice}}
+
+<style>
+html {
+	scroll-behavior: smooth;
+}
+</style>
+
+{{- $themesDir := partial "poppy-engine/get_hugo_config" "themesDir" -}}
+{{- $theme := partial "poppy-engine/get_hugo_config" "theme" -}}
+
+{{- with .Parent -}}
+  {{- $page_sections = $page.Params.page_sections | default .Params.subpage_sections -}}
+{{- else -}}
+  {{- $page_sections = $page.Params.page_sections  -}}
+{{- end -}}
+
+{{ if $page_sections }}
+  {{- range $page_sections -}}
+      {{- $sorted_sections =  $sorted_sections | append . -}}
+  {{- end -}}
+{{ end }}
+
+{{- range $sorted_sections -}}
+    {{- $page_section := .}}
+		{{- $page_component := "" -}}
+		{{- $component := .component -}}
+		{{- range (site.GetPage "/poppy-components" ).Pages }}
+		  {{- $component_name:= (index (split .Dir "/" ) 2) -}}
+			{{- if eq $component_name $component -}}
+				{{- $page_component = . -}}
+			{{- end -}}
+		{{- end -}}
+
+		{{- range (site.GetPage "/my-components" ).Pages }}
+
+			{{- $component_name:= (index (split .Dir "/" ) 1) -}}
+			{{- if eq $component_name $component -}}
+				{{- $page_component = . -}}
+			{{- end -}}
+		{{- end -}}
+
+		{{ with $page_component }}
+      {{- $poppy_component := printf "poppy-components/%s/%s" .Params.poppy_type .Params.poppy_variant -}}
+      {{- if (fileExists (printf "%s/%s/layouts/partials/%s.html" $themesDir $theme $poppy_component )) }}
+          {{- $content_info := partial "poppy-engine/get_content" (dict "page" $page "section" $page_section "page_component" . ) -}}
+          {{- $design_info := partial "poppy-engine/get_design" . -}}
+
+          {{- if site.Params.poppygo_debug -}}
+            {{- partial "poppy-engine/poppygo_debug" (dict "page" $page "component" $page_component "poppy_component" $poppy_component "content_info" $content_info "design_info" $design_info ) -}}
+          {{- end -}}
+
+          {{- with $content_info.content -}}
+            {{- partial "poppy-elements/bg_image" (dict "page" .bg_resource_page "css_class" .bg_css "bg_image" .bg_image ) }}
+          {{- end -}}
+
+					{{- with $content_info.content -}}
+						{{- partial "poppy-elements/texture_overlay" (dict "page" .bg_resource_page "css_class" .bg_css "bg_image" .texture ) }}
+					{{- end -}}
+
+					{{- with $content_info.content -}}
+						<section id="{{.name}}" class=" {{ .bg_color}} ">
+							<div class = "relative {{.bg_css}} {{if .parallax }} bg-fixed {{end}} bg-cover ">
+								<div class = "{{if $.Site.Data.design.site.container}} container {{end}} mx-auto">
+	          			{{- partial $poppy_component (dict "page" $page "content" $content_info.content "design" $design_info.design  ) -}}
+								</div>
+							<div>
+						</section>
+					{{- end -}}
+      {{- end -}}
+    {{ end }}
+{{- end -}}

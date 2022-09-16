@@ -1,0 +1,50 @@
+{{- $page := .page -}}
+{{- $content := .content -}}
+{{- $design := .design -}}
+
+{{- $items := partial "poppy-engine/sortedItems" (dict "list" $content.list ) -}}
+
+{{- $amount := 0 -}}
+{{ if $items }}
+    {{ $amount = len $items }}
+{{ end }}
+
+{{- with $design -}}
+<div class="{{.vertical_space}} ">
+  <h3 class=" {{.title }}">{{ $content.title }}</h3>
+  <p class=" {{.subtitle}}">{{ $content.subtitle }}</p>
+  <div class=" grid grid-flow-row-dense grid-cols-12 {{.gridgap}}">
+      {{- range $index, $item := $items -}}
+
+          {{- $span := partial "poppy-elements/standard-columns" (dict "amount" $amount "index" $index) -}}
+
+          <a href="{{.RelPermalink }}" class="{{$span}} flex flex-col w-full h-full overflow-hidden {{ $design.rounded }} {{$design.shadow}} {{$design.border}} {{$content.item_bg_color}}">
+            <div>
+              {{- partial "poppy-elements/image" (dict "resource_page" . "name" .Params.image "class" "w-full h-60 object-cover") -}}
+            </div>
+
+              <div class="flex flex-col p-4 h-full">
+
+                {{- with .Params.icon -}}
+                  {{- if not (eq . "none") -}}
+                    <div class="relative w-8 md:w-12 {{$design.itemtitle}} py-0 -mt-1 md:-mt-2 mr-5">
+                      {{- partial "poppy-elements/icon" (dict "icon" . "icontype" "outline" ) -}}
+                    </div>
+                  {{- end -}}
+                {{- end -}}
+
+                <div class="flex flex-col h-full">
+                  <div class = "{{$design.itemtitle}}" >{{.Title}}</div>
+                  <div class=" prose mx-auto {{$design.rounded}} {{$design.itembody}} flex-1">{{.Params.bodytext | markdownify }}</div>
+                  <div class="{{$design.itembody}}">
+                      {{- partial "poppy-elements/buttons" (dict "design" $design "buttons" .Params.buttons ) -}}
+                  </div>
+                </div>
+              </div>
+          </a>
+
+
+      {{- end -}}
+  </div>
+</div>
+{{- end -}}

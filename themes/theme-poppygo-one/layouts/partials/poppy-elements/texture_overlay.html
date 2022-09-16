@@ -1,0 +1,45 @@
+{{/*  Usage:
+- Add partial to your template: {{ partial "poppy-elements/bg_image" (dict "page" .section "css_class" .class "bg_image" .section.bg_image "resource_page" .page "imagePath" .imagePath)}}
+- And add the class to your container:  for example class = "{{.class}}"
+*/}}
+
+{{- $css_class := .css_class -}}
+
+{{- if .bg_image -}}
+  {{- $image_path := printf "images/*%s*" .bg_image -}}
+  {{- if or .page.IsHome .page.IsSection -}}
+      {{- $image_path = printf "*%s*" .bg_image -}}
+  {{- end }}
+  {{- $image := (.page.Resources.ByType "image").GetMatch $image_path -}}
+  {{- with $image -}}
+    {{- $filename := path.Base .Name -}}
+    {{- if eq (path.Ext $filename) ".webp" -}}
+      <style>.{{$css_class}} {background-image:url({{.RelPermalink | safeCSS }})}</style>
+    {{- else -}}
+        {{- $extraSmall := .Resize "500x" -}}
+        {{- $small := .Resize "768x" -}}
+        {{- $medium := .Resize "992x" -}}
+        {{- $large := .Resize "1200x" -}}
+        {{- $extralarge := .Resize "1920x" -}}
+        <style>
+        .{{$css_class}}::after {
+          content: "";
+          opacity:{{- site.Data.design.site.texture.opacity -}};
+          mix-blend-mode: {{- site.Data.design.site.texture.blendmode -}};
+          position: absolute;
+          width:100%;
+          height:100%;
+          top:0;
+          z-index: 0;
+          pointer-events: none;
+          background-size:cover;
+        }
+  @media (max-width: 667px) {.{{$css_class}}:after {background-image:url({{$extraSmall.RelPermalink | safeCSS }});}}
+  @media (min-width: 668px) {.{{$css_class}}:after {background-image:url({{$small.RelPermalink | safeCSS }}) ;}}
+  @media (min-width: 992px) {.{{$css_class}}:after {background-image:url( {{$medium.RelPermalink | safeCSS }}) ;}}
+  @media (min-width: 1200px) {.{{$css_class}}:after {background-image:url({{$large.RelPermalink | safeCSS }}); }}
+  @media (min-width: 1600px) {.{{$css_class}}:after {background-image:url({{$extralarge.RelPermalink | safeCSS }}) blendmo ;}}
+        </style>
+      {{- end -}}
+  {{- end -}}
+{{- end -}}

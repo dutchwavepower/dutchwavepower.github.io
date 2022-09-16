@@ -1,0 +1,32 @@
+{{- $page := .page -}}
+{{- $content := .content -}}
+{{- $design := .design -}}
+
+{{- with $design -}}
+<div class="{{.vertical_space}} ">
+  <h3 class=" {{.title }} m-2">{{ $content.title }}</h3>
+  <p class=" {{.subtitle}}">{{ $content.subtitle }}</p>
+
+  <div class="mt-10 mx-auto">
+    <dl class=" space-y-10 md:space-y-0 md:grid md:grid-cols-2 md:gap-x-8 md:gap-y-10">
+
+      {{- range $index, $value := $content.items -}}
+      <div class="relative">
+        <dt>
+          <div class="absolute flex items-center justify-center h-48 w-48 bg_transparent text-poppycolor2">
+            <div class= "poppycolor1 {{$design.rounded}} stroke-current col-span-5 md:col-span-2 my-auto {{$design.border}}" >
+
+                {{- partial "poppy-elements/icon" (dict "icon" .icon "icontype" "outline") -}}
+            </div>
+          </div>
+          <p class="ml-16 {{$design.subtitle}}">{{.title}}</p>
+        </dt>
+        <dd class="mt-2 ml-16 {{$design.body}}">
+          {{.bodytext | markdownify }}
+        </dd>
+      </div>
+      {{- end -}}
+    </dl>
+  </div>
+</div>
+{{- end -}}

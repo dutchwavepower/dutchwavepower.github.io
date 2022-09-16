@@ -1,0 +1,18 @@
+{{- $page := .page -}}
+{{- $content := .content -}}
+{{- $design := .design -}}
+
+{{- with $design -}}
+  <div class="{{.vertical_space}} lg:flex">
+      <div class="lg:w-2/3">
+        <h2 class="{{.title}}">{{$content.title}}</h2>
+        <span class="{{.subtitle}}">{{$content.subtitle }}</span>
+      </div>
+      <form action="POGOFORM" class="mt-2 w-full self-end">
+          <div class="flex ">
+              <input type="email" class="w-full h-16 px-2 py-4 {{$content.item_bg_color}} {{.rounded}} rounded-r-none {{.border}} focus:ring-4 focus:outline-none" required>
+              <button class="h-16 {{.button_primary}} rounded-l-none flex-none hover:opacity-70">Sign Up</button>
+          </div>
+      </form>
+  </div>
+{{- end -}}

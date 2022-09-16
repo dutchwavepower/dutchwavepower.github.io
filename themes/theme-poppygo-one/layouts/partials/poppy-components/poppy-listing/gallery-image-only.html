@@ -1,0 +1,33 @@
+{{- $page := .page -}}
+{{- $content := .content -}}
+{{- $design := .design -}}
+
+{{- $items := partial "poppy-engine/sortedItems" (dict "list" $content.list ) -}}
+{{- $size := $content.size | default 450 -}}
+{{- $max_amount := $content.max_amount | default (len $items) -}}
+
+<style>
+  .square-grid {
+  grid-template-columns: repeat(auto-fill, minmax({{ $size }}px, 1fr));
+  grid-auto-rows: {{ $size }}px;
+  }
+</style>
+
+{{- with $design -}}
+<div class="{{.vertical_space}}">
+  <h1 class = "{{.title }} ">{{ $content.title }}</h1>
+  <p class = "{{.subtitle }}">{{ $content.subtitle }}</p>
+  <div class = "grid gap-3 square-grid overflow-clip mx-auto">
+      {{- range $items -}}
+      {{- $bg_css := printf "%s-%s" $page.File.ContentBaseName .File.ContentBaseName -}}
+      {{- partial "poppy-elements/bg_image" (dict "page" . "css_class" $bg_css "bg_image" .Params.image ) -}}
+        <a class="{{$content.item_bg_color}} {{$bg_css}} {{$design.rounded}} {{$design.border}} {{$design.shadow}} bg-cover bg-center {{$design.vertical_space}} px-2" href={{.RelPermalink }}>
+
+        </a>
+      {{- end -}}
+  </div>
+  <div class = "{{.outer_space}}">
+  {{- partial "poppy-elements/buttons" (dict "design" . "buttons" $content.buttons ) -}}
+  </div>
+</div>
+{{- end -}}

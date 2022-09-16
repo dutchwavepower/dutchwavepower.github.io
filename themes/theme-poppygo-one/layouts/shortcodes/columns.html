@@ -1,0 +1,86 @@
+{{/* for automatical columns, apply like this <svgimage img1 img2 img3> .You can add an infinite amount of images */}}
+{{/* If you want to determine columns yourself, add an integer between 1 6 somewhere in the shortcode, e.g. for two columns <image 2 img1 img2 img3 img4> */}}
+
+{{ $page := .Page }}
+{{ $columns := slice }}
+{{ $class := "" }}
+{{ $numberOfCols := 1 }}
+{{ $cols := slice "oneCol" "twoCols" "threeCols" "fourCols" "fourCols" "sixCols" "sixCols"}}
+
+{{ range $index, $value := .Params }}
+      {{if eq (printf "%T" $value) "string" }}
+          {{ $columns = $columns | append $value }}
+      {{ end }}
+      {{if eq (printf "%T" $value) "int" }}
+          {{ $numberOfCols = $value }}
+          {{ $class = index $cols (sub $numberOfCols 1) }}
+      {{ end }}
+{{ end }}
+
+{{ if eq $class "" }}
+  {{ if le (len $columns) 3 }}
+    {{ $numberOfCols = len $columns }}
+    {{ $class = index $cols (sub $numberOfCols 1) }}
+  {{ else }}
+    {{ $numberOfCols = 3 }}
+    {{ $class = "threeCols" }}
+  {{ end }}
+{{ end }}
+
+<style>
+    .grid {
+      width: 100%;
+      display: grid;
+      grid-auto-flow: row;
+      justify-items: stretch;
+      justify-content: stretch;
+      grid-gap: 10px;
+      grid-template-columns: repeat(12, 1fr);
+    }
+
+    .oneCol, .twoCols, .threeCols {
+      grid-column: span 12;
+    }
+
+    .fourCols, .sixCols {
+      grid-column: span 6;
+    }
+
+
+      @media (min-width: 768px) {
+        .twoCols, .threeCols {
+          grid-column: span 6;
+        }
+
+        .fourCols, .sixCols {
+          grid-column: span 3;
+        }
+      }
+
+      @media (min-width: 992px) {
+        .twoCols {
+          grid-column: span 6;
+        }
+        .threeCols {
+          grid-column: span 4;
+        }
+        .sixCols {
+          grid-column: span 2;
+        }
+      }
+
+    .pogoimage {
+      width: 100%;
+    }
+</style>
+
+<div class="grid mt-2">
+  {{ range $columns}}
+      {{ $content := . | markdownify }}
+      <div class= "{{$class}}">
+          {{ with $content }}
+            {{ . }}
+          {{end}}
+      </div>
+  {{ end }}
+</div>

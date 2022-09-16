@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns#" lang="{{ .Site.LanguageCode }}">
+  <head itemscope itemtype="{{ .Site.BaseURL }}">
+    {{ hugo.Generator }}
+    {{- partial "poppy-meta/meta_tags" . -}}
+    {{- partial "poppy-engine/custom_variables" . -}}
+    {{- partial "poppy-meta/bundlecss" . -}}
+  </head>
+
+  {{- $bg_color := printf "bg-%s" site.Data.design.site.bg_color -}}
+  <body class="w-full min-h-screen relative flex-col flex justify-between {{$bg_color}}">
+    {{- block "main" . -}}{{- end -}}
+    {{- partial "poppy-meta/bundlejs" . -}}
+  </body>
+
+</html>

@@ -1,0 +1,10 @@
+{{ if .Site.Params.RelPermalink}}
+<link href="{{ with .OutputFormats.Get "RSS" }} {{ .RelPermalink  }} {{ end }}" rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" />
+{{else}}
+  {{ if ne .Permalink "/" }}
+      <link href="{{ "index.xml" | relURL}}" rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" />
+  {{ end }}
+  {{if .IsNode}}
+  <link href="{{ with .OutputFormats.Get "RSS" }} {{ .RelPermalink }} {{ end }}" rel="alternate" type="application/rss+xml" title="{{ if ne .RelPermalink "/" }}{{ .Title }} &middot; {{ end }}{{ .Site.Title }}" />
+  {{end}}
+{{end}}

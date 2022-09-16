@@ -1,0 +1,107 @@
+{{/* for automatical columns, apply like this <svgimage img1 img2 img3> .You can add an infinite amount of images */}}
+{{/* If you want to determine columns yourself, add an integer between 1 6 somewhere in the shortcode, e.g. for two columns <image 2 img1 img2 img3 img4> */}}
+
+
+{{ $page := .Page }}
+{{ $images := slice }}
+{{ $class := "" }}
+{{ $numberOfCols := 1 }}
+{{ $cols := slice "oneCol" "twoCols" "threeCols" "fourCols" "fourCols" "sixCols" "sixCols"}}
+
+{{ range $index, $value := .Params }}
+      {{if eq (printf "%T" $value) "string" }}
+          {{ $images = $images | append $value }}
+      {{ end }}
+      {{if eq (printf "%T" $value) "int" }}
+          {{ $numberOfCols = $value }}
+          {{ $class = index $cols (sub $numberOfCols 1) }}
+      {{ end }}
+{{ end }}
+
+{{ if eq $class "" }}
+  {{ if le (len $images) 3 }}
+    {{ $numberOfCols = len $images }}
+    {{ $class = index $cols (sub $numberOfCols 1) }}
+  {{ else }}
+    {{ $numberOfCols = 3 }}
+    {{ $class = "threeCols" }}
+  {{ end }}
+{{ end }}
+
+<style>
+    .grid {
+      width: 100%;
+      display: grid;
+      grid-auto-flow: row;
+      justify-items: stretch;
+      justify-content: stretch;
+      grid-gap: 10px;
+      grid-template-columns: repeat(12, 1fr);
+    }
+
+    .oneCol, .twoCols, .threeCols {
+      grid-column: span 12;
+    }
+
+    .fourCols, .sixCols {
+      grid-column: span 6;
+    }
+
+
+      @media (min-width: 768px) {
+        .twoCols, .threeCols {
+          grid-column: span 6;
+        }
+
+        .fourCols, .sixCols {
+          grid-column: span 3;
+        }
+      }
+
+      @media (min-width: 992px) {
+        .twoCols {
+          grid-column: span 6;
+        }
+        .threeCols {
+          grid-column: span 4;
+        }
+        .sixCols {
+          grid-column: span 2;
+        }
+      }
+
+    .pogoimage {
+      width: 100%;
+    }
+
+</style>
+
+
+<div class="grid">
+
+{{ range $images}}
+    {{ $image_name := .}}
+    {{ $image_path := "" }}
+    {{ $resource_page := "" }}
+
+      {{ if or (eq $page.Kind "taxonomy") (eq $page.Kind "term")}}
+        {{ $image_path = printf "*%s*" $image_name}}
+        {{ $resource_page = $page.Page }}
+      {{  else if or (eq $page.Parent.Type "widget_page")}}
+        {{ $image_path = printf "%s/%s/*%s*" (path.Base (path.Split $page.Path).Dir) "/images" $image_name}}
+        {{ $resource_page = $page.Parent }}
+      {{ else }}
+        {{ $image_path = printf "%s/*%s*" "images" $image_name }}
+        {{ $resource_page = $page.Page }}
+      {{ end }}
+
+    {{ $image := ($resource_page.Resources.ByType "image").GetMatch $image_path}}
+
+    <div class= "{{$class}}">
+        {{ with $image }}
+          {{ readFile (printf "%s%s" $page.Dir $image ) | safeHTML }}
+        {{end}}
+
+    </div>
+{{ end }}
+</div>

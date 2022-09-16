@@ -1,0 +1,36 @@
+{{/*  Usage:
+- Add partial to your template: {{ partial "poppy-elements/bg_image" (dict "page" .section "css_class" .class "bg_image" .section.bg_image "resource_page" .page "imagePath" .imagePath)}}
+- And add the class to your container:  for example class = "{{.class}}"
+*/}}
+
+{{- $css_class := .css_class -}}
+{{- if .bg_image -}}
+
+  {{- $image_path := printf "images/*%s*" .bg_image -}}
+  {{- if or .page.IsHome .page.IsSection -}}
+      {{- $image_path = printf "*%s*" .bg_image -}}
+  {{- end }}
+  {{- $image := (.page.Resources.ByType "image").GetMatch $image_path -}}
+  {{- with $image -}}
+    {{- $filename := path.Base .Name -}}
+    {{- if eq (path.Ext $filename) ".webp" -}}
+      <style>.{{$css_class}} {background-image:url({{.RelPermalink | safeCSS }}) ; background-position: center; </style>
+    {{- else -}}
+        {{- $extraSmall := .Resize "700x" -}}
+        {{- $small := .Resize "900x" -}}
+        {{- $medium := .Resize "1100x" -}}
+        {{- $large := .Resize "1500x" -}}
+        {{- $extralarge := .Resize "1920x" -}}
+        <style>
+        .{{$css_class}} {
+          background-position: center;
+        }
+  @media (max-width: 667px) {.{{$css_class}} {background-image:url({{$extraSmall.RelPermalink | safeCSS }}) ;}}
+  @media (min-width: 668px) {.{{$css_class}} {background-image:url({{$small.RelPermalink | safeCSS }}) ;}}
+  @media (min-width: 992px) {.{{$css_class}} {background-image:url( {{$medium.RelPermalink | safeCSS }}) ;}}
+  @media (min-width: 1200px) {.{{$css_class}} {background-image:url({{$large.RelPermalink | safeCSS }}) ;}}
+  @media (min-width: 1600px) {.{{$css_class}} {background-image:url({{$extralarge.RelPermalink | safeCSS }}) ;}}
+        </style>
+      {{- end -}}
+  {{- end -}}
+{{- end -}}

@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Components on Dutch Wave Power</title>
+    <link>/poppy-components/</link>
+    <description>Recent content in Components on Dutch Wave Power</description>
+    <generator>Hugo -- gohugo.io</generator><atom:link href="/poppy-components/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>-&gt;frompage</title>
+      <link>/poppy-components/poppy-article/article-standard/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/poppy-components/poppy-article/article-standard/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>-&gt;frompage</title>
+      <link>/poppy-components/poppy-article/portfolio-item/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/poppy-components/poppy-article/portfolio-item/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Component</title>
+      <link>/poppy-components/poppy-other/component/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/poppy-components/poppy-other/component/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Explainer</title>
+      <link>/poppy-components/poppy-shortlist/explainer/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/poppy-components/poppy-shortlist/explainer/</guid>
+      <description>-| I am the summary of the newsletter element, which is not very relevant</description>
+    </item>
+    
+    <item>
+      <title>footer</title>
+      <link>/poppy-components/poppy-footer/footer-simple/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/poppy-components/poppy-footer/footer-simple/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>I am a banner</title>
+      <link>/poppy-components/poppy-banner/headerbanner-full/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/poppy-components/poppy-banner/headerbanner-full/</guid>
+      <description>-| I am the summary of the banner, which can be used for opengraph and SEO descriptions</description>
+    </item>
+    
+    <item>
+      <title>I am a banner</title>
+      <link>/poppy-components/poppy-banner/headerbanner-standard/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/poppy-components/poppy-banner/headerbanner-standard/</guid>
+      <description>-| I am the summary of the banner, which can be used for opengraph and SEO descriptions</description>
+    </item>
+    
+    <item>
+      <title>I am a banner</title>
+      <link>/poppy-components/poppy-banner/introbanner/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/poppy-components/poppy-banner/introbanner/</guid>
+      <description>I am the summary of the banner, which can be used for opengraph and SEO&lt;br&gt;
+descriptions</description>
+    </item>
+    
+    <item>
+      <title>I am a gallery</title>
+      <link>/poppy-components/poppy-listing/gallery-image-only/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/poppy-components/poppy-listing/gallery-image-only/</guid>
+      <description>-| I am the summary of the gallery, which can be used for opengraph and SEO descriptions</description>
+    </item>
+    
+    <item>
+      <title>I am a gallery</title>
+      <link>/poppy-components/poppy-listing/gallery-standard/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/poppy-components/poppy-listing/gallery-standard/</guid>
+      <description>-| I am the summary of the gallery, which can be used for opengraph and SEO descriptions</description>
+    </item>
+    
+    <item>
+      <title>I am a list of items presented as blog teaser</title>
+      <link>/poppy-components/poppy-listing/list-articles-standard/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/poppy-components/poppy-listing/list-articles-standard/</guid>
+      <description>I am the main content of the form pagecomponents Here you have full freedom to add content as much as you want.
+You can add Images as shortcodes, columns as shortcodes etc.</description>
+    </item>
+    
+    <item>
+      <title>I am a reusable newsletter compontent</title>
+      <link>/poppy-components/poppy-form/newsletter-big/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/poppy-components/poppy-form/newsletter-big/</guid>
+      <description>-| I am the summary of the newsletter element, which is not very relevant</description>
+    </item>
+    
+    <item>
+      <title>I am an in-page banner for telling your story</title>
+      <link>/poppy-components/poppy-banner/inpage-banner/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/poppy-components/poppy-banner/inpage-banner/</guid>
+      <description>-| I am the summary of the banner, which can be used for opengraph and SEO descriptions</description>
+    </item>
+    
+    <item>
+      <title>I am an shortlist in the form of cards</title>
+      <link>/poppy-components/poppy-listing/listing-cards/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/poppy-components/poppy-listing/listing-cards/</guid>
+      <description>-| I am the summary of the banner, which can be used for opengraph and SEO descriptions</description>
+    </item>
+    
+    <item>
+      <title>I am an shortlist in the form of cards</title>
+      <link>/poppy-components/poppy-shortlist/cards-standard/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/poppy-components/poppy-shortlist/cards-standard/</guid>
+      <description>-| I am the summary of the banner, which can be used for opengraph and SEO descriptions</description>
+    </item>
+    
+    <item>
+      <title>I am an shortlist in the form of cards</title>
+      <link>/poppy-components/poppy-shortlist/image-cards/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/poppy-components/poppy-shortlist/image-cards/</guid>
+      <description>-| I am the summary of the banner, which can be used for opengraph and SEO descriptions</description>
+    </item>
+    
+    <item>
+      <title>navbar</title>
+      <link>/poppy-components/poppy-navigation/navbar-standard/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/poppy-components/poppy-navigation/navbar-standard/</guid>
+      <description>main content not in use </description>
+    </item>
+    
+    <item>
+      <title>PoppyGo One Theme</title>
+      <link>/poppy-components/poppy-footer/footer-3-column/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/poppy-components/poppy-footer/footer-3-column/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Showcase</title>
+      <link>/poppy-components/poppy-shortlist/showcase/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/poppy-components/poppy-shortlist/showcase/</guid>
+      <description>-| I am the summary of the showcase element, which is not very relevant</description>
+    </item>
+    
+    <item>
+      <title>Suscribe to our newsletter</title>
+      <link>/poppy-components/poppy-form/newsletter-simple/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/poppy-components/poppy-form/newsletter-simple/</guid>
+      <description>-| I am the summary of the newsletter element, which is not very relevant</description>
+    </item>
+    
+    <item>
+      <title>~Je bent van harte welkom~</title>
+      <link>/poppy-components/poppy-form/contact-noform/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/poppy-components/poppy-form/contact-noform/</guid>
+      <description>Introduction text for you</description>
+    </item>
+    
+  </channel>
+</rss>

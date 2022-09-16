@@ -1,0 +1,94 @@
+{{- $page := .page -}}
+{{- $content_info := .content_info -}}
+{{- $design_info := .design_info -}}
+{{- $component := .component -}}
+{{- $poppy_component := .poppy_component }}
+
+{{ $button_id := printf "btn-%s-%s" $component.File.ContentBaseName .content_info.content.name -}}
+{{ $window_id := printf "window-%s-%s" $component.File.ContentBaseName .content_info.content.name -}}
+
+<div id="{{$button_id}}" class="z-10 relative h-0">
+  <div class="absolute p-2">
+  <button  class="bg-gray text-white rounded-xl px-10">
+    Debug {{$component.File.ContentBaseName}}
+  </button>
+</div>
+</div>
+
+<section id="{{$window_id}}" class="hidden m-4 p-3 pt-8 mx-auto container bg-gray mb-10">
+  <div class = "p-10 border-dotted border-4 border-white">
+    <div class="-ml-3 -mt-16 w-72 ">
+      <p class="text-4xl text-white text-center bg-gray">Poppy debug info</p>
+    </div>
+  <h2 class="text-xl text-white">Page Component: {{$component.File.ContentBaseName}} <h2>
+  <h2 class="text-xl text-white">Poppy component: {{$poppy_component}} <h2>
+  <h2 class="text-xl text-white">Page: {{$page.File.ContentBaseName}}</h2>
+
+  <div class= "my-10">
+    <h2 class="text-2xl text-white mb-3">Content</h2>
+    <div class ="bg-poppycolor-4 grid-cols-1 md:grid-cols-4 text-xs grid grid-row-auto-dense gap-2">
+
+      {{ range $key, $value := $content_info.content }}
+        {{ if $value }}
+          {{- $override := index $design_info.override_debug_info $key -}}
+          <div class = "col-span-1 {{if $override}} bg-poppycolor1 {{else}} bg-white {{end}}">
+            <p class="text-gray">{{- $key -}}</p>
+            {{- if $override }}
+              <p class="text-white"> -> override in Page </p>
+            {{- end -}}
+          </div>
+          <div class = "md: col-span-3 text-white flex">
+            {{ if (reflect.IsSlice $value) }}
+                {{- range $index, $value := $value -}}
+                  <div class="text-gray text-center">{{ $index}}
+                  <div class= "m-1 border p-1">
+
+                    {{ range $key, $value := $value }}
+                      <div class="bg-white text-gray">
+                        {{ $key }}
+                      </div>
+                      <div>
+                        {{ $value }}
+                      </div>
+                    {{ end }}
+
+                   </div>
+                </div>
+                {{- end -}}
+            {{ else }}
+                {{$value }}
+            {{ end }}
+          </div>
+        {{ end }}
+      {{ end }}
+    </div>
+  </div>
+
+  <div class= "my-10 mb-0">
+    <h2 class="text-2xl text-white mb-3">Design</h2>
+    <div class ="bg-gray grid-cols-2 md:grid-cols-3 lg:grid-cols-5 grid grid-row-auto-dense gap-2">
+      {{ range $key, $value := $design_info.design }}
+          {{- if $value -}}
+            {{- $override := index $design_info.override_debug_info $key -}}
+            <div class="col-span-1 text-xs  ">
+              <div class = "{{if $override}} bg-poppycolor1 {{else}} bg-white {{end}}">
+                  <p class="text-gray">{{- $key -}} </p>
+                {{- if $override }}
+                  <p class="text-white"> -> override in Component </p>
+                {{- end -}}
+              </div>
+              <div class = "text-white">{{$value }}</div>
+            </div>
+          {{ end }}
+      {{ end }}
+    </div>
+  </div>
+</div>
+
+</section>
+
+<script>
+    document.getElementById('{{$button_id}}').addEventListener('click', function(){
+            document.getElementById('{{$window_id}}').classList.toggle('hidden');
+        });
+</script>

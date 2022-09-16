@@ -1,0 +1,55 @@
+author: PoppyGo
+baseURL: /
+description: ''
+imaging:
+  anchor: smart
+  quality: 70
+  resampleFilter: lanczos
+markup:
+  goldmark:
+    extensions:
+      definitionList: true
+      footnote: true
+      linkify: true
+      strikethrough: true
+      table: true
+      taskList: true
+      typographer: true
+    parser:
+      autoHeadingID: true
+      autoHeadingIDType: github
+    renderer:
+      hardWraps: true
+      unsafe: false
+      xhtml: false
+paginate: 20
+params:
+  authorBio: PoppyGo is one year old
+  authorbio: ''
+  avatar: images/avatar.jpg
+  copyright: Copyright © 2021 Dutch Wave Power
+  cover: images/vancouver.jpg
+  description: >+
+    Profitable Wave Energy - Unlocking the world's greatest untapped renewable
+    energy source
+
+  email: info@dutchwavepower.com
+  github: XXXX
+  headline: This is a headline
+  linkedin: 'https://linkedin.com/company/dutch-wave-power'
+  ogImage: images/og_image.jpg
+  ogimage: ''
+  poppygo_debug: false
+  twitter: XXXX
+  umami:
+    siteID: XXXXX
+    siteid: ''
+    trackerScript: //umami.example.com/umami.js
+    trackerscript: ''
+summaryLength: 40
+taxonomies:
+  category: categories
+  tag: tags
+theme: theme-poppygo-one
+themesDir: themes
+title: Dutch Wave Power

@@ -1,0 +1,58 @@
+{{- $page := .page -}}
+{{- $content := .content -}}
+{{- $design := .design -}}
+{{- $items := partial "poppy-engine/sortedItems" (dict "list" $content.list "count" $content.count ) -}}
+
+{{- with $design -}}
+<div class="{{.vertical_space}} ">
+  <h1 class = "{{.title }} ">{{ $content.title }}</h1>
+  <p class = "{{.subtitle }}">{{ $content.subtitle }}</p>
+  <div class = "flex flex-col md:flex-row">
+    <ol class="mb-4 list-none w-full">
+      {{- range $index, $item := $items -}}
+        <div class="{{$design.rounded}} {{$design.shadow}} hover:bg-white transition duration-300 ease-in-out">
+
+          <div class = "flex items-top mb-4">
+
+            {{ $itempage := . }}
+            {{- $bg_css := printf "%s%s%s" $content.bg_css .Params.image (string $index) -}}
+            {{- partial "poppy-elements/bg_image" (dict "page" $itempage "css_class" $bg_css "bg_image" .Params.image ) }}
+            <div class = "hidden md:block w-1/4 h-full bg-cover {{$bg_css}} {{$design.rounded}} m-2">
+              <div class= "h-full w-full pb-60"></div>
+            </div>
+            <div class = "p-4 w-full md:w-3/4">
+              <a href="{{ .RelPermalink }}">
+                <div class="{{$design.itemtitle}}">
+                  {{.Title }}
+                </div>
+                <small class="m-2 text-sm">
+                  <time class="text-gray-500" datetime="{{ dateFormat "2006-01-02T15:04:05-07:00" (default .Date (.PublishDate)) }}">
+                    {{ dateFormat "Jan 2" (default .Date (.PublishDate)) }}
+                  </time>
+
+                  {{ range (.GetTerms "tags") }}
+                    <a href="{{ .Permalink }}" class="inline-flex items-center px-4 py-1 rounded-full no-underline bg-orange-100 text-orange-800 hover:bg-orange-300 ml-4">
+                      {{ .LinkTitle }}
+                    </a>
+                  {{ end }}
+                </small>
+                <div class = "prose {{$design.body}} overflow-clip">
+                  {{ .Summary  }}
+                </div>
+              <div class = "">
+              {{- partial "poppy-elements/buttons" (dict "design" $design "buttons" $content.buttons ) -}}
+              </div>
+              </a>
+            </div>
+
+          </div>
+
+        </div>
+      {{- end -}}
+    </ol>
+  </div>
+  <div class = "{{.vertical_space}}">
+  {{- partial "poppy-elements/buttons" (dict "design" . "buttons" $content.buttons ) -}}
+  </div>
+</div>
+{{- end -}}

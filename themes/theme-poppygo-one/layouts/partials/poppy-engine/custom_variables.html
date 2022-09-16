@@ -1,0 +1,44 @@
+{{- $colors := "" -}}
+{{- $fonts := "" -}}
+{{- $fontweights := "" -}}
+{{- $container := "" -}}
+
+{{- range $key,$value := $.Site.Data.design.colorscheme -}}
+    {{- $colors = printf "%s %s" $colors (printf "--%s: %s;" (replace $key "_" "-" ) $value.colorcode ) -}}
+{{- end -}}
+
+{{- range $.Site.Data.design.fontscheme -}}
+    {{- $fonts = printf "%s %s" $fonts (printf "--font-%s: %s;" (replace .name "_" "-" ) .family ) -}}
+    {{- $fontweights := printf "%s %s" $fontweights (printf "--font-weight-%s: %s;" (replace .name "_" "-" ) (string .weight) )  }}
+{{- end -}}
+
+{{- range $key, $value := $.Site.Data.design.site.container_padding -}}
+  {{- if not (eq $key "name") -}}
+    {{- $container = printf "%s %s" $container (printf "--container-%s: %s;" $key $value ) -}}
+  {{- end -}}
+{{- end -}}
+
+
+<style>
+  :root {
+    {{- $colors | safeCSS -}}
+    {{- $fonts | safeCSS -}}
+    {{- $fontweights | safeCSS -}}
+    {{- $container | safeCSS -}}
+  }
+</style>
+
+{{/* google fonts */}}
+
+{{- $googlefonts := "" -}}
+{{/* {{- $url_weights := ":ital,wght@0,400;0,700;1,400&"}} */}}
+{{- $url_weights := ":ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&"}}
+
+{{- range $.Site.Data.design.fontscheme -}}
+    {{- $googlefonts = printf "%s%s" $googlefonts (printf "family=%s%s" (replace .family " " "+" ) $url_weights ) -}}
+{{- end -}}
+{{- $googlefonts = printf "%sdisplay=swap" $googlefonts -}}
+
+<link rel="dns-prefetch" href="//fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+<link rel="stylesheet" {{ printf "href=\"https://fonts.googleapis.com/css2?%sdisplay=swap\"" $googlefonts | safeHTMLAttr }}>

@@ -1,0 +1,53 @@
+{{- $page := .page -}}
+{{- $content := .content -}}
+{{- $design := .design -}}
+
+{{- with $design -}}
+<div class="{{.vertical_space}} ">
+  <h3 class=" {{.title }}">{{ $content.title }}</h3>
+  <p class=" {{.subtitle}}">{{ $content.subtitle }}</p>
+    <div class="md:gap-y-12 grid grid-cols-10 {{ .gridgap }} grid-flow-row-dense ">
+      {{- range $index, $value := $content.items -}}
+        {{- $switchImg := "" -}}
+        {{- $switchBody := "" -}}
+
+        {{-  if not (modBool $index 2) -}}
+          {{ $switchBody = "col-start-1 md:col-start-7 col-span-10 md:col-span-4" -}}
+          {{ $switchImg = "col-start-1 md:col-start-1 col-span-10 md:col-span-7" -}}
+        {{- else -}}
+          {{ $switchBody = "col-start-1 md:col-start-1 lg:col-start-1 col-span-10 md:col-span-4" -}}
+          {{ $switchImg = "col-start-1 md:col-start-4 col-span-10 md:col-span-7" -}}
+        {{- end -}}
+        {{- $row := printf "md:row-start-%s" (string (add $index 1)) -}}
+
+        {{- with .image -}}
+          <div class= "{{$row}} {{$switchImg}}" >
+              {{- $class := printf "%s %s w-full h-full object-cover" $design.rounded $design.shadow $design.border -}}
+              {{- partial "poppy-elements/image" (dict "resource_page" $content.fg_resource_page "name" . "class" $class ) -}}
+          </div>
+        {{- end -}}
+
+        <div class="md:my-28 p-4 {{$row}} {{$design.rounded}} {{$design.shadow}} {{$content.item_bg_color}} {{$switchBody}}">
+          <div class="flex flex-auto items-start">
+            {{- with .icon -}}
+              <div class="relative w-12 {{$design.itemtitle}} py-0 -mt-2 mr-5">
+                {{- partial "poppy-elements/icon" (dict "icon" . "icontype" "outline" ) -}}
+              </div>
+            {{- end -}}
+            <div>
+              <div class = "{{$design.itemtitle}}">{{.title}}</div>
+              <div class = "{{$design.itemsubtitle}}">{{.subtitle}}</div>
+              <div class=" prose mx-auto {{$design.rounded}} {{$design.itembody}} ">
+                  {{.bodytext | markdownify }}
+              </div>
+              <div class="{{$design.itembody}} justify-end">
+                  {{- partial "poppy-elements/buttons" (dict "design" $design "buttons" .buttons ) -}}
+              </div>
+            </div>
+          </div>
+        </div>
+
+      {{- end -}}
+    </div>
+  </div>
+{{- end -}}

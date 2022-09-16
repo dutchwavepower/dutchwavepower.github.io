@@ -1,0 +1,25 @@
+
+{{- $poppy_component := printf "poppy-components/%s/%s" .page.Params.poppy_type .page.Params.poppy_variant -}}
+{{- $themesDir := partial "poppy-engine/get_hugo_config" "themesDir" -}}
+{{- $theme := partial "poppy-engine/get_hugo_config" "theme" }}
+
+{{- if not (eq .page.Params.poppy_variant "render-component") -}}
+    {{- if (fileExists (printf "%s/%s/layouts/partials/%s.html" $themesDir $theme $poppy_component )) }}
+
+        {{- $content_info := partial "poppy-engine/get_content" (dict "page" .page "section" .page.Params "page_component" .page ) -}}
+        {{- $design_info := partial "poppy-engine/get_design" .page -}}
+
+        {{- with $content_info.content -}}
+          {{- partial "poppy-elements/bg_image" (dict "page" .bg_resource_page "css_class" .bg_css "bg_image" .bg_image ) }}
+        {{- end -}}
+
+        {{- "<!-- {.page.File.ContentBaseName }} -->" | safeHTML -}}
+
+        {{- partial $poppy_component (dict "page" .page "content" $content_info.content "design" $design_info.design  ) -}}
+
+    {{- end -}}
+{{- else -}}
+    <div class = "text-center">
+        This component is there to show other components. It cannot render itself.
+    </div>
+{{- end -}}

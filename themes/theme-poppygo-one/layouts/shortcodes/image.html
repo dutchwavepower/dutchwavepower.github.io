@@ -1,0 +1,122 @@
+{{/* for automatical columns, apply like this <image img1 img2 img3> .You can add an infinite amount of images */}}
+{{/* provide a width in percentage of the grid container */}}
+
+{{- $page := .Page -}}
+{{- $images := slice -}}
+{{- $class := "" }}
+{{- $grid_width := "100%" -}}
+{{- $float :=  "" -}}
+{{- $margin := "" -}}
+{{- $sizes := (slice "200" "360" "480" "800" "1200" "1500") -}}
+{{- $cols := slice "oneCol" "twoCols" "threeCols" "fourCols" "fourCols" "sixCols" "sixCols" -}}
+{{- range $index, $value := .Params -}}
+      {{- if and (eq (printf "%T" $value) "string") (not (eq $value "left")) (not (eq $value "right")) -}}
+          {{- $images = $images | append $value -}}
+      {{- end -}}
+      {{- if eq (printf "%T" $value) "int" -}}
+          {{- $grid_width = printf "%s%s" (string $value) "%" -}}
+      {{- end -}}
+      {{- if eq $value "left" -}}
+          {{- $float = "left" -}}
+          {{- $margin = "0 10px 0 0" -}}
+      {{- end -}}
+      {{- if eq $value "right" -}}
+          {{- $float = "right" -}}
+          {{- $margin = "0 0 0 10px" -}}
+      {{- end -}}
+{{- end -}}
+{{- $class = index $cols (sub (len $images) 1) -}}
+
+
+  {{- range $images -}}
+    {{- $image_name := . -}}
+    {{- $image_path := "" -}}
+
+    {{$classname := printf "imagegrid-%s" $image_name }}
+
+    <style>
+      .{{$classname}} {
+        width: 100% ;
+        display: grid;
+        grid-auto-flow: row;
+        justify-items: stretch;
+        justify-content: stretch;
+        grid-gap: 10px;
+        grid-template-columns: repeat(12, 1fr);
+      }
+      .oneCol, .twoCols, .threeCols {
+        grid-column: span 12;
+      }
+      .fourCols, .sixCols {
+        grid-column: span 6;
+      }
+      @media (min-width: 768px) {
+        .{{$classname}}{
+          margin: {{$margin}};
+          float: {{$float}};
+          width: {{ $grid_width }};
+        }
+        .twoCols, .threeCols {
+          grid-column: span 6;
+        }
+
+        .fourCols, .sixCols {
+          grid-column: span 3;
+        }
+      }
+      @media (min-width: 992px) {
+        .twoCols {
+          grid-column: span 6;
+        }
+        .threeCols {
+          grid-column: span 4;
+        }
+        .sixCols {
+          grid-column: span 2;
+        }
+      }
+      .pogoimage {
+        width: 100%;
+      }
+    </style>
+
+    <div class="{{$classname}} mt-4">
+      {{- $resource_page := $page -}}
+      {{- if or (eq $page.Kind "taxonomy") (eq $page.Kind "term") -}}
+        {{- $resource_page = $page.Page -}}
+      {{-  else if or (eq $page.Parent.Type "widget_page") -}}
+        {{- $resource_page = $page.Parent -}}
+      {{- else -}}
+        {{- $resource_page = $page.Page -}}
+      {{- end -}}
+      {{- range $resource_page.Resources.ByType "image" -}}
+        {{- if in . $image_name -}}
+            {{- if or $resource_page.IsSection $resource_page.IsHome -}}
+              {{- $image_path = printf "*%s*" $image_name -}}
+            {{- else -}}
+              {{- $image_path = printf "%s/*%s*" "images" $image_name -}}
+            {{- end -}}
+        {{- end -}}
+      {{- end -}}
+      {{- $image := ($resource_page.Resources.ByType "image").GetMatch $image_path -}}
+      <div class= "{{$class}}">
+          {{ with $image }}
+            {{- $filename := path.Base .Name -}}
+            {{- if eq (path.Ext $filename) ".webp" -}}
+                  <img src="{{.RelPermalink}}" class="lazyload {{$class}}" alt="{{$filename}}" style="margin: 0px">
+            {{- else if eq (path.Ext $filename) ".svg" -}}
+              This image is an svg
+            {{- else -}}
+              <img class="pogoimage" sizes="{{ printf "%svw" (string (div 60 (len $images)) ) }}" style="margin: 0px"
+                srcset='
+                {{- range $sizes -}}
+                  {{- ($image.Resize (printf "%sx" .)).RelPermalink }} {{ (printf "%sw" .) -}},
+                {{- end -}}'
+                src="{{- ($image.Resize "640x").Permalink -}}"
+                class="lazyload image"
+                alt="{{- printf "%s %s %s" $page.Title $page.Type $page.Summary -}}">
+            {{- end -}}
+          {{- end -}}
+      </div>
+    </div>
+  {{- end -}}

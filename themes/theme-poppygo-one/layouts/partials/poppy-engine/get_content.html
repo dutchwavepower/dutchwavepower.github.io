@@ -1,0 +1,75 @@
+
+{{- $page_component := .page_component -}}
+{{- $section := .section -}}
+{{- $page := .page -}}
+{{- $content := dict "name" ( .section.name | default .page_component.Name) -}}
+{{- $override_debug_info := dict -}}
+
+{{/* collect params from the component */}}
+
+{{- $params := slice -}}
+{{ range $key, $value := $page_component.Params}}
+  {{- $params = $params | append (string $key) -}}
+{{ end }}
+
+{{/* ----------- Set overrides of content in the page over the component -------- */}}
+{{- range $params -}}
+
+  {{- $section_value := index $section . -}}
+  {{- $component_value := index $page_component.Params . -}}
+  {{- $override := ( $section_value | default $component_value ) -}}
+
+  {{- if and (in . "bg_color")  -}}
+    {{- if $override -}}
+      {{- $override = printf "bg-%s" (partial "poppy-engine/colors" $override) -}}
+    {{- end -}}
+  {{- end -}}
+  {{- if $section_value }} {{- $override_debug_info = merge $override_debug_info (dict . true ) -}} {{- end -}}
+
+  {{- if (eq $override "none") -}}
+      {{/* Dont add to content */}}
+  {{- else if reflect.IsSlice $section_value -}}
+      {{- if (eq (len $section_value) 0 ) -}}
+        {{/* Dont add to content */}}
+      {{- else -}}
+        {{- $content = merge $content (dict . $override ) -}}
+        {{- $content = merge $content (dict "body" $page_component.Content) -}}
+      {{- end -}}
+  {{- else if eq $override "->frompage" -}}
+    {{- $page_value := index $page.Params . -}}
+    {{- $content = merge $content (dict . $page_value ) -}}
+    {{- $content = merge $content (dict "body" $page.Content) -}}
+  {{ else }}
+    {{- $content = merge $content (dict . $override ) -}}
+    {{- $content = merge $content (dict "body" $page_component.Content) -}}
+  {{ end }}
+{{- end -}}
+
+{{/* -----------Change resource page when images are set in the page section  -------- */}}
+{{- if .section.bg_image}}
+    {{- $content = merge $content (dict "bg_resource_page" .page) -}}
+{{- else -}}
+    {{- $content = merge $content (dict "bg_resource_page" $page_component ) -}}
+{{- end -}}
+
+{{- $content = merge $content (dict "bg_css" (printf "bg_%s_%s" ($page_component.File.UniqueID) ($section.name | anchorize ))) -}}
+
+
+{{/* --------Check if images are used in the section so, the right resourcepage will be chosen */}}
+
+{{- $images_in_items := false -}}
+{{- range .section.items -}}
+    {{- if .image -}}
+        {{- $images_in_items = true -}}
+    {{- end -}}
+{{- end -}}
+
+{{- if or .section.image $images_in_items -}}
+    {{- $content = merge $content (dict "fg_resource_page" .page) -}}
+{{- else -}}
+    {{- $content = merge $content (dict "fg_resource_page" $page_component) -}}
+{{- end -}}
+
+{{- $content_info := dict "override_debug_info" $override_debug_info "content" $content -}}
+
+{{- return $content_info -}}

@@ -1,0 +1,27 @@
+{{- $page := .page -}}
+{{- $content := .content -}}
+{{- $design := .design -}}
+
+{{- with $design -}}
+<div class="{{.vertical_space}}">
+  <div class="prose max-w-5xl mx-auto {{.body}} {{$content.item_bg_color}} {{.rounded}} {{.shadow}} {{.border}} p-10">
+      {{if not $page.Params.hideMetadata }}
+        <header class="text-center">
+          <small class="text-center text-sm">
+            {{ range ($page.GetTerms "tags") }}
+              term
+              <a href="{{$page.Permalink }}" class="inline-flex items-center px-4 py-1 rounded-full no-underline bg-orange-100 text-orange-800 hover:bg-orange-300 ml-4">
+                {{.LinkTitle }}
+              </a>
+            {{ end }}
+          </small>
+        </header>
+      {{ else }}
+      {{ end }}
+      <div class="overflow-auto {{.body}}">
+        {{$page.Content }}
+      </div>
+  </div>
+</div>
+
+{{- end -}}

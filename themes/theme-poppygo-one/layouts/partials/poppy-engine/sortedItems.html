@@ -1,0 +1,15 @@
+{{- $items_sort := "desc" -}}
+{{- $items :=  (where site.RegularPages "Section" "eq" .list)  -}}
+{{- $list := .list -}}
+{{- $count := .count | default 1000 -}}
+
+{{ range $key, $value := site.Taxonomies }}
+  {{- $taxonomy := printf "Params.%s" $key -}}
+  {{- range where site.Pages $taxonomy "eq" $list -}}
+    {{- $items = $items | append . -}}
+  {{- end -}}
+{{ end }}
+
+{{- $sort_by := .weight -}}
+{{- $items = sort $items $sort_by $items_sort -}}
+{{- return first $count $items -}}

@@ -1,0 +1,780 @@
+{
+   "build": [
+     {
+       "config": "tailwind.config.js",
+       "key": "default"
+     }
+   ],
+   "collections": [],
+   "hugover": "extended_0.80.0",
+   "menu": [
+     {
+       "key": "general",
+       "menuItems": [
+         {
+           "key": "ds_data_design"
+         },
+         {
+           "key": "ds_data_poppyselect"
+         },
+         {
+           "key": "config-menus"
+         }
+       ],
+       "title": "Site settings"
+     }
+   ],
+   "serve": [
+     {
+       "config": "tailwind.config.js",
+       "key": "default"
+     }
+   ],
+   "singles": [
+     {
+       "dataformat": "yaml",
+       "fields": [
+         {
+           "fields": [
+             {
+               "key": "color",
+               "multiple": false,
+               "options": [
+                 {
+                   "text": "transparent",
+                   "value": "transparent"
+                 },
+                 {
+                   "text": "white",
+                   "value": "white"
+                 },
+                 {
+                   "text": "poppycolor1",
+                   "value": "poppycolor1"
+                 },
+                 {
+                   "text": "poppycolor2",
+                   "value": "poppycolor2"
+                 },
+                 {
+                   "text": "poppycolor3",
+                   "value": "poppycolor3"
+                 },
+                 {
+                   "text": "poppycolor4",
+                   "value": "poppycolor4"
+                 },
+                 {
+                   "text": "poppycolor5",
+                   "value": "poppycolor5"
+                 },
+                 {
+                   "text": "poppycolor6",
+                   "value": "poppycolor6"
+                 },
+                 {
+                   "text": "poppycolorlight",
+                   "value": "poppycolorlight"
+                 },
+                 {
+                   "text": "poppycolordark",
+                   "value": "poppycolordark"
+                 }
+               ],
+               "title": "Color",
+               "type": "select"
+             },
+             {
+               "key": "font",
+               "multiple": false,
+               "options": [
+                 {
+                   "text": "display1",
+                   "value": "display1"
+                 },
+                 {
+                   "text": "display2",
+                   "value": "display2"
+                 },
+                 {
+                   "text": "body",
+                   "value": "body"
+                 },
+                 {
+                   "text": "art",
+                   "value": "art"
+                 }
+               ],
+               "title": "Font",
+               "type": "select"
+             },
+             {
+               "key": "font_weight",
+               "title": "Font weight",
+               "type": "string"
+             },
+             {
+               "arrayTitle": true,
+               "key": "name",
+               "title": "Name",
+               "type": "string"
+             },
+             {
+               "key": "rounded",
+               "title": "Rounded",
+               "type": "string"
+             },
+             {
+               "key": "size",
+               "multiple": false,
+               "options": [
+                 {
+                   "text": "xs",
+                   "value": "xs"
+                 },
+                 {
+                   "text": "sm",
+                   "value": "sm"
+                 },
+                 {
+                   "text": "base",
+                   "value": "base"
+                 },
+                 {
+                   "text": "lg",
+                   "value": "lg"
+                 },
+                 {
+                   "text": "xl",
+                   "value": "xl"
+                 },
+                 {
+                   "text": "2xl",
+                   "value": "2xl"
+                 },
+                 {
+                   "text": "3xl",
+                   "value": "3xl"
+                 },
+                 {
+                   "text": "4xl",
+                   "value": "4xl"
+                 },
+                 {
+                   "text": "5xl",
+                   "value": "5xl"
+                 },
+                 {
+                   "text": "6xl",
+                   "value": "6xl"
+                 },
+                 {
+                   "text": "7xl",
+                   "value": "7xl"
+                 },
+                 {
+                   "text": "8xl",
+                   "value": "8xl"
+                 },
+                 {
+                   "text": "9xl",
+                   "value": "9xl"
+                 }
+               ],
+               "title": "Size",
+               "type": "select"
+             },
+             {
+               "key": "space",
+               "title": "Space",
+               "type": "number"
+             },
+             {
+               "key": "text_color",
+               "multiple": false,
+               "options": [
+                 {
+                   "text": "transparent",
+                   "value": "transparent"
+                 },
+                 {
+                   "text": "white",
+                   "value": "white"
+                 },
+                 {
+                   "text": "poppycolor1",
+                   "value": "poppycolor1"
+                 },
+                 {
+                   "text": "poppycolor2",
+                   "value": "poppycolor2"
+                 },
+                 {
+                   "text": "poppycolor3",
+                   "value": "poppycolor3"
+                 },
+                 {
+                   "text": "poppycolor4",
+                   "value": "poppycolor4"
+                 },
+                 {
+                   "text": "poppycolor5",
+                   "value": "poppycolor5"
+                 },
+                 {
+                   "text": "poppycolor6",
+                   "value": "poppycolor6"
+                 },
+                 {
+                   "text": "poppycolorlight",
+                   "value": "poppycolorlight"
+                 },
+                 {
+                   "text": "poppycolordark",
+                   "value": "poppycolordark"
+                 }
+               ],
+               "title": "Text color",
+               "type": "select"
+             }
+           ],
+           "key": "buttons",
+           "title": "Buttons",
+           "type": "accordion"
+         },
+         {
+           "fields": [
+             {
+               "key": "poppy_color1",
+               "title": "Poppy color1",
+               "type": "string"
+             },
+             {
+               "key": "poppy_color2",
+               "title": "Poppy color2",
+               "type": "string"
+             },
+             {
+               "key": "poppy_color3",
+               "title": "Poppy color3",
+               "type": "string"
+             },
+             {
+               "key": "poppy_color4",
+               "title": "Poppy color4",
+               "type": "string"
+             },
+             {
+               "key": "poppy_color5",
+               "title": "Poppy color5",
+               "type": "string"
+             },
+             {
+               "key": "poppy_color6",
+               "title": "Poppy color6",
+               "type": "string"
+             },
+             {
+               "key": "poppy_colordark",
+               "title": "Poppy colordark",
+               "type": "string"
+             },
+             {
+               "key": "poppy_colorlight",
+               "title": "Poppy colorlight",
+               "type": "string"
+             }
+           ],
+           "groupdata": true,
+           "key": "colorscheme",
+           "title": "Colorscheme",
+           "type": "section"
+         },
+         {
+           "fields": [
+             {
+               "key": "family",
+               "title": "Family",
+               "type": "string"
+             },
+             {
+               "arrayTitle": true,
+               "key": "name",
+               "title": "Name",
+               "type": "string"
+             },
+             {
+               "key": "weight",
+               "title": "Weight",
+               "type": "number"
+             }
+           ],
+           "key": "fontscheme",
+           "title": "Fontscheme",
+           "type": "accordion"
+         },
+         {
+           "fields": [
+             {
+               "key": "bg_color",
+               "multiple": false,
+               "options": [
+                 {
+                   "text": "transparent",
+                   "value": "transparent"
+                 },
+                 {
+                   "text": "white",
+                   "value": "white"
+                 },
+                 {
+                   "text": "poppycolor1",
+                   "value": "poppycolor1"
+                 },
+                 {
+                   "text": "poppycolor2",
+                   "value": "poppycolor2"
+                 },
+                 {
+                   "text": "poppycolor3",
+                   "value": "poppycolor3"
+                 },
+                 {
+                   "text": "poppycolor4",
+                   "value": "poppycolor4"
+                 },
+                 {
+                   "text": "poppycolor5",
+                   "value": "poppycolor5"
+                 },
+                 {
+                   "text": "poppycolor6",
+                   "value": "poppycolor6"
+                 },
+                 {
+                   "text": "poppycolorlight",
+                   "value": "poppycolorlight"
+                 },
+                 {
+                   "text": "poppycolordark",
+                   "value": "poppycolordark"
+                 }
+               ],
+               "title": "Bg color",
+               "type": "select"
+             },
+             {
+               "key": "border",
+               "title": "Border",
+               "type": "string"
+             },
+             {
+               "key": "gridgap",
+               "title": "Gridgap",
+               "type": "number"
+             },
+             {
+               "key": "inner_space",
+               "title": "Inner space",
+               "type": "number"
+             },
+             {
+               "key": "item_bg_color",
+               "multiple": false,
+               "options": [
+                 {
+                   "text": "transparent",
+                   "value": "transparent"
+                 },
+                 {
+                   "text": "white",
+                   "value": "white"
+                 },
+                 {
+                   "text": "poppycolor1",
+                   "value": "poppycolor1"
+                 },
+                 {
+                   "text": "poppycolor2",
+                   "value": "poppycolor2"
+                 },
+                 {
+                   "text": "poppycolor3",
+                   "value": "poppycolor3"
+                 },
+                 {
+                   "text": "poppycolor4",
+                   "value": "poppycolor4"
+                 },
+                 {
+                   "text": "poppycolor5",
+                   "value": "poppycolor5"
+                 },
+                 {
+                   "text": "poppycolor6",
+                   "value": "poppycolor6"
+                 },
+                 {
+                   "text": "poppycolorlight",
+                   "value": "poppycolorlight"
+                 },
+                 {
+                   "text": "poppycolordark",
+                   "value": "poppycolordark"
+                 }
+               ],
+               "title": "Item bg color",
+               "type": "select"
+             },
+             {
+               "arrayTitle": true,
+               "key": "name",
+               "title": "Name",
+               "type": "string"
+             },
+             {
+               "key": "outer_space",
+               "title": "Outer space",
+               "type": "number"
+             },
+             {
+               "key": "rounded",
+               "title": "Rounded",
+               "type": "string"
+             },
+             {
+               "key": "shadow",
+               "multiple": false,
+               "options": [
+                 {
+                   "text": "none",
+                   "value": "none"
+                 },
+                 {
+                   "text": "sm",
+                   "value": "sm"
+                 },
+                 {
+                   "text": "md",
+                   "value": "md"
+                 },
+                 {
+                   "text": "lg",
+                   "value": "lg"
+                 },
+                 {
+                   "text": "xl",
+                   "value": "xl"
+                 },
+                 {
+                   "text": "2xl",
+                   "value": "2xl"
+                 },
+                 {
+                   "text": "4xl",
+                   "value": "4xl"
+                 },
+                 {
+                   "text": "5xl",
+                   "value": "5xl"
+                 },
+                 {
+                   "text": "6xl",
+                   "value": "6xl"
+                 },
+                 {
+                   "text": "7xl",
+                   "value": "7xl"
+                 },
+                 {
+                   "text": "8xl",
+                   "value": "8xl"
+                 },
+                 {
+                   "text": "9xl",
+                   "value": "9xl"
+                 }
+               ],
+               "title": "Shadow",
+               "type": "select"
+             }
+           ],
+           "key": "objects",
+           "title": "Objects",
+           "type": "accordion"
+         },
+         {
+           "fields": [
+             {
+               "key": "align",
+               "title": "Align",
+               "type": "string"
+             },
+             {
+               "key": "bg_color",
+               "multiple": false,
+               "options": [
+                 {
+                   "text": "transparent",
+                   "value": "transparent"
+                 },
+                 {
+                   "text": "white",
+                   "value": "white"
+                 },
+                 {
+                   "text": "poppycolor1",
+                   "value": "poppycolor1"
+                 },
+                 {
+                   "text": "poppycolor2",
+                   "value": "poppycolor2"
+                 },
+                 {
+                   "text": "poppycolor3",
+                   "value": "poppycolor3"
+                 },
+                 {
+                   "text": "poppycolor4",
+                   "value": "poppycolor4"
+                 },
+                 {
+                   "text": "poppycolor5",
+                   "value": "poppycolor5"
+                 },
+                 {
+                   "text": "poppycolor6",
+                   "value": "poppycolor6"
+                 },
+                 {
+                   "text": "poppycolorlight",
+                   "value": "poppycolorlight"
+                 },
+                 {
+                   "text": "poppycolordark",
+                   "value": "poppycolordark"
+                 }
+               ],
+               "title": "Bg color",
+               "type": "select"
+             },
+             {
+               "key": "color",
+               "multiple": false,
+               "options": [
+                 {
+                   "text": "transparent",
+                   "value": "transparent"
+                 },
+                 {
+                   "text": "white",
+                   "value": "white"
+                 },
+                 {
+                   "text": "poppycolor1",
+                   "value": "poppycolor1"
+                 },
+                 {
+                   "text": "poppycolor2",
+                   "value": "poppycolor2"
+                 },
+                 {
+                   "text": "poppycolor3",
+                   "value": "poppycolor3"
+                 },
+                 {
+                   "text": "poppycolor4",
+                   "value": "poppycolor4"
+                 },
+                 {
+                   "text": "poppycolor5",
+                   "value": "poppycolor5"
+                 },
+                 {
+                   "text": "poppycolor6",
+                   "value": "poppycolor6"
+                 },
+                 {
+                   "text": "poppycolorlight",
+                   "value": "poppycolorlight"
+                 },
+                 {
+                   "text": "poppycolordark",
+                   "value": "poppycolordark"
+                 }
+               ],
+               "title": "Color",
+               "type": "select"
+             },
+             {
+               "key": "font",
+               "multiple": false,
+               "options": [
+                 {
+                   "text": "display1",
+                   "value": "display1"
+                 },
+                 {
+                   "text": "display2",
+                   "value": "display2"
+                 },
+                 {
+                   "text": "body",
+                   "value": "body"
+                 },
+                 {
+                   "text": "art",
+                   "value": "art"
+                 }
+               ],
+               "title": "Font",
+               "type": "select"
+             },
+             {
+               "arrayTitle": true,
+               "key": "name",
+               "title": "Name",
+               "type": "string"
+             },
+             {
+               "key": "size",
+               "multiple": false,
+               "options": [
+                 {
+                   "text": "xs",
+                   "value": "xs"
+                 },
+                 {
+                   "text": "sm",
+                   "value": "sm"
+                 },
+                 {
+                   "text": "base",
+                   "value": "base"
+                 },
+                 {
+                   "text": "lg",
+                   "value": "lg"
+                 },
+                 {
+                   "text": "xl",
+                   "value": "xl"
+                 },
+                 {
+                   "text": "2xl",
+                   "value": "2xl"
+                 },
+                 {
+                   "text": "3xl",
+                   "value": "3xl"
+                 },
+                 {
+                   "text": "4xl",
+                   "value": "4xl"
+                 },
+                 {
+                   "text": "5xl",
+                   "value": "5xl"
+                 },
+                 {
+                   "text": "6xl",
+                   "value": "6xl"
+                 },
+                 {
+                   "text": "7xl",
+                   "value": "7xl"
+                 },
+                 {
+                   "text": "8xl",
+                   "value": "8xl"
+                 },
+                 {
+                   "text": "9xl",
+                   "value": "9xl"
+                 }
+               ],
+               "title": "Size",
+               "type": "select"
+             },
+             {
+               "key": "space",
+               "title": "Space",
+               "type": "number"
+             },
+             {
+               "key": "transform",
+               "title": "Transform",
+               "type": "string"
+             }
+           ],
+           "key": "typographies",
+           "title": "Typographies",
+           "type": "accordion"
+         }
+       ],
+       "file": "/data/design.yaml",
+       "key": "ds_data_design",
+       "previewUrl": "/",
+       "title": "Design"
+     },
+     {
+       "dataformat": "yaml",
+       "fields": [
+         {
+           "key": "bg_color",
+           "title": "Bg color",
+           "type": "chips"
+         },
+         {
+           "key": "color",
+           "title": "Color",
+           "type": "chips"
+         },
+         {
+           "key": "font",
+           "title": "Font",
+           "type": "chips"
+         },
+         {
+           "key": "item_bg_color",
+           "title": "Item bg color",
+           "type": "chips"
+         },
+         {
+           "key": "shadow",
+           "title": "Shadow",
+           "type": "chips"
+         },
+         {
+           "key": "size",
+           "title": "Size",
+           "type": "chips"
+         },
+         {
+           "key": "text_color",
+           "title": "Text color",
+           "type": "chips"
+         }
+       ],
+       "file": "/data/poppyselect.yaml",
+       "key": "ds_data_poppyselect",
+       "previewUrl": "/",
+       "title": "Poppyselect"
+     },
+     {
+       "dataformat": "js",
+       "fields": [
+         {
+           "fields": [],
+           "groupdata": true,
+           "key": "menu",
+           "title": "Menu",
+           "type": "section"
+         }
+       ],
+       "file": "/tailwind.config.js",
+       "key": "config-menus",
+       "title": "config | Menus"
+     }
+   ]
+ }

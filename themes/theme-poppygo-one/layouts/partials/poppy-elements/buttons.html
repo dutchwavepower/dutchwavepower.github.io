@@ -1,0 +1,23 @@
+{{ $design := .design }}
+
+
+{{- if reflect.IsSlice .buttons -}}
+  {{- range $index, $value := .buttons -}}
+    {{- $button := . -}}
+    {{- $btnclass := index $design ((printf "button_%s" .type) | default "button_primary") -}}
+    <a href="{{.link }}" class="m-2" >
+      <button type="button" class="m-2 hover:opacity-80 {{$btnclass}}">
+        <div class="flex">
+          {{- with .icon -}}
+            <div class="flex-col w-8 p-0 my-auto mr-2 -ml-4">
+              {{- partial "poppy-elements/icon" (dict "icon" . "icontype" ($button.icon_type | default "outline") ) -}}
+            </div>
+          {{- end -}}
+          <div class="my-auto">
+            {{- .label -}}
+          </div>
+        </div>
+      </button>
+    </a>
+  {{- end -}}
+{{- end -}}

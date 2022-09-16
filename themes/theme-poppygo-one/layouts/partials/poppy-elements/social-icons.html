@@ -1,0 +1,16 @@
+{{- $design := .design -}}
+{{- $content := .content -}}
+
+<div class="flex flex-wrap">
+  <div class="sm:w-1/2 md:w-1/4 px-4 mx-auto justify-center flex flex-row">
+    {{- range $content.social_icons -}}
+
+        <a href="{{.link}}" class="{{ $design.menu }} h-8">
+          <div class="h-full">
+          {{- partial "poppy-elements/icon" (dict "icon" .icon "icontype" "social" ) -}}
+          </div>
+        </a>
+
+    {{- end -}}
+  </div>
+</div>

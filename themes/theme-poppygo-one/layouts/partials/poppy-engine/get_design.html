@@ -1,0 +1,151 @@
+
+{{- $page_component := . -}}
+{{- $typographyData := site.Data.design.typographies -}}
+{{- $componentData := site.Data.design.components -}}
+{{- $buttonData := site.Data.design.buttons -}}
+{{- $design := dict -}}
+{{- $override_debug_info := dict -}}
+
+{{- range $componentData -}}
+  {{- $border := "" -}}
+  {{- range $key, $value := . -}}
+    {{- if $page_component.Params.design -}}
+      {{- $override := index $page_component.Params.design $key -}}
+      {{- $default := $value -}}
+      {{- $value = $override | default $default }}
+      {{- if $override }} {{- $override_debug_info = merge $override_debug_info (dict $key true ) -}} {{- end -}}
+    {{- end -}}
+    {{- if in $key "vertical_space" -}} {{- $value = printf "py-%s sm:pt-%s md:pt-%s lg:pt-%s xl:pt-%s" (string $value) (string (add $value 3)) (string (add $value 6)) (string (add $value 9)) (string (add $value 12)) -}}
+    {{- else if eq $key "rounded" -}} {{- $value = printf "rounded-%s" $value -}}
+    {{- else if eq $key "shadow" -}} {{- $value = printf "shadow-%s" $value -}}
+    {{- else if eq $key "border" -}}
+      {{- if eq $value "1" -}}
+        {{- $border = printf "%s %s" $border "border" -}}
+      {{- else -}}
+        {{- $border = printf "%s border-%s" $border (string $value) -}}
+      {{- end -}}
+    {{- else if eq $key "border_color" -}} {{- $border = printf "%s border-%s" $border (partial "poppy-engine/colors" $value) -}}
+    {{- else if eq $key "border_opacity" -}} {{- $border = printf "%s border-opacity-%s" $border (string $value) -}}
+    {{- else if eq $key "border" -}} {{- $value = printf "border-%s" (string $value) -}}
+    {{- else if eq $key "gridgap" -}} {{- $value = printf "gap-x-0 gap-y-%s sm:gap-%s" (string $value) (string $value) -}}
+    {{- end -}}
+    {{- $design = merge $design (dict $key $value) -}}
+  {{- end -}}
+  {{- $design = merge $design (dict "border" $border) -}}
+{{- end -}}
+
+{{ range $typographyData -}}
+  {{- $name := .name -}}
+  {{- $type := "" -}}
+
+  {{- range $key, $value := . -}}
+    {{- $typography := dict -}}
+    {{- if $page_component.Params.design.typographies -}}
+      {{- range where $page_component.Params.design.typographies "name" "eq" $name -}}
+        {{- $typography = . }}
+      {{- end -}}
+    {{- end -}}
+    {{- with $typography -}}
+      {{- $override := index . $key -}}
+      {{- $default := $value -}}
+      {{- $value = string ($override | default $default) -}}
+      {{- if $override -}}{{- $override_debug_info = merge $override_debug_info (dict $name true ) -}}{{- end -}}
+    {{- end -}}
+
+    {{- if $value -}}
+      {{- if in $key "font" -}} {{- $value = (printf "font-%s" $value ) -}} {{- end -}}
+      {{- if eq $key "bg_color" -}} {{- $value = (printf "bg-%s"  (partial "poppy-engine/colors" $value) ) -}} {{- end -}}
+      {{- if in $key "align" -}} {{- $value = printf "text-%s" $value -}} {{- end -}}
+      {{- if eq $key "color" -}} {{- $value = (printf "text-%s"  (partial "poppy-engine/colors" $value) ) -}} {{- end -}}
+      {{- if eq $key "size" -}}
+        {{- if not (in $name "menu") -}}
+          {{- $sizeIndex := 0 -}}
+          {{- $sizes := slice "xs" "sm" "base" "lg" "xl" "xl" "2xl" "2xl" "3xl" "4xl" "5xl" "6xl" "7xl" "8xl" "9xl" -}}
+          {{- $lg := "" -}} {{- $xl := "" -}} {{- $space := "" -}}
+          {{- range $index, $size := $sizes -}}
+            {{- if eq $size $value -}}
+              {{- if le $index (sub (len $sizes) 3 ) }} {{- $lg = index $sizes (add $index 1) -}}  {{- end -}}
+              {{- if le $index (sub (len $sizes) 4 ) }} {{- $xl = index $sizes (add $index 2) -}}  {{- end -}}
+              {{- $space = string (add (div $index 2) 0) -}}
+            {{- end -}}
+          {{- end -}}
+          {{- $value = (printf "text-%s lg:text-%s xl:text-%s py-%s" $value $lg $xl $space) -}}
+        {{- else -}}
+          {{- $value = (printf "text-%s"  $value ) -}}
+        {{- end -}}
+      {{- end -}}
+
+      {{- $type = printf "%s %s" $type $value -}}
+    {{- end -}}
+  {{- end -}}
+  {{- $design = merge $design (dict $name $type ) -}}
+{{- end -}}
+
+{{- range $buttonData -}}
+  {{- $name := .name -}}
+  {{- $button := "" -}}
+  {{- $button_name := "" -}}
+  {{- $overridden := "" -}}
+
+  {{- range $key, $value := . -}}
+    {{- $type := dict  -}}
+    {{- if $page_component.Params.design.buttons -}}
+      {{- range where $page_component.Params.design.buttons "name" "eq" $name -}}
+        {{- $type = . }}
+      {{- end -}}
+    {{- end -}}
+
+    {{- with $type -}}
+      {{- $override := index . $key -}}
+      {{- $default := $value -}}
+      {{- $value = string ($override | default $default) -}}
+      {{- if $override -}}{{- $overridden = true -}}{{- end -}}
+    {{- end -}}
+
+    {{- if $value -}}
+      {{- if in $key "font" -}} {{- $value = printf "font-%s"  $value  -}} {{- end -}}
+      {{- if in $key "rounded" -}} {{- $value = printf "rounded-%s"  $value  -}} {{- end -}}
+      {{- if eq $key "color" -}} {{- $value = printf "bg-%s"  (partial "poppy-engine/colors" $value)  -}} {{- end -}}
+      {{- if in $key "text" -}} {{- $value = printf "text-%s"  (partial "poppy-engine/colors" $value)  -}} {{- end -}}
+      {{- if eq $key "name" -}} {{- $button_name = printf "button_%s"  $value  -}} {{- end -}}
+
+      {{- if in $key "size" -}}
+        {{- $sizeIndex := 0 -}}
+        {{- $sizes := slice "xs" "sm" "base" "lg" "xl" "2xl" "3xl" "4xl" "5xl" "6xl" "7xl" "8xl" "9xl" -}}
+        {{- $spaces := slice 1 1 2 2 3 3 4 4 5 5 6 6 7 -}}
+        {{- $lg := "" -}} {{- $xl := "" -}} {{- $lg_spacex := "" -}} {{- $lg_spacey := "" -}} {{- $xl_spacex := "" -}} {{- $xl_spacey := "" -}}
+        {{- $base_spacey := "" -}}
+        {{- $base_spacex := "" -}}
+
+        {{- range $index, $size := $sizes -}}
+          {{- if eq $size $value -}}
+            {{- $base_spacey = (string (index $spaces $index)) -}}
+            {{- $base_spacex = string ( mul (index $spaces $index) 4) -}}
+            {{- if le $index (sub (len $sizes) 2 ) }}
+              {{- $lg = index $sizes (add $index 1) -}}
+              {{- $lg_spacey = index $spaces (add $index 1) -}}
+              {{- $lg_spacex = index $spaces ( mul (add $index 1) 4) -}}
+            {{- end -}}
+            {{- if le $index (sub (len $sizes) 3 ) }}
+              {{- $xl = index $sizes (add $index 2) -}}
+              {{- $lg_spacey = index $spaces (add $index 2) -}}
+              {{- $lg_spacex = index $spaces ( mul (add $index 2) 4 ) -}}
+            {{- end -}}
+          {{- end -}}
+        {{- end -}}
+        {{- $value = printf "text-%s lg:text-%s xl:text-%s" $value $lg $xl -}}
+        {{- $value = printf "%s py-%s lg:py-%s xl:py-%s" $value $base_spacey (string $lg_spacey) (string $xl_spacey) -}}
+        {{- $value = printf "%s px-%s lg:px-%s xl:px-%s" $value $base_spacex (string $lg_spacex) (string $xl_spacex) -}}
+      {{- end -}}
+      {{- $button = printf "%s %s" $button $value -}}
+    {{- end -}}
+  {{- end -}}
+  {{- if $overridden }}
+      {{- $override_debug_info = merge $override_debug_info (dict $button_name true ) -}}
+  {{- end -}}
+  {{- $design = merge $design (dict $button_name $button ) -}}
+{{- end -}}
+
+{{- $design_info := dict "override_debug_info" $override_debug_info "design" $design -}}
+
+{{- return $design_info -}}

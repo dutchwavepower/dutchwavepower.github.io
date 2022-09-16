@@ -1,0 +1,4 @@
+{{ range .Translations }}
+<link rel="alternate" hreflang="{{ .Lang }}" href="{{ .Permalink }}">
+{{ end }}
+<link rel="alternate" hreflang="{{ site.LanguageCode | default "nl-nl" }}" href="{{ .Permalink }}">

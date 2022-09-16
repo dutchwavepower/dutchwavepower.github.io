@@ -1,0 +1,124 @@
+buttons:
+  - color: orange
+    font: body
+    font_weight: bold
+    hover_color: tufts-blue
+    name: primary
+    rounded: xl
+    size: base
+    text_color: white
+  - color: tufts-blue
+    font: body
+    font_weight: bold
+    hover_color: baby-blue-eyes
+    name: secondary
+    rounded: xl
+    size: base
+    text_color: white
+  - color: ghost-white
+    font: body
+    font_weight: bold
+    hover_color: tufts-blue
+    name: tertiary
+    rounded: xl
+    size: base
+    text_color: charcoal
+colorscheme:
+  poppy_color1:
+    colorcode: '#FF8000'
+    name: orange
+  poppy_color2:
+    colorcode: '#2490EB'
+    name: tufts-blue
+  poppy_color3:
+    colorcode: '#9BCCF4'
+    name: baby-blue-eyes
+  poppy_color4:
+    colorcode: '#C6EDE2'
+    name: aero-blue
+  poppy_color5:
+    colorcode: '#324a61'
+    name: charcoal
+  poppy_color6:
+    colorcode: '#F7F7FF'
+    name: ghost-white
+components:
+  - border: none
+    gridgap: 7
+    name: all
+    rounded: lg
+    shadow: lg
+    vertical_space: 7
+fontscheme:
+  - family: Nunito
+    name: display1
+  - family: Nunito
+    name: body
+  - family: Nunito
+    name: menu
+  - family: Turret Road
+    name: art
+  - family: Nunito
+    name: display2
+site:
+  bg_color: ghost-white
+  container: true
+  container_padding:
+    2xl: 6rem
+    DEFAULT: 1rem
+    lg: 0rem
+    name: padding
+    sm: 0rem
+    xl: 3rem
+  texture:
+    blendmode: overlay
+    opacity: 0.2
+typographies:
+  - align: center
+    bg_color: transparent
+    color: charcoal
+    font: display1
+    font_weight: bold
+    name: title
+    size: 2xl
+    transform: ''
+  - align: ''
+    bg_color: none
+    color: charcoal
+    font: body
+    font_weight: ''
+    name: body
+    size: md
+    transform: ''
+  - align: center
+    bg_color: none
+    color: ghost-white
+    font: display2
+    font_weight: medium
+    name: subtitle
+    size: lg
+    transform: ''
+  - align: left
+    bg_color: none
+    color: charcoal
+    font: body
+    font_weight: extralight
+    name: itembody
+    size: lg
+    transform: ''
+  - align: ''
+    bg_color: transparent
+    color: charcoal
+    font: body
+    font_weight: semibold
+    name: menu
+    size: lg
+    transform: normal-case
+  - align: ''
+    bg_color: transparent
+    color: orange
+    font: display1
+    font_weight: semibold
+    name: itemtitle
+    size: lg
+    transform: uppercase

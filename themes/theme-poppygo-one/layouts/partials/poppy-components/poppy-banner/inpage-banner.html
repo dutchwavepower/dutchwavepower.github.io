@@ -1,0 +1,13 @@
+{{- $page := .page -}}
+{{- $content := .content -}}
+{{- $design := .design -}}
+
+{{- with $design -}}
+  <div class= "{{.vertical_space}} md:mx-32 lg:mx-60 pb-12">
+    <h1 class="z-10 {{ .title }}">{{$content.title}}</h1>
+    <p class="prose mx-auto {{ .subtitle }}">{{ $content.subtitle | markdownify }}</p>
+    <div class="{{.subtitle}}">
+      {{- partial "poppy-elements/buttons" (dict "design" . "buttons" $content.buttons ) -}}
+    </div>
+  </div>
+{{- end -}}

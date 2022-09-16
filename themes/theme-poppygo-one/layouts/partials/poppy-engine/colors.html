@@ -1,0 +1,14 @@
+{{- $name := . -}}
+{{- $poppy_color := "" -}}
+
+{{- if and (not (eq $name "transparent")) (not (eq $name "white")) -}}
+  {{- range $key, $value := site.Data.design.colorscheme -}}
+    {{- if eq $value.name $name -}}
+      {{ $poppy_color = (replace $key "_" "" ) -}}
+    {{- end -}}
+  {{- end -}}
+{{- else -}}
+  {{- $poppy_color = $name -}}
+{{- end -}}
+
+{{- return $poppy_color -}}

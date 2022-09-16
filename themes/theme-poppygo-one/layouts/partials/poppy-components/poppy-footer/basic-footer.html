@@ -1,0 +1,39 @@
+{{- $page := .page -}}
+{{- $content := .content -}}
+{{- $design := .design -}}
+
+{{- $page := .page -}}
+{{- $content := .content -}}
+{{- $design := .design -}}
+
+{{- with $design -}}
+<div class="{{.vertical_space}} ">
+  <div class=" ">
+    <div class="w-full px-4 h-20">
+      {{- partial "poppy-elements/logo" (dict "content" $content "design" $design) -}}
+    </div>
+    <h4 class="{{.title}}">{{$content.title}}</h4>
+    <h5 class="{{.subtitle}}">{{$content.subtitle}}</h5>
+  </div>
+
+  {{/* <div class="m-10 object-bottom flex flex-wrap items-center md:justify-between justify-center ">
+    <div class="mx-auto">
+      <button class="bg-white text-blue-400 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2 p-3" type="button">
+        <i class="flex fab fa-twitter"></i></button>
+    </div>
+  </div> */}}
+
+  <div class="pt-20">
+    <div class="w-full px-4 mx-auto text-center">
+      <div class="text-sm text-gray-600 font-semibold">
+        Made with
+        <a
+          href="/"
+          class="text-gray-600 hover:text-gray-900"
+          >PoppyGo</a
+        >.
+      </div>
+    </div>
+  </div>
+</div>
+{{- end -}}

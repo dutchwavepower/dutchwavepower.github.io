@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Components on Dutch Wave Power</title>
+    <link>/my-components/</link>
+    <description>Recent content in Components on Dutch Wave Power</description>
+    <generator>Hugo -- gohugo.io</generator><atom:link href="/my-components/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>-&gt;frompage</title>
+      <link>/my-components/dwp-article-standard/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/my-components/dwp-article-standard/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Dutch Wave Power</title>
+      <link>/my-components/dwp-navbar/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/my-components/dwp-navbar/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Explainer</title>
+      <link>/my-components/dwp-explainer/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/my-components/dwp-explainer/</guid>
+      <description>-| I am the summary of the newsletter element, which is not very relevant</description>
+    </item>
+    
+    <item>
+      <title>I am an in-page banner for telling your story</title>
+      <link>/my-components/dwp-inpage-banner/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/my-components/dwp-inpage-banner/</guid>
+      <description>-| I am the summary of the banner, which can be used for opengraph and SEO descriptions</description>
+    </item>
+    
+    <item>
+      <title>I am an shortlist in the form of cards</title>
+      <link>/my-components/dwp-cards-standard/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/my-components/dwp-cards-standard/</guid>
+      <description>-| I am the summary of the banner, which can be used for opengraph and SEO descriptions</description>
+    </item>
+    
+    <item>
+      <title>I am an shortlist in the form of cards</title>
+      <link>/my-components/dwp-image-cards/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/my-components/dwp-image-cards/</guid>
+      <description>-| I am the summary of the banner, which can be used for opengraph and SEO descriptions</description>
+    </item>
+    
+    <item>
+      <title>none</title>
+      <link>/my-components/dwp-footer/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/my-components/dwp-footer/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Showcase</title>
+      <link>/my-components/dwp-showcase/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/my-components/dwp-showcase/</guid>
+      <description>-| I am the summary of the showcase element, which is not very relevant</description>
+    </item>
+    
+    <item>
+      <title>~Je bent van harte welkom~</title>
+      <link>/my-components/dwp-contact-noform/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/my-components/dwp-contact-noform/</guid>
+      <description>Introduction text for you</description>
+    </item>
+    
+  </channel>
+</rss>

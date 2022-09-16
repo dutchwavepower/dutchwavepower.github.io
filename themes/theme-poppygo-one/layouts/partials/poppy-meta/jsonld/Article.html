@@ -1,0 +1,55 @@
+{{ printf "<!-- partial article -->" | safeHTML }}
+{{- $page := .page }}
+{{ $summary := .summary }}
+{{ with $page.Params.description }}
+  {{ $summary := . }}
+{{ end }}
+{{ $featured_image := ($page.Resources.ByType "image").GetMatch "*" }}
+
+{{/* Get schema type. */}}
+{{ $schema := "Article" }}
+{{ if or (eq $page.Type "documentation") (eq $page.Type "guide") (eq $page.Type "page") (eq $page.Type "theme") (eq $page.Type "themes") }}
+  {{ $schema = "TechArticle" }}
+{{ end }}
+{{ if eq $page.Type "release" }}
+  {{ $schema = "NewsArticle" }}
+{{ end }}
+
+{{ printf "<!-- schematype is %s -->" $schema | safeHTML }}
+
+{{ $publisher := site.Params.org_name | default site.Title }}
+{{ $logo_url := partial "functions/get_logo_url" $page -}}
+
+<script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": {{$schema}},
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": {{$page.Permalink}}
+      },
+      "headline": {{$page.Title}},
+      {{ if $featured_image }}
+      "image": [
+        {{$featured_image.Permalink}}
+      ],
+      {{end}}
+      "datePublished": {{ $page.PublishDate.Format "2006-01-02T15:04:05Z07:00" }},
+      "publisher": {
+        "@type": "Organization",
+        "name": {{$publisher}},
+        "logo": {
+          "@type": "ImageObject",
+          "url": {{$logo_url}}
+        }
+      },
+      "author": {
+        "@type": "Organization",
+        "name": "PopppyGo"
+      },
+      "description": {{ $summary }},
+      "wordCount": {{$page.Content | countwords }},
+      "articleSection": {{ $page.Section }},
+      "abstract" : {{ $summary }}
+    }
+</script>

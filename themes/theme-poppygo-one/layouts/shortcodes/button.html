@@ -1,0 +1,11 @@
+{{- $type := .Get 0 -}}
+{{- $label := .Get 1 -}}
+{{- $link := .Get 2 -}}
+{{- $design_info := partial "poppy-engine/get_design" .Page -}}
+{{- $btn_class := index $design_info.design ((printf "button_%s" $type) | default "button_primary") -}}
+
+<a href="{{ $link | safeURL }}" class="umami--click--{{$label | anchorize}} ">
+  <button class="{{$btn_class}} ">
+    {{ $label }}
+  </button>
+</a>

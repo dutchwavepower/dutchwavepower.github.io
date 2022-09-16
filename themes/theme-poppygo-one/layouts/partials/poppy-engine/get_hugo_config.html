@@ -1,0 +1,40 @@
+
+{{- $key := . -}}
+{{- $configFile := "" -}}
+
+{{- range readDir "/" -}}
+  {{- if and (eq .Name "config") .IsDir -}}
+        {{- range readDir "/config/_default" -}}
+            {{- if in .Name "config"  -}}
+                  {{ $configFile = readFile (printf "/config/_default/%s" .Name) }}
+            {{- end -}}
+        {{- end -}}
+  {{- else if in .Name "config" -}}
+        {{ $configFile = readFile .Name }}
+  {{- end -}}
+{{- end -}}
+
+{{- $lines := split $configFile "\n" -}}
+
+{{/* get the line */}}
+{{- $line := "" -}}
+{{- range $lines }}
+  {{- if or (in . (printf "%s:" $key )) (in . (printf "%s=" $key )) (in . (printf "%s =" $key )) -}}
+      {{- $line =  . -}}
+  {{- end -}}
+{{- end -}}
+
+{{/* get the value */}}
+{{- $value := "" -}}
+{{- if in $line "=" -}}
+  {{- $value = replaceRE "(\\s)" "" (index (split $line "=" ) 1 ) -}}
+{{- else if in $line ":" -}}
+  {{- $value = replaceRE "(\\s)" "" (index (split $line ":" ) 1 ) -}}
+{{- end }}
+
+{{/* Remove the comments */}}
+{{- if in $value "#" -}}
+  {{- $value = replaceRE "(\\s)" "" (index (split $value "#" ) 0 )  -}}
+{{- end -}}
+
+{{- return $value -}}

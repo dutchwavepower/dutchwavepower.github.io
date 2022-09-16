@@ -1,0 +1,8 @@
+{{- $name := printf "/icons/%s/%s.svg" .icontype .icon -}}
+{{- $icons_outline := resources.Match (printf "icons/%s/*" .icontype ) -}}
+{{ range  $icons_outline -}}
+  {{/* {{.RelPermalink}} */}}
+  {{- if eq .RelPermalink $name -}}
+    {{  .Content | safeHTML -}}
+  {{- end -}}
+{{- end -}}

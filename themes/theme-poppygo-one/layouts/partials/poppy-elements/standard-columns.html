@@ -1,0 +1,23 @@
+{{- $amount := .amount -}}
+{{- $index := .index -}}
+
+{{- $md_start := "" -}}
+{{- $lg_start := "" -}}
+{{- $span := "col-span-12 md:col-span-6 lg:col-span-4" -}}
+{{-  if and (not (modBool $amount 2)) (eq $index (sub $amount 1)) -}}
+  {{ $md_start = "md:col-start-4" -}}
+{{- end -}}
+{{-  if eq $amount 1 -}}{{ $lg_start = "lg:col-start-5" -}}
+{{-  else if and (eq $index 0) (eq $amount 2) -}}{{ $lg_start = "lg:col-start-3" -}}
+{{-  else if and (eq $index (sub $amount 2)) (eq $amount 5) -}}{{ $lg_start = "lg:col-start-3" -}}
+{{-  else if and (not (modBool $amount 2)) (not (modBool $amount 3)) (eq $index (sub $amount 3)) (gt $amount 6) -}}
+  {{ $lg_start = "lg:col-start-3" -}}
+{{- end -}}
+
+{{- if or (in (slice 4 7 8 10) $amount ) (gt $amount 10) -}}
+    {{- $span = "col-span-12 md:col-span-6 lg:col-span-3" -}}
+{{- end -}}
+
+{{- $span := printf "%s %s %s" $md_start $lg_start $span -}}
+
+{{- return $span -}}

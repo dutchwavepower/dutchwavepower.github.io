@@ -1,0 +1,39 @@
+<div id="search-screen" class="search-hidden fixed block inset-0" style="backdrop-filter: blur(8px);">
+    <div id="search-wrapper"
+        class="w-11/12 md:w-3/5 max-w-2xl mt-24 mx-auto rounded-md overflow-hidden transform -translate-y-4 transition-transform duration-150 ease-in">
+        {{/* Search input */}}
+        <div class="relative">
+            <div id="search-input" class="rounded-md">
+                <input
+                    class="pl-8 pr-6 py-2 block w-full focus:outline-none"
+                    type="text" placeholder="Search..." />
+                <div class="absolute inset-y-0 left-0 pl-2 flex items-center">
+                    <i data-feather="search" class="w-4 h-4"></i>
+                </div>
+            </div>
+        </div>
+
+        {{/* Popular tags */}}
+        <div id="search-popular-tags" class="block px-4 py-2">
+            <div class="w-full text-ne-on-surface text-base tracking-tight font-semibold">
+                Popular Tags
+            </div>
+            <div
+                class="flex flex-row flex-wrap justify-start space-x-2 text-sm font-semibold">
+                {{ range first 5 site.Taxonomies.tags.ByCount }}
+                <a href="/tags/{{ .Name }}"
+                    class="gray-tag my-1 px-3 py-0 rounded-full">#{{- .Name -}}</a>
+                {{ end }}
+            </div>
+        </div>
+
+        {{/* Search results filled in by js */}}
+        <div class="block overflow-y-auto w-full" style="max-height: 70vh;">
+            <ul class="search-results"></ul>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/minisearch@2.4.1/dist/umd/index.min.js"></script>
+{{ $minisearch := resources.Get "js/minisearch-config.js" | minify | fingerprint }}
+<script defer src="{{- $minisearch.RelPermalink -}}" integrity="{{- $minisearch.Data.Integrity -}}"></script>

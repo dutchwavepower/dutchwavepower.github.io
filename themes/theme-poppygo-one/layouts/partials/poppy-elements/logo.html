@@ -1,0 +1,17 @@
+{{- $design := .design -}}
+{{- $content := .content -}}
+
+{{- if and $content.imagesvg (fileExists (printf "%simages/%s" $content.fg_resource_page.Dir $content.imagesvg )) -}}
+  <a href="/" class = "py-2 lg:py-4 w-full h-full">
+    {{- $logo := readFile (printf "%simages/%s" $content.fg_resource_page.Dir $content.imagesvg ) -}}
+    {{- $logo | safeHTML }}
+  </a>
+{{ else if $content.image }}
+  <a href="/" class = "py-2 lg:py-4">
+    {{- partial "poppy-elements/image" (dict "resource_page" $content.fg_resource_page "name" $content.image "class" "%s mx-auto {{$size}}" ) -}}
+  </a>
+{{ else }}
+  <div class="p-6">
+      <a id="logo" class="uppercase bg-poppycolordark p-3 text-white text-3xl" href="/">{{$content.textlogo}}</a>
+  </div>
+{{ end }}

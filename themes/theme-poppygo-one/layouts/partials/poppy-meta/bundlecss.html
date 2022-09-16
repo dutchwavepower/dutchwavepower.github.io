@@ -1,0 +1,15 @@
+{{ $custom := resources.Get "css/custom.css" }}
+{{ $tailwind := resources.Get "css/tailwind.css" }}
+{{ $css := slice $custom $tailwind | resources.Concat "css/poppygo-one.css" }}
+
+{{- $css = $css | minify | fingerprint "md5" -}}
+<link rel="stylesheet" href="{{ $css.RelPermalink }}">
+
+
+{{/* {{ if .Site.IsServer }}
+    {{ $style := resources.Get "css/styles.css" | postCSS (dict "config" "./assets/css/dev/postcss.config.js") }}
+    <link rel="stylesheet" href="{{ $style.RelPermalink }}">
+  {{ else }}
+    {{ $style := resources.Get "css/styles.css" | postCSS (dict "config" "./assets/css/postcss.config.js") | minify | fingerprint }}
+    <link rel="stylesheet" href="{{ $style.Permalink }}" integrity="{{ $style.Data.Integrity }}">
+  {{ end }} */}}

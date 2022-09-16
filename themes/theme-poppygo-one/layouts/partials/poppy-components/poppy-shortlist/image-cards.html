@@ -1,0 +1,27 @@
+{{- $page := .page -}}
+{{- $content := .content -}}
+{{- $design := .design -}}
+
+{{- $amount := 0 -}}
+{{- range $content.items -}}
+  {{ if and .image (not (eq .image "none")) -}}
+    {{- $amount = add $amount 1 -}}
+  {{- end -}}
+{{- end -}}
+
+{{- with $design -}}
+<div class="{{.vertical_space}} ">
+  <h3 class=" {{.title }}">{{ $content.title }}</h3>
+  <p class=" {{.subtitle}}">{{ $content.subtitle }}</p>
+  <div class=" grid grid-flow-row-dense grid-cols-12 {{.gridgap}}">
+      {{- range $index, $item := $content.items -}}
+          {{- $span := partial "poppy-elements/standard-columns" (dict "amount" $amount "index" $index) -}}
+          <a href="{{.link }}" class="{{$span}} flex flex-col w-full h-full ">
+            <div>
+              {{- partial "poppy-elements/image" (dict "resource_page" $content.fg_resource_page "name" .image "class" "w-full") -}}
+            </div>
+          </a>
+      {{- end -}}
+  </div>
+</div>
+{{- end -}}

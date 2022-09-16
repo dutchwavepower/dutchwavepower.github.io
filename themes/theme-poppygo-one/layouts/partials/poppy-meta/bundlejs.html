@@ -1,0 +1,10 @@
+{{/* USE THIS TO BUNDLE YOUR JS files if you have any */}}
+
+{{/* {{ $script := resources.Get "js/script.js" }}
+{{ $js_bundle := (slice  $script) }}
+{{ $js_bundle = $js_bundle  | resources.Concat "js/poppygo-one.js" | minify | fingerprint "md5" }}
+<script src="{{ $js_bundle.RelPermalink }}"></script> */}}
+
+{{- if not .Site.IsServer -}}
+    <script async defer data-website-id="{{ .Site.Params.umami.siteID }}" src="{{ .Site.Params.umami.trackerScript }}"></script>
+{{- end -}}

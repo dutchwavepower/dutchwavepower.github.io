@@ -1,0 +1,30 @@
+{{- $page := .page -}}
+{{- $content := .content -}}
+{{- $design := .design -}}
+
+{{- with $design -}}
+    <div class="">
+        {{/* {{ partial "poppy-elements/post-tags" . }} */}}
+        <h1 class="{{.title}}">{{ $content.title }}</h1>
+        <div class="rounded overflow-hidden">
+            {{ with $content.summary }}
+                <div class="prose {{.body}}">
+                    {{ . }}
+                </div>
+            {{ end }}
+        </div>
+    </div>
+
+    <div class="prose {{.body}} article-container max-w-screen-md xl:max-w-screen-lg mx-auto overflow-auto">
+      <div class="overflow-hidden h-96 object-center">
+      {{- partial "poppy-elements/image" (dict "resource_page" $page "name" $content.image "link" $content.link "class" "w-full") -}}
+    </div>
+        {{- $page.Content | markdownify -}}
+    </div>
+
+    {{/* Buttons at the bottom-right */}}
+    <div class="fixed bottom-0 right-0 pb-5 pr-5">
+        {{partial "poppy-elements/back-to-top-button" }} {{partial "poppy-elements/toc-button" . }}
+    </div>
+    {{partial "poppy-elements/table-of-contents" $page }}
+{{- end -}}
