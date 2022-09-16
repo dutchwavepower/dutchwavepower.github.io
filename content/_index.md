@@ -43,7 +43,7 @@ page_sections:
     texture: ''
     title: ''
   - bg_color: white
-    bg_image: hero_banner_blue
+    bg_image: hero_banner
     buttons:
       - icon: ''
         icon_type: ''
