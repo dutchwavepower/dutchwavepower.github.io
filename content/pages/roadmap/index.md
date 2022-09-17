@@ -200,16 +200,16 @@ We tested the 1:4 prototype in the summer of 2020 in the Delta Flume at knowledg
 
 {{< youtube id="oe5T6Q-YNp8?version=3&vq=hd1080&rel=0" >}}
 
-# Stage 3
-
 **2021: Additional wave flume tests at MARIN**
 To validate and de-risk every aspect of our wave energy converter concept we conducted a large amount of tests at a wave flume at the marine research centre MARIN. The tests were be performed at a scale of 1:7.
 
 {{< youtube id="lBRg8wFgsjo?version=3&vq=hd1080&rel=0" >}}
 
-**2023 - 2024: Pilot system validation in a relevant environment: the North Sea**
-At the moment we are lining up for our first relevant environment: the North Sea. At the Offshore Test Site (OTS) at 12 kilometer of the coast of The Hague and Scheveningen we will deploy a small scale model to showcase the survivability and reliability. On top of that we will gather data to improve the output in all sea conditions.
 
+# Stage 3
+
+**2022 - 2024: Pilot system validation in a relevant environment: the North Sea**
+At the moment we are lining up for our first relevant environment: the North Sea. At the Offshore Test Site (OTS) at 12 kilometer of the coast of The Hague and Scheveningen we will deploy a small scale model to showcase the survivability and reliability. On top of that we will gather data to improve the output in all sea conditions.
 
 # Stage 4
 
@@ -217,6 +217,7 @@ At the moment we are lining up for our first relevant environment: the North Sea
 In 2024 we plan to install the near full scale 1:2 or full scale 1:1 demonstration models at sea for demonstration and certification purposes.
 
 # Stage 5
+
 **2026 - 2027: Grid or array of multiple wave energy converters**
 The first production array of multiple converters (>5) will provide us insights of grid effects and will provide a decent amount of renewable wave energy to be consumed by a relevant and connected project or group of consumers. The step towards commercialization!
 
