@@ -182,21 +182,34 @@ The heart of our wave energy converter consists of a float which comprises a dri
 {{< youtube id="vfl7XYkvUoE?version=3&vq=hd1080&rel=0" >}}
 
 
-Dutch Wave Power developed two different systems of suspensions for the full spectrum needed, from offshore, near shore to even onshore placement: 
-1. deep water locations - off shore 
-2. intermediate depth locations - near shore and shore line
+Dutch Wave Power developed multiple  systems of suspensions for the full spectrum needed, from offshore, near shore to even shoreline placement: 
+- deep water locations - off shore 
+- intermediate depth locations - near shore 
+- location at shore (harbour heads, dams) - shore line
 
 
-**Nearshore solution 1:**
+**Offshore solution:**
 
 {{< youtube id="RZxbgNj-FX8?version=3&vq=hd1080&rel=0" >}}
 
   
-**Nearshore solution 2:**
-  
+**Nearshore solution:**
 
 {{< youtube id="fg8OHEg4zWI?version=3&vq=hd1080&rel=0" >}}
 
+
+**1st Prototype / Key Concept Validation (Deltares):**
+
+{{< youtube id="oe5T6Q-YNp8?version=3&vq=hd1080&rel=0" >}}
+
+
+**2nd Prototype / Concept Validation (MARIN):**
+
+{{< youtube id="lBRg8wFgsjo?version=3&vq=hd1080&rel=0" >}}
+
+{{< youtube id="He4RB8xi_jc?version=3&vq=hd1080&rel=0" >}}
+
+{{< youtube id="Dx4A5dbI_xk?version=3&vq=hd1080&rel=0" >}}
 
 
 
