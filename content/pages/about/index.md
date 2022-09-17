@@ -94,7 +94,7 @@ page_sections:
     subtitle: >-
       Dutch Wave Power was founded by Sten and Hans after 2 years of research
       and development, because they share the same personal goal: fight global
-      warming and reduce CO2 emissions to keep this world save!
+      warming and reduce CO2 emissions to keep this world safe!
     texture: texture_underwater
     title: Founded in 2020
   - bg_color: ghost-white
