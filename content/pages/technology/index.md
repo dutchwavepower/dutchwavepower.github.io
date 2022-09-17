@@ -198,20 +198,5 @@ Dutch Wave Power developed multiple  systems of suspensions for the full spectru
 {{< youtube id="fg8OHEg4zWI?version=3&vq=hd1080&rel=0" >}}
 
 
-**1st Prototype / Key Concept Validation (Deltares):**
-
-{{< youtube id="oe5T6Q-YNp8?version=3&vq=hd1080&rel=0" >}}
-
-
-**2nd Prototype / Concept Validation (MARIN):**
-
-{{< youtube id="lBRg8wFgsjo?version=3&vq=hd1080&rel=0" >}}
-
-{{< youtube id="He4RB8xi_jc?version=3&vq=hd1080&rel=0" >}}
-
-{{< youtube id="Dx4A5dbI_xk?version=3&vq=hd1080&rel=0" >}}
-
-
-
 
 
