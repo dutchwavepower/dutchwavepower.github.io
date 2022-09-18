@@ -78,9 +78,9 @@ page_sections:
     list: ''
     name: home-hero-banner
     parallax: true
-    subtitle: wave energy
+    subtitle: none
     texture: ''
-    title: Profitable 
+    title: profitable wave energy
   - bg_color: orange
     bg_image: none
     buttons:
