@@ -23,7 +23,7 @@ summary: >-
 title: I am a banner
 design:
   typographies:
-    - align: center
+    - align: right
       bg_color: transparent
       color: charcoal
       font: display1
@@ -31,7 +31,7 @@ design:
       name: title
       size: 5xl
       transform: uppercase
-    - align: center
+    - align: right
       bg_color: transparent
       color: white
       font: display1
