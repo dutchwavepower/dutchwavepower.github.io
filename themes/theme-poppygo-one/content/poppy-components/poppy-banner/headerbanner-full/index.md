@@ -33,11 +33,11 @@ design:
       transform: uppercase
     - align: right
       bg_color: transparent
-      color: white
+      color: charcoal
       font: display1
-      font_weight: normal
+      font_weight: bold
       name: subtitle
-      size: xl
+      size: 5xl
       transform: uppercase
 
 ---
