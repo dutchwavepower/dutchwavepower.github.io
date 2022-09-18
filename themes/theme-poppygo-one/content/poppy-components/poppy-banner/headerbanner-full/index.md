@@ -29,7 +29,7 @@ design:
       font: display1
       font_weight: bold
       name: title
-      size: 5xl
+      size: 6xl
       transform: uppercase
     - align: right
       bg_color: transparent
