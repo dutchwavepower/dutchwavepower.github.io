@@ -80,7 +80,7 @@ page_sections:
     parallax: true
     subtitle: none
     texture: ''
-    title: profitable wave energy
+    title: profitable {{< line_break >}} wave energy
   - bg_color: orange
     bg_image: none
     buttons:
