@@ -29,15 +29,15 @@ design:
       font: display1
       font_weight: bold
       name: title
-      size: 6xl
+      size: 5xl
       transform: uppercase
     - align: right
       bg_color: transparent
-      color: charcoal
+      color: white
       font: display1
-      font_weight: bold
+      font_weight: normal
       name: subtitle
-      size: 5xl
+      size: xl
       transform: uppercase
 
 ---
