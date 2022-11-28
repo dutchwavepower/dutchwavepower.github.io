@@ -7,10 +7,10 @@ lastmod: ''
 publishdate: ''
 resources: []
 subtitle: ''
-title: Patent granted!
+title: Patent granted
 weight: 0
 summary: |-
-Patent granted!
+Patent granted
 Super excited to announce that the Dutch Wave Power patent has been awarded to us! It is an intense process to get it done, but we did it!
 
 ---
