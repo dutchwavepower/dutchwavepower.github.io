@@ -1,36 +1,23 @@
 ---
 bg_image: news_banner
-date: '2022-06-23'
+date: '2022-11-28'
 draft: false
-image: CrownPrinceDenmark
+image: patent_granted
 lastmod: ''
 publishdate: ''
 resources: []
 subtitle: ''
-title: Honoured to present our technology to HRH Crown Prince Frederik of Denmark!
+title: Patent granted!
 weight: 0
 summary: |-
- We were honoured to present our wave energy technology to HRH Crown Prince Frederik of Denmark on 20 June at DMEC (Dutch Marine Energy Centre).
-
+Super excited to announce that the Dutch Wave Power patent has been awarded to us! It is an intense process to get it done, but we did it!
 
 ---
 
-{{< image CrownPrinceDenmark right 60 >}}
+{{< image patent_granted right 60 >}}
 
-{{< image CrownPrinceDenmark2 right 60 >}}
-
-{{< image CrownPrinceDenmark3 right 60 >}}
-
-# Honoured to present our technology to HRH Crown Prince Frederik of Denmark
-
-We were honoured to present our wave energy technology to HRH Crown Prince Frederik of Denmark on 20 June at DMEC (Dutch Marine Energy Centre).
-
-HRH Crown Prince Frederik of Denmark was accompanied by Christian Stenberg, Deputy Permanent Secretary, Danish Ministry of Climate, Energy and Utilities and the Danish Ambassador in the Netherlands Jarl Frijs-Madsen.
-
-We are pleased with the Danish interest in our technology as Denmark is one of the leading countries in wave energy technologies. Much we can learn from each other to make wave energy a significant part of the energy transition.
-
-Special thanks to Embassy of Denmark in the Netherlands and The Hague Business Agency
-Photo credits: Holland Park Media
+# Patent granted
+Super excited to announce that the Dutch Wave Power patent has been awarded to us! It is an intense process to get it done, but we did it!
 
 
 
