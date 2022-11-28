@@ -10,7 +10,7 @@ subtitle: ''
 title: Patent granted!
 weight: 0
 summary: |-
-Super excited to announce that the Dutch Wave Power patent has been awarded to us! It is an intense process to get it done, but we did it!
+ Super excited to announce that the Dutch Wave Power patent has been awarded to us! It is an intense process to get it done, but we did it!
 
 ---
 
