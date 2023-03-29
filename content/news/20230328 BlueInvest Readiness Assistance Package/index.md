@@ -23,7 +23,7 @@ The BlueInvest Readiness Assistance is for high potential start-ups and SMEs wit
 
 We're thrilled to have the support of #BlueInvest and our expert and coach Lawrie Chandler as we work to bring our innovative wave energy solutions to market. This coaching will help us refine our business strategy, improve our investor pitch, and enhance our overall readiness for growth.
 
-Thank you to #BlueInvest for their commitment to supporting innovative startups in the sustainable ocean economy. We look forward to putting this coaching to work and taking Dutch Wave Power to the next level.
+Thank you to #BlueInvest for their commitment to supporting innovative startups in the sustainable ocean economy. We look forward to putting this coaching to work and taking Dutch Wave Power to the next level. 
 
 
 
