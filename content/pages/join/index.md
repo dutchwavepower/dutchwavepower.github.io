@@ -83,11 +83,9 @@ page_sections:
       - bodytext: >-
           Get in touch!
 
-          Call or email Sten and say Hi!
+          Send us an email us and say Hi!
 
-          - +31 6 14367978
-
-          - sten@dutchwavepower.com
+          - info@dutchwavepower.com
 
 
           Investment and sponsoring are key to get our tech-startup flying!
@@ -115,11 +113,9 @@ page_sections:
         name: fan_ambassador
         title: 'Become a fan or ambassador: '
       - bodytext: >-
-          Call us or send an email:
+          Send us an email us and say Hi!
 
-          - +31 6 14367978
-
-          - sten@dutchwavepower.com
+          - info@dutchwavepower.com
 
 
           We can use knowledge, experience and of course hands to help us out.
