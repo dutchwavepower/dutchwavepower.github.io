@@ -13,7 +13,7 @@ summary: |-
 
 ---
 
-{{< image Pressrelease-Eng_O4S >}}
+
 
 # Test!
 
