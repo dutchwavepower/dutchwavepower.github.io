@@ -7,7 +7,7 @@ lastmod: ''
 publishdate: ''
 resources: []
 subtitle: ''
-title: Accelerating Offshore Energy Transition: Netherlands and Flanders launch OFFSHORE FOR SURE Project!
+title: Accelerating Offshore Energy Transition - Netherlands and Flanders launch OFFSHORE FOR SURE Project!
 weight: 0
 summary: |-
  In the coming years, renewable energy at sea will receive a significant boost. Fifteen partners from Flanders and the Netherlands are pooling their expertise in the Offshore For Sure project to test five promising energy solutions and enhance their applicability in the energy system. The project's objective is to accelerate the energy transition at sea and drive the sustainable blue economy in collaboration with knowledge institutions, regional, and societal organizations. The Interreg Flanders-Netherlands program for 2021-2027 supports this collaboration.
