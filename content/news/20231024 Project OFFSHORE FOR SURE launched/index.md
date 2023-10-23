@@ -14,10 +14,6 @@ summary: |-
 
 ---
 
-
-
-# Accelerating Offshore Energy Transition - Netherlands and Flanders launch OFFSHORE FOR SURE Project!
-
 {{< image Pressrelease-Eng_O4S_Page_1 >}}
 {{< image Pressrelease-Eng_O4S_Page_2 >}}
 {{< image Pressrelease-Eng_O4S_Page_3 >}}
