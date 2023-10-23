@@ -7,8 +7,7 @@ lastmod: ''
 publishdate: ''
 resources: []
 subtitle: ''
-title: Accelerating Offshore Energy Transition, Netherlands
-and Flanders launch OFFSHORE FOR SURE Project!
+title: Accelerating Offshore Energy Transition Netherlands and Flanders launch OFFSHORE FOR SURE Project!
 weight: 0
 summary: |-
  In the coming years, renewable energy at sea will receive a significant boost. Fifteen
