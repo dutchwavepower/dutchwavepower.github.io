@@ -7,7 +7,7 @@ lastmod: ''
 publishdate: ''
 resources: []
 subtitle: ''
-title: Accelerating Offshore Energy Transition - Netherlands
+title: Accelerating Offshore Energy Transition, Netherlands
 and Flanders launch OFFSHORE FOR SURE Project!
 weight: 0
 summary: |-
@@ -23,7 +23,7 @@ Flanders-Netherlands program for 2021-2027 supports this collaboration.
 
 {{< image Interregvlaned_project_rgb_pos right 60 >}}
 
-# Accelerating Offshore Energy Transition - Netherlands and Flanders launch OFFSHORE FOR SURE Project!!
+# Accelerating Offshore Energy Transition, Netherlands and Flanders launch OFFSHORE FOR SURE Project!!
 During the three-year duration of the project, the project partners will invest more than 10
 million euros in the Flemish-Dutch border region. This investment is made possible in part
 by the European Interreg Flanders-Netherlands program and co-financiers. The
