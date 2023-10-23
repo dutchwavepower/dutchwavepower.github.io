@@ -2,7 +2,7 @@
 bg_image: news_banner
 date: '2023-10-24'
 draft: false
-image: Web_header_O4S
+image:
 lastmod: ''
 publishdate: ''
 resources: []
