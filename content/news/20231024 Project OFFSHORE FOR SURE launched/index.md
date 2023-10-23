@@ -1,6 +1,6 @@
 ---
-bg_image: news_banner
-date: '2023-03-28'
+bg_image: Web_header_small_O4S
+date: '2023-10-23'
 draft: false
 image: Web_header_O4S
 lastmod: ''
@@ -16,7 +16,7 @@ summary: |-
 
 
 
-# Test!
+# Accelerating Offshore Energy Transition - Netherlands and Flanders launch OFFSHORE FOR SURE Project!
 
 {{< image Pressrelease-Eng_O4S_Page_1 >}}
 {{< image Pressrelease-Eng_O4S_Page_2 >}}
