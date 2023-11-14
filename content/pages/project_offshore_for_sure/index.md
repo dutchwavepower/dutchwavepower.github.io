@@ -182,7 +182,7 @@ De komende jaren krijgt hernieuwbare energie op zee een flinke impuls. Vijftien 
 
 Gedurende de looptijd van het driejarige project investeren de projectpartners meer dan 10 miljoen euro in de Vlaams-Nederlandse grensregio. Deze investering wordt mede mogelijk gemaakt door het Europees programma Interreg Vlaanderen-Nederland en cofinanciers. Het consortium gelooft dat deze offshore energieoplossingen zullen bijdragen aan een slimmer, groener en socialer Europa. BLUESPRING is de initiatiefnemer achter het projectidee Offshore For Sure en treedt op als projectverantwoordelijke.
 
-Vijf innovaties en ondersteunende partners
+**Vijf innovaties en ondersteunende partners**
 De vijf demonstratieprojecten zijn innovatieve oplossingen van technologie ontwikkelaars met een track-record en een duidelijk plan voor uitrol op het gebied van getijdenenergie, golfenergie, offshore drijvende zonne-energie en energieopslag:
 
 1. Golfenergie van Dutch Wave Power
@@ -192,19 +192,23 @@ De vijf demonstratieprojecten zijn innovatieve oplossingen van technologie ontwi
 5. Intelligent beheer en voorspellend onderhoud van getijdenturbines van Tocardo
 Voor hun ontwikkelingen kunnen de technologieontwikkelaars rekenen op de kennis en expertise van partners Bluespring, World Class Maintenance, International Marine & Dredging Consultants, Ecopower, Rijkswaterstaat, Parkwind, Universiteit Gent, HOWEST, Deftiq en de Zeeuwse Milieufederatie.
 
-Samenwerking geconcentreerd op drie domeinen
+**Samenwerking geconcentreerd op drie domeinen**
 Activiteiten in het project hebben sterke banden met de regio’s waar ze worden uitgevoerd en hebben zowel een lokale als internationale impact. Daarom ontwikkelt het project diverse diensten voor verschillende groepen, om de opgedane ervaring maximaal te benutten en internationaal toe te passen.
 
-Beleid & Burger
+**Beleid & Burger**
 Aangezien een groot deel van de ontwikkelingen zich op zee afspeelt en daarmee buiten het zicht van bewoners en hun leefomgeving valt, richten de partners zich erop om mensen bij de projecten te betrekken, kennis uit te wisselen en zo het draagvlak en bewustzijn te vergroten. Het project werkt nauw samen met natuur- en milieuorganisaties, coöperaties en vergelijkbare projecten.
 
-Educatie
+**Educatie**
 Het project ontwikkelt leertrajecten, inclusief online en hybride cursussen, aan de hand van de kennis die de partners opdoen tijdens de uitvoering van het project. Het bevordert studentenuitwisseling en zet een samenwerking op tussen educatieve partners in Vlaanderen en Nederland.
 
-Certificering
+**Certificering**
 De partners werken aan certificeringsdiensten voor de testen in laboratoria en op open zee om de efficiëntie en robuustheid van de ontwikkelde systemen te waarborgen.
 
-Duurzaam perspectief
+**Duurzaam perspectief**
 De opbrengst van onze energietransitie op zee wordt getoetst door drie type eindgebruikers: overheden, projectontwikkelaars en burgercoöperaties. Door hun goedkeuring van onze bedrijfscases trekken we verdere investeringen aan voor zowel technologie als projecten. Dit moet leiden tot financierbare projecten voor de toekomst, die bijdragen aan economische groei in de regio en zorgen voor nieuwe banen in de duurzame blauwe economie.
+
+**Partners**
+
+**Offshore For Sure wordt mogelijk gemaakt door**
 
 
