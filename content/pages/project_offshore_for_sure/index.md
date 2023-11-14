@@ -182,6 +182,8 @@ De komende jaren krijgt hernieuwbare energie op zee een flinke impuls. Vijftien 
 
 Gedurende de looptijd van het driejarige project investeren de projectpartners meer dan 10 miljoen euro in de Vlaams-Nederlandse grensregio. Deze investering wordt mede mogelijk gemaakt door het Europees programma Interreg Vlaanderen-Nederland en cofinanciers. Het consortium gelooft dat deze offshore energieoplossingen zullen bijdragen aan een slimmer, groener en socialer Europa. BLUESPRING is de initiatiefnemer achter het projectidee Offshore For Sure en treedt op als projectverantwoordelijke.
 
+{{< image O4S_Project_Logo >}}
+
 **Vijf innovaties en ondersteunende partners**
 De vijf demonstratieprojecten zijn innovatieve oplossingen van technologie ontwikkelaars met een track-record en een duidelijk plan voor uitrol op het gebied van getijdenenergie, golfenergie, offshore drijvende zonne-energie en energieopslag:
 
@@ -214,5 +216,6 @@ De opbrengst van onze energietransitie op zee wordt getoetst door drie type eind
 **Offshore For Sure wordt mogelijk gemaakt door**
 
 {{< image Funding_logostrip_1 >}}
+
 
 
