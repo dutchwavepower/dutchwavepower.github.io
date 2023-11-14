@@ -178,39 +178,58 @@ title: Project Offshore for Sure
 # Project Offshore for Sure
 
 Five developers of promising offshore energy solutions are joining forces in Offshore For Sure (O4S), supported by specialists from Belgium and the Netherlands. These projects represent innovative solutions from technology developers with a proven track record in the fields of tidal energy, wave energy, offshore floating solar energy, and energy storage.
+
 {{< image O4S_Project_Logo >}}
 
-**Vijf innovaties en ondersteunende partners**
-De vijf demonstratieprojecten zijn innovatieve oplossingen van technologie ontwikkelaars met een track-record en een duidelijk plan voor uitrol op het gebied van getijdenenergie, golfenergie, offshore drijvende zonne-energie en energieopslag:
+**Accelerating Offshore Energy Transition**
+In the coming years, renewable energy at sea will receive a significant boost. Fifteen partners from Flanders and the Netherlands are pooling their expertise in the Offshore For Sure project to test five promising energy solutions and enhance their applicability in the energy system. The project’s objective is to accelerate the energy transition at sea and drive the sustainable blue economy in collaboration with knowledge institutions, regional, and societal organizations. The Interreg Flanders-Netherlands program for 2021-2027 supports this collaboration.
 
-1. Golfenergie van Dutch Wave Power
-2. Getijdenenergie van Water2Energy
-3. Offshore solar van Oceans of Energy
-4. Simulering van Energieopslag van FLASC
-5. Intelligent beheer en voorspellend onderhoud van getijdenturbines van Tocardo
-Voor hun ontwikkelingen kunnen de technologieontwikkelaars rekenen op de kennis en expertise van partners Bluespring, World Class Maintenance, International Marine & Dredging Consultants, Ecopower, Rijkswaterstaat, Parkwind, Universiteit Gent, HOWEST, Deftiq en de Zeeuwse Milieufederatie.
+**Role of Dutch Wave Power in Offshore For Sure**
 
-**Samenwerking geconcentreerd op drie domeinen**
-Activiteiten in het project hebben sterke banden met de regio’s waar ze worden uitgevoerd en hebben zowel een lokale als internationale impact. Daarom ontwikkelt het project diverse diensten voor verschillende groepen, om de opgedane ervaring maximaal te benutten en internationaal toe te passen.
 
-**Beleid & Burger**
-Aangezien een groot deel van de ontwikkelingen zich op zee afspeelt en daarmee buiten het zicht van bewoners en hun leefomgeving valt, richten de partners zich erop om mensen bij de projecten te betrekken, kennis uit te wisselen en zo het draagvlak en bewustzijn te vergroten. Het project werkt nauw samen met natuur- en milieuorganisaties, coöperaties en vergelijkbare projecten.
 
-**Educatie**
-Het project ontwikkelt leertrajecten, inclusief online en hybride cursussen, aan de hand van de kennis die de partners opdoen tijdens de uitvoering van het project. Het bevordert studentenuitwisseling en zet een samenwerking op tussen educatieve partners in Vlaanderen en Nederland.
 
-**Certificering**
-De partners werken aan certificeringsdiensten voor de testen in laboratoria en op open zee om de efficiëntie en robuustheid van de ontwikkelde systemen te waarborgen.
+**Investments**
+During the three-year duration of the project, the project partners will invest more than 10 million euros in the Flemish-Dutch border region. This investment is made possible in part by the European Interreg Flanders-Netherlands program and co-financiers. The consortium believes that these offshore energy solutions will contribute to a smarter, greener, and more co-operative Europe. 
 
-**Duurzaam perspectief**
-De opbrengst van onze energietransitie op zee wordt getoetst door drie type eindgebruikers: overheden, projectontwikkelaars en burgercoöperaties. Door hun goedkeuring van onze bedrijfscases trekken we verdere investeringen aan voor zowel technologie als projecten. Dit moet leiden tot financierbare projecten voor de toekomst, die bijdragen aan economische groei in de regio en zorgen voor nieuwe banen in de duurzame blauwe economie.
+**Demonstration projects**
+The five demonstration projects represent innovative solutions from technology developers with a proven track record and a clear plan for deployment in the fields of tidal energy, wave energy, offshore floating solar energy, and energy storage:
+
+- Wave energy from Dutch Wave Power
+- Tidal energy from Water2Energy Projects
+- Offshore solar from Oceans of Energy
+- Energy storage simulation from FLASC
+- Smart asset management and predictive maintenance of tidal turbines from Tocardo
+
+**Knowledge and expertise partners**
+For their developments, the technology developers can rely on the knowledge and expertise of partners Bluespring, World Class Maintenance, International Marine & Dredging Consultants, Ecopower, Rijkswaterstaat, Parkwind, Ghent University, HOWEST, Deftiq, and the Zeeland Environmental Federation.
+
+**Collaboration Focused on Three Domains**
+Activities in the project have strong ties to the regions where they are conducted and have both local and international impact. Therefore, we are developing various services for different groups to maximize the gained experience and apply it internationally.
+
+*Policy & Public Engagement*
+As a significant portion of the developments take place at sea, outside the view of residents and their living environment, we aim to involve people in the projects, exchange knowledge, and thereby increase support and awareness. We work closely with nature and environmental organizations, cooperatives, and similar projects.
+
+*Education*
+We are developing learning trajectories, including online and hybrid courses, based on the knowledge acquired during the project’s implementation. We promote student exchange and establish collaboration between educational partners in Flanders and the Netherlands.
+
+*Certification*
+We are working on certification services for testing in laboratories and at sea to ensure the efficiency and robustness of the developed systems.
+
+**Sustainable Perspective**
+The yield of our offshore energy transition is assessed by three types of end users: governments, project developers, and citizen cooperatives. Through their approval of our business cases, we attract further investments for both technology and projects. This should lead to bankable projects for the future, contributing to economic growth in the region and creating new jobs in the sustainable blue economy.
+
+**Stay informed or get involved**
+Are you interested in becoming involved as a stakeholder in the implementation of the project, or would you like to stay informed about the developments of Offshore For Sure? We invite you to express your interest.
+
+For the latest news go to:
+www.offshoreforsure.eu                               (Dutch)
+https://interregvlaned.eu/en/offshore-for-sure-o4s/ (English)
 
 **Partners**
-
 {{< image Partners_logostrip_2 >}}
 
 **Offshore For Sure wordt mogelijk gemaakt door**
-
 {{< image Funding_logostrip_1 >}}
 
 
