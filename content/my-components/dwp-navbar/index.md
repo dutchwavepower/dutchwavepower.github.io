@@ -18,9 +18,9 @@ menus:
         url: /pages/roadmap/
         weight: 0
       - identifier: ''
-        name: Projects
+        name: Project Offshore for Sure
         parent: ''
-        url: /pages/projects/
+        url: /pages/project_offshore_for_sure/
         weight: 0
       - identifier: ''
         name: About Us
