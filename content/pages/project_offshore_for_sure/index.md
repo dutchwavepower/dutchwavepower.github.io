@@ -192,4 +192,19 @@ De vijf demonstratieprojecten zijn innovatieve oplossingen van technologie ontwi
 5. Intelligent beheer en voorspellend onderhoud van getijdenturbines van Tocardo
 Voor hun ontwikkelingen kunnen de technologieontwikkelaars rekenen op de kennis en expertise van partners Bluespring, World Class Maintenance, International Marine & Dredging Consultants, Ecopower, Rijkswaterstaat, Parkwind, Universiteit Gent, HOWEST, Deftiq en de Zeeuwse Milieufederatie.
 
+Samenwerking geconcentreerd op drie domeinen
+Activiteiten in het project hebben sterke banden met de regio’s waar ze worden uitgevoerd en hebben zowel een lokale als internationale impact. Daarom ontwikkelt het project diverse diensten voor verschillende groepen, om de opgedane ervaring maximaal te benutten en internationaal toe te passen.
+
+Beleid & Burger
+Aangezien een groot deel van de ontwikkelingen zich op zee afspeelt en daarmee buiten het zicht van bewoners en hun leefomgeving valt, richten de partners zich erop om mensen bij de projecten te betrekken, kennis uit te wisselen en zo het draagvlak en bewustzijn te vergroten. Het project werkt nauw samen met natuur- en milieuorganisaties, coöperaties en vergelijkbare projecten.
+
+Educatie
+Het project ontwikkelt leertrajecten, inclusief online en hybride cursussen, aan de hand van de kennis die de partners opdoen tijdens de uitvoering van het project. Het bevordert studentenuitwisseling en zet een samenwerking op tussen educatieve partners in Vlaanderen en Nederland.
+
+Certificering
+De partners werken aan certificeringsdiensten voor de testen in laboratoria en op open zee om de efficiëntie en robuustheid van de ontwikkelde systemen te waarborgen.
+
+Duurzaam perspectief
+De opbrengst van onze energietransitie op zee wordt getoetst door drie type eindgebruikers: overheden, projectontwikkelaars en burgercoöperaties. Door hun goedkeuring van onze bedrijfscases trekken we verdere investeringen aan voor zowel technologie als projecten. Dit moet leiden tot financierbare projecten voor de toekomst, die bijdragen aan economische groei in de regio en zorgen voor nieuwe banen in de duurzame blauwe economie.
+
 
