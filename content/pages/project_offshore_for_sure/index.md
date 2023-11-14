@@ -179,7 +179,7 @@ title: Project Offshore for Sure
 
 Five developers of promising offshore energy solutions are joining forces in Offshore For Sure (O4S), supported by specialists from Belgium and the Netherlands. These projects represent innovative solutions from technology developers with a proven track record in the fields of tidal energy, wave energy, offshore floating solar energy, and energy storage.
 
-{{< image O4S_Project_Logo.Resize "600x" > }}
+{{< image O4S_Project_Logo 50 > }}
 
 **Accelerating Offshore Energy Transition**
 In the coming years, renewable energy at sea will receive a significant boost. Fifteen partners from Flanders and the Netherlands are pooling their expertise in the Offshore For Sure project to test five promising energy solutions and enhance their applicability in the energy system. The project’s objective is to accelerate the energy transition at sea and drive the sustainable blue economy in collaboration with knowledge institutions, regional, and societal organizations. The Interreg Flanders-Netherlands program for 2021-2027 supports this collaboration.
