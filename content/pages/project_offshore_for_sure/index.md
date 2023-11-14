@@ -185,9 +185,8 @@ Five developers of promising offshore energy solutions are joining forces in Off
 In the coming years, renewable energy at sea will receive a significant boost. Fifteen partners from Flanders and the Netherlands are pooling their expertise in the Offshore For Sure project to test five promising energy solutions and enhance their applicability in the energy system. The project’s objective is to accelerate the energy transition at sea and drive the sustainable blue economy in collaboration with knowledge institutions, regional, and societal organizations. The Interreg Flanders-Netherlands program for 2021-2027 supports this collaboration.
 
 **Role of Dutch Wave Power in Offshore For Sure**
-
-
-
+Dutch Wave Power will develop and test a 20kWp prototype wave energy converter (WEC) in the North Sea. The goal is to validate the technology on performance/output, robustness and ecological impact. Wave energy can provide renewable energy to offshore datahubs, aquaculture and coastal areas and also be integrated in wind/multi-use parks.
+Next to the development of the prototype, together with the University of Ghent components and materials will be tested and numerical models build and improved. Together with IMDC the ecological imapct will be assessed, testing plan developed and permitting processes undertaken. And with World Class Maintenance the techonolgy will be assessed for smart maintenance.
 
 **Investments**
 During the three-year duration of the project, the project partners will invest more than 10 million euros in the Flemish-Dutch border region. This investment is made possible in part by the European Interreg Flanders-Netherlands program and co-financiers. The consortium believes that these offshore energy solutions will contribute to a smarter, greener, and more co-operative Europe. 
@@ -226,11 +225,11 @@ For the latest news go to:
 www.offshoreforsure.eu                               (Dutch)
 https://interregvlaned.eu/en/offshore-for-sure-o4s/ (English)
 
-=== **Partners**
+> **Partners**
 
 {{< image Partners_logostrip_2 >}}
 
-=== **Offshore For Sure wordt mogelijk gemaakt door**
+> **Offshore For Sure wordt mogelijk gemaakt door**
 
 {{< image Funding_logostrip_1 >}}
 
