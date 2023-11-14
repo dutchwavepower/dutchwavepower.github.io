@@ -1,6 +1,6 @@
 ---
 aliases:
-  - /projects/
+  - /project_offshore_for_sure/
 draft: false
 page_sections:
   - bg_color: transparent
@@ -54,7 +54,7 @@ page_sections:
     parallax: false
     subtitle: none
     texture: ''
-    title: Projects
+    title: Project_offshore_for_sure
   - bg_color: '->frompage'
     bg_image: ''
     buttons: []
@@ -170,7 +170,7 @@ subpage_sections:
     subtitle: none
     texture: ''
     title: none
-title: Projects
+title: Project Offshore for Sure
 
 ---
 
