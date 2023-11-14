@@ -17,6 +17,11 @@ menus:
         parent: ''
         url: /pages/roadmap/
         weight: 0
+     - identifier: ''
+        name: Projects
+        parent: ''
+        url: /pages/projects/
+        weight: 0
       - identifier: ''
         name: About Us
         parent: ''
