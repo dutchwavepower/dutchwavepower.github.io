@@ -177,11 +177,7 @@ title: Project Offshore for Sure
 
 # Project Offshore for Sure
 
-Nederland en Vlaanderen bundelen krachten voor versnelling energietransitie op zee
-De komende jaren krijgt hernieuwbare energie op zee een flinke impuls. Vijftien partners uit Vlaanderen en Nederland combineren hun expertise in het project Offshore For Sure om 5 veelbelovende energieoplossingen te testen en de toepasbaarheid in het energiesysteem te vergroten. De doelstelling van het project is het versnellen van de energietransitie op zee en aanjagen van de duurzame blauwe economie in samenwerking met kennisinstellingen, regionale en maatschappelijke organisaties. Het Interreg Vlaanderen-Nederland programma 2021-2027 ondersteunt deze samenwerking.
-
-Gedurende de looptijd van het driejarige project investeren de projectpartners meer dan 10 miljoen euro in de Vlaams-Nederlandse grensregio. Deze investering wordt mede mogelijk gemaakt door het Europees programma Interreg Vlaanderen-Nederland en cofinanciers. Het consortium gelooft dat deze offshore energieoplossingen zullen bijdragen aan een slimmer, groener en socialer Europa. BLUESPRING is de initiatiefnemer achter het projectidee Offshore For Sure en treedt op als projectverantwoordelijke.
-
+Five developers of promising offshore energy solutions are joining forces in Offshore For Sure (O4S), supported by specialists from Belgium and the Netherlands. These projects represent innovative solutions from technology developers with a proven track record in the fields of tidal energy, wave energy, offshore floating solar energy, and energy storage.
 {{< image O4S_Project_Logo >}}
 
 **Vijf innovaties en ondersteunende partners**
