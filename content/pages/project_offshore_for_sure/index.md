@@ -208,9 +208,11 @@ De partners werken aan certificeringsdiensten voor de testen in laboratoria en o
 De opbrengst van onze energietransitie op zee wordt getoetst door drie type eindgebruikers: overheden, projectontwikkelaars en burgercoöperaties. Door hun goedkeuring van onze bedrijfscases trekken we verdere investeringen aan voor zowel technologie als projecten. Dit moet leiden tot financierbare projecten voor de toekomst, die bijdragen aan economische groei in de regio en zorgen voor nieuwe banen in de duurzame blauwe economie.
 
 **Partners**
-{{< image Partners_logostrip_2 right 50 >}}
+
+{{< image Partners_logostrip_2 >}}
 
 **Offshore For Sure wordt mogelijk gemaakt door**
-{{< image Funding_logostrip_1 right 50 >}}
+
+{{< image Funding_logostrip_1 >}}
 
 
