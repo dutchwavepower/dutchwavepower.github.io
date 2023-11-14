@@ -227,9 +227,11 @@ www.offshoreforsure.eu                               (Dutch)
 https://interregvlaned.eu/en/offshore-for-sure-o4s/ (English)
 
 **Partners**
+
 {{< image Partners_logostrip_2 >}}
 
 **Offshore For Sure wordt mogelijk gemaakt door**
+
 {{< image Funding_logostrip_1 >}}
 
 
