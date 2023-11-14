@@ -226,10 +226,10 @@ For the latest news go to:
 www.offshoreforsure.eu                               (Dutch)
 https://interregvlaned.eu/en/offshore-for-sure-o4s/ (English)
 
-   ***Partners***
+**Partners**
 {{< image Partners_logostrip_2 >}}
 
-  ***Offshore For Sure wordt mogelijk gemaakt door***
+**Offshore For Sure wordt mogelijk gemaakt door**
 {{< image Funding_logostrip_1 >}}
 
 
