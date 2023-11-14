@@ -207,13 +207,13 @@ For their developments, the technology developers can rely on the knowledge and 
 **Collaboration Focused on Three Domains**
 Activities in the project have strong ties to the regions where they are conducted and have both local and international impact. Therefore, we are developing various services for different groups to maximize the gained experience and apply it internationally.
 
-    *Policy & Public Engagement*
+*Policy & Public Engagement*
 As a significant portion of the developments take place at sea, outside the view of residents and their living environment, we aim to involve people in the projects, exchange knowledge, and thereby increase support and awareness. We work closely with nature and environmental organizations, cooperatives, and similar projects.
 
-  *Education*
+*Education*
 We are developing learning trajectories, including online and hybrid courses, based on the knowledge acquired during the project’s implementation. We promote student exchange and establish collaboration between educational partners in Flanders and the Netherlands.
 
-  *Certification*
+*Certification*
 We are working on certification services for testing in laboratories and at sea to ensure the efficiency and robustness of the developed systems.
 
 **Sustainable Perspective**
