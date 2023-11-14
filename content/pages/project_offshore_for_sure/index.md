@@ -54,7 +54,7 @@ page_sections:
     parallax: false
     subtitle: none
     texture: ''
-    title: Project_offshore_for_sure
+    title: Offshore for Sure
   - bg_color: '->frompage'
     bg_image: ''
     buttons: []
