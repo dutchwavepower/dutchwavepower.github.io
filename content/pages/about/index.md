@@ -140,8 +140,7 @@ page_sections:
 
 
           Hans is the technical designer, specialized in concept design,
-          modelling and manufacturing and takes care of the business economics
-          and administrations.
+          modelling and manufacturing.
 
 
           Hans holds a master degree in Aerospace Engineering at Technical
