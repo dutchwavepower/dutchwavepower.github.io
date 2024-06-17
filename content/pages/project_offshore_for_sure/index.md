@@ -235,7 +235,7 @@ https://interregvlaned.eu/en/offshore-for-sure-o4s/ (English)
 
 
 {{< image Funding_logostrip_1 >}}
-{{< image LOGO_WF_RGB >}}
+{{< image LOGO_WF_RGB 30 >}}
 
 
 &nbsp;&nbsp;&nbsp;&nbsp;
