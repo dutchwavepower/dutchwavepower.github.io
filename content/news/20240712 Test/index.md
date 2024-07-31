@@ -1,13 +1,13 @@
 ---
 bg_image: news_banner
-date: '2023-03-28'
+date: '2024-07-12'
 draft: false
-image: blueinvest_readiness_assistance
+image: Stork_Dutch_Wave_Power_News_Icon_2024
 lastmod: ''
 publishdate: ''
 resources: []
 subtitle: ''
-title: BlueInvest Readiness Assistance Package received!
+title: Dutch Wave Power receives a positive Technology Appraisal by Stork!
 weight: 0
 summary: |-
  Great news! Dutch Wave Power has received a Readiness Assistance package from BlueInvest! This package includes up to 80 hours of coaching to help us prepare for the next stage of our wave energy technology development.
