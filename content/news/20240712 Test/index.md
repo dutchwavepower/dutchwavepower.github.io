@@ -14,15 +14,24 @@ summary: |-
 
 ---
 
+{{< image Stork_Dutch_Wave_Power_News_Icon_2024 right 60 >}}
 
-# BlueInvest Readiness Assistance Package received!
-Great news! Dutch Wave Power has received a Readiness Assistance package from BlueInvest! This package includes up to 80 hours of coaching to help us prepare for the next stage of our wave energy technology development.
+# Milestone Achievement:: Dutch Wave Power receives a positive Technology Appraisal by Stork, a BiLFINGER company!
 
-The BlueInvest Readiness Assistance is for high potential start-ups and SMEs with innovative and sustainable products and solutions for the Blue Economy
+Dutch Wave Power successfully completed a Technical Qualification Assessment of our innovative wave energy conversion technology. 
 
-We're thrilled to have the support of #BlueInvest and our expert and coach Lawrie Chandler as we work to bring our innovative wave energy solutions to market. This coaching will help us refine our business strategy, improve our investor pitch, and enhance our overall readiness for growth.
+This assessment was conducted by Stork and was commissioned by World Class Maintenance, as part of the Offshore For Sure project, a project funded by Interreg Vlaanderen-Nederland
+The Stork team provided a comprehensive evaluation/assessment according to the IEC (International Electrotechnical Commission) TC 62600-4 Specification for establishing qualification of new technology covering::
 
-Thank you to #BlueInvest for their commitment to supporting innovative startups in the sustainable ocean economy. We look forward to putting this coaching to work and taking Dutch Wave Power to the next level. 
+* Technology definition:: A detailed asset breakdown structure of the system
+* Qualification bases:: criteria for success and reliability of the technology
+* Technology assessment:: In-depth analysis of capabilities and uncertainties
+* Threat/Risk assessment:: Identification and mitigation of potential risks by extensive FMECA and RAM analysis
+
+We express sincere gratitude to the Stork team:: Ludolf Pijpker, Nina Fozein Kwanke and Sebastiaan Soerel for their expertise and dedication throughout this process. 
+
+Also we want to express our appreciation to World Class Maintenance and Bluespring for initiating and managing this Technical Qualification process.
+This successful assessment marks a significant milestone for Dutch Wave Power:: one step closer to bringing clean, reliable wave energy to the world!
 
 
 
