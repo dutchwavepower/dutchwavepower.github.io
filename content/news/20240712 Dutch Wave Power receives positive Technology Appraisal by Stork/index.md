@@ -10,8 +10,7 @@ subtitle: ''
 title: Milestone Achievement! A Positive Technology Appraisal received!
 weight: 0
 summary: |-
- Stork a BiLFINGER company has issued a positive Technology Appraisal to Dutch Wave Power!
- Because we successfully completed a Technical Qualification Assessment of our innovative wave energy conversion technology. 
+
 
 ---
 
