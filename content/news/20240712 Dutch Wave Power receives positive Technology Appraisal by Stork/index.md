@@ -17,7 +17,7 @@ summary: |-
 
 {{< image Stork_Dutch_Wave_Power_News_Icon_2024 >}}
 
-# Milestone Achievement Dutch Wave Power receives positive Technology Appraisal by Stork, a BiLFINGER company!
+# Milestone Achievement Dutch Wave Power receives positive Technology Appraisal by Stork - a BiLFINGER company!
 
 Dutch Wave Power successfully completed a Technical Qualification Assessment of our innovative 🌊 wave energy conversion technology. 
 
