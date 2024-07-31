@@ -1,5 +1,5 @@
 ---
-bg_image: Stork_Dutch_Wave_Power_News_Icon_2024
+bg_image: news_banner
 date: '2024-07-12'
 draft: false
 image: Stork_Dutch_Wave_Power_News_Icon_2024
@@ -14,7 +14,7 @@ summary: |-
 
 ---
 
-{{< image PStork_Dutch_Wave_Power_News_Icon_2024 >}}
+{{< image Stork_Dutch_Wave_Power_News_Icon_2024 >}}
 
 # Milestone Achievement: Dutch Wave Power receives a positive Technology Appraisal by Stork, a BiLFINGER company!
 
