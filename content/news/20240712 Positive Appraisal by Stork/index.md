@@ -7,10 +7,10 @@ lastmod: ''
 publishdate: ''
 resources: []
 subtitle: ''
-title: Dutch Wave Power receives a positive Technology Appraisal by Stork!
+title: Milestone Achievement -> Positive Technology Appraisal by Stork!
 weight: 0
 summary: |-
- Milestone Achievement:: Dutch Wave Power receives a positive Technology Appraisal by Stork, a BiLFINGER company!
+ Dutch Wave Power receives a positive Technology Appraisal by Stork, a BiLFINGER company after completing a Technical Qualification Assessment
 
 ---
 # Milestone Achievement!
