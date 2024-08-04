@@ -179,7 +179,7 @@ title: Technology
 
 The heart of our wave energy converter consists of a float which comprises a drive line and pendulum system to create electrical energy when the float rotates back and forth. This rotation is induced by the upward/downward and forward/backward motion of waves in combination with the float moving along a system of suspension. The float itself is a structure fully encased in a wear resistant plastic outer body preventing any contact between sea water, vapor or air and the inner drive line parts. Our technology is suited for any wave climate around the world.
 
-{{< video src="Dutch_Wave_Power_Animation_Vertical_1080_1920p.mp4" controls="yes" width="50%" autoplay="true" loop="true" >}}
+{{< video preload="auto" autoplay="true" loop="true" src="Dutch_Wave_Power_Animation_Vertical_1080_1920p.mp4" controls="yes" width="50%"  >}}
 
 {{< youtube id="vfl7XYkvUoE?version=3&vq=hd1080&rel=0" >}}
 
@@ -189,15 +189,14 @@ Dutch Wave Power developed multiple  systems of suspensions for the full spectru
 - intermediate depth locations - near shore 
 - location at shore (harbour heads, dams) - shore line
 
+{{/* **Offshore solution:** */}} 
 
-{{/* **Offshore solution:**
-
-{{< youtube id="RZxbgNj-FX8?version=3&vq=hd1080&rel=0" >}}
+{{/* {{< youtube id="RZxbgNj-FX8?version=3&vq=hd1080&rel=0" >}} */}}
 
   
-**Nearshore solution:**
+{{/* **Nearshore solution:** */}}
 
-{{< youtube id="fg8OHEg4zWI?version=3&vq=hd1080&rel=0" >}} */}} 
+{{/* {{< youtube id="fg8OHEg4zWI?version=3&vq=hd1080&rel=0" >}} */}} 
 
 
 
