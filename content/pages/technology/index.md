@@ -190,14 +190,14 @@ Dutch Wave Power developed multiple  systems of suspensions for the full spectru
 - location at shore (harbour heads, dams) - shore line
 
 
-**Offshore solution:**
+{{/* **Offshore solution:**
 
 {{< youtube id="RZxbgNj-FX8?version=3&vq=hd1080&rel=0" >}}
 
   
 **Nearshore solution:**
 
-{{< youtube id="fg8OHEg4zWI?version=3&vq=hd1080&rel=0" >}}
+{{< youtube id="fg8OHEg4zWI?version=3&vq=hd1080&rel=0" >}} */}} 
 
 
 
