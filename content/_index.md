@@ -131,6 +131,7 @@ page_sections:
           size: 2xl
           transform: ''
     image: wave_why_wave_energy
+    video: Dutch_Wave_Power_Animation_Vertical_1080_1920p
     item_bg_color: white
     items: []
     list: ''
