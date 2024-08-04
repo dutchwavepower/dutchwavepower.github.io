@@ -22,8 +22,6 @@ summary: |-
 {{< image Pressrelease-Eng_O4S_Page_6 >}}
 {{< image Pressrelease-Eng_O4S_Page_7 >}}
 
-{{< embed-pdf Pressrelease-Eng_O4S >}}
-
 
 
 
