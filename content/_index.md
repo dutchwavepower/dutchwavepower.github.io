@@ -346,3 +346,4 @@ title: Homepage
 
 ---
 
+{{< video src="Dutch_Wave_Power_Animation_Vertical_1080_1920p.mp4" controls="yes" width="50%" autoplay="true" loop="true" >}}
