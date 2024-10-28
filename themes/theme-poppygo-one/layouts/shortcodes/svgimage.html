@@ -77,10 +77,10 @@
       width: 100%;
     }
 
-      .svg-half-width {
-        width: 50%;
-      }
-
+    .svg-container {
+        width: 50%; /* Adjust the width as needed */
+        height: auto; /* Maintain aspect ratio */
+    }
 </style>
 
 
@@ -105,10 +105,11 @@
     {{ $image := ($resource_page.Resources.ByType "image").GetMatch $image_path}}
 
     <div class= "{{$class}}">
-        {{ with $image }}
-          {{ readFile (printf "%s%s" $page.Dir $image ) | safeHTML }}
-        {{end}}
-
+      <div class="svg-container">
+            {{ with $image }}
+                {{ readFile (printf "%s%s" $page.Dir $image ) | safeHTML }}
+            {{end}}
+        </div>
     </div>
 {{ end }}
 </div>
