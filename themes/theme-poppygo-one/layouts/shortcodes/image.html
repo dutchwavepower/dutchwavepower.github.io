@@ -104,6 +104,8 @@
             {{- $filename := path.Base .Name -}}
             {{- if eq (path.Ext $filename) ".webp" -}}
                   <img src="{{.RelPermalink}}" class="lazyload {{$class}}" alt="{{$filename}}" style="margin: 0px">
+            {{- else if eq (path.Ext $filename) ".svg" -}}
+              This image is an svg
             {{- else -}}
               <img class="pogoimage" sizes="{{ printf "%svw" (string (div 60 (len $images)) ) }}" style="margin: 0px"
                 srcset='
