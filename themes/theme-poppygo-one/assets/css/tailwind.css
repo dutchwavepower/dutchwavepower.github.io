@@ -437,6 +437,12 @@ img {
   border-style: solid;
 }
 
+.svg-container {
+    width: 100%;
+    height: auto; /* Maintain aspect ratio */
+}
+
+
 textarea {
   resize: vertical;
 }
