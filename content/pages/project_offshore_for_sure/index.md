@@ -235,9 +235,7 @@ https://interregvlaned.eu/en/offshore-for-sure-o4s/ (English)
 &nbsp;&nbsp;&nbsp;&nbsp;
 
 
-<svg width="100" height="100">
-  <circle cx="50" cy="50" r="40" stroke="black" stroke-width="3" fill="red" />
-</svg>
+<img src="Partners_logostrip_Oct_2024.svg" width="100%">
 
 
 &nbsp;&nbsp;&nbsp;&nbsp;
