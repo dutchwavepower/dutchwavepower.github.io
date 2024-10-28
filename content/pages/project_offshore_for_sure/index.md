@@ -230,7 +230,7 @@ https://interregvlaned.eu/en/offshore-for-sure-o4s/ (English)
 
 
 
-{{< svgimage Partners_logostrip_Oct_2024 class="svg-width-control" >}}
+{{< svgimage Partners_logostrip_Oct_2024 >}}
 
 
 &nbsp;&nbsp;&nbsp;&nbsp;
