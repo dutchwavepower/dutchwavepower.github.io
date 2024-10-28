@@ -233,6 +233,8 @@ https://interregvlaned.eu/en/offshore-for-sure-o4s/ (English)
 {{< image Partners_logostrip_Oct_2024 >}}
 
 
+&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;
 
 **Offshore For Sure wordt mogelijk gemaakt door**
 
