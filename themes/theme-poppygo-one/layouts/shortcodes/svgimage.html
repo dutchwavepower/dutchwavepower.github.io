@@ -29,27 +29,26 @@
 {{ end }}
 
 <style>
-         .{{$classname}} {
-        width: 100% ;
-        display: grid;
-        grid-auto-flow: row;
-        justify-items: stretch;
-        justify-content: stretch;
-        grid-gap: 10px;
-        grid-template-columns: repeat(12, 1fr);
-      }
-      .oneCol, .twoCols, .threeCols {
-        grid-column: span 12;
-      }
-      .fourCols, .sixCols {
-        grid-column: span 6;
-      }
+    .grid {
+      width: 100%;
+      display: grid;
+      grid-auto-flow: row;
+      justify-items: stretch;
+      justify-content: stretch;
+      grid-gap: 10px;
+      grid-template-columns: repeat(12, 1fr);
+    }
+
+    .oneCol, .twoCols, .threeCols {
+      grid-column: span 12;
+    }
+
+    .fourCols, .sixCols {
+      grid-column: span 6;
+    }
+
+
       @media (min-width: 768px) {
-        .{{$classname}}{
-          margin: {{$margin}};
-          float: {{$float}};
-          width: {{ $grid_width }};
-        }
         .twoCols, .threeCols {
           grid-column: span 6;
         }
@@ -58,6 +57,7 @@
           grid-column: span 3;
         }
       }
+
       @media (min-width: 992px) {
         .twoCols {
           grid-column: span 6;
@@ -69,14 +69,15 @@
           grid-column: span 2;
         }
       }
-      .pogoimage {
-        width: 100%;
-      }
-      
+
+    .pogoimage {
+      width: 100%;
+    }
+
 </style>
 
 
-<div class="{{$classname}} mt-4">
+<div class="grid">
 
 {{ range $images}}
     {{ $image_name := .}}
@@ -102,6 +103,5 @@
         {{end}}
 
     </div>
-  {{ end }}
- </div>
-
+{{ end }}
+</div>
