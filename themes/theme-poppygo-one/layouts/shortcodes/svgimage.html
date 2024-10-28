@@ -5,7 +5,6 @@
 {{ $page := .Page }}
 {{ $images := slice }}
 {{ $class := "" }}
-{{- $grid_width := "100%" -}}
 {{ $numberOfCols := 1 }}
 {{ $cols := slice "oneCol" "twoCols" "threeCols" "fourCols" "fourCols" "sixCols" "sixCols"}}
 
@@ -31,7 +30,7 @@
 
 <style>
     .grid {
-      width: 50%;
+      width: 100%;
       display: grid;
       grid-auto-flow: row;
       justify-items: stretch;
@@ -39,7 +38,10 @@
       grid-gap: 10px;
       grid-template-columns: repeat(12, 1fr);
     }
-
+  .svgimage .svg-container {
+    width: 300px; /* Set desired width */
+    height: auto; /* Maintain aspect ratio */
+  }
     .oneCol, .twoCols, .threeCols {
       grid-column: span 12;
     }
@@ -73,14 +75,6 @@
         }
       }
 
-    .pogoimage {
-      width: 300px;
-    }
-
-  .svgimage .svg-container {
-    width: 300px; /* Set desired width */
-    height: auto; /* Maintain aspect ratio */
-  }
 </style>
 
 
