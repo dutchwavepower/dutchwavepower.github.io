@@ -437,12 +437,6 @@ img {
   border-style: solid;
 }
 
-.svg-container {
-    width: 100%;
-    height: auto; /* Maintain aspect ratio */
-}
-
-
 textarea {
   resize: vertical;
 }
@@ -551,7 +545,7 @@ object {
  * https://github.com/mozdevs/cssremedy/issues/14
  */
 
-img,
+img,svg,
 video {
   max-width: 100%;
   height: auto;
