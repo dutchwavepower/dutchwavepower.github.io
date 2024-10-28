@@ -82,7 +82,7 @@
 </style>
 
 
-<div class="grid">
+<div class="svg-container">
 
 {{ range $images}}
     {{ $image_name := .}}
@@ -102,7 +102,7 @@
 
     {{ $image := ($resource_page.Resources.ByType "image").GetMatch $image_path}}
 
-    <div class= "svg-container">
+    <div class= "{{$class}}">
         {{ with $image }}
           {{ readFile (printf "%s%s" $page.Dir $image ) | safeHTML }}
         {{end}}
