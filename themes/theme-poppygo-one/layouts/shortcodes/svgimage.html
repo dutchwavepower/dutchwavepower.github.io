@@ -40,7 +40,7 @@
       grid-template-columns: repeat(12, 1fr);
     }
 
-    .svg-300 .svg-container {
+    .svg-container {
     width: 100%;
     height: auto;
     }
@@ -103,7 +103,7 @@
 
     {{ $image := ($resource_page.Resources.ByType "image").GetMatch $image_path}}
 
-    <div class= "{{$class}}">
+    <div class= "svg-container">
         {{ with $image }}
           {{ readFile (printf "%s%s" $page.Dir $image ) | safeHTML }}
         {{end}}
