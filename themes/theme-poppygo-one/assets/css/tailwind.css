@@ -545,9 +545,14 @@ object {
  * https://github.com/mozdevs/cssremedy/issues/14
  */
 
-img,svg,
+img,
 video {
   max-width: 100%;
+  height: auto;
+}
+
+svg {
+  width: 100%;
   height: auto;
 }
 
