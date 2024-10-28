@@ -186,7 +186,7 @@ In the coming years, renewable energy at sea will receive a significant boost. F
 
 **Role of Dutch Wave Power in Offshore For Sure**
 Dutch Wave Power will develop and test a 20kWp prototype wave energy converter (WEC) in the North Sea. The goal is to validate the technology on performance/output, robustness and ecological impact. Wave energy can provide renewable energy to offshore datahubs, aquaculture and coastal areas and also be integrated in wind/multi-use parks.
-Next to the development of the prototype, together with the University of Ghent components and materials will be tested and numerical models build and improved. Together with IMDC the ecological imapct will be assessed, testing plan developed and permitting processes undertaken. And with World Class Maintenance the techonolgy will be assessed for smart maintenance.
+Next to the development of the prototype, together with the University of Ghent components and materials will be tested and numerical models build and improved. Together with IMDC the ecological impact will be assessed, testing plan developed and permitting processes undertaken. And with World Class Maintenance the techonolgy will be assessed for smart maintenance.
 
 **Investments**
 During the three-year duration of the project, the project partners will invest more than 10 million euros in the Flemish-Dutch border region. This investment is made possible in part by the European Interreg Flanders-Netherlands program and co-financiers. The consortium believes that these offshore energy solutions will contribute to a smarter, greener, and more co-operative Europe. 
