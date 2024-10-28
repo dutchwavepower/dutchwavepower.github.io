@@ -38,15 +38,10 @@
       grid-gap: 10px;
       grid-template-columns: repeat(12, 1fr);
     }
-  .svgimage .svg-container {
-    width: 300px; /* Set desired width */
-    height: auto; /* Maintain aspect ratio */
-  }
+
     .oneCol, .twoCols, .threeCols {
       grid-column: span 12;
     }
-
-      
 
     .fourCols, .sixCols {
       grid-column: span 6;
@@ -75,6 +70,10 @@
         }
       }
 
+    .pogoimage {
+      width: 100%;
+    }
+
 </style>
 
 
@@ -99,11 +98,11 @@
     {{ $image := ($resource_page.Resources.ByType "image").GetMatch $image_path}}
 
     <div class= "{{$class}}">
-      <div class="svg-container">
-            {{ with $image }}
-                {{ readFile (printf "%s%s" $page.Dir $image ) | safeHTML }}
-            {{end}}
-        </div>
+        {{ with $image }}
+          {{ readFile (printf "%s%s" $page.Dir $image ) | safeHTML }}
+        {{end}}
+
     </div>
 {{ end }}
 </div>
+
