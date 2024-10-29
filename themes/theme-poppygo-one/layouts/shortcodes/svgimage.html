@@ -39,11 +39,6 @@
       grid-template-columns: repeat(12, 1fr);
     }
 
-    .svg-container {
-    width: 100%;
-    height: auto;
-    }
-
     .oneCol, .twoCols, .threeCols {
       grid-column: span 12;
     }
@@ -82,7 +77,7 @@
 </style>
 
 
-<div class="svg-container">
+<div class="grid">
 
 {{ range $images}}
     {{ $image_name := .}}
