@@ -81,6 +81,7 @@ page_sections:
     subtitle: wave energy
     texture: ''
     title: profitable
+    video: /waves.mp4  # Path to your video file 
   - bg_color: orange
     bg_image: none
     buttons:
