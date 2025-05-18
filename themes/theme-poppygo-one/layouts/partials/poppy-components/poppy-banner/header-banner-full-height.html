@@ -1,32 +1,6 @@
 {{- $page := .page -}}
 {{- $content := .content -}}
 {{- $design := .design -}}
-{{- with $design -}}
-  {{ $content.title }}
-  {{ $content.subtitle }}
-  {{- partial "poppy-elements/buttons" (dict "design" . "buttons" $content.buttons ) -}}
-
-  {{- if $content.video -}}
-  <div class="w-full h-auto overflow-hidden">
-    <video class="w-full h-auto object-cover" autoplay loop muted playsinline poster="{{ with $content.image }}{{ $content.image }}{{ end }}">
-      <source src="{{ $content.video }}" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>
-  </div>
-  {{- else if $content.image -}}
-    {{- $class := printf "w-full max-h-full %s %s %s" .rounded .shadow .border -}}
-    {{- partial "poppy-elements/image" (dict "resource_page" $content.fg_resource_page "name" $content.image "link" $content.link "class" $class) -}}
-  {{- end -}}
-
-{{- end -}}
-
-
-
-
-
-<!-- {{- $page := .page -}}
-{{- $content := .content -}}
-{{- $design := .design -}}
 
 {{- with $design -}}
   <div class="{{.vertical_space}} top-0 flex h-screen">
@@ -46,4 +20,4 @@
       </div>
     {{- end -}}
   </div>
-{{- end -}} -->
+{{- end -}}
