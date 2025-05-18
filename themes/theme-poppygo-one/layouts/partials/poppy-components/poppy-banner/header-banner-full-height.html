@@ -13,6 +13,59 @@
         </div>
       </div>
     </div>
+    {{- if $content.video -}}
+      <div class="w-full h-screen overflow-hidden absolute left-0 top-0 z-0">
+        <video class="w-full h-full object-cover" autoplay loop muted playsinline poster="{{ with $content.image }}{{ $content.image }}{{ end }}">
+          <source src="{{ $content.video }}" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+      <div class="w-full h-screen absolute left-0 top-0 z-10 bg-black opacity-50"></div> <div class="flex flex-col justify-center ml-auto relative z-20"> <div class = "text-center mx-2 md:mx-10 lg:mx-20 xl:mx-48">
+          <h1 class="{{.title}}">{{$content.title}}</h1>
+          <p class="{{ .subtitle }}">{{ $content.subtitle }}</p>
+          <div class="{{.subtitle}}">
+            {{- partial "poppy-elements/buttons" (dict "design" . "buttons" $content.buttons ) -}}
+          </div>
+        </div>
+      </div>
+    {{- else if $content.image -}}
+      <div class = "w-full md:flex flex-col justify-center relative z-0">
+        {{- $class := printf "w-full h-screen object-cover %s %s %s" .rounded .shadow .border -}}
+        {{- partial "poppy-elements/image" (dict "resource_page" $content.fg_resource_page "name" $content.image "link" $content.link "class" $class) -}}
+      </div>
+      <div class="w-full h-screen absolute left-0 top-0 z-10 bg-black opacity-50"></div> <div class="flex flex-col justify-center ml-auto relative z-20"> <div class = "text-center mx-2 md:mx-10 lg:mx-20 xl:mx-48">
+          <h1 class="{{.title}}">{{$content.title}}</h1>
+          <p class="{{ .subtitle }}">{{ $content.subtitle }}</p>
+          <div class="{{.subtitle}}">
+            {{- partial "poppy-elements/buttons" (dict "design" . "buttons" $content.buttons ) -}}
+          </div>
+        </div>
+      </div>
+    {{- end -}}
+  </div>
+{{- end -}}
+
+
+
+
+
+
+
+<!-- {{- $page := .page -}}
+{{- $content := .content -}}
+{{- $design := .design -}}
+
+{{- with $design -}}
+  <div class="{{.vertical_space}} top-0 flex h-screen">
+    <div class= "flex flex-col justify-center ml-auto">
+      <div class = "text-center mx-2 md:mx-10 lg:mx-20 xl:mx-48">
+        <h1 class="{{.title}}">{{$content.title}}</h1>
+        <p class="{{ .subtitle }}">{{ $content.subtitle }}</p>
+        <div class="{{.subtitle}}">
+          {{- partial "poppy-elements/buttons" (dict "design" . "buttons" $content.buttons ) -}}
+        </div>
+      </div>
+    </div>
     {{- if $content.image -}}
       <div class = "hidden w-full md:flex flex-col justify-center">
         {{- $class := printf "w-full max-h-full %s %s %s" .rounded .shadow .border -}}
@@ -20,4 +73,4 @@
       </div>
     {{- end -}}
   </div>
-{{- end -}}
+{{- end -}} -->
