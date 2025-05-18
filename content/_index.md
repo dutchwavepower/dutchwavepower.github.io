@@ -43,6 +43,7 @@ page_sections:
     texture: ''
     title: ''
   - bg_color: white
+    video: waves.mp4
     bg_image: hero_banner_blue
     buttons:
       - icon: ''
