@@ -76,7 +76,7 @@ site:
 typographies:
   - align: center
     bg_color: transparent
-    color: charcoal
+    color: ghost-white
     font: display1
     font_weight: bold
     name: title
@@ -108,7 +108,7 @@ typographies:
     transform: ''
   - align: ''
     bg_color: transparent
-    color: charcoal
+    color: ghost-white
     font: body
     font_weight: semibold
     name: menu
