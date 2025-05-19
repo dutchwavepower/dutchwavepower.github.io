@@ -71,7 +71,7 @@ typographies:
     transform: uppercase
   - align: center
     bg_color: none
-    color: poppycolor6
+    color: poppycolor5
     font: display1
     font_weight: semibold
     name: title
