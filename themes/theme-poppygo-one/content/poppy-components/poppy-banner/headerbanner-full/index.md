@@ -1,4 +1,4 @@
----
+<img width="1355" alt="image" src="https://github.com/user-attachments/assets/6b6094b3-1aa0-4e2c-8c67-1d8b024f4604" />---
 bg_color: white
 item_bg_color: white
 bg_image: back
@@ -25,7 +25,7 @@ design:
   typographies:
     - align: right
       bg_color: transparent
-      color: charcoal
+      color: ghost-white
       font: display1
       font_weight: bold
       name: title
@@ -33,7 +33,7 @@ design:
       transform: uppercase
     - align: right
       bg_color: transparent
-      color: charcoal
+      color: ghost-white
       font: display1
       font_weight: bold
       name: subtitle
