@@ -103,7 +103,7 @@ typographies:
     transform: ''
   - align: ''
     bg_color: none
-    color: poppycolordark
+    color: poppycolorlight
     font: body
     font_weight: semibold
     name: menu
