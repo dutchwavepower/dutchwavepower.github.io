@@ -3,7 +3,7 @@
 {{- $design := .design -}}
 {{- $size := "w-52 lg:w-60 xl:w-68 max-h-full" -}}
 {{- $transparent := "" -}}
-{{- if eq $content.bg_color "bg-transparent" -}}{{- $transparent = "absolute z-10 top-0 left-0 w-full" -}} {{- end -}}
+{{- if eq $content.bg_color "bg-transparent" -}}{{- $transparent = "absolute z-30 top-0 left-0 w-full" -}} {{- end -}}
 
 {{- with $design -}}
 <div class="{{$transparent}}">
