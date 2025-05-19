@@ -14,11 +14,13 @@
       </div>
     </div>
     <div class="w-full h-screen overflow-hidden absolute left-0 top-0 z-0">
-      <video class="w-full h-full object-cover" autoplay loop muted playsinline poster="{{ with $content.image }}{{ $content.image }}{{ end }}">
-        <source src="/waves.mp4" type="video/mp4">  Your browser does not support the video tag.
+      <video class="w-full h-full object-cover" autoplay loop muted playsinline>
+        <source src="/waves.mp4" type="video/mp4">
+        Your browser does not support the video tag.
       </video>
     </div>
-    <div class="w-full h-screen absolute left-0 top-0 z-10 bg-black opacity-50"></div>  </div>
+    <div class="w-full h-screen absolute left-0 top-0 z-10 bg-black opacity-50"></div>
+  </div>
 {{- end -}}
 
 
