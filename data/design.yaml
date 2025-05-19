@@ -76,7 +76,7 @@ site:
 typographies:
   - align: center
     bg_color: transparent
-    color: ghost-white
+    color: charcoal
     font: display1
     font_weight: bold
     name: title
@@ -92,7 +92,7 @@ typographies:
     transform: ''
   - align: center
     bg_color: none
-    color: ghost-white
+    color: charcoal
     font: display2
     font_weight: medium
     name: subtitle
