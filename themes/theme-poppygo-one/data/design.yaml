@@ -20,7 +20,7 @@ colorscheme:
   poppy_color2: '#2490EB'
   poppy_color3: '#9BCCF4'
   poppy_color4: '#C6EDE2'
-  poppy_color5: '#F7F7FF '
+  poppy_color5: '#F7F7FF'
   poppy_color6: '#324a61'
   poppy_colordark: '#324a61'
   poppy_colorlight: '#F7F7FF'
@@ -55,7 +55,7 @@ site:
 typographies:
   - align: center
     bg_color: transparent
-    color: poppycolor6
+    color: poppy_colorlight
     font: display1
     font_weight: bold
     name: banner
@@ -71,7 +71,7 @@ typographies:
     transform: uppercase
   - align: center
     bg_color: none
-    color: poppycolor5
+    color: poppy_colorlight
     font: display1
     font_weight: semibold
     name: title
