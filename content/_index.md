@@ -43,7 +43,7 @@ page_sections:
     texture: ''
     title: ''
   - bg_color: white
-    bg_image: ''
+    bg_image: 'waves_frame_1'
     buttons:
       - icon: ''
         icon_type: ''
