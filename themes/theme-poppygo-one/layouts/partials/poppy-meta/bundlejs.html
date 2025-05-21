@@ -1,36 +1,30 @@
-{{/* USE THIS TO BUNDLE YOUR JS files if you have any */}}
+{{/* Bundles only poppy-banner.js and any other specifically included JS files */}}
 
 {{ $js_files := slice }} {{/* Initialize an empty slice */}}
 
-{{/* Conditionally add main.js if it exists */}}
-{{- with resources.Get "js/main.js" -}}
-    {{ $js_files = $js_files | append . }}
-{{- end -}}
+{{/* --- IMPORTANT: Only include resources that you are sure exist --- */}}
 
-{{/* Conditionally add script.js if it exists */}}
-{{- with resources.Get "js/script.js" -}}
-    {{ $js_files = $js_files | append . }}
-{{- end -}}
-
-{{/* Add your poppy-banner.js if it exists */}}
+{{/* Add your poppy-banner.js */}}
 {{- with resources.Get "js/poppy-banner.js" -}}
     {{ $js_files = $js_files | append . }}
+{{- else -}}
+    {{ warnf "poppy-banner.js not found in assets/js/ - JS animation will not work." }}
 {{- end -}}
+
+{{/* --- End of explicitly added files --- */}}
+
 
 {{/* Only attempt to bundle if there are files in the slice */}}
 {{- if gt (len $js_files) 0 -}}
-    {{/* Use resources.Get "js/poppygo-one.js" if it's meant to be a base,
-         otherwise simply bundle the collected files. */}}
-    {{/* If 'poppygo-one.js' is just the output name, you can specify it in js.Build as target path. */}}
-
     {{ $bundle := $js_files | js.Build (dict "targetPath" "js/poppygo-one.js") | minify | fingerprint "md5" }}
     <script src="{{ $bundle.RelPermalink }}" integrity="{{ $bundle.Data.Integrity }}" defer></script>
+{{- else -}}
+    {{ warnf "No JavaScript files found to bundle for poppygo-one.js. Check your bundlejs.html." }}
 {{- end -}}
 
 {{- if not .Site.IsServer -}}
     <script async defer data-website-id="{{ .Site.Params.umami.siteID }}" src="{{ .Site.Params.umami.trackerScript }}"></script>
 {{- end -}}
-
 
 
 
