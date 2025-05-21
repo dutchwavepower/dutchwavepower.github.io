@@ -1,4 +1,9 @@
-<div class="partner-banner-wrapper">
+<div style="background-color: green; padding: 30px; text-align: center; color: white; font-size: 24px;">
+    <p>*** TEST BANNER COMPONENT IS RENDERING! ***</p>
+    <p>Check if partners data is loaded: {{ if .Site.Data.partners }}YES ({{ len .Site.Data.partners }} items){{ else }}NO{{ end }}</p>
+</div>
+
+<!-- <div class="partner-banner-wrapper">
     <div class="partner-banner">
         {{ range .Site.Data.partners }}
         <div class="partner-logo-item">
@@ -26,3 +31,4 @@
         {{ end }}
     </div>
 </div>
+ -->
