@@ -95,11 +95,20 @@ page_sections:
         buttons: []
         icon: ''
         icon_type: ''
-        image: logo_svg_martens
+        image: logo_martens
         link: https://martensgroep.eu/nl
         name: martens
         title: ''
-        logo_style: "height: 200px;" 
+        logo_style: "height: 200px;"
+      - bodytext: ''
+        buttons: []
+        icon: ''
+        icon_type: ''
+        image: logo_waddenfonds
+        link: ''
+        name: batterylabs
+        title: ''
+        logo_style: "height: 100px;"
       - bodytext: ''
         buttons: []
         icon: ''
@@ -158,7 +167,7 @@ page_sections:
         buttons: []
         icon: ''
         icon_type: ''
-        image: logo-with-payoff_bluespring
+        image: logo-bluespring
         link: ''
         name: bluespring
         title: ''
