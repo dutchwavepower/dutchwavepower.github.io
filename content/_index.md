@@ -103,6 +103,14 @@ page_sections:
         buttons: []
         icon: ''
         icon_type: ''
+        image: logo_svg_martens
+        link: https://martensgroep.eu/nl
+        name: martens
+        title: ''
+      - bodytext: ''
+        buttons: []
+        icon: ''
+        icon_type: ''
         image: logo_dls
         link: ''
         name: dls
