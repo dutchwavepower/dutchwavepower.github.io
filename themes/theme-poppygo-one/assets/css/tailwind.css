@@ -112754,3 +112754,67 @@ svg {
             animation: bounce 1s infinite;
   }
 }
+/* CSS for the Partner Logo Banner */
+
+.partner-banner-wrapper {
+    overflow: hidden; /* Hides the logos outside the visible area */
+    white-space: nowrap; /* Prevents logos from wrapping to the next line */
+    width: 100%; /* Ensures the banner takes full width */
+    padding: 20px 0; /* Add some vertical padding */
+    box-sizing: border-box;
+    /* Optional: Add a border or background if desired */
+    /* border-top: 1px solid #eee; */
+    /* border-bottom: 1px solid #eee; */
+    /* background-color: #f9f9f9; */
+}
+
+.partner-banner {
+    display: inline-flex; /* Allows items to sit side-by-side */
+    animation: scroll-left var(--scroll-speed, 30s) linear infinite; /* Medium speed: 30s */
+    animation-play-state: running; /* Ensure it starts playing */
+}
+
+.partner-banner-wrapper:hover .partner-banner {
+    animation-play-state: paused; /* Pause on hover */
+}
+
+.partner-logo-item {
+    flex-shrink: 0; /* Prevents logos from shrinking */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px; /* Spacing between logos */
+    height: 80px; /* Fixed height for logos */
+    transition: transform 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.partner-logo-item img {
+    max-height: 100%; /* Ensure image fits within item height */
+    max-width: 150px; /* Max width for individual logos, adjust as needed */
+    width: auto; /* Maintain aspect ratio */
+    object-fit: contain; /* Ensures the entire image is visible within its container */
+    display: block; /* Remove extra space below image */
+}
+
+.partner-logo-item:hover img {
+    transform: scale(1.2); /* Scale up to 120% on hover */
+}
+
+/* Keyframe animation for continuous left scroll */
+@keyframes scroll-left {
+    0% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(-50%); /* Scrolls half the total width (one set of logos) */
+    }
+}
+
+/* Optional: Adjust scroll speed if needed */
+/* To make it faster, decrease the time (e.g., 20s) */
+/* To make it slower, increase the time (e.g., 40s) */
+/* You can define custom properties or directly change the animation time */
+/* Example for slower speed: */
+/* .partner-banner {
+    --scroll-speed: 45s;
+} */
