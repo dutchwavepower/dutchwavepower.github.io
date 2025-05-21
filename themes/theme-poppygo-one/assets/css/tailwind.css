@@ -112777,7 +112777,7 @@ svg {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 0 40px; /* Space between individual logos */
+    padding: 0 20px; /* Space between individual logos */
     height: 200px; /* Uniform height for logo containers */
 }
 
