@@ -107,7 +107,7 @@ page_sections:
         link: https://martensgroep.eu/nl
         name: martens
         title: ''
-        logo_style: "height: 100px;" # NEW: Add this line for a specific height
+        logo_style: "height: 200px;" # NEW: Add this line for a specific height
       - bodytext: ''
         buttons: []
         icon: ''
