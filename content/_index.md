@@ -108,6 +108,7 @@ page_sections:
         link: https://rometal.nl
         name: rometal
         title: ''
+        logo_style: "height: 100px;" 
       - bodytext: ''
         buttons: []
         icon: ''
@@ -124,6 +125,7 @@ page_sections:
         link: ''
         name: doIoTLogo
         title: ''
+        logo_style: "height: 100px;" 
       - bodytext: ''
         buttons: []
         icon: ''
