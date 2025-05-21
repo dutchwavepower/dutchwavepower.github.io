@@ -8,10 +8,11 @@
     main stylesheet (e.g., assets/css/style.css) and remove it from here.
 */}}
 <style>
+    /* --- Begin CSS for Poppy Logo Banner (from partial) --- */
     .poppy-logo-banner-wrapper {
         overflow: hidden;
-        width: 100vw; /* Full viewport width */
-        margin-left: calc(50% - 50vw); /* Centers and pushes to edges */
+        width: 100vw; /* Ensures it spans the full viewport width */
+        margin-left: calc(50% - 50vw); /* Centers it and pushes it to the screen edges */
         padding: 20px 0;
         background-color: transparent;
         box-shadow: none;
@@ -19,20 +20,19 @@
 
     .poppy-logo-banner {
         display: flex;
-        animation: scroll-poppy-left 6.4s linear infinite; /* Speed reduced: 3.2s * 2 = 6.4s */
-        white-space: nowrap;
-        will-change: transform;
-        /* Adding transform-style can sometimes help with smoother GPU rendering */
-        transform-style: preserve-3d;
+        animation: scroll-poppy-left 12.8s linear infinite; /* Adjusted speed: 12.8 seconds per loop */
+        white-space: nowrap; /* Prevents logos from wrapping to the next line */
+        will-change: transform; /* Hints to the browser to optimize for transform animations */
+        transform-style: preserve-3d; /* Can sometimes help with smoother GPU rendering */
     }
 
     .poppy-logo-item {
-        flex-shrink: 0;
+        flex-shrink: 0; /* Prevents logos from shrinking */
         display: flex;
         justify-content: center;
         align-items: center;
-        padding: 0 40px; /* Space between logos */
-        height: 200px; /* Logo container height */
+        padding: 0 40px; /* Space between individual logos */
+        height: 200px; /* Uniform height for logo containers */
     }
 
     .poppy-logo-item img {
@@ -40,11 +40,11 @@
         max-width: 375px;
         width: auto;
         opacity: 1;
-        transition: transform 0.3s ease-in-out; /* Smooth transition for hover effects */
+        transition: transform .3s ease-in-out; /* Smooth transition for hover effects */
     }
 
     .poppy-logo-item img:hover {
-        transform: scale(1.5); /* Hovering increases size by 150% */
+        transform: scale(1.5); /* Logos enlarge by 150% on hover */
     }
 
     /* Animation Keyframes */
@@ -53,9 +53,11 @@
             transform: translateX(0%);
         }
         100% {
-            /* New offset attempt: Using a slightly larger pixel value.
-               This is the key area for fixing the "restarting" jump. */
-            transform: translateX(calc(-50% - 20px));
+            /* This is the crucial line for fixing the jump.
+               We're translating by 50% of the banner's width (one full set of logos)
+               PLUS a small viewport-width-based offset to hide the reset point.
+               You might still need to fine-tune '0.2vw' using browser inspect tools. */
+            transform: translateX(calc(-50% - 0.2vw));
         }
     }
 
@@ -63,6 +65,7 @@
     .poppy-logo-banner-wrapper:hover .poppy-logo-banner {
         animation-play-state: paused;
     }
+    /* --- End CSS for Poppy Logo Banner (from partial) --- */
 </style>
 
 {{- with $design -}}
@@ -86,9 +89,10 @@
                 {{- end -}}
             {{- end -}}
 
+            {{/* This second loop duplicates the logos to create the seamless infinite scroll effect */}}
             {{- range $item := $content.items -}}
                 {{ if and $item.image (not (eq $item.image "none")) -}}
-                    <div class="poppy-logo-item" aria-hidden="true">
+                    <div class="poppy-logo-item" aria-hidden="true"> {{/* aria-hidden for accessibility on duplicate elements */}}
                         {{ if $item.link }}
                             <a href="{{ $item.link | safeURL }}" target="_blank" rel="noopener">
                                 {{- partial "poppy-elements/image" (dict "resource_page" $content.fg_resource_page "name" $item.image "class" "h-full w-full object-contain" "alt" ($item.name | default "logo")) -}}
@@ -103,6 +107,9 @@
     </div>
 </div>
 {{- end -}}
+
+
+
 
 
 
