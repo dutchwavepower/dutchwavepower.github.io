@@ -95,34 +95,34 @@ page_sections:
         buttons: []
         icon: ''
         icon_type: ''
-        image: logo_martens
-        link: https://martensgroep.eu/nl
-        name: martens
-        title: ''
-      - bodytext: ''
-        buttons: []
-        icon: ''
-        icon_type: ''
         image: logo_svg_martens
         link: https://martensgroep.eu/nl
         name: martens
         title: ''
-        logo_style: "height: 200px;" # NEW: Add this line for a specific height
+        logo_style: "height: 200px;" 
       - bodytext: ''
         buttons: []
         icon: ''
         icon_type: ''
-        image: logo_dls
-        link: ''
-        name: dls
+        image: logo_rometal
+        link: https://rometal.nl
+        name: rometal
         title: ''
       - bodytext: ''
         buttons: []
         icon: ''
         icon_type: ''
-        image: logo_dyneema
+        image: logo_Interregvlaned_project_rgb_pos
         link: ''
-        name: dyneema
+        name: Interregvlaned_project_rgb_pos
+        title: ''
+      - bodytext: ''
+        buttons: []
+        icon: ''
+        icon_type: ''
+        image: logo_doIoTLogo
+        link: ''
+        name: doIoTLogo
         title: ''
       - bodytext: ''
         buttons: []
@@ -139,6 +139,14 @@ page_sections:
         image: logo_marin
         link: ''
         name: marin
+        title: ''
+      - bodytext: ''
+        buttons: []
+        icon: ''
+        icon_type: ''
+        image: logo_dls
+        link: ''
+        name: dls
         title: ''
       - bodytext: ''
         buttons: []
