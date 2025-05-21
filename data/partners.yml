@@ -1,0 +1,27 @@
+# data/partners.yml
+
+- name: "Martens"
+  logo: "/images/partners/logo_martens.png"
+  url: "https://martensgroep.eu/nl"
+  alt: "Logo of Koninkljke Martens"
+
+# - name: "Partner Company B"
+#   logo: "/images/partners/company-b-logo.svg"
+#   url: "https://www.company-b.org"
+#   alt: "Logo of Partner Company B"
+
+# - name: "Partner Company C"
+#   logo: "/images/partners/company-c-logo.jpg"
+#   url: "https://www.company-c.net"
+#   alt: "Logo of Partner Company C"
+
+# - name: "Partner Company D"
+#   logo: "/images/partners/company-d-logo.png"
+#   url: "https://www.company-d.co"
+#   alt: "Logo of Partner Company D"
+
+# Add more partners here as needed
+# - name: "Another Partner"
+#   logo: "/images/partners/another-partner-logo.png"
+#   url: "https://www.another-partner.com"
+#   alt: "Logo of Another Partner"
