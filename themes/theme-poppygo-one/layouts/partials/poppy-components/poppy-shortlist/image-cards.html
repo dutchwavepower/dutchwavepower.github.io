@@ -10,18 +10,20 @@
 <style>
     .poppy-logo-banner-wrapper {
         overflow: hidden;
-        width: 100vw; /* Make it full viewport width */
-        margin-left: calc(50% - 50vw); /* Shift left to align with viewport edge, breaking out of parent container */
+        width: 100vw; /* Full viewport width */
+        margin-left: calc(50% - 50vw); /* Centers and pushes to edges */
         padding: 20px 0;
-        background-color: transparent; /* Transparent background */
-        box-shadow: none; /* No shadow */
+        background-color: transparent;
+        box-shadow: none;
     }
 
     .poppy-logo-banner {
         display: flex;
-        animation: scroll-poppy-left 6.4s linear infinite; /* Speed increased again: 16s / 2.5 = 6.4s */
+        animation: scroll-poppy-left 3.2s linear infinite; /* Speed: 3.2s */
         white-space: nowrap;
         will-change: transform;
+        /* Adding transform-style can sometimes help with smoother GPU rendering */
+        transform-style: preserve-3d;
     }
 
     .poppy-logo-item {
@@ -51,9 +53,9 @@
             transform: translateX(0%);
         }
         100% {
-            /* Adjusted with a small pixel offset to help mask the loop restart/jump.
-               You might need to fine-tune '5px' based on your browser and content. */
-            transform: translateX(calc(-50% - 5px));
+            /* Modified offset to be a very small percentage of viewport width.
+               This often handles scaling and sub-pixel issues better than fixed pixels. */
+            transform: translateX(calc(-50% - 0.1vw));
         }
     }
 
@@ -101,7 +103,6 @@
     </div>
 </div>
 {{- end -}}
-
 
 
 
