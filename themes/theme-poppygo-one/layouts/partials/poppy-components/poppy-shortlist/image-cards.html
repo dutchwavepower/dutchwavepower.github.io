@@ -9,41 +9,42 @@
 */}}
 <style>
     .poppy-logo-banner-wrapper {
-        overflow: hidden; /* Hides the overflowing duplicated content */
+        overflow: hidden;
         width: 100%;
-        padding: 20px 0; /* Add some vertical padding */
-        background-color: {{ $content.bg_color | default "#f8f8f8" }}; /* Uses bg_color from content, or default */
-        box-shadow: inset 0 0 10px rgba(0,0,0,0.05); /* Soft shadow */
+        padding: 20px 0;
+        background-color: {{ $content.bg_color | default "#f8f8f8" }};
+        box-shadow: inset 0 0 10px rgba(0,0,0,0.05);
     }
 
     .poppy-logo-banner {
         display: flex;
-        animation: scroll-poppy-left 40s linear infinite; /* Adjust duration as needed */
-        white-space: nowrap; /* Prevent items from wrapping */
-        will-change: transform; /* Optimize for animation */
+        animation: scroll-poppy-left 16s linear infinite; /* Speed increased 2.5x (40s / 2.5 = 16s) */
+        white-space: nowrap;
+        will-change: transform;
     }
 
     .poppy-logo-item {
-        flex-shrink: 0; /* Prevent items from shrinking */
+        flex-shrink: 0;
         display: flex;
         justify-content: center;
         align-items: center;
-        padding: 0 40px; /* Space between logos */
-        height: 80px; /* Fixed height for logos */
+        padding: 0 40px;
+        height: 200px; /* Logos larger: 80px * 2.5 = 200px */
     }
 
     .poppy-logo-item img {
-        max-height: 100%; /* Ensure logos fit within the item height */
-        max-width: 150px; /* Limit logo width */
+        max-height: 100%;
+        max-width: 375px; /* Logos larger: 150px * 2.5 = 375px */
         width: auto;
-        filter: grayscale(100%); /* Optional: Make logos grayscale */
-        opacity: 0.7; /* Optional: Reduce opacity */
-        transition: all 0.3s ease-in-out;
+        /* filter: grayscale(100%);  <-- Removed for default colors */
+        opacity: 1; /* Default opacity is now 1 (no longer faded out) */
+        transition: all 0.3s ease-in-out; /* Smooth transition for hover effects */
     }
 
     .poppy-logo-item img:hover {
-        filter: grayscale(0%); /* Optional: Color on hover */
-        opacity: 1; /* Optional: Full opacity on hover */
+        /* filter: grayscale(0%); <-- Removed as default is now color */
+        opacity: 1; /* Remains at 1 on hover */
+        transform: scale(1.5); /* Hovering increases size by 150% */
     }
 
     /* Animation Keyframes */
@@ -52,7 +53,7 @@
             transform: translateX(0%);
         }
         100% {
-            transform: translateX(-50%); /* Scrolls half the total width (original + duplicate) */
+            transform: translateX(-50%);
         }
     }
 
@@ -103,8 +104,6 @@
     </div>
 </div>
 {{- end -}}
-
-
 
 <!-- {{- $page := .page -}}
 {{- $content := .content -}}
