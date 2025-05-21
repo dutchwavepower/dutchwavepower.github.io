@@ -237,8 +237,8 @@ page_sections:
     subtitle: 'Become an investor, ambassador or teammember'
     texture: texture_underwater
     title: '"Support this new wave of power generation!"'
-  - component: partner-banner-component 
-    name: partner-banner-section      
+  - component: partner-logo-banner 
+    name: partner-banner      
     bg_color: baby-blue-eyes
   - bg_color: white
     bg_image: none
