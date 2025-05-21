@@ -1,31 +1,46 @@
-{{/* Bundles only poppy-banner.js and any other specifically included JS files */}}
+{{/* Bundles JS files using resources.Concat for compatibility */}}
 
 {{ $js_files := slice }} {{/* Initialize an empty slice */}}
 
-{{/* --- IMPORTANT: Only include resources that you are sure exist --- */}}
+{{/* --- Conditionally add JS resources to the slice --- */}}
 
-{{/* Add your poppy-banner.js */}}
+{{/* Add your poppy-banner.js if it exists */}}
 {{- with resources.Get "js/poppy-banner.js" -}}
     {{ $js_files = $js_files | append . }}
 {{- else -}}
     {{ warnf "poppy-banner.js not found in assets/js/ - JS animation will not work." }}
 {{- end -}}
 
+{{/*
+    You can uncomment and add other scripts here if they exist and you want them bundled.
+    Example:
+    {{- with resources.Get "js/main.js" -}}
+        {{ $js_files = $js_files | append . }}
+    {{- end -}}
+    {{- with resources.Get "js/script.js" -}}
+        {{ $js_files = $js_files | append . }}
+    {{- end -}}
+*/}}
+
 {{/* --- End of explicitly added files --- */}}
 
 
 {{/* Only attempt to bundle if there are files in the slice */}}
 {{- if gt (len $js_files) 0 -}}
-    {{ $bundle := $js_files | js.Build (dict "targetPath" "js/poppygo-one.js") | minify | fingerprint "md5" }}
-    <script src="{{ $bundle.RelPermalink }}" integrity="{{ $bundle.Data.Integrity }}" defer></script>
+    {{/* Concatenate all collected JS files into a single bundle */}}
+    {{ $js_bundle := $js_files | resources.Concat "js/poppygo-one.js" }}
+
+    {{/* Minify and fingerprint the concatenated bundle */}}
+    {{ $final_bundle := $js_bundle | minify | fingerprint "md5" }}
+
+    <script src="{{ $final_bundle.RelPermalink }}" integrity="{{ $final_bundle.Data.Integrity }}" defer></script>
 {{- else -}}
-    {{ warnf "No JavaScript files found to bundle for poppygo-one.js. Check your bundlejs.html." }}
+    {{ warnf "No JavaScript files found to bundle for poppygo-one.js. Check your bundlejs.html and assets/js/ folder." }}
 {{- end -}}
 
 {{- if not .Site.IsServer -}}
     <script async defer data-website-id="{{ .Site.Params.umami.siteID }}" src="{{ .Site.Params.umami.trackerScript }}"></script>
 {{- end -}}
-
 
 
 <!-- {{/* USE THIS TO BUNDLE YOUR JS files if you have any */}}
