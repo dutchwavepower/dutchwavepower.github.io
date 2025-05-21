@@ -2,6 +2,114 @@
 {{- $content := .content -}}
 {{- $design := .design -}}
 
+{{/*
+    IMPORTANT: This <style> block is for demonstration.
+    For a production site, you should copy this CSS into your theme's
+    main stylesheet (e.g., assets/css/style.css) and remove it from here.
+*/}}
+<style>
+    .poppy-logo-banner-wrapper {
+        overflow: hidden; /* Hides the overflowing duplicated content */
+        width: 100%;
+        padding: 20px 0; /* Add some vertical padding */
+        background-color: {{ $content.bg_color | default "#f8f8f8" }}; /* Uses bg_color from content, or default */
+        box-shadow: inset 0 0 10px rgba(0,0,0,0.05); /* Soft shadow */
+    }
+
+    .poppy-logo-banner {
+        display: flex;
+        animation: scroll-poppy-left 40s linear infinite; /* Adjust duration as needed */
+        white-space: nowrap; /* Prevent items from wrapping */
+        will-change: transform; /* Optimize for animation */
+    }
+
+    .poppy-logo-item {
+        flex-shrink: 0; /* Prevent items from shrinking */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0 40px; /* Space between logos */
+        height: 80px; /* Fixed height for logos */
+    }
+
+    .poppy-logo-item img {
+        max-height: 100%; /* Ensure logos fit within the item height */
+        max-width: 150px; /* Limit logo width */
+        width: auto;
+        filter: grayscale(100%); /* Optional: Make logos grayscale */
+        opacity: 0.7; /* Optional: Reduce opacity */
+        transition: all 0.3s ease-in-out;
+    }
+
+    .poppy-logo-item img:hover {
+        filter: grayscale(0%); /* Optional: Color on hover */
+        opacity: 1; /* Optional: Full opacity on hover */
+    }
+
+    /* Animation Keyframes */
+    @keyframes scroll-poppy-left {
+        0% {
+            transform: translateX(0%);
+        }
+        100% {
+            transform: translateX(-50%); /* Scrolls half the total width (original + duplicate) */
+        }
+    }
+
+    /* Pause animation on hover */
+    .poppy-logo-banner-wrapper:hover .poppy-logo-banner {
+        animation-play-state: paused;
+    }
+</style>
+
+{{- with $design -}}
+<div class="{{.vertical_space}}">
+    {{/* Optionally display title/subtitle if they exist in your content */}}
+    {{ if $content.title }}<h3 class="{{.title}}">{{ $content.title }}</h3>{{ end }}
+    {{ if $content.subtitle }}<p class="{{.subtitle}}">{{ $content.subtitle }}</p>{{ end }}
+
+    <div class="poppy-logo-banner-wrapper">
+        <div class="poppy-logo-banner">
+            {{/* First set of logos */}}
+            {{- range $item := $content.items -}}
+                {{ if and $item.image (not (eq $item.image "none")) -}}
+                    <div class="poppy-logo-item">
+                        {{ if $item.link }}
+                            <a href="{{ $item.link | safeURL }}" target="_blank" rel="noopener">
+                                {{- partial "poppy-elements/image" (dict "resource_page" $content.fg_resource_page "name" $item.image "class" "h-full w-full object-contain" "alt" ($item.name | default "logo")) -}}
+                            </a>
+                        {{ else }}
+                            {{- partial "poppy-elements/image" (dict "resource_page" $content.fg_resource_page "name" $item.image "class" "h-full w-full object-contain" "alt" ($item.name | default "logo")) -}}
+                        {{ end }}
+                    </div>
+                {{- end -}}
+            {{- end -}}
+
+            {{/* Duplicate set of logos for seamless looping */}}
+            {{- range $item := $content.items -}}
+                {{ if and $item.image (not (eq $item.image "none")) -}}
+                    <div class="poppy-logo-item" aria-hidden="true">
+                        {{ if $item.link }}
+                            <a href="{{ $item.link | safeURL }}" target="_blank" rel="noopener">
+                                {{- partial "poppy-elements/image" (dict "resource_page" $content.fg_resource_page "name" $item.image "class" "h-full w-full object-contain" "alt" ($item.name | default "logo")) -}}
+                            </a>
+                        {{ else }}
+                            {{- partial "poppy-elements/image" (dict "resource_page" $content.fg_resource_page "name" $item.image "class" "h-full w-full object-contain" "alt" ($item.name | default "logo")) -}}
+                        {{ end }}
+                    </div>
+                {{- end -}}
+            {{- end -}}
+        </div>
+    </div>
+</div>
+{{- end -}}
+
+
+
+<!-- {{- $page := .page -}}
+{{- $content := .content -}}
+{{- $design := .design -}}
+
 {{- $amount := 0 -}}
 {{- range $content.items -}}
   {{ if and .image (not (eq .image "none")) -}}
@@ -25,3 +133,4 @@
   </div>
 </div>
 {{- end -}}
+ -->
