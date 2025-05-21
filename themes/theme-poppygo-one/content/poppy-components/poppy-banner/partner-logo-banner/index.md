@@ -3,16 +3,16 @@ bg_color: white
 item_bg_color: white
 mainContent: ''
 resources: []
-title: I am an in-page banner for telling your story
+title: I am an partner logo banner for telling your story
 subtitle: Banners can be used for selling your proposition
 summary: -|
     I am the summary of the banner, which can be used for opengraph and SEO descriptions
 poppy_type: poppy-banner
-poppy_variant: inpage-banner
+poppy_variant: partner-logo-banner
 image: ''
-parallax: true
-bg_image: for
-name: inpage-banner
+parallax: false
+bg_image: ''
+name: partner-logo-banner
 texture: paper
 buttons:
   - label: 'Join us'
