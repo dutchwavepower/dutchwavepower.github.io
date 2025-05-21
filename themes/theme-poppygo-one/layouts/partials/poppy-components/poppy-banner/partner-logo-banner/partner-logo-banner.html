@@ -1,0 +1,28 @@
+<div class="partner-banner-wrapper">
+    <div class="partner-banner">
+        {{ range .Site.Data.partners }}
+        <div class="partner-logo-item">
+            {{ if .url }}
+            <a href="{{ .url | safeURL }}" target="_blank" rel="noopener">
+                <img src="{{ .logo | relURL }}" alt="{{ .alt }}" loading="lazy">
+            </a>
+            {{ else }}
+            <img src="{{ .logo | relURL }}" alt="{{ .alt }}" loading="lazy">
+            {{ end }}
+        </div>
+        {{ end }}
+
+        {{/* Duplicate the logos to create a seamless loop */}}
+        {{ range .Site.Data.partners }}
+        <div class="partner-logo-item" aria-hidden="true">
+            {{ if .url }}
+            <a href="{{ .url | safeURL }}" target="_blank" rel="noopener">
+                <img src="{{ .logo | relURL }}" alt="{{ .alt }}" loading="lazy">
+            </a>
+            {{ else }}
+            <img src="{{ .logo | relURL }}" alt="{{ .alt }}" loading="lazy">
+            {{ end }}
+        </div>
+        {{ end }}
+    </div>
+</div>
