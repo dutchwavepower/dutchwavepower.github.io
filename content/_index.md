@@ -95,25 +95,9 @@ page_sections:
         buttons: []
         icon: ''
         icon_type: ''
-        image: logo_empty
-        link: ''
-        name: empty
-        title: ''
-      - bodytext: ''
-        buttons: []
-        icon: ''
-        icon_type: ''
         image: logo_martens
         link: https://martensgroep.eu/nl
         name: martens
-        title: ''
-      - bodytext: ''
-        buttons: []
-        icon: ''
-        icon_type: ''
-        image: logo_empty
-        link: ''
-        name: empty
         title: ''
       - bodytext: ''
         buttons: []
