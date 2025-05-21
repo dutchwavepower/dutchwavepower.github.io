@@ -15,20 +15,21 @@
                         {{ if $item.link }}
                             <a href="{{ $item.link | safeURL }}" target="_blank" rel="noopener">
                                 {{- partial "poppy-elements/image" (dict
-                                        "resource_page" $content.fg_resource_page
-                                        "name" $item.image
-                                        "class" "h-full w-full object-contain"
-                                        "alt" ($item.name | default "logo")
-                                    ) -}}
+                                        "resource_page" $content.fg_resource_page
+                                        "name" $item.image
+                                        "class" "h-full w-full object-contain"
+                                        "alt" ($item.name | default "logo")
+                                        "logo_style" $item.logo_style
+                                    ) -}}
                             </a>
                         {{ else }}
                             {{- partial "poppy-elements/image" (dict
-                                        "resource_page" $content.fg_resource_page
-                                        "name" $item.image
-                                        "class" "h-full w-full object-contain"
-                                        "alt" ($item.name | default "logo")
-                                        "logo_style" $item.logo_style /* ADDED HERE */
-                                    ) -}}
+                                        "resource_page" $content.fg_resource_page
+                                        "name" $item.image
+                                        "class" "h-full w-full object-contain"
+                                        "alt" ($item.name | default "logo")
+                                        "logo_style" $item.logo_style
+                                    ) -}}
                         {{ end }}
                     </div>
                 {{- end -}}
@@ -41,30 +42,24 @@
                         {{ if $item.link }}
                             <a href="{{ $item.link | safeURL }}" target="_blank" rel="noopener">
                                 {{- partial "poppy-elements/image" (dict
-                                        "resource_page" $content.fg_resource_page
-                                        "name" $item.image
-                                        "class" "h-full w-full object-contain"
-                                        "alt" ($item.name | default "logo")
-                                        "logo_style" $item.logo_style /* ADDED HERE */
-                                    ) -}}
+                                        "resource_page" $content.fg_resource_page
+                                        "name" $item.image
+                                        "class" "h-full w-full object-contain"
+                                        "alt" ($item.name | default "logo")
+                                        "logo_style" $item.logo_style
+                                    ) -}}
                             </a>
                         {{ else }}
                             {{- partial "poppy-elements/image" (dict
-                                        "resource_page" $content.fg_resource_page
-                                        "name" $item.image
-                                        "class" "h-full w-full object-contain"
-                                        "alt" ($item.name | default "logo")
-                                        "logo_style" $item.logo_style /* ADDED HERE */
-                                    ) -}}
+                                        "resource_page" $content.fg_resource_page
+                                        "name" $item.image
+                                        "class" "h-full w-full object-contain"
+                                        "alt" ($item.name | default "logo")
+                                        "logo_style" $item.logo_style
+                                    ) -}}
                         {{ end }}
                     </div>
                 {{- end -}}
-            {{- end -}}
-        </div>
-    </div>
-</div>
-{{- end -}}
-
 
 <!-- {{- $page := .page -}}
 {{- $content := .content -}}
