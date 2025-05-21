@@ -1,4 +1,45 @@
 {{/* Usage:
+{{ partial "image" (dict "page" . "name" .Params.image "path" "images/" "scale" "w-100")  }}
+*/}}
+
+{{- $class := .class -}}
+{{- $sizes := (slice "480" "800" "1500") -}}
+{{- $image_path := printf "images/*%s*" .name -}}
+{{- if or (.resource_page.IsHome) (.resource_page.IsSection) -}}
+    {{- $image_path = printf "*%s*" .name -}}
+{{- end }}
+
+{{- $image := (.resource_page.Resources.ByType "image").GetMatch $image_path -}}
+
+{{- with $image -}}
+
+    {{- $filename := path.Base .Name -}}
+    {{- $caption := "" -}}
+
+    {{- if eq (path.Ext $filename) ".webp" -}}
+          <img src="{{.RelPermalink}}" class="lazyload {{$class}}" alt="{{$filename}}">
+    {{- else if eq (path.Ext $filename) ".svg" -}}
+          <img src="{{.RelPermalink}}" class="{{$class}}" alt="{{$filename}}">
+    {{- else -}}
+      <img sizes="(min-width: 992px) 25vw, 55vw"
+      srcset='
+      {{- range $sizes -}}
+        {{- ($image.Resize (printf "%sx" .)).RelPermalink }} {{ (printf "%sw" .) -}},
+      {{- end -}}'
+      src="{{- ($image.Resize "800x").Permalink -}}"
+      class="lazyload {{$class}}"
+      alt="{{- $filename -}}">
+  {{- end -}}
+{{- end -}}
+
+
+
+
+
+
+
+
+<!-- {{/* Usage:
 {{ partial "image" (dict "page" . "name" .Params.image "path" "images/" "scale" "w-100")  }}
 */}}
 
@@ -31,3 +72,4 @@
       alt="{{- $filename -}}">
   {{- end -}}
 {{- end -}}
+ -->
