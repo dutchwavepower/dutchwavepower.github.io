@@ -112799,9 +112799,10 @@ svg {
         transform: translateX(0%);
     }
     100% {
-        /* This is the crucial line for fixing the jump.
-           You might still need to fine-tune '0.2vw' using browser inspect tools. */
-        transform: translateX(calc(-50% - 0.2vw));
+        /* Use the dynamically calculated value from JavaScript */
+        transform: translateX(var(--poppy-translate-x));
+        /* If a *very* tiny flicker still occurs, you can try adding a tiny static offset like this: */
+        /* transform: translateX(calc(var(--poppy-translate-x) - 0.1px)); */
     }
 }
 
