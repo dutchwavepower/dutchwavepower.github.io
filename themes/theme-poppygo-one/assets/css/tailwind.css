@@ -112766,7 +112766,7 @@ svg {
 
 .poppy-logo-banner {
     display: flex;
-    animation: scroll-poppy-left 12.8s linear infinite; /* Animation speed: 12.8 seconds per loop */
+    animation: scroll-poppy-left 24s linear infinite; /* Animation speed: 12.8 seconds per loop */
     white-space: nowrap; /* Prevents logos from wrapping to the next line */
     will-change: transform; /* Hints to the browser to optimize for transform animations */
     transform-style: preserve-3d; /* Can sometimes help with smoother GPU rendering */
