@@ -112754,67 +112754,59 @@ svg {
             animation: bounce 1s infinite;
   }
 }
-/* CSS for the Partner Logo Banner */
+/* --- Poppy Logo Banner Styles --- */
+.poppy-logo-banner-wrapper {
+    overflow: hidden;
+    width: 100vw; /* Ensures it spans the full viewport width */
+    margin-left: calc(50% - 50vw); /* Centers it and pushes it to the screen edges */
+    padding: 20px 0;
+    background-color: transparent;
+    box-shadow: none;
+}
 
-.partner-banner-wrapper {
-    overflow: hidden; /* Hides the logos outside the visible area */
+.poppy-logo-banner {
+    display: flex;
+    animation: scroll-poppy-left 12.8s linear infinite; /* Animation speed: 12.8 seconds per loop */
     white-space: nowrap; /* Prevents logos from wrapping to the next line */
-    width: 100%; /* Ensures the banner takes full width */
-    padding: 20px 0; /* Add some vertical padding */
-    box-sizing: border-box;
-    /* Optional: Add a border or background if desired */
-    /* border-top: 1px solid #eee; */
-    /* border-bottom: 1px solid #eee; */
-    /* background-color: #f9f9f9; */
+    will-change: transform; /* Hints to the browser to optimize for transform animations */
+    transform-style: preserve-3d; /* Can sometimes help with smoother GPU rendering */
 }
 
-.partner-banner {
-    display: inline-flex; /* Allows items to sit side-by-side */
-    animation: scroll-left var(--scroll-speed, 30s) linear infinite; /* Medium speed: 30s */
-    animation-play-state: running; /* Ensure it starts playing */
-}
-
-.partner-banner-wrapper:hover .partner-banner {
-    animation-play-state: paused; /* Pause on hover */
-}
-
-.partner-logo-item {
+.poppy-logo-item {
     flex-shrink: 0; /* Prevents logos from shrinking */
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 0 20px; /* Spacing between logos */
-    height: 80px; /* Fixed height for logos */
-    transition: transform 0.3s ease; /* Smooth transition for hover effect */
+    padding: 0 40px; /* Space between individual logos */
+    height: 200px; /* Uniform height for logo containers */
 }
 
-.partner-logo-item img {
-    max-height: 100%; /* Ensure image fits within item height */
-    max-width: 150px; /* Max width for individual logos, adjust as needed */
-    width: auto; /* Maintain aspect ratio */
-    object-fit: contain; /* Ensures the entire image is visible within its container */
-    display: block; /* Remove extra space below image */
+.poppy-logo-item img {
+    max-height: 100%;
+    max-width: 375px;
+    width: auto;
+    opacity: 1;
+    transition: transform .3s ease-in-out; /* Smooth transition for hover effects */
 }
 
-.partner-logo-item:hover img {
-    transform: scale(1.2); /* Scale up to 120% on hover */
+.poppy-logo-item img:hover {
+    transform: scale(1.5); /* Logos enlarge by 150% on hover */
 }
 
-/* Keyframe animation for continuous left scroll */
-@keyframes scroll-left {
+/* Animation Keyframes */
+@keyframes scroll-poppy-left {
     0% {
         transform: translateX(0%);
     }
     100% {
-        transform: translateX(-50%); /* Scrolls half the total width (one set of logos) */
+        /* This is the crucial line for fixing the jump.
+           You might still need to fine-tune '0.2vw' using browser inspect tools. */
+        transform: translateX(calc(-50% - 0.2vw));
     }
 }
 
-/* Optional: Adjust scroll speed if needed */
-/* To make it faster, decrease the time (e.g., 20s) */
-/* To make it slower, increase the time (e.g., 40s) */
-/* You can define custom properties or directly change the animation time */
-/* Example for slower speed: */
-/* .partner-banner {
-    --scroll-speed: 45s;
-} */
+/* Pause animation on hover */
+.poppy-logo-banner-wrapper:hover .poppy-logo-banner {
+    animation-play-state: paused;
+}
+/* --- End Poppy Logo Banner Styles --- */
