@@ -25,7 +25,7 @@
                     style="{{. | safeCSS}}" {{/* This applies the inline style from your front matter */}}
                 {{- end -}}
             >
-    {{- else -}}
+    {{- else -}}  {{/* This 'else' block now handles PNGs, JPGs, etc. */}}
       <img sizes="(min-width: 992px) 25vw, 55vw"
       srcset='
       {{- range $sizes -}}
@@ -33,6 +33,10 @@
       {{- end -}}'
       src="{{- ($image.Resize "800x").Permalink -}}"
       class="lazyload {{$class}}"
-      alt="{{- $filename -}}">
+      alt="{{- $filename -}}"
+      {{- with $logo_style -}}  {{/* Now applies logo_style to PNGs/JPGs too */}}
+          style="{{. | safeCSS}}"
+      {{- end -}}
+      >
     {{- end -}}
 {{- end -}}
