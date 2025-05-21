@@ -238,8 +238,8 @@ page_sections:
     texture: texture_underwater
     title: '"Support this new wave of power generation!"'
   - component: partner-banner-component 
-  name: partner-banner-section      
-    bg_color: light-grey
+    name: partner-banner-section      
+    bg_color: baby-blue-eyes
   - bg_color: white
     bg_image: none
     buttons: []
