@@ -2,72 +2,6 @@
 {{- $content := .content -}}
 {{- $design := .design -}}
 
-{{/*
-    IMPORTANT: This <style> block is for demonstration.
-    For a production site, you should copy this CSS into your theme's
-    main stylesheet (e.g., assets/css/style.css) and remove it from here.
-*/}}
-<style>
-    /* --- Begin CSS for Poppy Logo Banner (from partial) --- */
-    .poppy-logo-banner-wrapper {
-        overflow: hidden;
-        width: 100vw; /* Ensures it spans the full viewport width */
-        margin-left: calc(50% - 50vw); /* Centers it and pushes it to the screen edges */
-        padding: 20px 0;
-        background-color: transparent;
-        box-shadow: none;
-    }
-
-    .poppy-logo-banner {
-        display: flex;
-        animation: scroll-poppy-left 12.8s linear infinite; /* Adjusted speed: 12.8 seconds per loop */
-        white-space: nowrap; /* Prevents logos from wrapping to the next line */
-        will-change: transform; /* Hints to the browser to optimize for transform animations */
-        transform-style: preserve-3d; /* Can sometimes help with smoother GPU rendering */
-    }
-
-    .poppy-logo-item {
-        flex-shrink: 0; /* Prevents logos from shrinking */
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 0 40px; /* Space between individual logos */
-        height: 200px; /* Uniform height for logo containers */
-    }
-
-    .poppy-logo-item img {
-        max-height: 100%;
-        max-width: 375px;
-        width: auto;
-        opacity: 1;
-        transition: transform .3s ease-in-out; /* Smooth transition for hover effects */
-    }
-
-    .poppy-logo-item img:hover {
-        transform: scale(1.5); /* Logos enlarge by 150% on hover */
-    }
-
-    /* Animation Keyframes */
-    @keyframes scroll-poppy-left {
-        0% {
-            transform: translateX(0%);
-        }
-        100% {
-            /* This is the crucial line for fixing the jump.
-               We're translating by 50% of the banner's width (one full set of logos)
-               PLUS a small viewport-width-based offset to hide the reset point.
-               You might still need to fine-tune '0.2vw' using browser inspect tools. */
-            transform: translateX(calc(-50% - 0.2vw));
-        }
-    }
-
-    /* Pause animation on hover */
-    .poppy-logo-banner-wrapper:hover .poppy-logo-banner {
-        animation-play-state: paused;
-    }
-    /* --- End CSS for Poppy Logo Banner (from partial) --- */
-</style>
-
 {{- with $design -}}
 <div class="{{.vertical_space}}">
     {{ if $content.title }}<h3 class="{{.title}}">{{ $content.title }}</h3>{{ end }}
@@ -107,9 +41,6 @@
     </div>
 </div>
 {{- end -}}
-
-
-
 
 
 
