@@ -81,7 +81,96 @@ page_sections:
     subtitle: wave energy
     texture: ''
     title: profitable
-    video: /waves.mp4  # Path to your video file 
+    video: /waves.mp4  # Path to your video file
+- bg_color: white
+    bg_image: none
+    buttons: []
+    component: image-cards
+    component_type: ''
+    count: ''
+    image: ''
+    item_bg_color: ''
+    items:
+      - bodytext: ''
+        buttons: []
+        icon: ''
+        icon_type: ''
+        image: logo_empty
+        link: ''
+        name: empty
+        title: ''
+      - bodytext: ''
+        buttons: []
+        icon: ''
+        icon_type: ''
+        image: logo_martens
+        link: https://martensgroep.eu/nl
+        name: martens
+        title: ''
+      - bodytext: ''
+        buttons: []
+        icon: ''
+        icon_type: ''
+        image: logo_empty
+        link: ''
+        name: empty
+        title: ''
+      - bodytext: ''
+        buttons: []
+        icon: ''
+        icon_type: ''
+        image: logo_dls
+        link: ''
+        name: dls
+        title: ''
+      - bodytext: ''
+        buttons: []
+        icon: ''
+        icon_type: ''
+        image: logo_dyneema
+        link: ''
+        name: dyneema
+        title: ''
+      - bodytext: ''
+        buttons: []
+        icon: ''
+        icon_type: ''
+        image: logo_dmec
+        link: ''
+        name: dmec
+        title: ''
+      - bodytext: ''
+        buttons: []
+        icon: ''
+        icon_type: ''
+        image: logo_marin
+        link: ''
+        name: marin
+        title: ''
+      - bodytext: ''
+        buttons: []
+        icon: ''
+        icon_type: ''
+        image: logo-with-payoff_bluespring
+        link: ''
+        name: bluespring
+        title: ''
+      - bodytext: ''
+        buttons: []
+        icon: ''
+        icon_type: ''
+        image: logo_batterylabs
+        link: ''
+        name: batterylabs
+        title: ''
+    list: ''
+    name: partnerslist
+    parallax: false
+    poppy_type: poppy-shortlist
+    poppy_variant: image-cards
+    subtitle: none
+    texture: ''
+    title: Partners
   - bg_color: orange
     bg_image: none
     buttons:
@@ -215,95 +304,6 @@ page_sections:
     subtitle: 'Become an investor, ambassador or teammember'
     texture: texture_underwater
     title: '"Support this new wave of power generation!"'
-  - bg_color: white
-    bg_image: none
-    buttons: []
-    component: image-cards
-    component_type: ''
-    count: ''
-    image: ''
-    item_bg_color: ''
-    items:
-      - bodytext: ''
-        buttons: []
-        icon: ''
-        icon_type: ''
-        image: logo_empty
-        link: ''
-        name: empty
-        title: ''
-      - bodytext: ''
-        buttons: []
-        icon: ''
-        icon_type: ''
-        image: logo_martens
-        link: https://martensgroep.eu/nl
-        name: martens
-        title: ''
-      - bodytext: ''
-        buttons: []
-        icon: ''
-        icon_type: ''
-        image: logo_empty
-        link: ''
-        name: empty
-        title: ''
-      - bodytext: ''
-        buttons: []
-        icon: ''
-        icon_type: ''
-        image: logo_dls
-        link: ''
-        name: dls
-        title: ''
-      - bodytext: ''
-        buttons: []
-        icon: ''
-        icon_type: ''
-        image: logo_dyneema
-        link: ''
-        name: dyneema
-        title: ''
-      - bodytext: ''
-        buttons: []
-        icon: ''
-        icon_type: ''
-        image: logo_dmec
-        link: ''
-        name: dmec
-        title: ''
-      - bodytext: ''
-        buttons: []
-        icon: ''
-        icon_type: ''
-        image: logo_marin
-        link: ''
-        name: marin
-        title: ''
-      - bodytext: ''
-        buttons: []
-        icon: ''
-        icon_type: ''
-        image: logo-with-payoff_bluespring
-        link: ''
-        name: bluespring
-        title: ''
-      - bodytext: ''
-        buttons: []
-        icon: ''
-        icon_type: ''
-        image: logo_batterylabs
-        link: ''
-        name: batterylabs
-        title: ''
-    list: ''
-    name: partnerslist
-    parallax: false
-    poppy_type: poppy-shortlist
-    poppy_variant: image-cards
-    subtitle: none
-    texture: ''
-    title: Partners
   - bg_color: ghost-white
     bg_image: ''
     buttons:
