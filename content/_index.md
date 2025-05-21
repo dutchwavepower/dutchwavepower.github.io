@@ -264,7 +264,7 @@ page_sections:
         icon: ''
         icon_type: ''
         image: logo_martens
-        link: ''
+        link: https://martensgroep.eu/nl
         name: martens
         title: ''
       - bodytext: ''
