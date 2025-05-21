@@ -1,11 +1,12 @@
 {{/* Usage:
-{{ partial "image" (dict "page" . "name" .Params.image "path" "images/" "scale" "w-100")  }}
+{{ partial "image" (dict "page" . "name" .Params.image "path" "images/" "class" "my-custom-class" "logo_style" "height: 50px;") }}
 */}}
 
 {{- $class := .class -}}
+{{- $logo_style := .logo_style -}} {# NEW: Capture the logo_style parameter #}
 {{- $sizes := (slice "480" "800" "1500") -}}
 {{- $image_path := printf "images/*%s*" .name -}}
-{{- if or (.resource_page.IsHome) (.resource_page.IsSection) -}}
+{{- if or (.resource_page.IsHome) (.resource_page.IsSection) (.resource_page.IsPage) -}} {# Updated: Added .IsPage for broader resource context #}
     {{- $image_path = printf "*%s*" .name -}}
 {{- end }}
 
@@ -19,7 +20,11 @@
     {{- if eq (path.Ext $filename) ".webp" -}}
           <img src="{{.RelPermalink}}" class="lazyload {{$class}}" alt="{{$filename}}">
     {{- else if eq (path.Ext $filename) ".svg" -}}
-          <img src="{{.RelPermalink}}" class="{{$class}}" alt="{{$filename}}">
+          <img src="{{.RelPermalink}}" class="{{$class}}" alt="{{$filename}}"
+              {{- with $logo_style -}}
+                  style="{{.}}" {# This applies the inline style from your front matter #}
+              {{- end -}}
+          >
     {{- else -}}
       <img sizes="(min-width: 992px) 25vw, 55vw"
       srcset='
@@ -31,7 +36,6 @@
       alt="{{- $filename -}}">
   {{- end -}}
 {{- end -}}
-
 
 
 
