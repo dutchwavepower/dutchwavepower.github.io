@@ -19,7 +19,7 @@
 
     .poppy-logo-banner {
         display: flex;
-        animation: scroll-poppy-left 3.2s linear infinite; /* Speed: 3.2s */
+        animation: scroll-poppy-left 6.4s linear infinite; /* Speed reduced: 3.2s * 2 = 6.4s */
         white-space: nowrap;
         will-change: transform;
         /* Adding transform-style can sometimes help with smoother GPU rendering */
@@ -53,9 +53,9 @@
             transform: translateX(0%);
         }
         100% {
-            /* Modified offset to be a very small percentage of viewport width.
-               This often handles scaling and sub-pixel issues better than fixed pixels. */
-            transform: translateX(calc(-50% - 0.1vw));
+            /* New offset attempt: Using a slightly larger pixel value.
+               This is the key area for fixing the "restarting" jump. */
+            transform: translateX(calc(-50% - 20px));
         }
     }
 
