@@ -1,18 +1,31 @@
 {{/* USE THIS TO BUNDLE YOUR JS files if you have any */}}
 
-{{ $script := resources.Get "js/script.js" }} {# Assuming a main script.js exists, if not, you can remove this line #}
-{{ $js_bundle := (slice $script) }}
+{{ $js_files := slice }} {{/* Initialize an empty slice */}}
 
-{{/* ADD YOUR poppy-banner.js HERE */}}
-{{ $js_bundle = $js_bundle | append (resources.Get "js/poppy-banner.js") }}
+{{/* Conditionally add main.js if it exists */}}
+{{- with resources.Get "js/main.js" -}}
+    {{ $js_files = $js_files | append . }}
+{{- end -}}
 
-{{ $js_bundle = $js_bundle | resources.Concat "js/poppygo-one.js" | minify | fingerprint "md5" }}
-<script src="{{ $js_bundle.RelPermalink }}" integrity="{{ $js_bundle.Data.Integrity }}" defer></script> {# Added defer attribute for better performance #}
+{{/* Conditionally add script.js if it exists */}}
+{{- with resources.Get "js/script.js" -}}
+    {{ $js_files = $js_files | append . }}
+{{- end -}}
+
+{{/* Add your poppy-banner.js if it exists */}}
+{{- with resources.Get "js/poppy-banner.js" -}}
+    {{ $js_files = $js_files | append . }}
+{{- end -}}
+
+{{/* Only attempt to bundle if there are files in the slice */}}
+{{- if gt (len $js_files) 0 -}}
+    {{ $js_bundle := $js_files | js.Build | minify | fingerprint "md5" }}
+    <script src="{{ $js_bundle.RelPermalink }}" integrity="{{ $js_bundle.Data.Integrity }}" defer></script>
+{{- end -}}
 
 {{- if not .Site.IsServer -}}
     <script async defer data-website-id="{{ .Site.Params.umami.siteID }}" src="{{ .Site.Params.umami.trackerScript }}"></script>
 {{- end -}}
-
 
 
 
