@@ -117,6 +117,7 @@ page_sections:
         link: ''
         name: Interregvlaned_project_rgb_pos
         title: ''
+        logo_style: "height: 100px;" 
       - bodytext: ''
         buttons: []
         icon: ''
@@ -134,6 +135,7 @@ page_sections:
         link: ''
         name: dmec
         title: ''
+        logo_style: "height: 100px;" 
       - bodytext: ''
         buttons: []
         icon: ''
@@ -142,6 +144,7 @@ page_sections:
         link: ''
         name: marin
         title: ''
+        logo_style: "height: 100px;" 
       - bodytext: ''
         buttons: []
         icon: ''
@@ -150,6 +153,7 @@ page_sections:
         link: ''
         name: dls
         title: ''
+        logo_style: "height: 100px;" 
       - bodytext: ''
         buttons: []
         icon: ''
@@ -158,6 +162,7 @@ page_sections:
         link: ''
         name: bluespring
         title: ''
+        logo_style: "height: 100px;" 
       - bodytext: ''
         buttons: []
         icon: ''
@@ -166,6 +171,7 @@ page_sections:
         link: ''
         name: batterylabs
         title: ''
+        logo_style: "height: 100px;" 
     list: ''
     name: partnerslist
     parallax: false
