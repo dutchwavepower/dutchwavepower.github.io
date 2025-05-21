@@ -237,9 +237,11 @@ page_sections:
     subtitle: 'Become an investor, ambassador or teammember'
     texture: texture_underwater
     title: '"Support this new wave of power generation!"'
-  - component: partner-logo-banner 
-    name: partner-banner      
+  - component: partner-logo-banner # You can keep this, but it's not used for the path
+    name: partner-banner
     bg_color: baby-blue-eyes
+    poppy_type: poppy-banner # This is the key: it's the subfolder name
+    poppy_variant: partner-logo-banner # This is the filename
   - bg_color: white
     bg_image: none
     buttons: []
