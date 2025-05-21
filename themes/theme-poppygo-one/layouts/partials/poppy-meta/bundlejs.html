@@ -19,13 +19,18 @@
 
 {{/* Only attempt to bundle if there are files in the slice */}}
 {{- if gt (len $js_files) 0 -}}
-    {{ $js_bundle := $js_files | js.Build | minify | fingerprint "md5" }}
-    <script src="{{ $js_bundle.RelPermalink }}" integrity="{{ $js_bundle.Data.Integrity }}" defer></script>
+    {{/* Use resources.Get "js/poppygo-one.js" if it's meant to be a base,
+         otherwise simply bundle the collected files. */}}
+    {{/* If 'poppygo-one.js' is just the output name, you can specify it in js.Build as target path. */}}
+
+    {{ $bundle := $js_files | js.Build (dict "targetPath" "js/poppygo-one.js") | minify | fingerprint "md5" }}
+    <script src="{{ $bundle.RelPermalink }}" integrity="{{ $bundle.Data.Integrity }}" defer></script>
 {{- end -}}
 
 {{- if not .Site.IsServer -}}
     <script async defer data-website-id="{{ .Site.Params.umami.siteID }}" src="{{ .Site.Params.umami.trackerScript }}"></script>
 {{- end -}}
+
 
 
 
