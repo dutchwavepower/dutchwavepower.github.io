@@ -112799,10 +112799,13 @@ svg {
         transform: translateX(0%);
     }
     100% {
-        /* Use the dynamically calculated value from JavaScript */
-        transform: translateX(var(--poppy-translate-x));
-        /* If a *very* tiny flicker still occurs, you can try adding a tiny static offset like this: */
-        /* transform: translateX(calc(var(--poppy-translate-x) - 0.1px)); */
+        /* Add this 'calc' and the tiny offset */
+        transform: translateX(calc(var(--poppy-translate-x) - 0.1px));
+        /*
+           Experiment with the offset value using browser dev tools:
+           - Try -0.1px, -0.2px, -0.5px (pixels are often more precise for this)
+           - If it jumps the other way, try +0.1px etc.
+        */
     }
 }
 
