@@ -82,7 +82,7 @@ page_sections:
     texture: ''
     title: profitable
     video: /waves.mp4  # Path to your video file
-- bg_color: white
+  - bg_color: white
     bg_image: none
     buttons: []
     component: image-cards
