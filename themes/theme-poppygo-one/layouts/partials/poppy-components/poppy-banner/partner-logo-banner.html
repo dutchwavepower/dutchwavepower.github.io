@@ -4,10 +4,22 @@
         <div class="partner-logo-item">
             {{ if .url }}
             <a href="{{ .url | safeURL }}" target="_blank" rel="noopener">
-                <img src="{{ .logo | relURL }}" alt="{{ .alt }}" loading="lazy">
+                {{ $partnerImage := $.Page.Resources.GetMatch .logo }}
+                {{ if $partnerImage }}
+                <img src="{{ $partnerImage.RelPermalink }}" alt="{{ .alt }}" loading="lazy">
+                {{ else }}
+                <p style="color: red; background-color: yellow; padding: 5px;">DEBUG: Image resource '{{ .logo }}' not found for partner '{{ .name }}'.</p>
+                <img src="/images/placeholder.png" alt="Placeholder for {{ .alt }}" style="width: 50px; height: 50px; border: 1px solid red;">
+                {{ end }}
             </a>
             {{ else }}
-            <img src="{{ .logo | relURL }}" alt="{{ .alt }}" loading="lazy">
+                {{ $partnerImage := $.Page.Resources.GetMatch .logo }}
+                {{ if $partnerImage }}
+                <img src="{{ $partnerImage.RelPermalink }}" alt="{{ .alt }}" loading="lazy">
+                {{ else }}
+                <p style="color: red; background-color: yellow; padding: 5px;">DEBUG: Image resource '{{ .logo }}' not found for partner '{{ .name }}'.</p>
+                <img src="/images/placeholder.png" alt="Placeholder for {{ .alt }}" style="width: 50px; height: 50px; border: 1px solid red;">
+                {{ end }}
             {{ end }}
         </div>
         {{ end }}
@@ -17,13 +29,22 @@
         <div class="partner-logo-item" aria-hidden="true">
             {{ if .url }}
             <a href="{{ .url | safeURL }}" target="_blank" rel="noopener">
-                <img src="{{ .logo | relURL }}" alt="{{ .alt }}" loading="lazy">
+                {{ $partnerImage := $.Page.Resources.GetMatch .logo }}
+                {{ if $partnerImage }}
+                <img src="{{ $partnerImage.RelPermalink }}" alt="{{ .alt }}" loading="lazy">
+                {{ else }}
+                {{/* No need for debug here, it's just a duplicate */}}
+                {{ end }}
             </a>
             {{ else }}
-            <img src="{{ .logo | relURL }}" alt="{{ .alt }}" loading="lazy">
+                {{ $partnerImage := $.Page.Resources.GetMatch .logo }}
+                {{ if $partnerImage }}
+                <img src="{{ $partnerImage.RelPermalink }}" alt="{{ .alt }}" loading="lazy">
+                {{ else }}
+                {{/* No need for debug here, it's just a duplicate */}}
+                {{ end }}
             {{ end }}
         </div>
         {{ end }}
     </div>
 </div>
-
