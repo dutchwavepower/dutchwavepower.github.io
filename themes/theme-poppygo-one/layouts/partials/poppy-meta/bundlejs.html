@@ -31,7 +31,7 @@
     {{ $js_bundle := $js_files | resources.Concat "js/poppygo-one.js" }}
 
     {{/* Minify and fingerprint the concatenated bundle */}}
-    {{ $final_bundle := $js_bundle | minify | fingerprint "md5" }}
+    {{ $final_bundle := $js_bundle | minify | fingerprint "sha256" }}
 
     <script src="{{ $final_bundle.RelPermalink }}" integrity="{{ $final_bundle.Data.Integrity }}" defer></script>
 {{- else -}}
