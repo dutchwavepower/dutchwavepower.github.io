@@ -10,15 +10,16 @@
 <style>
     .poppy-logo-banner-wrapper {
         overflow: hidden;
-        width: 100%;
+        width: 100vw; /* Make it full viewport width */
+        margin-left: calc(50% - 50vw); /* Shift left to align with viewport edge, breaking out of parent container */
         padding: 20px 0;
-        background-color: transparent; /* Changed to transparent */
-        box-shadow: none; /* Removed box-shadow for an 'empty' background */
+        background-color: transparent; /* Transparent background */
+        box-shadow: none; /* No shadow */
     }
 
     .poppy-logo-banner {
         display: flex;
-        animation: scroll-poppy-left 16s linear infinite; /* Speed: 16s */
+        animation: scroll-poppy-left 6.4s linear infinite; /* Speed increased again: 16s / 2.5 = 6.4s */
         white-space: nowrap;
         will-change: transform;
     }
@@ -28,7 +29,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        padding: 0 40px;
+        padding: 0 40px; /* Space between logos */
         height: 200px; /* Logo container height */
     }
 
@@ -37,11 +38,11 @@
         max-width: 375px;
         width: auto;
         opacity: 1;
-        transition: transform 0.3s ease-in-out; /* Only transition transform for efficiency */
+        transition: transform 0.3s ease-in-out; /* Smooth transition for hover effects */
     }
 
     .poppy-logo-item img:hover {
-        transform: scale(1.5);
+        transform: scale(1.5); /* Hovering increases size by 150% */
     }
 
     /* Animation Keyframes */
@@ -50,8 +51,9 @@
             transform: translateX(0%);
         }
         100% {
-            /* Adjusted slightly for smoother looping. Using calc with vw for potentially better sub-pixel handling. */
-            transform: translateX(calc(-50% - 0.05vw));
+            /* Adjusted with a small pixel offset to help mask the loop restart/jump.
+               You might need to fine-tune '5px' based on your browser and content. */
+            transform: translateX(calc(-50% - 5px));
         }
     }
 
@@ -68,7 +70,6 @@
 
     <div class="poppy-logo-banner-wrapper">
         <div class="poppy-logo-banner">
-            {{/* First set of logos */}}
             {{- range $item := $content.items -}}
                 {{ if and $item.image (not (eq $item.image "none")) -}}
                     <div class="poppy-logo-item">
@@ -83,7 +84,6 @@
                 {{- end -}}
             {{- end -}}
 
-            {{/* Duplicate set of logos for seamless looping */}}
             {{- range $item := $content.items -}}
                 {{ if and $item.image (not (eq $item.image "none")) -}}
                     <div class="poppy-logo-item" aria-hidden="true">
@@ -101,8 +101,6 @@
     </div>
 </div>
 {{- end -}}
-
-
 
 
 
