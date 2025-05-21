@@ -193,28 +193,6 @@ page_sections:
     subtitle: none
     texture: texture_underwater
     title: Design Philosophy
-  - bg_color: ghost-white
-    bg_image: ''
-    buttons:
-      - icon: ''
-        icon_type: ''
-        label: Contact
-        link: /pages/contact/
-        type: ''
-    component: list-articles-standard
-    component_type: ''
-    count: ''
-    image: ''
-    item_bg_color: transparent
-    items: []
-    list: news
-    name: news
-    parallax: false
-    poppy_type: poppy-listing
-    poppy_variant: news-list
-    subtitle: none
-    texture: ''
-    title: News
   - bg_color: baby-blue-eyes
     bg_image: none
     buttons:
@@ -237,11 +215,6 @@ page_sections:
     subtitle: 'Become an investor, ambassador or teammember'
     texture: texture_underwater
     title: '"Support this new wave of power generation!"'
-  - component: partner-logo-banner # You can keep this, but it's not used for the path
-    name: partner-banner
-    bg_color: baby-blue-eyes
-    poppy_type: poppy-banner # This is the key: it's the subfolder name
-    poppy_variant: partner-logo-banner # This is the filename
   - bg_color: white
     bg_image: none
     buttons: []
@@ -331,6 +304,28 @@ page_sections:
     subtitle: none
     texture: ''
     title: Partners
+  - bg_color: ghost-white
+    bg_image: ''
+    buttons:
+      - icon: ''
+        icon_type: ''
+        label: Contact
+        link: /pages/contact/
+        type: ''
+    component: list-articles-standard
+    component_type: ''
+    count: ''
+    image: ''
+    item_bg_color: transparent
+    items: []
+    list: news
+    name: news
+    parallax: false
+    poppy_type: poppy-listing
+    poppy_variant: news-list
+    subtitle: none
+    texture: ''
+    title: News
   - bg_color: ''
     bg_image: ''
     buttons: []
