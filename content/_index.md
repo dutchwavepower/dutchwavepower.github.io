@@ -108,7 +108,7 @@ page_sections:
         link: ''
         name: batterylabs
         title: ''
-        logo_style: "height: 100px;"
+        logo_style: "height: 80px;"
       - bodytext: ''
         buttons: []
         icon: ''
@@ -117,7 +117,7 @@ page_sections:
         link: https://rometal.nl
         name: rometal
         title: ''
-        logo_style: "height: 100px;" 
+        logo_style: "height: 80px;" 
       - bodytext: ''
         buttons: []
         icon: ''
@@ -135,7 +135,7 @@ page_sections:
         link: ''
         name: doIoTLogo
         title: ''
-        logo_style: "height: 100px;" 
+        logo_style: "height: 80px;" 
       - bodytext: ''
         buttons: []
         icon: ''
@@ -144,7 +144,7 @@ page_sections:
         link: ''
         name: dmec
         title: ''
-        logo_style: "height: 100px;" 
+        logo_style: "height: 150px;" 
       - bodytext: ''
         buttons: []
         icon: ''
@@ -153,7 +153,7 @@ page_sections:
         link: ''
         name: marin
         title: ''
-        logo_style: "height: 100px;" 
+        logo_style: "height: 150px;" 
       - bodytext: ''
         buttons: []
         icon: ''
@@ -162,7 +162,7 @@ page_sections:
         link: ''
         name: dls
         title: ''
-        logo_style: "height: 100px;" 
+        logo_style: "height: 150px;" 
       - bodytext: ''
         buttons: []
         icon: ''
@@ -180,7 +180,7 @@ page_sections:
         link: ''
         name: batterylabs
         title: ''
-        logo_style: "height: 100px;" 
+        logo_style: "height: 150px;" 
     list: ''
     name: partnerslist
     parallax: false
