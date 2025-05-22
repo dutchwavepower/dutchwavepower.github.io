@@ -216,7 +216,7 @@ page_sections:
         link: ''
         name: MARIN
         title: https://marin.nl/
-        logo_style: "height: 150px;" 
+        logo_style: "height: 80px;" 
       - bodytext: ''
         buttons: []
         icon: ''
