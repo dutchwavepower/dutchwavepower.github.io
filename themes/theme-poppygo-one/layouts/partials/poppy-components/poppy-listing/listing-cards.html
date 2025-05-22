@@ -2,22 +2,7 @@
 {{- $content := .content -}}
 {{- $design := .design -}}
 
-{{- $dynamic_limit := 1000 -}} {{/* Default if no specific limit is passed */}}
-
-{{- if (isset $content "items") -}}
-    {{- if (reflect.IsSlice $content.items) -}}
-        {{- if gt (len $content.items) 0 -}}
-            {{- $val := (index $content.items 0) -}}
-            {{- if (eq (printf "%T" $val) "int") -}} {{/* Ensure the retrieved value is an integer */}}
-                {{- $dynamic_limit = $val -}}
-            {{- end -}}
-        {{- end -}}
-    {{- end -}}
-{{- end -}}
-
-
-{{- $items := partial "poppy-engine/sortedItems" (dict "list" $content.list "count" $dynamic_limit) -}} {{/* PASSING COUNT HERE */}}
-
+{{- $items := partial "poppy-engine/sortedItems" (dict "list" $content.list "count" $content.count) -}} {{/* PASSING .content.count DIRECTLY */}}
 
 {{- $amount := 0 -}}
 {{ if $items }}
