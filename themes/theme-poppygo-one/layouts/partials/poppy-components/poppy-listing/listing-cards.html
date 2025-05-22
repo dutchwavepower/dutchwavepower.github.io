@@ -1,11 +1,15 @@
-{{- $ctx := . -}}
-{{- $component_content := $ctx.content -}}
+{{- $page := .page -}}
+{{- $content := .content -}}
+{{- $design := .design -}}
+
+{{- $items := partial "poppy-engine/sortedItems" (dict "list" $content.list ) -}}
+
 {{- $limit := 5 -}} {{/* Default limit to 5 if not specified or invalid */}}
 
-{{- if (isset $component_content "items") -}}
-    {{- if (reflect.IsSlice $component_content.items) -}}
-        {{- if gt (len $component_content.items) 0 -}}
-            {{- $retrieved_limit := (index $component_content.items 0) -}}
+{{- if (isset $content "items") -}}
+    {{- if (reflect.IsSlice $content.items) -}}
+        {{- if gt (len $content.items) 0 -}}
+            {{- $retrieved_limit := (index $content.items 0) -}}
             {{- if (eq (printf "%T" $retrieved_limit) "int") -}} {{/* Ensure the retrieved value is an integer */}}
                 {{- $limit = $retrieved_limit -}}
             {{- end -}}
@@ -13,22 +17,53 @@
     {{- end -}}
 {{- end -}}
 
-{{- if (isset $component_content "list") -}}
-    {{- with .Site.GetPage $component_content.list -}} {{/* This gets the "news" section page (or whatever .list is) */}}
-        {{- $allArticles := .Pages.ByPublishDate.Reverse -}} {{/* Get all pages in this section, sorted by latest publish date */}}
+{{- $amount := 0 -}}
+{{ if $items }}
+    {{- $amount = len (first $limit $items) -}} {{/* Calculate amount based on limited items */}}
+{{ end }}
 
-        {{- if $allArticles -}}
-            <div class="poppy-listing poppy-listing-{{ $component_content.poppy_variant }}">
-                {{- range first $limit $allArticles -}} {{/* LIMIT APPLIED HERE: Only loop through the first $limit articles */}}
-                    {{/* This is where your theme likely calls a sub-partial to render each news item summary */}}
-                    {{/* YOU MIGHT NEED TO ADJUST THE PARTIAL NAME BELOW TO MATCH YOUR THEME */}}
-                    {{- partial "poppy-listing/post-summary.html" . -}}
-                    {{/* If the above doesn't work, try other names like "news-summary.html", "article-summary.html", or "listing-item.html" */}}
-                {{- end -}}
+{{- with $design -}}
+<div class="{{.vertical_space}} ">
+  <h3 class=" {{.title }}">{{ $content.title }}</h3>
+  <p class=" {{.subtitle}}">{{ $content.subtitle }}</p>
+  <div class=" grid grid-flow-row-dense grid-cols-12 {{.gridgap}}">
+      {{- range $index, $item := first $limit $items -}} {{/* LIMIT APPLIED HERE */}}
+
+          {{- $span := partial "poppy-elements/standard-columns" (dict "amount" $amount "index" $index) -}}
+
+          <a href="{{.RelPermalink }}" class="{{$span}} flex flex-col w-full h-full overflow-hidden {{ $design.rounded }} {{$design.shadow}} {{$design.border}} {{$content.item_bg_color}}">
+            <div>
+              {{- partial "poppy-elements/image" (dict "resource_page" . "name" .Params.image "class" "w-full h-60 object-cover") -}}
             </div>
-        {{- end -}}
-    {{- end -}}
+
+              <div class="flex flex-col p-4 h-full">
+
+                {{- with .Params.icon -}}
+                  {{- if not (eq . "none") -}}
+                    <div class="relative w-8 md:w-12 {{$design.itemtitle}} py-0 -mt-1 md:-mt-2 mr-5">
+                      {{- partial "poppy-elements/icon" (dict "icon" . "icontype" "outline" ) -}}
+                    </div>
+                  {{- end -}}
+                {{- end -}}
+
+                <div class="flex flex-col h-full">
+                  <div class = "{{$design.itemtitle}}" >{{.Title}}</div>
+                  <div class=" prose mx-auto {{$design.rounded}} {{$design.itembody}} flex-1">{{.Params.bodytext | markdownify }}</div>
+                  <div class="{{$design.itembody}}">
+                      {{- partial "poppy-elements/buttons" (dict "design" $design "buttons" .Params.buttons ) -}}
+                  </div>
+                </div>
+              </div>
+          </a>
+
+      {{- end -}}
+  </div>
+</div>
 {{- end -}}
+
+
+
+
 
 
 
@@ -82,4 +117,5 @@
       {{- end -}}
   </div>
 </div>
-{{- end -}} -->
+{{- end -}}
+ -->
