@@ -312,7 +312,7 @@ page_sections:
         buttons: []
         icon: ''
         icon_type: ''
-        image: Dutch_Wave_Power_Animation_Vertical_1080_1920p
+        image: efficient
         link: technology
         name: Tension Leg Platform Technology
         title: ''
