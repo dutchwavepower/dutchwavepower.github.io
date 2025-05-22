@@ -162,7 +162,7 @@ page_sections:
         link: https://www.campusatsea.nl/
         name: Campus@Sea
         title: ''
-        logo_style: "height: 100px;" 
+        logo_style: "height: 50px;" 
       - bodytext: ''
         buttons: []
         icon: ''
