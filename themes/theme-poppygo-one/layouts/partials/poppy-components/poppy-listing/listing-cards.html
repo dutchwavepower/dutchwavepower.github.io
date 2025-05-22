@@ -1,4 +1,39 @@
-{{- $page := .page -}}
+{{- $ctx := . -}}
+{{- $component_content := $ctx.content -}}
+{{- $limit := 5 -}} {{/* Default limit to 5 if not specified or invalid */}}
+
+{{- if (isset $component_content "items") -}}
+    {{- if (reflect.IsSlice $component_content.items) -}}
+        {{- if gt (len $component_content.items) 0 -}}
+            {{- $retrieved_limit := (index $component_content.items 0) -}}
+            {{- if (eq (printf "%T" $retrieved_limit) "int") -}} {{/* Ensure the retrieved value is an integer */}}
+                {{- $limit = $retrieved_limit -}}
+            {{- end -}}
+        {{- end -}}
+    {{- end -}}
+{{- end -}}
+
+{{- if (isset $component_content "list") -}}
+    {{- with .Site.GetPage $component_content.list -}} {{/* This gets the "news" section page (or whatever .list is) */}}
+        {{- $allArticles := .Pages.ByPublishDate.Reverse -}} {{/* Get all pages in this section, sorted by latest publish date */}}
+
+        {{- if $allArticles -}}
+            <div class="poppy-listing poppy-listing-{{ $component_content.poppy_variant }}">
+                {{- range first $limit $allArticles -}} {{/* LIMIT APPLIED HERE: Only loop through the first $limit articles */}}
+                    {{/* This is where your theme likely calls a sub-partial to render each news item summary */}}
+                    {{/* YOU MIGHT NEED TO ADJUST THE PARTIAL NAME BELOW TO MATCH YOUR THEME */}}
+                    {{- partial "poppy-listing/post-summary.html" . -}}
+                    {{/* If the above doesn't work, try other names like "news-summary.html", "article-summary.html", or "listing-item.html" */}}
+                {{- end -}}
+            </div>
+        {{- end -}}
+    {{- end -}}
+{{- end -}}
+
+
+
+
+<!-- {{- $page := .page -}}
 {{- $content := .content -}}
 {{- $design := .design -}}
 
@@ -47,4 +82,4 @@
       {{- end -}}
   </div>
 </div>
-{{- end -}}
+{{- end -}} -->
