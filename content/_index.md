@@ -99,7 +99,7 @@ page_sections:
         link: https://martensgroep.eu/nl
         name: Martens
         title: ''
-        logo_style: "height: 200px;"
+        logo_style: "height: 250px;"
       - bodytext: ''
         buttons: []
         icon: ''
@@ -108,7 +108,7 @@ page_sections:
         link: https://waddenfonds.nl
         name: Waddenfonds
         title: ''
-        logo_style: "height: 60px;"
+        logo_style: "height: 80px;"
       - bodytext: ''
         buttons: []
         icon: ''
@@ -144,7 +144,7 @@ page_sections:
         link: https://www.zuid-holland.nl
         name: Zuid-Holland
         title: ''
-        logo_style: "height: 100px;"
+        logo_style: "height: 80px;"
       - bodytext: ''
         buttons: []
         icon: ''
@@ -198,7 +198,7 @@ page_sections:
         link: ''
         name: DMEC
         title: ''
-        logo_style: "height: 60px;"
+        logo_style: "height: 40px;"
       - bodytext: ''
         buttons: []
         icon: ''
@@ -243,7 +243,7 @@ page_sections:
         link: https://batterylabs.nl
         name: BatteryLabs
         title: ''
-        logo_style: "height: 80px;" 
+        logo_style: "height: 50px;" 
     list: ''
     name: partnerslist
     parallax: false
