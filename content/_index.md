@@ -312,9 +312,9 @@ page_sections:
         buttons: []
         icon: ''
         icon_type: ''
-        image: efficient
+        image: Dutch_Wave_Power_Animation_Vertical_1080_1920p
         link: technology
-        name: efficient
+        name: Tension Leg Platform Technology
         title: ''
       - bodytext: |
           - all sensitive parts inside
@@ -329,13 +329,13 @@ page_sections:
         name: robust
         title: ''
     list: ''
-    name: design-philosophy
+    name: how-do-we-do-it
     parallax: false
     poppy_type: poppy-shortlist
     poppy_variant: cards-standard
     subtitle: none
     texture: texture_underwater
-    title: Design Philosophy
+    title: How do we do it?
   - bg_color: charcoal
     bg_image: none
     bodytext: |-
