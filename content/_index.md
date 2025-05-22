@@ -395,7 +395,7 @@ page_sections:
         type: ''
     component: list-articles-standard
     component_type: ''
-    count: ''
+    count: 5
     image: ''
     item_bg_color: transparent
     items: []
