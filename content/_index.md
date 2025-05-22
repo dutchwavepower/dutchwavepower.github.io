@@ -398,7 +398,7 @@ page_sections:
     count: ''
     image: ''
     item_bg_color: transparent
-    items: []
+    items: [5]
     list: news
     name: news
     parallax: false
