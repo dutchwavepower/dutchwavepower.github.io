@@ -395,7 +395,7 @@ page_sections:
         type: ''
     component: list-articles-standard
     component_type: ''
-    count: 5
+    count: 3
     image: ''
     item_bg_color: transparent
     items: []
@@ -406,7 +406,7 @@ page_sections:
     poppy_variant: news-list
     subtitle: none
     texture: ''
-    title: News
+    title: Latest news items
   - bg_color: ''
     bg_image: ''
     buttons: []
