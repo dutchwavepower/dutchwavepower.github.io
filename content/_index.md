@@ -198,7 +198,7 @@ page_sections:
         link: ''
         name: DMEC
         title: ''
-        logo_style: "height: 150px;"
+        logo_style: "height: 80px;"
       - bodytext: ''
         buttons: []
         icon: ''
@@ -216,7 +216,7 @@ page_sections:
         link: ''
         name: MARIN
         title: https://marin.nl/
-        logo_style: "height: 80px;" 
+        logo_style: "height: 70px;" 
       - bodytext: ''
         buttons: []
         icon: ''
@@ -225,7 +225,7 @@ page_sections:
         link: https://www.dlsbv.nl/
         name: DLS
         title: ''
-        logo_style: "height: 160px;" 
+        logo_style: "height: 120px;" 
       - bodytext: ''
         buttons: []
         icon: ''
