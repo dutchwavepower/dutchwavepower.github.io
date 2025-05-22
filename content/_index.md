@@ -158,6 +158,15 @@ page_sections:
         buttons: []
         icon: ''
         icon_type: ''
+        image: logo_van_melsen_engineering
+        link: ''
+        name: Van_Melsen_engineering
+        title: https://vanmelsenengineering.nl/
+        logo_style: "height: 120px;" 
+      - bodytext: ''
+        buttons: []
+        icon: ''
+        icon_type: ''
         image: logo_campus_at_sea
         link: https://www.campusatsea.nl/
         name: Campus@Sea
