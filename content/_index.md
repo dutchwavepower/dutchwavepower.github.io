@@ -149,7 +149,7 @@ page_sections:
         buttons: []
         icon: ''
         icon_type: ''
-        image: logo_den_haag
+        image: logo_gemeente_den_haag
         link: https://www.denhaag.nl/
         name: Den Haag
         title: ''
@@ -171,7 +171,7 @@ page_sections:
         link: ''
         name: Van_Melsen_engineering
         title: https://vanmelsenengineering.nl/
-        logo_style: "height: 120px;" 
+        logo_style: "height: 80px;" 
       - bodytext: ''
         buttons: []
         icon: ''
@@ -225,7 +225,7 @@ page_sections:
         link: https://www.dlsbv.nl/
         name: DLS
         title: ''
-        logo_style: "height: 120px;" 
+        logo_style: "height: 80px;" 
       - bodytext: ''
         buttons: []
         icon: ''
@@ -234,7 +234,7 @@ page_sections:
         link: ''
         name: Bluespring
         title: https://www.bluespring.blue/
-        logo_style: "height: 70px;" 
+        logo_style: "height: 80px;" 
       - bodytext: ''
         buttons: []
         icon: ''
