@@ -243,7 +243,7 @@ page_sections:
         link: https://batterylabs.nl
         name: BatteryLabs
         title: ''
-        logo_style: "height: 180px;" 
+        logo_style: "height: 120px;" 
     list: ''
     name: partnerslist
     parallax: false
