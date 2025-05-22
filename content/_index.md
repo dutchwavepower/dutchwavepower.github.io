@@ -158,6 +158,15 @@ page_sections:
         buttons: []
         icon: ''
         icon_type: ''
+        image: logo_hillebrand
+        link: https://hillebrandbv.nl/
+        name: Hillebrand
+        title: ''
+        logo_style: "height: 80px;" 
+      - bodytext: ''
+        buttons: []
+        icon: ''
+        icon_type: ''
         image: logo_van_melsen_engineering
         link: ''
         name: Van_Melsen_engineering
@@ -189,7 +198,16 @@ page_sections:
         link: ''
         name: DMEC
         title: ''
-        logo_style: "height: 150px;" 
+        logo_style: "height: 150px;"
+      - bodytext: ''
+        buttons: []
+        icon: ''
+        icon_type: ''
+        image: logo_proetuin_op_de_noordzee
+        link: ''
+        name: Proeftuin_op_de_Noordzee
+        title: ''
+        logo_style: "height: 120px;" 
       - bodytext: ''
         buttons: []
         icon: ''
