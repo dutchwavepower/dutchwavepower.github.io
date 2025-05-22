@@ -2,24 +2,26 @@
 {{- $content := .content -}}
 {{- $design := .design -}}
 
-{{- $items := partial "poppy-engine/sortedItems" (dict "list" $content.list ) -}}
-
-{{- $limit := 5 -}} {{/* Default limit to 5 if not specified or invalid */}}
+{{- $dynamic_limit := 1000 -}} {{/* Default if no specific limit is passed */}}
 
 {{- if (isset $content "items") -}}
     {{- if (reflect.IsSlice $content.items) -}}
         {{- if gt (len $content.items) 0 -}}
-            {{- $retrieved_limit := (index $content.items 0) -}}
-            {{- if (eq (printf "%T" $retrieved_limit) "int") -}} {{/* Ensure the retrieved value is an integer */}}
-                {{- $limit = $retrieved_limit -}}
+            {{- $val := (index $content.items 0) -}}
+            {{- if (eq (printf "%T" $val) "int") -}} {{/* Ensure the retrieved value is an integer */}}
+                {{- $dynamic_limit = $val -}}
             {{- end -}}
         {{- end -}}
     {{- end -}}
 {{- end -}}
 
+
+{{- $items := partial "poppy-engine/sortedItems" (dict "list" $content.list "count" $dynamic_limit) -}} {{/* PASSING COUNT HERE */}}
+
+
 {{- $amount := 0 -}}
 {{ if $items }}
-    {{- $amount = len (first $limit $items) -}} {{/* Calculate amount based on limited items */}}
+    {{- $amount = len $items -}} {{/* $items is already limited by sortedItems.html */}}
 {{ end }}
 
 {{- with $design -}}
@@ -27,7 +29,7 @@
   <h3 class=" {{.title }}">{{ $content.title }}</h3>
   <p class=" {{.subtitle}}">{{ $content.subtitle }}</p>
   <div class=" grid grid-flow-row-dense grid-cols-12 {{.gridgap}}">
-      {{- range $index, $item := first $limit $items -}} {{/* LIMIT APPLIED HERE */}}
+      {{- range $index, $item := $items -}} {{/* NO 'first $limit' HERE, as it's done in sortedItems.html */}}
 
           {{- $span := partial "poppy-elements/standard-columns" (dict "amount" $amount "index" $index) -}}
 
