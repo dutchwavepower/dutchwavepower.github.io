@@ -99,7 +99,7 @@ page_sections:
         link: https://martensgroep.eu/nl
         name: Martens
         title: ''
-        logo_style: "height: 300px;"
+        logo_style: "height: 400px;"
       - bodytext: ''
         buttons: []
         icon: ''
@@ -168,9 +168,9 @@ page_sections:
         icon: ''
         icon_type: ''
         image: logo_van_melsen_engineering
-        link: ''
+        link: https://vanmelsenengineering.nl
         name: Van_Melsen_engineering
-        title: https://vanmelsenengineering.nl/
+        title: ''
         logo_style: "height: 80px;" 
       - bodytext: ''
         buttons: []
@@ -195,7 +195,7 @@ page_sections:
         icon: ''
         icon_type: ''
         image: logo_dmec
-        link: ''
+        link: https://www.dutchmarineenergy.com
         name: DMEC
         title: ''
         logo_style: "height: 40px;"
@@ -204,7 +204,7 @@ page_sections:
         icon: ''
         icon_type: ''
         image: logo_proeftuin_op_de_noordzee
-        link: ''
+        link: https://proeftuinopdenoordzee.nl
         name: Proeftuin_op_de_Noordzee
         title: ''
         logo_style: "height: 80px;" 
@@ -213,9 +213,9 @@ page_sections:
         icon: ''
         icon_type: ''
         image: logo_marin
-        link: ''
+        link: https://marin.nl/
         name: MARIN
-        title: https://marin.nl/
+        title: ''
         logo_style: "height: 50px;" 
       - bodytext: ''
         buttons: []
@@ -231,9 +231,9 @@ page_sections:
         icon: ''
         icon_type: ''
         image: logo_bluespring
-        link: ''
+        link: https://www.bluespring.blue/
         name: Bluespring
-        title: https://www.bluespring.blue/
+        title: ''
         logo_style: "height: 70px;" 
       - bodytext: ''
         buttons: []
@@ -243,7 +243,7 @@ page_sections:
         link: https://batterylabs.nl
         name: BatteryLabs
         title: ''
-        logo_style: "height: 35px;" 
+        logo_style: "height: 25px;" 
     list: ''
     name: partnerslist
     parallax: false
