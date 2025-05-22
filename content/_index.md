@@ -97,7 +97,7 @@ page_sections:
         icon_type: ''
         image: logo_martens
         link: https://martensgroep.eu/nl
-        name: martens
+        name: Martens
         title: ''
         logo_style: "height: 200px;"
       - bodytext: ''
@@ -105,82 +105,118 @@ page_sections:
         icon: ''
         icon_type: ''
         image: logo_waddenfonds
-        link: ''
-        name: batterylabs
+        link: https://waddenfonds.nl
+        name: Waddenfonds
         title: ''
-        logo_style: "height: 80px;"
+        logo_style: "height: 60px;"
       - bodytext: ''
         buttons: []
         icon: ''
         icon_type: ''
         image: logo_rometal
         link: https://rometal.nl
-        name: rometal
+        name: Rometal
         title: ''
         logo_style: "height: 80px;" 
       - bodytext: ''
         buttons: []
         icon: ''
         icon_type: ''
-        image: logo_Interregvlaned_project_rgb_pos
-        link: ''
-        name: Interregvlaned_project_rgb_pos
+        image: logo_interreg
+        link: https://interregvlaned.eu/en/offshore-for-sure-o4s/about-us
+        name: Interreg
+        title: ''
+        logo_style: "height: 800px;"
+      - bodytext: ''
+        buttons: []
+        icon: ''
+        icon_type: ''
+        image: logo_noord_brabant
+        link: https://www.brabant.nl
+        name: Noord-Brabant
+        title: ''
+        logo_style: "height: 100px;"
+      - bodytext: ''
+        buttons: []
+        icon: ''
+        icon_type: ''
+        image: logo_zuid_holland
+        link: https://www.zuid-holland.nl
+        name: Zuid-Holland
+        title: ''
+        logo_style: "height: 100px;"
+      - bodytext: ''
+        buttons: []
+        icon: ''
+        icon_type: ''
+        image: logo_den_haag
+        link: https://www.denhaag.nl/
+        name: Den Haag
+        title: ''
+        logo_style: "height: 100px;"
+      - bodytext: ''
+        buttons: []
+        icon: ''
+        icon_type: ''
+        image: logo_campus_at_sea
+        link: https://www.campusatsea.nl/
+        name: Campus@Sea
         title: ''
         logo_style: "height: 100px;" 
       - bodytext: ''
         buttons: []
         icon: ''
         icon_type: ''
-        image: logo_doIoTLogo
-        link: ''
-        name: doIoTLogo
+        image: logo_doiotfieldlab
+        link: https://doiotfieldlab.tudelftcampus.nl/
+        name: DoIoTfieldlab
         title: ''
-        logo_style: "height: 80px;" 
+        logo_style: "height: 50px;" 
       - bodytext: ''
         buttons: []
         icon: ''
         icon_type: ''
         image: logo_dmec
         link: ''
-        name: dmec
+        name: DMEC
         title: ''
-        logo_style: "height: 150px;" 
+        logo_style: "height: 180px;" 
       - bodytext: ''
         buttons: []
         icon: ''
         icon_type: ''
         image: logo_marin
         link: ''
-        name: marin
-        title: ''
-        logo_style: "height: 150px;" 
+        name: MARIN
+        title: https://marin.nl/
+        logo_style: "height: 180px;" 
       - bodytext: ''
         buttons: []
         icon: ''
         icon_type: ''
         image: logo_dls
-        link: ''
-        name: dls
+        link: https://www.dlsbv.nl/
+        name: DLS
         title: ''
-        logo_style: "height: 150px;" 
+        logo_style: "height: 180px;" 
       - bodytext: ''
         buttons: []
         icon: ''
         icon_type: ''
-        image: logo-bluespring
+        image: logo_bluespring
         link: ''
-        name: bluespring
-        title: ''
-        logo_style: "height: 100px;" 
+        name: Bluespring
+        title: https://www.bluespring.blue/
+        logo_style: "height: 70px;" 
       - bodytext: ''
         buttons: []
         icon: ''
         icon_type: ''
         image: logo_batterylabs
-        link: ''
-        name: batterylabs
+        link: https://batterylabs.nl
+        name: BatteryLabs
         title: ''
-        logo_style: "height: 150px;" 
+        logo_style: "height: 180px;" 
     list: ''
     name: partnerslist
     parallax: false
