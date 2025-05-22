@@ -162,7 +162,7 @@ page_sections:
         link: https://www.campusatsea.nl/
         name: Campus@Sea
         title: ''
-        logo_style: "height: 50px;" 
+        logo_style: "height: 40px;" 
       - bodytext: ''
         buttons: []
         icon: ''
@@ -180,7 +180,7 @@ page_sections:
         link: ''
         name: DMEC
         title: ''
-        logo_style: "height: 180px;" 
+        logo_style: "height: 150px;" 
       - bodytext: ''
         buttons: []
         icon: ''
@@ -189,7 +189,7 @@ page_sections:
         link: ''
         name: MARIN
         title: https://marin.nl/
-        logo_style: "height: 180px;" 
+        logo_style: "height: 150px;" 
       - bodytext: ''
         buttons: []
         icon: ''
@@ -198,7 +198,7 @@ page_sections:
         link: https://www.dlsbv.nl/
         name: DLS
         title: ''
-        logo_style: "height: 180px;" 
+        logo_style: "height: 160px;" 
       - bodytext: ''
         buttons: []
         icon: ''
