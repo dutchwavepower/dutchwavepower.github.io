@@ -126,7 +126,7 @@ page_sections:
         link: https://interregvlaned.eu/en/offshore-for-sure-o4s/about-us
         name: Interreg
         title: ''
-        logo_style: "height: 800px;"
+        logo_style: "height: 100px;"
       - bodytext: ''
         buttons: []
         icon: ''
@@ -135,7 +135,7 @@ page_sections:
         link: https://www.brabant.nl
         name: Noord-Brabant
         title: ''
-        logo_style: "height: 100px;"
+        logo_style: "height: 80px;"
       - bodytext: ''
         buttons: []
         icon: ''
@@ -198,16 +198,16 @@ page_sections:
         link: ''
         name: DMEC
         title: ''
-        logo_style: "height: 80px;"
+        logo_style: "height: 60px;"
       - bodytext: ''
         buttons: []
         icon: ''
         icon_type: ''
-        image: logo_proetuin_op_de_noordzee
+        image: logo_proeftuin_op_de_noordzee
         link: ''
         name: Proeftuin_op_de_Noordzee
         title: ''
-        logo_style: "height: 120px;" 
+        logo_style: "height: 80px;" 
       - bodytext: ''
         buttons: []
         icon: ''
@@ -216,7 +216,7 @@ page_sections:
         link: ''
         name: MARIN
         title: https://marin.nl/
-        logo_style: "height: 70px;" 
+        logo_style: "height: 50px;" 
       - bodytext: ''
         buttons: []
         icon: ''
@@ -225,7 +225,7 @@ page_sections:
         link: https://www.dlsbv.nl/
         name: DLS
         title: ''
-        logo_style: "height: 80px;" 
+        logo_style: "height: 60px;" 
       - bodytext: ''
         buttons: []
         icon: ''
@@ -234,7 +234,7 @@ page_sections:
         link: ''
         name: Bluespring
         title: https://www.bluespring.blue/
-        logo_style: "height: 80px;" 
+        logo_style: "height: 70px;" 
       - bodytext: ''
         buttons: []
         icon: ''
@@ -243,7 +243,7 @@ page_sections:
         link: https://batterylabs.nl
         name: BatteryLabs
         title: ''
-        logo_style: "height: 120px;" 
+        logo_style: "height: 80px;" 
     list: ''
     name: partnerslist
     parallax: false
