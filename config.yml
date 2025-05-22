@@ -46,6 +46,7 @@ params:
     siteid: ''
     trackerScript: //umami.example.com/umami.js
     trackerscript: ''
+  googleAnalytics: "G-D0P3QB4DLF" # <-- ADD THIS LINE.  REPLACE G-XXXXXXXXXX with your actual Measurement ID
 summaryLength: 40
 taxonomies:
   category: categories
