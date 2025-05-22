@@ -99,7 +99,7 @@ page_sections:
         link: https://martensgroep.eu/nl
         name: Martens
         title: ''
-        logo_style: "height: 250px;"
+        logo_style: "height: 300px;"
       - bodytext: ''
         buttons: []
         icon: ''
@@ -243,7 +243,7 @@ page_sections:
         link: https://batterylabs.nl
         name: BatteryLabs
         title: ''
-        logo_style: "height: 50px;" 
+        logo_style: "height: 35px;" 
     list: ''
     name: partnerslist
     parallax: false
