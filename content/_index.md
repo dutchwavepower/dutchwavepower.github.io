@@ -189,7 +189,16 @@ page_sections:
         link: https://doiotfieldlab.tudelftcampus.nl/
         name: DoIoTfieldlab
         title: ''
-        logo_style: "height: 50px;" 
+        logo_style: "height: 50px;"
+      - bodytext: ''
+        buttons: []
+        icon: ''
+        icon_type: ''
+        image: logo_north_sea_farmers
+        link: https://www.northseafarmers.org/
+        name: NorthSeaFarmers
+        title: ''
+        logo_style: "height: 60px;"
       - bodytext: ''
         buttons: []
         icon: ''
