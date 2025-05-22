@@ -8,7 +8,8 @@
       <div class="text-center mx-2 md:mx-10 lg:mx-20 xl:mx-48">
         <h1 class="{{.title}}">{{$content.title}}</h1>
         <p class="{{ .subtitle }}">{{ $content.subtitle }}</p>
-        <div class="{{.subtitle}}">
+        {{/* IMPORTANT CHANGE HERE: Now using flex flex-col items-end */}}
+        <div class="{{.subtitle}} flex flex-col items-end">
           {{- partial "poppy-elements/buttons" (dict "design" . "buttons" $content.buttons ) -}}
           {{/* LinkedIn Button Starts Here */}}
           <a href="YOUR_LINKEDIN_PROFILE_URL" target="_blank" rel="noopener" class="m-2">
@@ -31,6 +32,45 @@
     </div>
   </div>
 {{- end -}}
+
+
+
+
+
+
+<!-- {{- $page := .page -}}
+{{- $content := .content -}}
+{{- $design := .design -}}
+
+{{- with $design -}}
+  <div class="{{.vertical_space}} top-0 flex h-screen">
+    <div class="flex flex-col justify-center ml-auto relative z-20">
+      <div class="text-center mx-2 md:mx-10 lg:mx-20 xl:mx-48">
+        <h1 class="{{.title}}">{{$content.title}}</h1>
+        <p class="{{ .subtitle }}">{{ $content.subtitle }}</p>
+        <div class="{{.subtitle}}">
+          {{- partial "poppy-elements/buttons" (dict "design" . "buttons" $content.buttons ) -}}
+          {{/* LinkedIn Button Starts Here */}}
+          <a href="YOUR_LINKEDIN_PROFILE_URL" target="_blank" rel="noopener" class="m-2">
+            <button type="button" class="m-2 hover:opacity-80 bg-poppycolor2 font-body font-bold rounded-xl text-base lg:text-lg xl:text-lg py-2 lg:py-3 xl:py- px-8 lg:px- xl:px- text-white flex items-center justify-center">
+                <svg class="h-5 w-5 mr-2" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M22.23 0H1.77C.79 0 0 .79 0 1.77v20.46c0 .98.79 1.77 1.77 1.77h20.46c.98 0 1.77-.79 1.77-1.77V1.77c0-.98-.79-1.77-1.77-1.77zM7.18 19.14H4.15V9.45h3.03v9.69zM5.67 8.16c-1.01 0-1.83-.82-1.83-1.83s.82-1.83 1.83-1.83 1.83.82 1.83 1.83-.82 1.83-1.83 1.83zM19.86 19.14h-3.03v-4.99c0-1.2-.55-2.02-1.5-2.02-.82 0-1.31.55-1.54 1.08-.08.19-.11.46-.11.75v5.18h-3.03s.04-.84 0-9.69h3.03v1.3c.4-1.28 1.15-2.15 2.58-2.15 1.88 0 3.29 1.22 3.29 3.86v7.19z"/>
+                </svg>
+                Follow us on LinkedIn
+            </button>
+          </a>
+          {{/* LinkedIn Button Ends Here */}}
+        </div>
+      </div>
+    </div>
+    <div class="w-full h-screen overflow-hidden absolute left-0 top-0 z-0">
+      <video class="w-full h-full object-cover" autoplay loop muted playsinline>
+        <source src="/waves.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+  </div>
+{{- end -}} -->
 
 
 
