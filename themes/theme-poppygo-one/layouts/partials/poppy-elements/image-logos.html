@@ -9,9 +9,10 @@
 {{- $imgHeight := "" -}}
 
 {{- with $resource_page -}}
-    {{- $image = .Resources.Get $name -}}
+    {{- /* If resource_page is already a Resources collection, call .Get directly */ -}}
+    {{- $image = .Get $name -}}  <-- **THIS LINE WAS CHANGED** (removed .Resources)
     {{- if not $image -}}
-        {{- /* Fallback to site-wide resources if not found on page */ -}}
+        {{- /* Fallback to site-wide resources if not found in page-specific collection */ -}}
         {{- $image = $.Site.Resources.Get $name -}}
     {{- end -}}
 {{- end -}}
@@ -32,6 +33,10 @@
     {{- errorf "Image '%s' not found for logo banner in %s" $name $resource_page.RelPermalink -}}
 {{- end -}}
 
+
+
+
+        
 
 
 <!-- {{/* Usage:
