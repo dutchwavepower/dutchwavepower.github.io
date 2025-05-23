@@ -1,73 +1,4 @@
-{{- $page := .page -}}
-{{- $content := .content -}}
-{{- $design := .design -}}
 
-{{- with $design -}}
-<div class="{{.vertical_space}}">
-    {{ if $content.title }}<h3 class="{{.title}}">{{ $content.title }}</h3>{{ end }}
-    {{ if $content.subtitle }}<p class="{{.subtitle}}">{{ $content.subtitle }}</p>{{ end }}
-
-    <div class="poppy-logo-banner-wrapper">
-        <div class="poppy-logo-banner">
-            {{- range $item := $content.items -}}
-                {{ if and $item.image (not (eq $item.image "none")) -}}
-                    <div class="poppy-logo-item">
-                        {{ if $item.link }}
-                            <a href="{{ $item.link | safeURL }}" target="_blank" rel="noopener">
-                                {{- partial **"poppy-elements/image-logos"** (dict
-                                        "resource_page" $page
-                                        "name" $item.image
-                                        "class" "h-full w-full object-contain"
-                                        "alt" ($item.name | default "logo")
-                                        "logo_style" $item.logo_style
-                                    ) -}}
-                            </a>
-                        {{ else }}
-                            {{- partial **"poppy-elements/image-logos"** (dict
-                                        "resource_page" $page
-                                        "name" $item.image
-                                        "class" "h-full w-full object-contain"
-                                        "alt" ($item.name | default "logo")
-                                        "logo_style" $item.logo_style
-                                    ) -}}
-                        {{ end }}
-                    </div>
-                {{- end -}}
-            {{- end -}}
-
-            {{/* This second loop duplicates the logos to create the seamless infinite scroll effect */}}
-            {{- range $item := $content.items -}}
-                {{ if and $item.image (not (eq $item.image "none")) -}}
-                    <div class="poppy-logo-item" aria-hidden="true"> {{/* aria-hidden for accessibility on duplicate elements */}}
-                        {{ if $item.link }}
-                            <a href="{{ $item.link | safeURL }}" target="_blank" rel="noopener">
-                                {{- partial **"poppy-elements/image-logos"** (dict
-                                        "resource_page" $page
-                                        "name" $item.image
-                                        "class" "h-full w-full object-contain"
-                                        "alt" ($item.name | default "logo")
-                                        "logo_style" $item.logo_style
-                                    ) -}}
-                            </a>
-                        {{ else }}
-                            {{- partial **"poppy-elements/image-logos"** (dict
-                                        "resource_page" $page
-                                        "name" $item.image
-                                        "class" "h-full w-full object-contain"
-                                        "alt" ($item.name | default "logo")
-                                        "logo_style" $item.logo_style
-                                    ) -}}
-                        {{ end }}
-                    </div>
-                {{- end -}}
-            {{- end -}}
-        </div>
-    </div>
-</div>
-{{- end -}}
-
-
-<!-- 
 {{- $page := .page -}}
 {{- $content := .content -}}
 {{- $design := .design -}}
@@ -84,7 +15,7 @@
                     <div class="poppy-logo-item">
                         {{ if $item.link }}
                             <a href="{{ $item.link | safeURL }}" target="_blank" rel="noopener">
-                                {{- partial "poppy-elements/image" (dict
+                                {{- partial "poppy-elements/image-logo" (dict
                                         "resource_page" $page
                                         "name" $item.image
                                         "class" "h-full w-full object-contain"
@@ -93,7 +24,7 @@
                                     ) -}}
                             </a>
                         {{ else }}
-                            {{- partial "poppy-elements/image" (dict
+                            {{- partial "poppy-elements/images-logos" (dict
                                         "resource_page" $page
                                         "name" $item.image
                                         "class" "h-full w-full object-contain"
@@ -111,7 +42,7 @@
                     <div class="poppy-logo-item" aria-hidden="true"> {{/* aria-hidden for accessibility on duplicate elements */}}
                         {{ if $item.link }}
                             <a href="{{ $item.link | safeURL }}" target="_blank" rel="noopener">
-                                {{- partial "poppy-elements/image" (dict
+                                {{- partial "poppy-elements/images-logos" (dict
                                         "resource_page" $page
                                         "name" $item.image
                                         "class" "h-full w-full object-contain"
@@ -120,7 +51,7 @@
                                     ) -}}
                             </a>
                         {{ else }}
-                            {{- partial "poppy-elements/image" (dict
+                            {{- partial "poppy-elements/images-logos" (dict
                                         "resource_page" $page
                                         "name" $item.image
                                         "class" "h-full w-full object-contain"
@@ -158,11 +89,11 @@
           {{- $span := partial "poppy-elements/standard-columns" (dict "amount" $amount "index" $index) -}}
           <a href="{{.link }}" class="{{$span}} flex flex-col w-full h-full ">
             <div>
-              {{- partial "poppy-elements/image" (dict "resource_page" $content.fg_resource_page "name" .image "class" "w-full") -}}
+              {{- partial "poppy-elements/images-logos" (dict "resource_page" $content.fg_resource_page "name" .image "class" "w-full") -}}
             </div>
           </a>
       {{- end -}}
   </div>
 </div>
 {{- end -}} -->
- -->
+
