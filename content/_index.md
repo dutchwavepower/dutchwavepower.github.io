@@ -273,7 +273,7 @@ page_sections:
         icon_type: ''
         label: join or support us!
         link: join
-        type: secondary
+        type: primary
     component: dwp-inpage-banner
     component_type: ''
     count: ''
