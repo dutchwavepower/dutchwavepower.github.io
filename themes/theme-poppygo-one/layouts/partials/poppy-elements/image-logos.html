@@ -1,4 +1,59 @@
-{{/* Usage:
+{{- $resource_page := .resource_page -}}
+{{- $name := .name -}}
+{{- $class := .class -}}
+{{- $alt := .alt -}}
+{{- $logo_style := .logo_style | default "" -}}
+
+{{- $image := "" -}}
+{{- $imgWidth := "" -}}
+{{- $imgHeight := "" -}}
+{{- $isSVG := false -}}
+
+{{- /* Step 1: Robust Resource Lookup (Try site-wide first, then page bundle if available) */ -}}
+{{- /* Logos are often global, so check $.Site.Resources first. */ -}}
+{{- $image = $.Site.Resources.Get $name -}}
+
+{{- if not $image -}}
+    {{- /* If not found site-wide, and a page context is provided and is a Page object,
+           then try to get the image from the page's bundle resources. */ -}}
+    {{- if and $resource_page $resource_page.IsPage -}}
+        {{- $image = $resource_page.Resources.Get $name -}}
+    {{- end -}}
+{{- end -}}
+
+{{- /* Step 2: If image found, determine its type and dimensions */ -}}
+{{- if $image -}}
+    {{- /* Check if the image is an SVG */ -}}
+    {{- if eq (path.Ext $image.RelPermalink) ".svg" -}}
+        {{- $isSVG = true -}}
+    {{- else -}}
+        {{- /* For non-SVG images (PNG, JPG, etc.), get natural dimensions for explicit width/height attributes.
+               This helps the browser with layout and JavaScript with scrollWidth. */ -}}
+        {{- $imgWidth = $image.NaturalWidth -}}
+        {{- $imgHeight = $image.NaturalHeight -}}
+    {{- end -}}
+
+    {{- /* Step 3: Render the <img> tag based on image type and apply logo_style */ -}}
+    <img src="{{ $image.RelPermalink }}"
+        alt="{{ $alt }}"
+        class="{{ $class }}"
+        style="{{ $logo_style | safeCSS }}" {{/* This is where your height: 50px; will be applied */}}
+        {{- if not $isSVG -}}
+            {{- /* ONLY apply width/height attributes if it's not an SVG. SVGs are best sized by CSS/style. */ -}}
+            {{- with $imgWidth }}width="{{ . }}"{{ end -}}
+            {{- with $imgHeight }}height="{{ . }}"{{ end -}}
+        {{- end -}}
+    >
+{{- else -}}
+    {{- /* Provide a detailed error message if the logo image cannot be found */ -}}
+    {{- errorf "Logo image '%s' not found for banner. Please ensure the image file exists and is correctly referenced. Debug: resource_page type: %T (%v)" $name $resource_page $resource_page -}}
+{{- end -}}
+
+
+
+
+
+<!-- {{/* Usage:
 {{ partial "image" (dict "page" . "name" .Params.image "path" "images/" "class" "my-custom-class" "logo_style" "height: 50px;") }}
 */}}
 
@@ -40,3 +95,4 @@
       >
     {{- end -}}
 {{- end -}}
+ -->
