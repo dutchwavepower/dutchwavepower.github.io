@@ -1,25 +1,68 @@
-{{- $resource_page := .resource_page -}}
-{{- $name := .name -}}
-{{- $class := .class -}}
-{{- $alt := .alt -}}
-{{- $style := .style | default "" -}}
+---
+{{- $page := .page -}}
+{{- $content := .content -}}
+{{- $design := .design -}}
 
-{{- $image := "" -}}
+{{- with $design -}}
+<div class="{{.vertical_space}}">
+    {{ if $content.title }}<h3 class="{{.title}}">{{ $content.title }}</h3>{{ end }}
+    {{ if $content.subtitle }}<p class="{{.subtitle}}">{{ $content.subtitle }}</p>{{ end }}
 
-{{- with $resource_page -}}
-    {{- $image = .Resources.Get $name -}}
-    {{- if not $image -}}
-        {{- /* Fallback to site-wide resources if not found on page */ -}}
-        {{- $image = $.Site.Resources.Get $name -}}
-    {{- end -}}
-{{- end -}}
+    <div class="poppy-logo-banner-wrapper">
+        <div class="poppy-logo-banner">
+            {{- range $item := $content.items -}}
+                {{ if and $item.image (not (eq $item.image "none")) -}}
+                    <div class="poppy-logo-item">
+                        {{ if $item.link }}
+                            <a href="{{ $item.link | safeURL }}" target="_blank" rel="noopener">
+                                {{- partial "poppy-elements/image" (dict
+                                        "resource_page" $page
+                                        "name" $item.image
+                                        "class" "h-full w-full object-contain"
+                                        "alt" ($item.name | default "logo")
+                                        "logo_style" $item.logo_style
+                                    ) -}}
+                            </a>
+                        {{ else }}
+                            {{- partial "poppy-elements/image" (dict
+                                        "resource_page" $page
+                                        "name" $item.image
+                                        "class" "h-full w-full object-contain"
+                                        "alt" ($item.name | default "logo")
+                                        "logo_style" $item.logo_style
+                                    ) -}}
+                        {{ end }}
+                    </div>
+                {{- end -}}
+            {{- end -}}
 
-{{- if $image -}}
-    <img src="{{ $image.RelPermalink }}"
-        alt="{{ $alt }}"
-        class="{{ $class }}"
-        style="{{ $style | safeCSS }}"
-    >
-{{- else -}}
-    {{- errorf "Image '%s' not found." $name -}}
+            {{/* This second loop duplicates the logos to create the seamless infinite scroll effect */}}
+            {{- range $item := $content.items -}}
+                {{ if and $item.image (not (eq $item.image "none")) -}}
+                    <div class="poppy-logo-item" aria-hidden="true"> {{/* aria-hidden for accessibility on duplicate elements */}}
+                        {{ if $item.link }}
+                            <a href="{{ $item.link | safeURL }}" target="_blank" rel="noopener">
+                                {{- partial "poppy-elements/image" (dict
+                                        "resource_page" $page
+                                        "name" $item.image
+                                        "class" "h-full w-full object-contain"
+                                        "alt" ($item.name | default "logo")
+                                        "logo_style" $item.logo_style
+                                    ) -}}
+                            </a>
+                        {{ else }}
+                            {{- partial "poppy-elements/image" (dict
+                                        "resource_page" $page
+                                        "name" $item.image
+                                        "class" "h-full w-full object-contain"
+                                        "alt" ($item.name | default "logo")
+                                        "logo_style" $item.logo_style
+                                    ) -}}
+                        {{ end }}
+                    </div>
+                {{- end -}}
+            {{- end -}}
+        </div>
+    </div>
+</div>
 {{- end -}}
