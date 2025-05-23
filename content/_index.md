@@ -90,7 +90,7 @@ page_sections:
   - bg_color: white
     bg_image: none
     buttons: []
-    component: image-cards
+    component: image-cards-logos
     component_type: ''
     count: ''
     image: ''
