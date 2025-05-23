@@ -2,6 +2,41 @@
 {{- $content := .content -}}
 {{- $design := .design -}}
 
+<div class="poppy-image-cards {{ with $design.background_color }}{{ . }}{{ end }}">
+    {{- with $content -}}
+        {{- if .items -}}
+            <div class="poppy-image-cards-container">
+                {{- range $item := .items -}}
+                    <div class="poppy-image-card">
+                        {{- $link := $item.link | default "#" -}}
+                        {{- $class := "image-class-default" -}}
+                        {{- $style := "" -}}
+                        {{- /* Example of how $item.style might have been handled, specific to image */ -}}
+                        {{- if $item.style -}}
+                            {{- $style = $item.style -}}
+                        {{- end -}}
+
+                        <a href="{{ $link }}">
+                            {{- partial "poppy-elements/image" (dict "resource_page" $page "name" $item.image "class" $class "alt" ($item.title | default "image") "style" $style) -}}
+                        </a>
+                        {{- with $item.title -}}<h3>{{ . }}</h3>{{- end -}}
+                        {{- with $item.bodytext -}}<p>{{ . | markdownify }}</p>{{- end -}}
+                        {{- partial "poppy-elements/buttons" (dict "buttons" $item.buttons) -}}
+                    </div>
+                {{- end -}}
+            </div>
+        {{- end -}}
+    {{- end -}}
+</div>
+
+
+
+<!-- 
+
+{{- $page := .page -}}
+{{- $content := .content -}}
+{{- $design := .design -}}
+
 {{- with $design -}}
 <div class="{{.vertical_space}}">
     {{ if $content.title }}<h3 class="{{.title}}">{{ $content.title }}</h3>{{ end }}
@@ -41,3 +76,4 @@
     </div>
 </div>
 {{- end -}}
+ -->
