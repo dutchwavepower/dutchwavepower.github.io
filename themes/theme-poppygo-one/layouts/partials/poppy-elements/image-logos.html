@@ -2,34 +2,6 @@
 {{- $name := .name -}}
 {{- $class := .class -}}
 {{- $alt := .alt -}}
-{{- $style := .style | default "" -}}
-
-{{- $image := "" -}}
-
-{{- with $resource_page -}}
-    {{- $image = .Resources.Get $name -}}
-    {{- if not $image -}}
-        {{- /* Fallback to site-wide resources if not found on page */ -}}
-        {{- $image = $.Site.Resources.Get $name -}}
-    {{- end -}}
-{{- end -}}
-
-{{- if $image -}}
-    <img src="{{ $image.RelPermalink }}"
-        alt="{{ $alt }}"
-        class="{{ $class }}"
-        style="{{ $style | safeCSS }}"
-    >
-{{- else -}}
-    {{- errorf "Image '%s' not found." $name -}}
-{{- end -}}
-
-
-
-<!-- {{- $resource_page := .resource_page -}}
-{{- $name := .name -}}
-{{- $class := .class -}}
-{{- $alt := .alt -}}
 {{- $logo_style := .logo_style | default "" -}}
 
 {{- $image := "" -}}
@@ -37,16 +9,27 @@
 {{- $imgHeight := "" -}}
 
 {{- with $resource_page -}}
-    {{- /* If resource_page is already a Resources collection, call .Get directly */ -}}
-    {{- $image = .Get $name -}}  <-- **THIS LINE WAS CHANGED** (removed .Resources)
+    {{- /* Check if resource_page is a Page object. If so, access its .Resources.
+           Otherwise, assume it's already a collection of resources (e.g., Page.Resources). */ -}}
+    {{- if ($resource_page | default false).IsPage -}}
+        {{- $image = $resource_page.Resources.Get $name -}}
+    {{- else -}}
+        {{- /* This path specifically handles the previous Hugo error (can't evaluate field Get in type resource.Resources),
+               as it assumes '.' is already a resource collection and calls .Get directly. */ -}}
+        {{- $image = .Get $name -}}
+    {{- end -}}
+
     {{- if not $image -}}
-        {{- /* Fallback to site-wide resources if not found in page-specific collection */ -}}
+        {{- /* Final fallback to site-wide resources if not found via page or passed collection */ -}}
         {{- $image = $.Site.Resources.Get $name -}}
     {{- end -}}
+{{- else -}}
+    {{- /* If no resource_page is provided (e.g., it's nil), try site-wide resources as default */ -}}
+    {{- $image = $.Site.Resources.Get $name -}}
 {{- end -}}
 
 {{- if $image -}}
-    {{- /* Get natural dimensions for width/height attributes */ -}}
+    {{- /* Get natural dimensions from the image resource for width/height attributes */ -}}
     {{- $imgWidth = $image.NaturalWidth -}}
     {{- $imgHeight = $image.NaturalHeight -}}
 
@@ -58,57 +41,5 @@
         {{ with $imgHeight }}height="{{ . }}"{{ end }}
     >
 {{- else -}}
-    {{- errorf "Image '%s' not found for logo banner in %s" $name $resource_page.RelPermalink -}}
+    {{- errorf "Image '%s' not found for logo banner. Please ensure the image exists and is correctly referenced in content/index.md or as a site resource." $name -}}
 {{- end -}}
-
-
- -->
-
-        
-
-
-<!-- {{/* Usage:
-{{ partial "image" (dict "page" . "name" .Params.image "path" "images/" "class" "my-custom-class" "logo_style" "height: 50px;") }}
-*/}}
-
-{{- $class := .class -}}
-{{- $logo_style := .logo_style -}} {{/* NEW: Capture the logo_style parameter */}}
-{{- $sizes := (slice "480" "800" "1500") -}}
-{{- $image_path := printf "images/*%s*" .name -}}
-{{- if or (.resource_page.IsHome) (.resource_page.IsSection) (.resource_page.IsPage) -}} {{/* Updated: Added .IsPage for broader resource context */}}
-    {{- $image_path = printf "*%s*" .name -}}
-{{- end }}
-
-{{- $image := (.resource_page.Resources.ByType "image").GetMatch $image_path -}}
-
-{{- with $image -}}
-
-    {{- $filename := path.Base .Name -}}
-    {{- $caption := "" -}}
-
-    {{- if eq (path.Ext $filename) ".webp" -}}
-            <img src="{{.RelPermalink}}" class="lazyload {{$class}}" alt="{{$filename}}">
-    {{- else if eq (path.Ext $filename) ".svg" -}}
-            <img src="{{.RelPermalink}}" class="{{$class}}" alt="{{$filename}}"
-                {{- with $logo_style -}}
-                    style="{{. | safeCSS}}" {{/* This applies the inline style from your front matter */}}
-                {{- end -}}
-            >
-    {{- else -}}  {{/* This 'else' block now handles PNGs, JPGs, etc. */}}
-      <img sizes="(min-width: 992px) 25vw, 55vw"
-      srcset='
-      {{- range $sizes -}}
-        {{- ($image.Resize (printf "%sx" .)).RelPermalink }} {{ (printf "%sw" .) -}},
-      {{- end -}}'
-      src="{{- ($image.Resize "800x").Permalink -}}"
-      class="lazyload {{$class}}"
-      alt="{{- $filename -}}"
-      {{- with $logo_style -}}  {{/* Now applies logo_style to PNGs/JPGs too */}}
-          style="{{. | safeCSS}}"
-      {{- end -}}
-      >
-    {{- end -}}
-{{- end -}}
-
-
- -->
