@@ -15,7 +15,7 @@
                     <div class="poppy-logo-item">
                         {{ if $item.link }}
                             <a href="{{ $item.link | safeURL }}" target="_blank" rel="noopener">
-                                {{- partial "poppy-elements/image-logo" (dict
+                                {{- partial "poppy-elements/image-logos" (dict
                                         "resource_page" $page
                                         "name" $item.image
                                         "class" "h-full w-full object-contain"
