@@ -52,7 +52,7 @@ page_sections:
         type: primary
       - icon: ''
         icon_type: ''
-        label: foloow us on LinkedIn
+        label: follow us on LinkedIn
         link: https://www.linkedin.com/company/dutch-wave-power/
         type: secondary
     component: headerbanner-full
