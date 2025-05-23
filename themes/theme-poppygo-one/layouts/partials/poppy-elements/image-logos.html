@@ -1,38 +1,42 @@
-{{- $resource_page := .resource_page -}}
-{{- $name := .name -}}
+{{/* Usage:
+{{ partial "image" (dict "page" . "name" .Params.image "path" "images/" "class" "my-custom-class" "logo_style" "height: 50px;") }}
+*/}}
+
 {{- $class := .class -}}
-{{- $alt := .alt -}}
-{{- $logo_style := .logo_style | default "" -}} {{/* Use logo_style as passed from index.md */}}
+{{- $logo_style := .logo_style -}} {{/* NEW: Capture the logo_style parameter */}}
+{{- $sizes := (slice "480" "800" "1500") -}}
+{{- $image_path := printf "images/*%s*" .name -}}
+{{- if or (.resource_page.IsHome) (.resource_page.IsSection) (.resource_page.IsPage) -}} {{/* Updated: Added .IsPage for broader resource context */}}
+    {{- $image_path = printf "*%s*" .name -}}
+{{- end }}
 
-{{- $image := "" -}}
-{{- $imgWidth := "" -}}
-{{- $imgHeight := "" -}}
+{{- $image := (.resource_page.Resources.ByType "image").GetMatch $image_path -}}
 
-{{- with $resource_page -}}
-    {{- /* Try to get image from page bundle resources first (e.g., if image is in same folder as markdown) */ -}}
-    {{- $image = .Resources.Get $name -}}
-    {{- if not $image -}}
-        {{- /* Fallback to site-wide resources if not found on page (e.g., from static/images or global assets) */ -}}
-        {{- $image = $.Site.Resources.Get $name -}}
+{{- with $image -}}
+
+    {{- $filename := path.Base .Name -}}
+    {{- $caption := "" -}}
+
+    {{- if eq (path.Ext $filename) ".webp" -}}
+            <img src="{{.RelPermalink}}" class="lazyload {{$class}}" alt="{{$filename}}">
+    {{- else if eq (path.Ext $filename) ".svg" -}}
+            <img src="{{.RelPermalink}}" class="{{$class}}" alt="{{$filename}}"
+                {{- with $logo_style -}}
+                    style="{{. | safeCSS}}" {{/* This applies the inline style from your front matter */}}
+                {{- end -}}
+            >
+    {{- else -}}  {{/* This 'else' block now handles PNGs, JPGs, etc. */}}
+      <img sizes="(min-width: 992px) 25vw, 55vw"
+      srcset='
+      {{- range $sizes -}}
+        {{- ($image.Resize (printf "%sx" .)).RelPermalink }} {{ (printf "%sw" .) -}},
+      {{- end -}}'
+      src="{{- ($image.Resize "800x").Permalink -}}"
+      class="lazyload {{$class}}"
+      alt="{{- $filename -}}"
+      {{- with $logo_style -}}  {{/* Now applies logo_style to PNGs/JPGs too */}}
+          style="{{. | safeCSS}}"
+      {{- end -}}
+      >
     {{- end -}}
-{{- else -}}
-    {{- /* If no resource_page context is provided at all, try site-wide resources as default */ -}}
-    {{- $image = $.Site.Resources.Get $name -}}
-{{- end -}}
-
-{{- if $image -}}
-    {{- /* Get natural dimensions from the image resource for width/height attributes */ -}}
-    {{- $imgWidth = $image.NaturalWidth -}}
-    {{- $imgHeight = $image.NaturalHeight -}}
-
-    <img src="{{ $image.RelPermalink }}"
-        alt="{{ $alt }}"
-        class="{{ $class }}"
-        style="{{ $logo_style | safeCSS }}" {{/* Apply logo_style as an inline style */}}
-        {{ with $imgWidth }}width="{{ . }}"{{ end }}
-        {{ with $imgHeight }}height="{{ . }}"{{ end }}
-    >
-{{- else -}}
-    {{- /* Provide a more informative error if image is not found */ -}}
-    {{- errorf "Image '%s' not found for logo banner. Please ensure the image exists and is correctly referenced in content/index.md or as a site resource. Context: %s" $name ($resource_page.RelPermalink | default "N/A") -}}
 {{- end -}}
