@@ -1,4 +1,40 @@
-{{/* Usage:
+{{- $resource_page := .resource_page -}}
+{{- $name := .name -}}
+{{- $class := .class -}}
+{{- $alt := .alt -}}
+{{- $logo_style := .logo_style | default "" -}}
+
+{{- $image := "" -}}
+{{- $imgWidth := "" -}}
+{{- $imgHeight := "" -}}
+
+{{- with $resource_page -}}
+    {{- $image = .Resources.Get $name -}}
+    {{- if not $image -}}
+        {{- /* Fallback to site-wide resources if not found on page */ -}}
+        {{- $image = $.Site.Resources.Get $name -}}
+    {{- end -}}
+{{- end -}}
+
+{{- if $image -}}
+    {{- /* Get natural dimensions for width/height attributes */ -}}
+    {{- $imgWidth = $image.NaturalWidth -}}
+    {{- $imgHeight = $image.NaturalHeight -}}
+
+    <img src="{{ $image.RelPermalink }}"
+        alt="{{ $alt }}"
+        class="{{ $class }}"
+        style="{{ $logo_style | safeCSS }}"
+        {{ with $imgWidth }}width="{{ . }}"{{ end }}
+        {{ with $imgHeight }}height="{{ . }}"{{ end }}
+    >
+{{- else -}}
+    {{- errorf "Image '%s' not found for logo banner in %s" $name $resource_page.RelPermalink -}}
+{{- end -}}
+
+
+
+<!-- {{/* Usage:
 {{ partial "image" (dict "page" . "name" .Params.image "path" "images/" "class" "my-custom-class" "logo_style" "height: 50px;") }}
 */}}
 
@@ -42,3 +78,4 @@
 {{- end -}}
 
 
+ -->
