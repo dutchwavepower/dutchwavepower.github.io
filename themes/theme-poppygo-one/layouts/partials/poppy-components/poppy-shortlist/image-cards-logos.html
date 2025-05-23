@@ -14,7 +14,7 @@
                     <div class="poppy-logo-item">
                         {{ if $item.link }}
                             <a href="{{ $item.link | safeURL }}" target="_blank" rel="noopener">
-                                {{- partial **"poppy-elements/image-logos"** (dict
+                                {{- partial "poppy-elements/image-logos" (dict
                                         "resource_page" $page
                                         "name" $item.image
                                         "class" "h-full w-full object-contain"
@@ -23,49 +23,13 @@
                                     ) -}}
                             </a>
                         {{ else }}
-                            {{- partial **"poppy-elements/image-logos"** (dict
+                            {{- partial "poppy-elements/image-logos" (dict
                                         "resource_page" $page
                                         "name" $item.image
                                         "class" "h-full w-full object-contain"
                                         "alt" ($item.name | default "logo")
                                         "logo_style" $item.logo_style
                                     ) -}}
-                        {{ end }}
-                    </div>
-                {{- end -}}
-            {{- end -}}
-
-            {{/* This second loop duplicates the logos to create the seamless infinite scroll effect */}}
-            {{- range $item := $content.items -}}
-                {{ if and $item.image (not (eq $item.image "none")) -}}
-                    <div class="poppy-logo-item" aria-hidden="true"> {{/* aria-hidden for accessibility on duplicate elements */}}
-                        {{ if $item.link }}
-                            <a href="{{ $item.link | safeURL }}" target="_blank" rel="noopener">
-                                {{- partial **"poppy-elements/image-logos"** (dict
-                                        "resource_page" $page
-                                        "name" $item.image
-                                        "class" "h-full w-full object-contain"
-                                        "alt" ($item.name | default "logo")
-                                        "logo_style" $item.logo_style
-                                    ) -}}
-                            </a>
-                        {{ else }}
-                            {{- partial **"poppy-elements/image-logos"** (dict
-                                        "resource_page" $page
-                                        "name" $item.image
-                                        "class" "h-full w-full object-contain"
-                                        "alt" ($item.name | default "logo")
-                                        "logo_style" $item.logo_style
-                                    ) -}}
-                        {{ end }}
-                    </div>
-                {{- end -}}
-            {{- end -}}
-        </div>
-    </div>
-</div>
-{{- end -}}
-
 
 
 
