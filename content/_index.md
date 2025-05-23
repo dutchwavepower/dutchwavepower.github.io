@@ -262,7 +262,7 @@ page_sections:
     name: partnerslist
     parallax: false
     poppy_type: poppy-shortlist
-    poppy_variant: image-cards
+    poppy_variant: image-cards-logos
     subtitle: none
     texture: ''
     title: Partners
