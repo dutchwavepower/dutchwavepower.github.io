@@ -1,4 +1,4 @@
-{{- $resource_page := .resource_page -}}
+<!-- {{- $resource_page := .resource_page -}}
 {{- $name := .name -}}
 {{- $class := .class -}}
 {{- $alt := .alt -}}
@@ -48,12 +48,12 @@
     {{- /* Provide a detailed error message if the logo image cannot be found */ -}}
     {{- errorf "Logo image '%s' not found for banner. Please ensure the image file exists and is correctly referenced. Debug: resource_page type: %T (%v)" $name $resource_page $resource_page -}}
 {{- end -}}
+ -->
 
 
 
 
-
-<!-- {{/* Usage:
+{{/* Usage:
 {{ partial "image" (dict "page" . "name" .Params.image "path" "images/" "class" "my-custom-class" "logo_style" "height: 50px;") }}
 */}}
 
@@ -95,4 +95,4 @@
       >
     {{- end -}}
 {{- end -}}
- -->
+
