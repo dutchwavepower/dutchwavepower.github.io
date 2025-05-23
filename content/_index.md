@@ -104,7 +104,7 @@ page_sections:
         link: https://martensgroep.eu/nl
         name: Martens
         title: ''
-        logo_style: "height: 400px;"
+        logo_style: "height: 250px;"
       - bodytext: ''
         buttons: []
         icon: ''
