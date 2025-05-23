@@ -50,6 +50,11 @@ page_sections:
         label: how do we do it?
         link: '#design-philosophy'
         type: primary
+      - icon: ''
+        icon_type: ''
+        label: foloow us on LinkedIn
+        link: https://www.linkedin.com/company/dutch-wave-power/
+        type: secondary
     component: headerbanner-full
     component_type: ''
     count: ''
