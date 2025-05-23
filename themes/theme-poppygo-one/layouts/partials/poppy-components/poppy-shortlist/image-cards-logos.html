@@ -14,7 +14,7 @@
                     <div class="poppy-logo-item">
                         {{ if $item.link }}
                             <a href="{{ $item.link | safeURL }}" target="_blank" rel="noopener">
-                                {{- partial "poppy-elements/image" (dict
+                                {{- partial "poppy-elements/image-logos" (dict
                                         "resource_page" $page
                                         "name" $item.image
                                         "class" "h-full w-full object-contain"
@@ -23,7 +23,7 @@
                                     ) -}}
                             </a>
                         {{ else }}
-                            {{- partial "poppy-elements/image" (dict
+                            {{- partial "poppy-elements/image-logos" (dict
                                         "resource_page" $page
                                         "name" $item.image
                                         "class" "h-full w-full object-contain"
@@ -41,7 +41,7 @@
                     <div class="poppy-logo-item" aria-hidden="true"> {{/* aria-hidden for accessibility on duplicate elements */}}
                         {{ if $item.link }}
                             <a href="{{ $item.link | safeURL }}" target="_blank" rel="noopener">
-                                {{- partial "poppy-elements/image" (dict
+                                {{- partial "poppy-elements/image-logos" (dict
                                         "resource_page" $page
                                         "name" $item.image
                                         "class" "h-full w-full object-contain"
@@ -50,7 +50,7 @@
                                     ) -}}
                             </a>
                         {{ else }}
-                            {{- partial "poppy-elements/image" (dict
+                            {{- partial "poppy-elements/image-logos" (dict
                                         "resource_page" $page
                                         "name" $item.image
                                         "class" "h-full w-full object-contain"
