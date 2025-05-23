@@ -2,29 +2,21 @@
 {{- $name := .name -}}
 {{- $class := .class -}}
 {{- $alt := .alt -}}
-{{- $logo_style := .logo_style | default "" -}}
+{{- $logo_style := .logo_style | default "" -}} {{/* Use logo_style as passed from index.md */}}
 
 {{- $image := "" -}}
 {{- $imgWidth := "" -}}
 {{- $imgHeight := "" -}}
 
 {{- with $resource_page -}}
-    {{- /* Check if resource_page is a Page object. If so, access its .Resources.
-           Otherwise, assume it's already a collection of resources (e.g., Page.Resources). */ -}}
-    {{- if ($resource_page | default false).IsPage -}}
-        {{- $image = $resource_page.Resources.Get $name -}}
-    {{- else -}}
-        {{- /* This path specifically handles the previous Hugo error (can't evaluate field Get in type resource.Resources),
-               as it assumes '.' is already a resource collection and calls .Get directly. */ -}}
-        {{- $image = .Get $name -}}
-    {{- end -}}
-
+    {{- /* Try to get image from page bundle resources first (e.g., if image is in same folder as markdown) */ -}}
+    {{- $image = .Resources.Get $name -}}
     {{- if not $image -}}
-        {{- /* Final fallback to site-wide resources if not found via page or passed collection */ -}}
+        {{- /* Fallback to site-wide resources if not found on page (e.g., from static/images or global assets) */ -}}
         {{- $image = $.Site.Resources.Get $name -}}
     {{- end -}}
 {{- else -}}
-    {{- /* If no resource_page is provided (e.g., it's nil), try site-wide resources as default */ -}}
+    {{- /* If no resource_page context is provided at all, try site-wide resources as default */ -}}
     {{- $image = $.Site.Resources.Get $name -}}
 {{- end -}}
 
@@ -36,10 +28,11 @@
     <img src="{{ $image.RelPermalink }}"
         alt="{{ $alt }}"
         class="{{ $class }}"
-        style="{{ $logo_style | safeCSS }}"
+        style="{{ $logo_style | safeCSS }}" {{/* Apply logo_style as an inline style */}}
         {{ with $imgWidth }}width="{{ . }}"{{ end }}
         {{ with $imgHeight }}height="{{ . }}"{{ end }}
     >
 {{- else -}}
-    {{- errorf "Image '%s' not found for logo banner. Please ensure the image exists and is correctly referenced in content/index.md or as a site resource." $name -}}
+    {{- /* Provide a more informative error if image is not found */ -}}
+    {{- errorf "Image '%s' not found for logo banner. Please ensure the image exists and is correctly referenced in content/index.md or as a site resource. Context: %s" $name ($resource_page.RelPermalink | default "N/A") -}}
 {{- end -}}
