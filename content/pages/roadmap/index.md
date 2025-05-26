@@ -194,7 +194,7 @@ A promising concept emerged from these tests in 2019. We have further developed 
 
 At the end of 2019, we attracted our first investor: Koninklijke Martens group. An investor with a green heart, own sustainable generation and with the same standards and values. Thanks to this partner we have been able to realize our concept validation on a scale of 1:4. At this scale, the dimensions, weights and required tools are so large that strengthening our team with the right knowledge, resources and financial support was necessary.
 
-{{< image logo_martens align="center" 30 >}}
+{{< image logo_martens 30 >}}
 
 # Stage 2
 
