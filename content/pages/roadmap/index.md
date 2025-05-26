@@ -194,20 +194,20 @@ A promising concept emerged from these tests in 2019. We have further developed 
 
 At the end of 2019, we attracted our first investor: Koninklijke Martens group. An investor with a green heart, own sustainable generation and with the same standards and values. Thanks to this partner we have been able to realize our concept validation on a scale of 1:4. At this scale, the dimensions, weights and required tools are so large that strengthening our team with the right knowledge, resources and financial support was necessary.
 
-{{< image logo_martens 20 >}}
+{{< image logo_martens centre 30 >}}
 
 # Stage 2
 
 **2020: Proof of concept and numerical model validation**
 We tested the 1:4 prototype in the Delta Flume at knowledge institute Deltares. The test went extremely well and the results were very encouraging: the operation and launching in accordance with expectations, but above all the efficiency, ie the power generated, were significantly exceeded! The latter offers prospects for a positive cost-benefit outcome.
 
-{{< youtube id="oe5T6Q-YNp8?version=3&vq=hd1080&rel=0" >}}
+{{< youtube id="oe5T6Q-YNp8?version=3&vq=hd1080&rel=0" 50 >}}
 
  
 **2021: Additional wave flume tests at MARIN**
 To validate and de-risk every aspect of our wave energy converter concept we conducted a large amount of tests at a wave flume at the marine research centre MARIN. The tests were be performed at a scale of 1:7.
 
-{{< youtube id="lBRg8wFgsjo?version=3&vq=hd1080&rel=0" >}}
+{{< youtube id="lBRg8wFgsjo?version=3&vq=hd1080&rel=0" 50 >}}
 
  
 # Stage 3
