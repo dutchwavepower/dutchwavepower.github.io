@@ -100,18 +100,18 @@ page_sections:
         buttons: []
         icon: ''
         icon_type: ''
-        image: empty
+        image: logo_empty
         link: 
-        name: empty
+        name: 
         title: ''
         logo_style: "height: 250px;"
       - bodytext: ''
         buttons: []
         icon: ''
         icon_type: ''
-        image: empty
+        image: logo_empty
         link: 
-        name: empty
+        name: 
         title: ''
         logo_style: "height: 250px;"
       - bodytext: ''
@@ -459,4 +459,3 @@ resources: []
 title: Homepage
 
 ---
-
