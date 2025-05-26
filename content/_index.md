@@ -100,6 +100,24 @@ page_sections:
         buttons: []
         icon: ''
         icon_type: ''
+        image: empty
+        link: 
+        name: empty
+        title: ''
+        logo_style: "height: 250px;"
+      - bodytext: ''
+        buttons: []
+        icon: ''
+        icon_type: ''
+        image: empty
+        link: 
+        name: empty
+        title: ''
+        logo_style: "height: 250px;"
+      - bodytext: ''
+        buttons: []
+        icon: ''
+        icon_type: ''
         image: logo_martens
         link: https://martensgroep.eu/nl
         name: Martens
