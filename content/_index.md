@@ -361,24 +361,6 @@ page_sections:
         link: ''
         name: tension-leg-platform-technology
         title: 'Tension Leg Platform Technology'
-      - bodytext: >-
-          text
-        buttons: []
-        icon: ''
-        icon_type: ''
-        image: flexible_positioning
-        link: ''
-        name: ''
-        title: 'Simple'
-      - bodytext: >-
-          text
-        buttons: []
-        icon: ''
-        icon_type: ''
-        image: efficient
-        link: ''
-        name: ''
-        title: 'Easy'
     list: ''
     name: how-do-we-do-it
     parallax: false
