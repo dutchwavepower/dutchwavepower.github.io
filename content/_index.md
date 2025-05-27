@@ -337,7 +337,7 @@ page_sections:
         icon_type: ''
         image: efficient
         link: technology
-        name: Tension Leg Platform Technology
+        name: efficient
         title: ''
         video: ''
       - bodytext: |
