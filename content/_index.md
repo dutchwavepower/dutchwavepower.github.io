@@ -357,10 +357,11 @@ page_sections:
         buttons: []
         icon: ''
         icon_type: ''
-        image: blue_vertical
+        image: ''
         link: ''
         name: tension-leg-platform-technology
         title: 'Tension Leg Platform Technology'
+        video: Dutch_Wave_Power_Animation_Vertical_1080_1920p
     list: ''
     name: how-do-we-do-it
     parallax: false
