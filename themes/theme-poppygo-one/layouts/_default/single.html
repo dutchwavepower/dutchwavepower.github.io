@@ -1,3 +1,21 @@
 {{- define "main" -}}
-  {{- partial "poppy-engine/page_sections" . -}}
+    <h2 style="color:red;">TEST VIDEO BELOW</h2>
+    {{- $videoResource := .Resources.GetMatch "Dutch_Wave_Power_Animation_Vertical_1080_1920p*" -}}
+    {{- if $videoResource -}}
+        <video controls autoplay loop muted playsinline src="{{ $videoResource.RelPermalink }}" style="width: 500px; height: auto; border: 2px solid green;"></video>
+        <p style="color:blue;">Video found: {{ $videoResource.RelPermalink }}</p>
+    {{- else -}}
+        <p style="color:red;">Video resource NOT found directly on page.</p>
+    {{- end -}}
+    <h2 style="color:red;">END TEST VIDEO</h2>
+
+    {{- partial "poppy-engine/page_sections" . -}}
 {{- end -}}
+
+
+
+
+
+<!-- {{- define "main" -}}
+  {{- partial "poppy-engine/page_sections" . -}}
+{{- end -}} -->
