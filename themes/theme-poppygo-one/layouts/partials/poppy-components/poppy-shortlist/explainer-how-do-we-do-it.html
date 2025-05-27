@@ -29,7 +29,7 @@
                 {{- $videoSource = .RelPermalink -}}
           {{- end -}}
 
-          <div class="relative z-10 mt-10 my-auto {{ $content.item_bg_color }} {{$row}} {{$design.rounded}} {{$design.shadow}} {{$switchImg}} {{$design.border}}" style="padding-top: 56.25%;">
+          <div class="relative z-10 mt-10 {{ $content.item_bg_color }} {{$row}} {{$design.rounded}} {{$design.shadow}} {{$switchImg}} {{$design.border}}" style="padding-top: 56.25%;">
             {{- if $videoSource -}}
                 <video autoplay loop muted playsinline class="absolute inset-0 w-full h-full object-cover rounded-md">
                     <source src="{{ $videoSource }}" type="video/mp4">
