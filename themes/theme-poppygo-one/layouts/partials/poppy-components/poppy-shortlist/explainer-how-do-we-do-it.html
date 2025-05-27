@@ -46,9 +46,36 @@
         {{- else if $value.image -}}
           {{/* Render Image (original logic) */}}
           <div class= "z-10 mt-10 my-auto {{$content.item_bg_color}} {{$row}} {{$design.rounded}} {{$design.shadow}} {{$switchImg}} {{$design.border}}" >
-                {{- $class := printf "%s %s w-full h-auto" $design.rounded $design.shadow -
+                {{- $class := printf "%s %s w-full h-auto" $design.rounded $design.shadow -}}
+                {{- partial "poppy-elements/image-how-do-we-do-it" (dict "resource_page" $page "name" . "class" $class ) -}}
+          </div>
+        {{- end -}}
+        {{/* --- End: Video/Image Handling Block --- */}}
 
+        <div class="pt-10 my-auto mb-10 {{$row}} {{$design.rounded}} {{$design.shadow}} {{$content.item_bg_color}} {{$bodyClasses}}">
+          <div class="flex flex-auto items-start">
 
+            {{- with .icon -}}
+              <div class="relative w-12 {{$design.itemtitle}} py-0 -mt-2 mr-5">
+                {{- partial "poppy-elements/icon" (dict "icon" . "icontype" "outline" ) -}}
+              </div>
+            {{- end -}}
+
+            <div>
+              <div class = {{$design.itemtitle}}>{{.title}}</div>
+              <div class=" prose mx-auto {{$design.rounded}} {{$design.itembody}} ">
+                  {{.bodytext | markdownify }}
+              </div>
+              <div class="{{$design.itembody}} justify-end">
+                  {{- partial "poppy-elements/buttons" (dict "design" $design "buttons" .buttons ) -}}
+              </div>
+            </div>
+          </div>
+        </div>
+      {{- end -}}
+    </div>
+</div>
+{{- end -}}
 
 
 
