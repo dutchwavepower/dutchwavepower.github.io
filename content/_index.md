@@ -335,10 +335,11 @@ page_sections:
         buttons: []
         icon: ''
         icon_type: ''
-        image: efficient
+        image: ''
         link: technology
         name: Tension Leg Platform Technology
         title: ''
+        video: Dutch_Wave_Power_Animation_Vertical_1080_1920p.mp4
       - bodytext: |
           - all sensitive parts inside
           - submerge in extremes
