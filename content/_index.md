@@ -48,7 +48,7 @@ page_sections:
       - icon: ''
         icon_type: ''
         label: how do we do it?
-        link: '#design-philosophy'
+        link: '#how-do-we-do-it'
         type: primary
       - icon: ''
         icon_type: ''
