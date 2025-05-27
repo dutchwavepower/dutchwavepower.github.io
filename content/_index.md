@@ -380,7 +380,7 @@ page_sections:
         name: ''
         title: 'Easy'
     list: ''
-    name: how_do_we_do_it
+    name: how-do-we-do-it
     parallax: false
     subtitle: ''
     texture: texture_underwater
