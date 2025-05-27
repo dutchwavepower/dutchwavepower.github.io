@@ -306,6 +306,42 @@ page_sections:
     subtitle: Unlocking world's greatest untapped sustainable energy source
     texture: texture_underwater
     title: '"We need to act now!"'
+  - bg_color: charcoal
+    bg_image: none
+    bodytext: |-
+      - 100% renewable
+      - huge potential
+      - predictable
+      - consistent
+      - complementary
+    buttons:
+      - icon: ''
+        icon_type: ''
+        label: wave energy explained
+        link: /pages/wave-energy-explained
+        type: primary
+    component: introbanner
+    component_type: poppy-banner
+    count: ''
+    design:
+      typographies:
+        - align: center
+          bg_color: none
+          color: ghost-white
+          font: display1
+          font_weight: ''
+          name: title
+          size: 2xl
+          transform: ''
+    image: wave_why_wave_energy
+    item_bg_color: white
+    items: []
+    list: ''
+    name: why wave energy
+    parallax: false
+    subtitle: none
+    texture: ''
+    title: Why Wave Energy?
   - bg_color: ghost-white
     bg_image: none
     buttons: []
@@ -371,42 +407,6 @@ page_sections:
     subtitle: 'Become an investor, ambassador or teammember'
     texture: texture_underwater
     title: '"Support this new wave of power generation!"'
-  - bg_color: charcoal
-    bg_image: none
-    bodytext: |-
-      - 100% renewable
-      - huge potential
-      - predictable
-      - consistent
-      - complementary
-    buttons:
-      - icon: ''
-        icon_type: ''
-        label: wave energy explained
-        link: /pages/wave-energy-explained
-        type: primary
-    component: introbanner
-    component_type: poppy-banner
-    count: ''
-    design:
-      typographies:
-        - align: center
-          bg_color: none
-          color: ghost-white
-          font: display1
-          font_weight: ''
-          name: title
-          size: 2xl
-          transform: ''
-    image: wave_why_wave_energy
-    item_bg_color: white
-    items: []
-    list: ''
-    name: why wave energy
-    parallax: false
-    subtitle: none
-    texture: ''
-    title: Why Wave Energy?
   - bg_color: ghost-white
     bg_image: ''
     buttons:
