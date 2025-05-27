@@ -345,7 +345,7 @@ page_sections:
   - bg_color: ghost-white
     bg_image: none
     buttons: []
-    component: explainer
+    component: explainer-how-do-we-do-it
     component_type: ''
     count: ''
     image: ''
