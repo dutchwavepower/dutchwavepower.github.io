@@ -1,4 +1,4 @@
-<!-- {{- $page := .page -}}
+{{- $page := .page -}}
 {{- $content := .content -}}
 {{- $design := .design -}}
 
@@ -11,14 +11,15 @@
 <div class="{{.vertical_space}} ">
   <h3 class=" {{.title }}">{{ $content.title }}</h3>
   <p class=" {{.subtitle}}">{{ $content.subtitle }}</p>
-  <div class=" grid grid-flow-row-dense grid-cols-12 gap-4"> {{/* Added gap-4 for spacing */}}
+  <div class=" grid grid-flow-row-dense grid-cols-12 {{.gridgap}}"> {{/* Keep .gridgap from your theme */}}
       {{- range $index, $item := $content.items -}}
-          {{/* Force column span for testing */}}
-          {{- $span := "col-span-12 sm:col-span-6 md:col-span-4" -}} {{/* FORCED 4-column layout (3 cards per row on larger screens) */}}
+          {{- $span := partial "poppy-elements/standard-columns" (dict "amount" $amount "index" $index) -}}
           <div class="{{$span}} flex flex-col w-full h-full overflow-hidden {{ $design.rounded }} {{$design.shadow}} {{$design.border}} {{$content.item_bg_color}}">
 
-            <a href="{{$item.link }}" class="block w-full h-72 overflow-hidden flex items-center justify-center bg-gray-200"> {{/* Added bg-gray-200 to see wrapper */}}
+            {{/* START: Media Wrapper - this block will contain either image or video */}}
+            <a href="{{$item.link }}" class="block w-full h-72 overflow-hidden flex items-center justify-center"> {{/* h-72 sets fixed height for consistency */}}
               {{- if $item.video -}}
+                {{/* --- Video content --- */}}
                 {{- $videoSource := "" -}}
                 {{- with $page.Resources.GetMatch (printf "%s*" $item.video) -}}
                     {{- $videoSource = .RelPermalink -}}
@@ -29,14 +30,17 @@
                         Your browser does not support the video tag.
                     </video>
                 {{- else -}}
+                    {{/* Fallback if video resource not found, check for image */}}
                     {{- if $item.image -}}
                         {{- partial "poppy-elements/image" (dict "resource_page" $content.fg_resource_page "name" $item.image "class" "w-full h-full object-cover") -}}
                     {{- end -}}
                 {{- end -}}
               {{- else if $item.image -}}
+                {{/* --- Image content (original) --- */}}
                 {{- partial "poppy-elements/image" (dict "resource_page" $content.fg_resource_page "name" $item.image "class" "w-full h-full object-cover") -}}
               {{- end -}}
             </a>
+            {{/* END: Media Wrapper */}}
 
             {{- if or $item.title $item.buttons (gt (len $item.bodytext) 2 ) -}}
               <div class="flex flex-col p-4 h-full">
@@ -62,14 +66,13 @@
   </div>
 </div>
 {{- end -}}
- -->
 
 
 
 
 
 
-
+<!-- 
 
 {{- $page := .page -}}
 {{- $content := .content -}}
@@ -117,3 +120,4 @@
 </div>
 {{- end -}}
 
+ -->
