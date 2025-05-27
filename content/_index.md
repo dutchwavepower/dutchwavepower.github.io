@@ -396,6 +396,49 @@ page_sections:
     subtitle: none
     texture: ''
     title: Why Wave Energy?
+  - bg_color: ghost-white
+    bg_image: none
+    buttons: []
+    component: explainer
+    component_type: ''
+    count: ''
+    image: ''
+    item_bg_color: ''
+    items:
+      - bodytext: >-
+          text
+
+        buttons: []
+        icon: ''
+        icon_type: ''
+        image: blue_vertical
+        link: ''
+        name: tension_leg_platform_technology
+        title: 'Tension Leg Platform Technology'
+      - bodytext: >-
+          text
+        buttons: []
+        icon: ''
+        icon_type: ''
+        image: blue_vertical
+        link: ''
+        name: ''
+        title: 'Simple'
+      - bodytext: >-
+          text
+        buttons: []
+        icon: ''
+        icon_type: ''
+        image: blue_vertical
+        link: ''
+        name: ''
+        title: 'Easy'
+    list: ''
+    name: how do we do it?
+    parallax: false
+    subtitle: ''
+    texture: texture_underwater
+    title: How do we do it?
   - bg_color: baby-blue-eyes
     bg_image: none
     buttons:
