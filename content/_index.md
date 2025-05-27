@@ -352,25 +352,25 @@ page_sections:
     item_bg_color: ''
     items:
       - bodytext: |-
-          # Patented technology
-          <br>
-          # Cost-effective
-          - Simple design, few components
-          - Off-the-shelf components
-          - Low maintenance: sensitive parts totally shield of the environment
-          - Drop and connect installation
-          - Medium sized: production and transport in existing facilities
-          <br>
-          # Flexible positioning
-          Technology placeable at any location:
-          - Onshore
-          - Near Shore
-          - Offshore
-          <br>
-          # Robust & Efficiency
-          - Submerges in extreme waves
-          - Resonant in full wave spectrum
-          - High efficiency
+          ### Patented technology
+         
+          ### Cost-effective
+          - Simple design, few components
+          - Off-the-shelf components
+          - Low maintenance: sensitive parts totally shield of the environment
+          - Drop and connect installation
+          - Medium sized: production and transport in existing facilities
+         
+          ### Flexible positioning
+          Technology placeable at any location:
+          - Onshore
+          - Near Shore
+          - Offshore
+         
+          ### Robust & Efficiency
+          - Submerges in extreme waves
+          - Resonant in full wave spectrum
+          - High efficiency
         buttons: []
         icon: ''
         icon_type: ''
