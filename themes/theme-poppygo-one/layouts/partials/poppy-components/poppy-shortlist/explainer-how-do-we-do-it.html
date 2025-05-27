@@ -30,7 +30,7 @@
                 {{- $videoSource = .RelPermalink -}}
             {{- end -}}
             {{- if $videoSource -}}
-                <video autoplay loop muted playsinline class="w-full h-full object-cover rounded-md">
+                <video autoplay loop muted playsinline class="w-full h-auto object-cover rounded-md">
                     <source src="{{ $videoSource }}" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
