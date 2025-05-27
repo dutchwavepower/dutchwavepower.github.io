@@ -323,7 +323,7 @@ page_sections:
         buttons: []
         icon: ''
         icon_type: ''
-        image: costeffective
+        image: blue_vertical
         link: roadmap
         name: costeffective
         title: ''
