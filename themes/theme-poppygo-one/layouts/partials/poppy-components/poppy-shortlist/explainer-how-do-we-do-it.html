@@ -12,7 +12,7 @@
         {{- $switchBody := "" -}}
 
         {{-  if not (modBool $index 2) -}}
-          {{ $switchBody = "col-start-1 md:col-start-5 col-span-10 md:col-span-6 px-4 md:pl-16 lg:pl-24 xl:pl-32" -}}
+          {{ $switchBody = "col-start-1 md:col-start-5 col-span-10 md:col-span-6 px-4 md:pl-16 lg:pl-24 xl:pl-32" }} {{/* CORRECTED: Removed trailing hyphen */}}
           {{ $switchImg = "col-start-1 md:col-start-1 lg:col-start-2 col-span-10 md:col-span-5 lg:col-span-4" -}}
         {{- else -}}
           {{ $switchBody = "col-start-1 md:col-start-1 col-span-10 md:col-span-6 px-4 md:pl-6 md:pr-12 lg:pr-28" -}}
@@ -27,51 +27,4 @@
           <div class="z-10 mt-10 my-auto {{ $content.item_bg_color }} {{$row}} {{$design.rounded}} {{$design.shadow}} {{$switchImg}} {{$design.border}}">
             {{- $videoSource := "" -}}
             {{- with $content.fg_resource_page.Resources.GetMatch (printf "%s*" $value.video) -}}
-                {{- $videoSource = .RelPermalink -}}
-            {{- end -}}
-            {{- if $videoSource -}}
-                <video autoplay loop muted playsinline class="w-full h-auto object-cover rounded-md"> {{/* Added h-auto for aspect ratio, rounded-md from your design.rounded */}}
-                    <source src="{{ $videoSource }}" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-            {{- else -}}
-                {{/* Fallback if video not found - can display image if it exists */}}
-                {{- with $value.image -}}
-                    {{- $class := printf "%s %s w-full h-auto" $design.rounded $design.shadow -}} {{/* Added h-auto for image */}}
-                    {{- partial "poppy-elements/image-how-do-we-do-it" (dict "resource_page" $content.fg_resource_page "name" . "class" $class ) -}}
-                {{- end -}}
-            {{- end -}}
-          </div>
-        {{- else if $value.image -}}
-          {{/* Render Image (original logic) */}}
-          <div class= "z-10 mt-10 my-auto {{$content.item_bg_color}} {{$row}} {{$design.rounded}} {{$design.shadow}} {{$switchImg}} {{$design.border}}" >
-              {{- $class := printf "%s %s w-full h-auto" $design.rounded $design.shadow -}} {{/* Added h-auto for image */}}
-              {{- partial "poppy-elements/image-how-do-we-do-it" (dict "resource_page" $content.fg_resource_page "name" . "class" $class ) -}}
-          </div>
-        {{- end -}}
-        {{/* --- End: Video/Image Handling Block --- */}}
-
-        <div class="pt-10 my-auto mb-10 {{$row}} {{$design.rounded}} {{$design.shadow}} {{$content.item_bg_color}} {{$switchBody}}">
-          <div class="flex flex-auto items-start">
-
-            {{- with .icon -}}
-              <div class="relative w-12 {{$design.itemtitle}} py-0 -mt-2 mr-5">
-                {{- partial "poppy-elements/icon" (dict "icon" . "icontype" "outline" ) -}}
-              </div>
-            {{- end -}}
-
-            <div>
-              <div class = {{$design.itemtitle}}>{{.title}}</div>
-              <div class=" prose mx-auto {{$design.rounded}} {{$design.itembody}} ">
-                  {{.bodytext | markdownify }}
-              </div>
-              <div class="{{$design.itembody}} justify-end">
-                  {{- partial "poppy-elements/buttons" (dict "design" $design "buttons" .buttons ) -}}
-              </div>
-            </div>
-          </div>
-        </div>
-      {{- end -}}
-    </div>
-</div>
-{{- end -}}
+                {{-
