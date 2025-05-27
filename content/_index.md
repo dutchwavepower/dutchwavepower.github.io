@@ -309,11 +309,11 @@ page_sections:
   - bg_color: charcoal
     bg_image: none
     bodytext: |-
-      - 100% renewable
-      - huge potential
-      - predictable
-      - consistent
-      - complementary
+      - clean and green:            100% renewable
+      - huge energy potential:      10% global energy need
+      - huge economic potential:    €650 billion market in 2050
+      - highly predictable:         3-5 days in advance
+      - complements wind and solar
     buttons:
       - icon: ''
         icon_type: ''
