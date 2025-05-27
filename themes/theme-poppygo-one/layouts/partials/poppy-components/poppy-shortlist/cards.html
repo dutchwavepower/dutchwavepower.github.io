@@ -4,82 +4,6 @@
 
 {{- $amount := 0 -}}
 {{ if $content.items }}
-    {{ $amount = len $content.items }}
-{{ end }}
-
-{{- with $design -}}
-<div class="{{.vertical_space}} ">
-  <h3 class=" {{.title }}">{{ $content.title }}</h3>
-  <p class=" {{.subtitle}}">{{ $content.subtitle }}</p>
-  <div class=" grid grid-flow-row-dense grid-cols-12 {{.gridgap}}"> {{/* Keep .gridgap from your theme */}}
-      {{- range $index, $item := $content.items -}}
-          {{- $span := partial "poppy-elements/standard-columns" (dict "amount" $amount "index" $index) -}}
-          <div class="{{$span}} flex flex-col w-full h-full overflow-hidden {{ $design.rounded }} {{$design.shadow}} {{$design.border}} {{$content.item_bg_color}}">
-
-            {{/* START: Media Wrapper - this block will contain either image or video */}}
-            <a href="{{$item.link }}" class="block w-full h-72 overflow-hidden flex items-center justify-center"> {{/* h-72 sets fixed height for consistency */}}
-              {{- if $item.video -}}
-                {{/* --- Video content --- */}}
-                {{- $videoSource := "" -}}
-                {{- with $page.Resources.GetMatch (printf "%s*" $item.video) -}}
-                    {{- $videoSource = .RelPermalink -}}
-                {{- end -}}
-                {{- if $videoSource -}}
-                    <video autoplay loop muted playsinline class="w-full h-full object-cover">
-                        <source src="{{ $videoSource }}" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                {{- else -}}
-                    {{/* Fallback if video resource not found, check for image */}}
-                    {{- if $item.image -}}
-                        {{- partial "poppy-elements/image" (dict "resource_page" $content.fg_resource_page "name" $item.image "class" "w-full h-full object-cover") -}}
-                    {{- end -}}
-                {{- end -}}
-              {{- else if $item.image -}}
-                {{/* --- Image content (original) --- */}}
-                {{- partial "poppy-elements/image" (dict "resource_page" $content.fg_resource_page "name" $item.image "class" "w-full h-full object-cover") -}}
-              {{- end -}}
-            </a>
-            {{/* END: Media Wrapper */}}
-
-            {{- if or $item.title $item.buttons (gt (len $item.bodytext) 2 ) -}}
-              <div class="flex flex-col p-4 h-full">
-                {{- with $item.icon -}}
-                  {{- if not (eq . "none") -}}
-                    <div class="relative w-8 md:w-12 {{$design.itemtitle}} py-0 -mt-1 md:-mt-2 mr-5">
-                      {{- partial "poppy-elements/icon" (dict "icon" . "icontype" "outline") -}}
-                    </div>
-                  {{- end -}}
-                {{- end -}}
-                <div class="flex flex-col h-full">
-                  <div class = "{{$design.itemtitle}}" >{{$item.title}}</div>
-                  <div class=" prose mx-auto {{$design.rounded}} {{$design.itembody}} flex-1 mb-5">{{$item.bodytext | markdownify }}</div>
-                  <div class="{{$design.itembody}}">
-                      {{- partial "poppy-elements/buttons" (dict "design" $design "buttons" $item.buttons ) -}}
-                  </div>
-                </div>
-              </div>
-            {{- end -}}
-          </div>
-
-      {{- end -}}
-  </div>
-</div>
-{{- end -}}
-
-
-
-
-
-
-<!-- 
-
-{{- $page := .page -}}
-{{- $content := .content -}}
-{{- $design := .design -}}
-
-{{- $amount := 0 -}}
-{{ if $content.items }}
     {{ $amount = len $content.items }}
 {{ end }}
 
@@ -119,5 +43,3 @@
   </div>
 </div>
 {{- end -}}
-
- -->
