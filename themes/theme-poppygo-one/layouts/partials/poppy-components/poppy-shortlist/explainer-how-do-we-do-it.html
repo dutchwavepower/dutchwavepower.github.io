@@ -24,18 +24,14 @@
         {{/* --- Start: Video/Image Handling Block --- */}}
         {{- if $value.video -}}
           {{/* Render Video */}}
-          <div class="relative z-10 mt-10 my-auto {{ $content.item_bg_color }} {{$row}} {{$design.rounded}} {{$design.shadow}} {{$switchImg}} {{$design.border}}" style="padding-top: 56.25%;">
-                  <video autoplay loop muted playsinline class="absolute inset-0 w-full h-full object-cover rounded-md">
-                          <source src="{{ $videoSource }}" type="video/mp4">
-                          Your browser does not support the video tag.
-                  </video>
-          </div>
-            {{- $videoSource := "" -}}
-            {{- with $page.Resources.GetMatch (printf "%s*" $value.video) -}}
+          {{- $videoSource := "" -}}
+          {{- with $page.Resources.GetMatch (printf "%s*" $value.video) -}}
                 {{- $videoSource = .RelPermalink -}}
-            {{- end -}}
+          {{- end -}}
+
+          <div class="relative z-10 mt-10 my-auto {{ $content.item_bg_color }} {{$row}} {{$design.rounded}} {{$design.shadow}} {{$switchImg}} {{$design.border}}" style="padding-top: 56.25%;">
             {{- if $videoSource -}}
-                <video autoplay loop muted playsinline class="w-full h-auto object-cover rounded-md">
+                <video autoplay loop muted playsinline class="absolute inset-0 w-full h-full object-cover rounded-md">
                     <source src="{{ $videoSource }}" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
@@ -80,6 +76,11 @@
     </div>
 </div>
 {{- end -}}
+
+
+
+
+
 
 
 
