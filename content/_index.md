@@ -306,60 +306,71 @@ page_sections:
     subtitle: Unlocking world's greatest untapped sustainable energy source
     texture: texture_underwater
     title: '"We need to act now!"'
-  - bg_color: baby-blue-eyes
+  - bg_color: ghost-white
     bg_image: none
     buttons: []
-    component: cards-standard
-    component_type: poppy-shortlist
+    component: explainer
+    component_type: ''
     count: ''
     image: ''
-    item_bg_color: white
+    item_bg_color: ''
     items:
-      - bodytext: |-
-          - simple and unique design
-          - drop & connect installation
-          - off-the-shelf components
-          - low maintenaince
+      - bodytext: >-
+          text
+
         buttons: []
         icon: ''
         icon_type: ''
-        image: costeffective
-        link: roadmap
-        name: costeffective
-        title: ''
-      - bodytext: |
-          - follows wave rotation
-          - uses wave front
-          - full range resonance
-          - automatic tide adaption
-        buttons: []
-        icon: ''
-        icon_type: ''
-        image: efficient
-        link: technology
-        name: efficient
-        title: ''
-        video: ''
-      - bodytext: |
-          - all sensitive parts inside
-          - submerge in extremes
-          - no end-stops
-          - load steering
+        image: blue_vertical
+        link: ''
+        name: tension_leg_platform_technology
+        title: 'Tension Leg Platform Technology'
+      - bodytext: >-
+          text
         buttons: []
         icon: ''
         icon_type: ''
         image: robust
-        link: technology
-        name: robust
-        title: ''
+        link: ''
+        name: ''
+        title: 'Simple'
+      - bodytext: >-
+          text
+        buttons: []
+        icon: ''
+        icon_type: ''
+        image: efficient
+        link: ''
+        name: ''
+        title: 'Easy'
     list: ''
-    name: how-do-we-do-it
+    name: how_do_we_do_it
     parallax: false
-    poppy_type: poppy-shortlist
-    poppy_variant: cards-standard
-    subtitle: none
+    subtitle: ''
     texture: texture_underwater
     title: How do we do it?
+  - bg_color: baby-blue-eyes
+    bg_image: none
+    buttons:
+      - icon: ''
+        icon_type: ''
+        label: join
+        link: join
+        type: primary
+    component: dwp-inpage-banner
+    component_type: ''
+    count: ''
+    image: ''
+    item_bg_color: transparent
+    items: []
+    list: ''
+    name: support
+    parallax: false
+    poppy_type: poppy-banner
+    poppy_variant: inpage-banner
+    subtitle: 'Become an investor, ambassador or teammember'
+    texture: texture_underwater
+    title: '"Support this new wave of power generation!"'
   - bg_color: charcoal
     bg_image: none
     bodytext: |-
@@ -396,71 +407,6 @@ page_sections:
     subtitle: none
     texture: ''
     title: Why Wave Energy?
-  - bg_color: ghost-white
-    bg_image: none
-    buttons: []
-    component: explainer
-    component_type: ''
-    count: ''
-    image: ''
-    item_bg_color: ''
-    items:
-      - bodytext: >-
-          text
-
-        buttons: []
-        icon: ''
-        icon_type: ''
-        image: blue_vertical
-        link: ''
-        name: tension_leg_platform_technology
-        title: 'Tension Leg Platform Technology'
-      - bodytext: >-
-          text
-        buttons: []
-        icon: ''
-        icon_type: ''
-        image: blue_vertical
-        link: ''
-        name: ''
-        title: 'Simple'
-      - bodytext: >-
-          text
-        buttons: []
-        icon: ''
-        icon_type: ''
-        image: blue_vertical
-        link: ''
-        name: ''
-        title: 'Easy'
-    list: ''
-    name: how do we do it?
-    parallax: false
-    subtitle: ''
-    texture: texture_underwater
-    title: How do we do it?
-  - bg_color: baby-blue-eyes
-    bg_image: none
-    buttons:
-      - icon: ''
-        icon_type: ''
-        label: join
-        link: join
-        type: primary
-    component: dwp-inpage-banner
-    component_type: ''
-    count: ''
-    image: ''
-    item_bg_color: transparent
-    items: []
-    list: ''
-    name: support
-    parallax: false
-    poppy_type: poppy-banner
-    poppy_variant: inpage-banner
-    subtitle: 'Become an investor, ambassador or teammember'
-    texture: texture_underwater
-    title: '"Support this new wave of power generation!"'
   - bg_color: ghost-white
     bg_image: ''
     buttons:
