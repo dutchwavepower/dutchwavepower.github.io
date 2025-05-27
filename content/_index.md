@@ -335,7 +335,7 @@ page_sections:
         buttons: []
         icon: ''
         icon_type: ''
-        image: ''
+        image: efficient
         link: technology
         name: Tension Leg Platform Technology
         title: ''
