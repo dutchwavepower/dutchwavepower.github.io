@@ -342,26 +342,49 @@ page_sections:
     subtitle: none
     texture: ''
     title: Why Wave Energy?
+  - bg_color: ghost-white
+    bg_image: none
+    buttons: []
+    component: explainer-how-do-we-do-it
+    component_type: ''
+    count: ''
+    image: ''
+    item_bg_color: ''
+    items:
       - bodytext: |-
-          ### Patented technology
-          
-          ### Cost-effective
-          - Simple design, few components
-          - Off-the-shelf components
-          - Low maintenance: sensitive parts totally shield of the environment
-          - Drop and connect installation
-          - Medium sized: production and transport in existing facilities
-          
-          ### Flexible positioning
-          Technology placeable at any location:
-          - Onshore
-          - Near Shore
-          - Offshore
-          
-          ### Robust & Efficiency
-          - Submerges in extreme waves
-          - Resonant in full wave spectrum
-          - High efficiency
+          # Patented technology
+          <br>
+          # Cost-effective
+          - Simple design, few components
+          - Off-the-shelf components
+          - Low maintenance: sensitive parts totally shield of the environment
+          - Drop and connect installation
+          - Medium sized: production and transport in existing facilities
+          <br>
+          # Flexible positioning
+          Technology placeable at any location:
+          - Onshore
+          - Near Shore
+          - Offshore
+          <br>
+          # Robust & Efficiency
+          - Submerges in extreme waves
+          - Resonant in full wave spectrum
+          - High efficiency
+        buttons: []
+        icon: ''
+        icon_type: ''
+        image: ''
+        link: ''
+        name: tension-leg-platform-technology
+        title: 'Tension Leg Platform Technology'
+        video: Dutch_Wave_Power_Animation_Vertical_1080_1920p
+    list: ''
+    name: how-do-we-do-it
+    parallax: false
+    subtitle: ''
+    texture: texture_underwater
+    title: How do we do it?
   - bg_color: baby-blue-eyes
     bg_image: none
     buttons:
