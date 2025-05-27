@@ -21,6 +21,47 @@
 
         {{ $row := printf "md:row-start-%s" (string (add $index 1)) -}}
 
+        {{/* --- Start: Video/Image Handling Block --- */}}
+        {{- if $value.video -}}
+          {{/* Render Video */}}
+          <div class="relative z-10 mt-10 my-auto {{ $content.item_bg_color }} {{$row}} {{$design.rounded}} {{$design.shadow}} {{$switchImg}} {{$design.border}} aspect-w-16 aspect-h-9">
+            {{- $videoSource := "" -}}
+            {{- with $page.Resources.GetMatch (printf "%s*" $value.video) -}}
+                {{- $videoSource = .RelPermalink -}}
+            {{- end -}}
+            {{- if $videoSource -}}
+                <video autoplay loop muted playsinline class="absolute inset-0 w-full h-full object-cover rounded-md">
+                    <source src="{{ $videoSource }}" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+
+
+
+
+
+<!-- {{- $page := .page -}}
+{{- $content := .content -}}
+{{- $design := .design -}}
+
+{{- with $design -}}
+<div class="{{.vertical_space}} ">
+  <h3 class=" {{.title }}">{{ $content.title }}</h3>
+  <p class=" {{.subtitle}}">{{ $content.subtitle }}</p>
+    <div class="grid grid-cols-10 {{ .gridgap }} grid-flow-row-dense ">
+      {{- range $index, $value := $content.items -}}
+        {{- $switchImg := "" -}}
+        {{- $bodyClasses := "" -}}
+
+        {{- if not (modBool $index 2) }}
+          {{ $bodyClasses = "col-start-1 md:col-start-5 col-span-10 md:col-span-6 px-4 md:pl-16 lg:pl-24 xl:pl-32" }}
+          {{ $switchImg = "col-start-1 md:col-start-1 lg:col-start-2 col-span-10 md:col-span-5 lg:col-span-4" }}
+        {{- else }}
+          {{ $bodyClasses = "col-start-1 md:col-start-1 col-span-10 md:col-span-6 px-4 md:pl-6 md:pr-12 lg:pr-28" }}
+          {{ $switchImg = "col-start-1 md:col-start-6 lg:col-start-6 col-span-10 md:col-span-5 lg:col-span-4" }}
+        {{- end -}}
+
+        {{ $row := printf "md:row-start-%s" (string (add $index 1)) -}}
+
         {{/* --- Start: Video/Image Handling Block --- */}}
         {{- if $value.video -}}
           {{/* Render Video */}}
@@ -74,4 +115,4 @@
       {{- end -}}
     </div>
 </div>
-{{- end -}}
+{{- end -}} -->
