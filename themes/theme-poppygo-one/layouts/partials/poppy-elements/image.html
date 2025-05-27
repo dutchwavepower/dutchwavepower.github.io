@@ -1,43 +1,4 @@
 {{/* Usage:
-{{ partial "image" (dict "page" . "name" .Params.image "path" "images/" "scale" "w-100") }}
-*/}}
-
-{{- $class := .class -}}
-{{- $sizes := (slice "480" "800" "1500") -}}
-{{- $image_path := printf "images/*%s*" .name -}}
-{{- if or (.resource_page.IsHome) (.resource_page.IsSection) -}}
-    {{- $image_path = printf "*%s*" .name -}}
-{{- end }}
-
-{{- $image := (.resource_page.Resources.ByType "image").GetMatch $image_path -}}
-
-{{- with $image -}}
-    {{- $filename := path.Base .Name -}}
-    {{- $caption := "" -}}
-
-    {{- if eq (path.Ext $filename) ".svg" -}}
-        {{/* Handle SVG by embedding or directly linking, ensuring it takes class */}}
-        <img src="{{.RelPermalink}}" class="{{$class}}" alt="{{$filename}}">
-    {{- else if (or (in $class "h-full") (in $class "h-72") (in $class "object-cover")) -}}
-        {{/* If a fixed height or object-fit class is passed, prioritize that for fixed-size containers.
-            Remove sizes and srcset here to prevent conflict with object-fit. */}}
-        <img src="{{- ($image.Resize "800x").Permalink -}}" class="lazyload {{$class}}" alt="{{- $filename -}}">
-    {{- else -}}
-        {{/* Default behavior for other images (responsive, non-fixed height) */}}
-        <img sizes="(min-width: 992px) 25vw, 55vw"
-        srcset='
-        {{- range $sizes -}}
-          {{- ($image.Resize (printf "%sx" .)).RelPermalink }} {{ (printf "%sw" .) -}},
-        {{- end -}}'
-        src="{{- ($image.Resize "800x").Permalink -}}"
-        class="lazyload {{$class}}"
-        alt="{{- $filename -}}">
-    {{- end -}}
-{{- end -}}
-
-
-
-<!-- {{/* Usage:
 {{ partial "image" (dict "page" . "name" .Params.image "path" "images/" "scale" "w-100")  }}
 */}}
 
@@ -69,4 +30,4 @@
       class="lazyload {{$class}}"
       alt="{{- $filename -}}">
   {{- end -}}
-{{- end -}} -->
+{{- end -}}
