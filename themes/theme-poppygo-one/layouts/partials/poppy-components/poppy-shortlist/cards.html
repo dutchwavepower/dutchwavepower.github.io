@@ -17,7 +17,8 @@
           <div  class="{{$span}} flex flex-col w-full h-full overflow-hidden {{ $design.rounded }} {{$design.shadow}} {{$design.border}} {{$content.item_bg_color}}">
 
             {{/* This is the shared wrapper for both image and video */}}
-            <a href="{{$item.link }}" class="block w-full card-media-wrapper"> {{/* Added card-media-wrapper class and made it a block */}}
+            {{/* Use Tailwind classes for consistent height and overflow */}}
+            <a href="{{$item.link }}" class="block w-full h-72 overflow-hidden flex items-center justify-center"> {{/* COMBINED CLASSES HERE */}}
               {{- if $item.video -}}
                 {{/* --- Video content --- */}}
                 {{- $videoSource := "" -}}
@@ -25,19 +26,19 @@
                     {{- $videoSource = .RelPermalink -}}
                 {{- end -}}
                 {{- if $videoSource -}}
-                    <video autoplay loop muted playsinline class="card-media-element">
+                    <video autoplay loop muted playsinline class="w-full h-full object-cover"> {{/* TAILWIND CLASSES HERE */}}
                         <source src="{{ $videoSource }}" type="video/mp4">
                         Your browser does not support the video tag.
                     </video>
                 {{- else -}}
                     {{/* Fallback if video resource not found */}}
                     {{- if $item.image -}}
-                        {{- partial "poppy-elements/image" (dict "resource_page" $content.fg_resource_page "name" $item.image "class" "w-full card-media-element") -}}
+                        {{- partial "poppy-elements/image" (dict "resource_page" $content.fg_resource_page "name" $item.image "class" "w-full h-full object-cover") -}} {{/* TAILWIND CLASSES HERE */}}
                     {{- end -}}
                 {{- end -}}
               {{- else if $item.image -}}
                 {{/* --- Image content --- */}}
-                {{- partial "poppy-elements/image" (dict "resource_page" $content.fg_resource_page "name" $item.image "class" "w-full card-media-element") -}}
+                {{- partial "poppy-elements/image" (dict "resource_page" $content.fg_resource_page "name" $item.image "class" "w-full h-full object-cover") -}} {{/* TAILWIND CLASSES HERE */}}
               {{- end -}}
             </a>
 
@@ -65,29 +66,6 @@
   </div>
 </div>
 {{- end -}}
-
-<style>
-  /* This CSS will apply to the media (image or video) within the cards */
-  .card-media-wrapper {
-    /* Set a fixed height for the wrapper */
-    height: 12rem; /* h-48 in Tailwind CSS is 12rem (192px). h-100 is 18rem. Let's use h-48 for a more balanced look, or h-64 (16rem) */
-    /* If you want 3x of h-24 (which is 6rem), then 3 * 6 = 18rem. So h-72 is 18rem. Let's use h-72 (18rem). */
-    height: 18rem; /* Equivalent to Tailwind's h-72 (3 * 6rem) */
-    overflow: hidden; /* Crucial to crop media if it exceeds the fixed height */
-    display: flex; /* Helps in centering content vertically if needed, but primarily for positioning */
-    justify-content: center; /* Center horizontally if content is smaller */
-    align-items: center; /* Center vertically if content is smaller */
-  }
-
-  .card-media-element {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Ensures the media covers the container, cropping as necessary */
-    /* object-position: center; /* Ensures the center of the image/video is visible */
-  }
-</style>
-
-
 
 
 
