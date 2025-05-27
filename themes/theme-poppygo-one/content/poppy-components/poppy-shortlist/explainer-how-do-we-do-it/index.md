@@ -4,7 +4,7 @@ bg_color: white
 item_bg_color: white
 image: explainer
 poppy_type: poppy-shortlist
-poppy_variant: explainer-how-it-do-we-do
+poppy_variant: explainer-how-do-we-do-it
 subtitle: ''
 summary: '-| I am the summary of the newsletter element, which is not very relevant'
 title: Explainer-how-it-do-we-do
