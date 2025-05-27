@@ -11,34 +11,30 @@
 <div class="{{.vertical_space}} ">
   <h3 class=" {{.title }}">{{ $content.title }}</h3>
   <p class=" {{.subtitle}}">{{ $content.subtitle }}</p>
-  <div class=" grid grid-flow-row-dense grid-cols-12 {{.gridgap}}">
+  <div class=" grid grid-flow-row-dense grid-cols-12 gap-4"> {{/* Added gap-4 for spacing */}}
       {{- range $index, $item := $content.items -}}
-          {{- $span := partial "poppy-elements/standard-columns" (dict "amount" $amount "index" $index) -}}
-          <div  class="{{$span}} flex flex-col w-full h-full overflow-hidden {{ $design.rounded }} {{$design.shadow}} {{$design.border}} {{$content.item_bg_color}}">
+          {{/* Force column span for testing */}}
+          {{- $span := "col-span-12 sm:col-span-6 md:col-span-4" -}} {{/* FORCED 4-column layout (3 cards per row on larger screens) */}}
+          <div class="{{$span}} flex flex-col w-full h-full overflow-hidden {{ $design.rounded }} {{$design.shadow}} {{$design.border}} {{$content.item_bg_color}}">
 
-            {{/* This is the shared wrapper for both image and video */}}
-            {{/* Use Tailwind classes for consistent height and overflow */}}
-            <a href="{{$item.link }}" class="block w-full h-72 overflow-hidden flex items-center justify-center"> {{/* COMBINED CLASSES HERE */}}
+            <a href="{{$item.link }}" class="block w-full h-72 overflow-hidden flex items-center justify-center bg-gray-200"> {{/* Added bg-gray-200 to see wrapper */}}
               {{- if $item.video -}}
-                {{/* --- Video content --- */}}
                 {{- $videoSource := "" -}}
                 {{- with $page.Resources.GetMatch (printf "%s*" $item.video) -}}
                     {{- $videoSource = .RelPermalink -}}
                 {{- end -}}
                 {{- if $videoSource -}}
-                    <video autoplay loop muted playsinline class="w-full h-full object-cover"> {{/* TAILWIND CLASSES HERE */}}
+                    <video autoplay loop muted playsinline class="w-full h-full object-cover">
                         <source src="{{ $videoSource }}" type="video/mp4">
                         Your browser does not support the video tag.
                     </video>
                 {{- else -}}
-                    {{/* Fallback if video resource not found */}}
                     {{- if $item.image -}}
-                        {{- partial "poppy-elements/image" (dict "resource_page" $content.fg_resource_page "name" $item.image "class" "w-full h-full object-cover") -}} {{/* TAILWIND CLASSES HERE */}}
+                        {{- partial "poppy-elements/image" (dict "resource_page" $content.fg_resource_page "name" $item.image "class" "w-full h-full object-cover") -}}
                     {{- end -}}
                 {{- end -}}
               {{- else if $item.image -}}
-                {{/* --- Image content --- */}}
-                {{- partial "poppy-elements/image" (dict "resource_page" $content.fg_resource_page "name" $item.image "class" "w-full h-full object-cover") -}} {{/* TAILWIND CLASSES HERE */}}
+                {{- partial "poppy-elements/image" (dict "resource_page" $content.fg_resource_page "name" $item.image "class" "w-full h-full object-cover") -}}
               {{- end -}}
             </a>
 
@@ -66,9 +62,6 @@
   </div>
 </div>
 {{- end -}}
-
-
-
 
 
 <!-- {{- $page := .page -}}
