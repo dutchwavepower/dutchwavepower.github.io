@@ -24,7 +24,7 @@
         {{- with .image -}}
           <div class= "z-10 mt-10 my-auto {{$content.item_bg_color}} {{$row}} {{$design.rounded}} {{$design.shadow}} {{$switchImg}} {{$design.border}}" >
               {{- $class := printf "%s %s w-full" $design.rounded $design.shadow -}}
-              {{- partial "poppy-elements/image" (dict "resource_page" $content.fg_resource_page "name" . "class" $class ) -}}
+              {{- partial "poppy-elements/image-how-do-we-do-it" (dict "resource_page" $content.fg_resource_page "name" . "class" $class ) -}}
           </div>
         {{- end -}}
 
