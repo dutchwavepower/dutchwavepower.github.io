@@ -359,14 +359,14 @@ page_sections:
         icon_type: ''
         image: blue_vertical
         link: ''
-        name: tension_leg_platform_technology
+        name: tension-leg-platform-technology
         title: 'Tension Leg Platform Technology'
       - bodytext: >-
           text
         buttons: []
         icon: ''
         icon_type: ''
-        image: robust
+        image: flexible_positioning
         link: ''
         name: ''
         title: 'Simple'
