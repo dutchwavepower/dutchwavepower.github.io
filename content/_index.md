@@ -310,10 +310,10 @@ page_sections:
     bg_image: none
     bodytext: |-
       - 100% clean and green       
-      - 10% global energy need
+      - 10% of global energy need
       - €650 billion market in 2050
       - highly predictable -> 3-5 days in advance
-      - unique characteristic that complements wind and solar
+      - unique characteristic -> complements wind and solar
     buttons:
       - icon: ''
         icon_type: ''
@@ -352,17 +352,11 @@ page_sections:
     item_bg_color: ''
     items:
       - bodytext: |-
-          **Patented technology**
+          The technology consists of a cylindrical float that rotates back and forth along a suspension system due to the up and down movement of the waves.
+          In the float, a pendulum and power take-off system convert the rotational energy into electricity. 
+          All electrical conversion parts are completely enclosed in the wear-resistant float, preventing any contact with salty seawater. 
+          Rotation is key in this technology and it only takes a few off-the-shelf components to make it happen in a cost effective way.
 
-          **Flexible positioning at any location**
-          - Onshore
-          - Near Shore
-          - Offshore
-    
-          **Robust & Efficient**
-          - Submerges in extreme waves
-          - Resonant in full wave spectrum
-          - Relative high efficiency
         buttons: []
         icon: ''
         icon_type: ''
@@ -384,6 +378,26 @@ page_sections:
         link: ''
         name: costeffective
         title: 'Costeffective'
+        video: ''
+      - bodytext: |-
+          **Patented technology**
+        
+          **Flexible positioning at any location**
+          - Onshore
+          - Near Shore
+          - Offshore
+    
+          **Robust & Efficient**
+          - Submerges in extreme waves
+          - Resonant in full wave spectrum
+          - Relative high efficiency
+        buttons: []
+        icon: ''
+        icon_type: ''
+        image: patented
+        link: ''
+        name: patented
+        title: 'Patented technology'
         video: ''
     list: ''
     name: how-do-we-do-it
