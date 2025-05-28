@@ -4,11 +4,16 @@
     position: relative !important;
     width: 100%;
     padding-bottom: 56.25% !important;
-    height: 0 !important;
+    height: 0 !important;             /* The target */
     overflow: hidden;
-    min-height: 0 !important; /* Ensure min-height is explicitly 0 */
-    align-self: start !important; /* Prevent stretching in grid/flex */
-    flex-shrink: 0 !important; /* Prevent shrinking in flex contexts */
+    min-height: 0 !important;         /* Prevent minimum height from interfering */
+    align-self: start !important;     /* Prevent grid/flex item stretching */
+    flex-shrink: 0 !important;        /* Prevent flex item shrinking */
+    
+    /* NEW: Explicitly define grid row behavior for this item if it's a grid child */
+    /* This aims to prevent grid-auto-rows or implicit row sizing from affecting height */
+    grid-row: auto / span 1 !important; /* Forces it to occupy one row only, and auto-size its content row */
+    grid-template-rows: none !important; /* Ensure no template rows are forcing its height */
 }
 
 /* Rules for the inner video/image elements */
@@ -22,18 +27,13 @@
     object-fit: cover;
 }
 
-/* NEW: Highly specific override for common Tailwind height conflicts within grid/columns */
-/* This targets the .force-16-9-ratio when it's a child of any element with a 'col-span-' class */
-[class*="col-span-"] > .force-16-9-ratio {
-    height: 0 !important;
-    min-height: 0 !important;
-    /* Optional: Ensure grid-row-end doesn't cause height issues */
-    grid-row-end: span 1 !important;
-}
-
-/* Also ensure no other inherited height from 'row-start' or 'row-end' if present */
+/* Also ensure no other inherited height from 'col-span' or 'row-start' if present */
+/* We're keeping these as they increase specificity to counter other potential grid classes */
+[class*="col-span-"] > .force-16-9-ratio,
 [class*="row-start"] > .force-16-9-ratio,
 [class*="row-end"] > .force-16-9-ratio {
     height: 0 !important;
     min-height: 0 !important;
+    /* Redundant but for absolute certainty on specific grid interactions */
+    grid-row: auto / span 1 !important;
 }
