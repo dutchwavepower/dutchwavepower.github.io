@@ -353,8 +353,11 @@ page_sections:
     items:
       - bodytext: |-
           The technology consists of a cylindrical float that rotates back and forth along a suspension system due to the up and down movement of the waves.
-          In the float, a pendulum and power take-off system convert the rotational energy into electricity. 
-          All electrical conversion parts are completely enclosed in the wear-resistant float, preventing any contact with salty seawater. 
+        
+          In the float, a pendulum and power take-off system convert the rotational energy into electricity.
+        
+          All electrical conversion parts are completely enclosed in the wear-resistant float, preventing any contact with salty seawater.
+  
           Rotation is key in this technology and it only takes a few off-the-shelf components to make it happen in a cost effective way.
 
         buttons: []
@@ -362,8 +365,8 @@ page_sections:
         icon_type: ''
         image: ''
         link: ''
-        name: tension-leg-platform-technology
-        title: 'Tension Leg Platform Technology'
+        name: our-unique-technology
+        title: 'Our Unique Technology'
         video: Dutch_Wave_Power_Animation_Vertical_1080_1920p
       - bodytext: |-
           - Simple design, few components
@@ -394,10 +397,10 @@ page_sections:
         buttons: []
         icon: ''
         icon_type: ''
-        image: patented
+        image: 
         link: ''
-        name: patented
-        title: 'Patented technology'
+        name: 
+        title: ''
         video: ''
     list: ''
     name: how-do-we-do-it
