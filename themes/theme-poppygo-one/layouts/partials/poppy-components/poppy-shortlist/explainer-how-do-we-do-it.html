@@ -29,20 +29,20 @@
               {{- $videoSource = .RelPermalink -}}
           {{- end -}}
 
-        <div class="relative z-10 mt-10 {{ $content.item_bg_color }} {{$row}} {{$design.rounded}} {{$design.shadow}} {{$switchImg}} {{$design.border}} force-16-9-ratio">
-          {{- if $videoSource -}}
-            <video autoplay loop muted playsinline class="w-full h-full object-cover rounded-md">
-              <source src="{{ $videoSource }}" type="video/mp4">
-              Your browser does not support the video tag.
-            </video>
-          {{- else -}}
-            {{/* Fallback if video not found - can display image if it exists */}}
-            {{- with $value.image -}}
-              {{- $class := printf "%s %s w-full h-full object-cover rounded-md" $design.rounded $design.shadow -}}
-              {{- partial "poppy-elements/image-how-do-we-do-it" (dict "resource_page" $page "name" . "class" $class ) -}}
+          <div class="relative z-10 mt-10 {{ $content.item_bg_color }} {{$row}} {{$design.rounded}} {{$design.shadow}} {{$switchImg}} {{$design.border}} force-16-9-ratio">
+            {{- if $videoSource -}}
+              <video autoplay loop muted playsinline class="w-full h-full object-cover rounded-md">
+                <source src="{{ $videoSource }}" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+            {{- else -}}
+              {{/* Fallback if video not found - can display image if it exists */}}
+              {{- with $value.image -}}
+                {{- $class := printf "%s %s w-full h-full object-cover rounded-md" $design.rounded $design.shadow -}}
+                {{- partial "poppy-elements/image-how-do-we-do-it" (dict "resource_page" $page "name" . "class" $class ) -}}
+              {{- end -}}
             {{- end -}}
-          {{- end -}}
-        </div>
+          </div>
         {{- else if $value.image -}}
           {{/* Render Image: Updated to use force-16-9-ratio container */}}
           <div class= "z-10 mt-10 my-auto {{$content.item_bg_color}} {{$row}} {{$design.rounded}} {{$design.shadow}} {{$switchImg}} {{$design.border}} force-16-9-ratio" >
