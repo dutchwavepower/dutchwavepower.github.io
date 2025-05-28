@@ -3,31 +3,24 @@
 .force-16-9-ratio {
     position: relative !important;
     width: 100%;
-    padding-bottom: 56.25% !important;
-    height: 0 !important;             /* The stubbornly overridden property */
     overflow: hidden;
-    min-height: 0 !important;         /* Prevent minimum height from interfering */
-    align-self: start !important;     /* Prevent grid/flex item stretching */
-    flex-shrink: 0 !important;        /* Prevent flex item shrinking */
-    /* REMOVE: grid-row and grid-template-rows from here */
+
+    /* NEW: Modern aspect ratio property - simpler and often bypasses grid issues */
+    aspect-ratio: 16 / 9 !important; /* Forces a 16:9 aspect ratio */
+
+    /* Retain important overrides for other properties, just in case */
+    min-height: 0 !important;
+    align-self: start !important;
+    flex-shrink: 0 !important;
 }
 
-/* Rules for the inner video/image elements */
+/* Rules for the inner video/image elements - still needed to fill the space */
 .force-16-9-ratio video,
 .force-16-9-ratio img {
-    position: absolute;
+    position: absolute; /* Essential for the inner content to fill the aspect-ratio container */
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
-}
-
-/* Keep these highly specific rules for height and min-height, as they are trying to fix the height issue */
-[class*="col-span-"] > .force-16-9-ratio,
-[class*="row-start"] > .force-16-9-ratio,
-[class*="row-end"] > .force-16-9-ratio {
-    height: 0 !important;
-    min-height: 0 !important;
-    /* REMOVE: grid-row from here too */
 }
