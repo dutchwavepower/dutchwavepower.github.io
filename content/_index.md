@@ -378,6 +378,23 @@ page_sections:
         name: tension-leg-platform-technology
         title: 'Tension Leg Platform Technology'
         video: Dutch_Wave_Power_Animation_Vertical_1080_1920p
+      - bodytext: |-
+    
+          **Cost-effective**
+          - Simple design, few components
+          - Off-the-shelf components
+          - Low maintenance: sensitive parts totally shield of the environment
+          - Drop and connect installation
+          - Medium sized: production and transport in existing facilities
+
+        buttons: []
+        icon: ''
+        icon_type: ''
+        image: robust
+        link: ''
+        name: tension-leg-platform-technology
+        title: 'Tension Leg Platform Technology'
+        video: ''
     list: ''
     name: how-do-we-do-it
     parallax: false
