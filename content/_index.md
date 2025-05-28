@@ -342,7 +342,7 @@ page_sections:
     subtitle: none
     texture: ''
     title: Why Wave Energy?
-  - bg_color: ghost-white
+  - bg_color: baby-blue-eyes
     bg_image: none
     buttons: []
     component: explainer-how-do-we-do-it
