@@ -1,9 +1,6 @@
-{{ $custom := resources.Get "css/custom.css" }}
 {{ $tailwind := resources.Get "css/tailwind.css" }}
-
-{{/* CORRECTED ORDER: Tailwind first, then custom. This ensures custom.css overrides Tailwind. */}}
+{{ $custom := resources.Get "css/custom.css" }}
 {{ $css := slice $tailwind $custom | resources.Concat "css/poppygo-one.css" }}
-
 {{- $css = $css | minify | fingerprint "md5" -}}
 <link rel="stylesheet" href="{{ $css.RelPermalink }}">
 
