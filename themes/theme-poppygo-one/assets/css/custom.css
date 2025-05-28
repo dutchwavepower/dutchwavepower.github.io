@@ -1,17 +1,17 @@
 /* themes/theme-poppygo-one/assets/css/custom.css */
 
 .force-16-9-ratio {
-    position: relative !important;
-    width: 100%;
-    overflow: hidden;
+    position: relative !important; /* Keep this to position inner video */
+    width: 100%;                  /* Essential for responsiveness */
+    overflow: hidden;             /* Keep to hide overflow from object-fit:cover */
+    
+    /* NEW: Modern aspect ratio property */
+    aspect-ratio: 16 / 9 !important; /* Forces a 16:9 aspect ratio (width / height) */
 
-    /* NEW: Modern aspect ratio property - simpler and often bypasses grid issues */
-    aspect-ratio: 16 / 9 !important; /* Forces a 16:9 aspect ratio */
-
-    /* Retain important overrides for other properties, just in case */
-    min-height: 0 !important;
-    align-self: start !important;
-    flex-shrink: 0 !important;
+    /* Retain important overrides for other grid/flex properties that might still interfere */
+    min-height: 0 !important;     /* Prevent minimum height from interfering */
+    align-self: start !important; /* Prevent grid/flex item stretching */
+    flex-shrink: 0 !important;    /* Prevent flex item shrinking */
 }
 
 /* Rules for the inner video/image elements - still needed to fill the space */
@@ -24,3 +24,9 @@
     height: 100%;
     object-fit: cover;
 }
+
+/* You can remove any highly specific rules like
+   [class*="col-span-"] > .force-16-9-ratio,
+   [class*="row-start"] > .force-16-9-ratio etc.,
+   unless this new approach still causes problems. Start clean.
+*/
