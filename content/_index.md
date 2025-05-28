@@ -352,11 +352,6 @@ page_sections:
     item_bg_color: ''
     items:
       - bodytext: >-
-        100% clean and green       
-        - 10% global energy need
-        - €650 billion market in 2050
-        - highly predictable -> 3-5 days in advance
-        - unique characteristic that complements wind and solar
         buttons: []
         icon: ''
         icon_type: ''
