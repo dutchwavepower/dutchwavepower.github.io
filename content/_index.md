@@ -352,6 +352,8 @@ page_sections:
     item_bg_color: ''
     items:
       - bodytext: |-
+          Dutch Wave Power is an innovative developer of wave energy technology and strives for a sustainable future by making wave energy part of the energy transition in a cost-effective and profitable way
+
           The technology consists of a cylindrical float that rotates back and forth along a suspension system due to the up and down movement of the waves.
         
           In the float, a pendulum and power take-off system convert the rotational energy into electricity.
