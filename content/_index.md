@@ -352,8 +352,31 @@ page_sections:
     item_bg_color: ''
     items:
       - bodytext: >-
-          - test
-          - test
+          # Patented technology
+        
+          # Cost-effective
+          - Simple design, few components
+          - Off-the-shelf components
+          - Low maintenance: sensitive parts totally shield of the environment
+          - Drop and connect installation
+          - Medium sized: production and transport in existing facilities
+            
+          # Flexible positioning
+          Technology placeable at any location:
+          - Onshore
+          - Near Shore
+          - Offshore
+            
+          # Robust & Efficient
+          - Submerges in extreme waves
+          - Resonant in full wave spectrum
+          - Relative high efficiency
+![image](https://github.com/user-attachments/assets/1da9d733-73cf-49ac-8d76-9f5eae1a9bb1)
+
+![image](https://github.com/user-attachments/assets/2ee3f70e-9c81-46b1-9b89-89d45edf42dc)
+
+![image](https://github.com/user-attachments/assets/658d88dd-c3f4-4c4e-825d-ff742cf44091)
+
         buttons: []
         icon: ''
         icon_type: ''
