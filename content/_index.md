@@ -356,6 +356,7 @@ page_sections:
 
     
           **Cost-effective**
+        
           - Simple design, few components
           - Off-the-shelf components
           - Low maintenance: sensitive parts totally shield of the environment
@@ -363,14 +364,16 @@ page_sections:
           - Medium sized: production and transport in existing facilities
 
 
-          **Flexible positioning**
-          Technology placeable at any location:
+          **Flexible positioning at any location**
+
+        
           - Onshore
           - Near Shore
           - Offshore
 
 
           **Robust & Efficient**
+        
           - Submerges in extreme waves
           - Resonant in full wave spectrum
           - Relative high efficiency
