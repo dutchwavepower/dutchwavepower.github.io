@@ -353,14 +353,7 @@ page_sections:
     items:
       - bodytext: |-
           **Patented technology**
-    
-          **Cost-effective**
-          - Simple design, few components
-          - Off-the-shelf components
-          - Low maintenance: sensitive parts totally shield of the environment
-          - Drop and connect installation
-          - Medium sized: production and transport in existing facilities
-    
+
           **Flexible positioning at any location**
           - Onshore
           - Near Shore
@@ -379,21 +372,18 @@ page_sections:
         title: 'Tension Leg Platform Technology'
         video: Dutch_Wave_Power_Animation_Vertical_1080_1920p
       - bodytext: |-
-    
-          **Cost-effective**
           - Simple design, few components
           - Off-the-shelf components
           - Low maintenance: sensitive parts totally shield of the environment
           - Drop and connect installation
           - Medium sized: production and transport in existing facilities
-
         buttons: []
         icon: ''
         icon_type: ''
-        image: robust
+        image: hero_banner_blue
         link: ''
-        name: tension-leg-platform-technology
-        title: 'Tension Leg Platform Technology'
+        name: costeffective
+        title: 'Costeffective'
         video: ''
     list: ''
     name: how-do-we-do-it
