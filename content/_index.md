@@ -352,22 +352,22 @@ page_sections:
     item_bg_color: ''
     items:
       - bodytext: >-
-          # Patented technology #
-        
-          # Cost-effective #
+          **Patented technology**
+          ---
+          **Cost-effective**
           - Simple design, few components
           - Off-the-shelf components
           - Low maintenance: sensitive parts totally shield of the environment
           - Drop and connect installation
           - Medium sized: production and transport in existing facilities
-            
-          # Flexible positioning #
+          ---
+          **Flexible positioning**
           Technology placeable at any location:
           - Onshore
           - Near Shore
           - Offshore
-            
-          # Robust & Efficient #
+          --- 
+          **Robust & Efficient**
           - Submerges in extreme waves
           - Resonant in full wave spectrum
           - Relative high efficiency
