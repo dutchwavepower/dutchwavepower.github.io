@@ -352,6 +352,8 @@ page_sections:
     item_bg_color: ''
     items:
       - bodytext: >-
+          - test
+          - test
         buttons: []
         icon: ''
         icon_type: ''
