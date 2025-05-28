@@ -1,0 +1,21 @@
+/* themes/theme-poppygo-one/assets/css/custom.css */
+
+.force-16-9-ratio {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* This creates the 16:9 aspect ratio space */
+    height: 0;
+    overflow: hidden;
+}
+
+.force-16-9-ratio video,
+.force-16-9-ratio img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Makes video/image fill the space, potentially cropping edges */
+    /* If you prefer to show the full video/image (with black bars if aspect ratios don't match), use: */
+    /* object-fit: contain; */
+}
