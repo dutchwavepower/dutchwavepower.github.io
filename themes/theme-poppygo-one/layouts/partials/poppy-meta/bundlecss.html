@@ -1,5 +1,35 @@
 {{ $custom := resources.Get "css/custom.css" }}
 {{ $tailwind := resources.Get "css/tailwind.css" }}
+
+{{/* The order here matters for the cascade: Tailwind first, then custom */}}
+{{ $css := slice $tailwind $custom | resources.Concat "css/poppygo-one.css" }}
+
+{{- $css = $css | minify | fingerprint "md5" -}}
+<link rel="stylesheet" href="{{ $css.RelPermalink }}">
+
+
+{{/*
+    The commented out section below seems to be for a 'styles.css'
+    which might also be processed by PostCSS.
+    If 'styles.css' is generating those fixed grid properties (36px columns, 242.5px rows),
+    you might need to investigate that file's source or PostCSS configuration.
+    For now, we're focusing on the order of tailwind.css and custom.css within this bundle.
+*/}}
+{{/*
+{{ if .Site.IsServer }}
+    {{ $style := resources.Get "css/styles.css" | postCSS (dict "config" "./assets/css/dev/postcss.config.js") }}
+    <link rel="stylesheet" href="{{ $style.RelPermalink }}">
+  {{ else }}
+    {{ $style := resources.Get "css/styles.css" | postCSS (dict "config" "./assets/css/postcss.config.js") | minify | fingerprint }}
+    <link rel="stylesheet" href="{{ $style.Permalink }}" integrity="{{ $style.Data.Integrity }}">
+  {{ end }}
+*/}}
+
+
+
+
+<!-- {{ $custom := resources.Get "css/custom.css" }}
+{{ $tailwind := resources.Get "css/tailwind.css" }}
 {{ $css := slice $custom $tailwind | resources.Concat "css/poppygo-one.css" }}
 
 {{- $css = $css | minify | fingerprint "md5" -}}
@@ -12,4 +42,4 @@
   {{ else }}
     {{ $style := resources.Get "css/styles.css" | postCSS (dict "config" "./assets/css/postcss.config.js") | minify | fingerprint }}
     <link rel="stylesheet" href="{{ $style.Permalink }}" integrity="{{ $style.Data.Integrity }}">
-  {{ end }} */}}
+  {{ end }} */}} -->
