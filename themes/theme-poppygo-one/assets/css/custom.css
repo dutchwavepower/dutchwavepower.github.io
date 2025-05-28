@@ -1,16 +1,17 @@
 /* themes/theme-poppygo-one/assets/css/custom.css */
 
-/* Ensure the position: relative; is not overridden by a less specific rule.
-   Adding !important to position as well. */
 .force-16-9-ratio {
-    position: relative !important; /* Force this as it was crossed out */
+    position: relative !important;
     width: 100%;
     padding-bottom: 56.25% !important;
     height: 0 !important;
     overflow: hidden;
+    min-height: 0 !important;
+    align-self: start !important;
+    flex-shrink: 0 !important;
 }
 
-/* Ensure the inner video/image elements fill the space */
+/* Rules for the inner video/image elements */
 .force-16-9-ratio video,
 .force-16-9-ratio img {
     position: absolute;
@@ -21,33 +22,11 @@
     object-fit: cover;
 }
 
-/* New: Target directly if it's a grid item.
-   This might override a grid's default height calculation for the item. */
-.grid > .force-16-9-ratio {
+/* NEW: More specific rule for grid item behavior */
+/* This targets the direct parent which uses grid, and tells the child not to auto-size its height in the grid */
+[class*="grid"] > .force-16-9-ratio {
     height: 0 !important;
-    min-height: 0 !important; /* Very important in flex/grid contexts */
-    align-self: start !important; /* Prevents stretching in grid/flex */
+    min-height: 0 !important;
+    align-self: start !important;
+    grid-row-end: span 1 !important; /* Explicitly tell grid not to expand row automatically */
 }
-
-
-
-/* /* themes/theme-poppygo-one/assets/css/custom.css */
-
-.force-16-9-ratio {
-    position: relative;
-    width: 100%;
-    padding-bottom: 56.25% !important; /* Force padding-bottom */
-    height: 0 !important;             /* Force height to 0, allowing padding to define size */
-    overflow: hidden;
-}
-
-.force-16-9-ratio video,
-.force-16-9-ratio img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
- */
