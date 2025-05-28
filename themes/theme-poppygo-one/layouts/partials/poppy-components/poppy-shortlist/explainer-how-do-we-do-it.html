@@ -44,7 +44,7 @@
           {{- end -}}
         </div>
         {{- else if $value.image -}}
-          {{/* Render Image (original logic) */}}
+          {{/* Render Image: Updated to use force-16-9-ratio container */}}
           <div class= "z-10 mt-10 my-auto {{$content.item_bg_color}} {{$row}} {{$design.rounded}} {{$design.shadow}} {{$switchImg}} {{$design.border}} force-16-9-ratio" >
             {{- $class := printf "%s %s w-full h-full object-cover rounded-md" $design.rounded $design.shadow -}}
             {{- partial "poppy-elements/image-how-do-we-do-it" (dict "resource_page" $page "name" $value.image "class" $class ) -}}
