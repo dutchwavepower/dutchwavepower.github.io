@@ -1,5 +1,38 @@
 /* themes/theme-poppygo-one/assets/css/custom.css */
 
+/* Ensure the position: relative; is not overridden by a less specific rule.
+   Adding !important to position as well. */
+.force-16-9-ratio {
+    position: relative !important; /* Force this as it was crossed out */
+    width: 100%;
+    padding-bottom: 56.25% !important;
+    height: 0 !important;
+    overflow: hidden;
+}
+
+/* Ensure the inner video/image elements fill the space */
+.force-16-9-ratio video,
+.force-16-9-ratio img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* New: Target directly if it's a grid item.
+   This might override a grid's default height calculation for the item. */
+.grid > .force-16-9-ratio {
+    height: 0 !important;
+    min-height: 0 !important; /* Very important in flex/grid contexts */
+    align-self: start !important; /* Prevents stretching in grid/flex */
+}
+
+
+
+/* /* themes/theme-poppygo-one/assets/css/custom.css */
+
 .force-16-9-ratio {
     position: relative;
     width: 100%;
@@ -17,3 +50,4 @@
     height: 100%;
     object-fit: cover;
 }
+ */
