@@ -367,9 +367,9 @@ page_sections:
           **Flexible positioning at any location**
 
         
-          - Onshore
-          - Near Shore
-          - Offshore
+          + Onshore
+          + Near Shore
+          + Offshore
 
 
           **Robust & Efficient**
