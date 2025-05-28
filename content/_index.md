@@ -351,7 +351,7 @@ page_sections:
     image: ''
     item_bg_color: ''
     items:
-      bodytext: |-
+      - bodytext: >-
         - 100% clean and green       
         - 10% global energy need
         - €650 billion market in 2050
