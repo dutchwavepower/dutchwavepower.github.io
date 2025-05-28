@@ -351,7 +351,7 @@ page_sections:
     image: ''
     item_bg_color: ''
     items:
-      - bodytext: >-
+      - bodytext: |-
           **Patented technology**
     
           **Cost-effective**
