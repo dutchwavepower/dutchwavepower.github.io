@@ -6,9 +6,9 @@
     padding-bottom: 56.25% !important;
     height: 0 !important;
     overflow: hidden;
-    min-height: 0 !important;
-    align-self: start !important;
-    flex-shrink: 0 !important;
+    min-height: 0 !important; /* Ensure min-height is explicitly 0 */
+    align-self: start !important; /* Prevent stretching in grid/flex */
+    flex-shrink: 0 !important; /* Prevent shrinking in flex contexts */
 }
 
 /* Rules for the inner video/image elements */
@@ -22,11 +22,18 @@
     object-fit: cover;
 }
 
-/* NEW: More specific rule for grid item behavior */
-/* This targets the direct parent which uses grid, and tells the child not to auto-size its height in the grid */
-[class*="grid"] > .force-16-9-ratio {
+/* NEW: Highly specific override for common Tailwind height conflicts within grid/columns */
+/* This targets the .force-16-9-ratio when it's a child of any element with a 'col-span-' class */
+[class*="col-span-"] > .force-16-9-ratio {
     height: 0 !important;
     min-height: 0 !important;
-    align-self: start !important;
-    grid-row-end: span 1 !important; /* Explicitly tell grid not to expand row automatically */
+    /* Optional: Ensure grid-row-end doesn't cause height issues */
+    grid-row-end: span 1 !important;
+}
+
+/* Also ensure no other inherited height from 'row-start' or 'row-end' if present */
+[class*="row-start"] > .force-16-9-ratio,
+[class*="row-end"] > .force-16-9-ratio {
+    height: 0 !important;
+    min-height: 0 !important;
 }
