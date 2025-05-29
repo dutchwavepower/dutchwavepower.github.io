@@ -1,9 +1,9 @@
-{{- $id := .Get "id" }}
-{{- if not $id }}
-  {{- errorf "youtube shortcode: missing id parameter for %q" .Inner }}
+{{- /* Debugging - Step 3: Minimal shortcode content */ -}}
+{{- $videoID := .Get "id" }}
+{{- if not $videoID }}
+    {{- errorf "youtube shortcode: missing id parameter in %s" .Page.RelPermalink }}
 {{- end }}
 
-<div style="background-color: lightgray; padding: 20px; text-align: center; margin: 20px 0; border: 2px solid red;">
-    <p>This is a placeholder for YouTube video: **{{ $id }}**</p>
-    <p>If you see this, the shortcode parsing is working.</p>
+<div style="background-color: #ffcccc; padding: 10px; text-align: center; border: 1px solid blue; margin: 10px;">
+    <p>Shortcode rendered for ID: **{{ $videoID }}**</p>
 </div>
