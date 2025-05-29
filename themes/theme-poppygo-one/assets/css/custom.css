@@ -1,1 +1,20 @@
+.youtube-embed-wrapper {
+    width: 60%; /* Set the width to 60% of its parent container */
+    margin-left: auto; /* Auto margins will center a block-level element with a defined width */
+    margin-right: auto;
+    
+    /* Optional: Add aspect ratio for consistent video height */
+    position: relative;
+    padding-bottom: 56.25%; /* For a 16:9 aspect ratio (9/16 * 100%). Most YouTube videos are 16:9. */
+    height: 0; /* Important for padding-bottom trick */
+    overflow: hidden;
+    max-width: 100%; /* Ensure it doesn't exceed parent width */
+}
 
+.youtube-embed-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
