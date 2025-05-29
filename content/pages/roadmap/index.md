@@ -206,7 +206,7 @@ We tested the 1:4 prototype in the Delta Flume at knowledge institute Deltares. 
 **2021: Additional wave flume tests at MARIN**
 To validate and de-risk every aspect of our wave energy converter concept we conducted a large amount of tests at a wave flume at the marine research centre MARIN. The tests were be performed at a scale of 1:7.
 
-{{< youtube id="lBRg8wFgsjo" >}}
+{{- /* {{< youtube id="lBRg8wFgsjo" >}} */ -}}
 
 
 # Stage 3
