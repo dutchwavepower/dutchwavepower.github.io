@@ -1,0 +1,26 @@
+{{- $pc := .Page.Param "privacy_config" | default .Site.Params.privacy_config }}
+{{- $cdn := false }}
+{{- if (and ($pc) ($pc.youtube)) }}
+    {{- $cdn = $pc.youtube.cdn | default false }}
+{{- end }}
+
+{{- $id := .Get "id" }}
+{{- if not $id }}
+  {{- errorf "youtube shortcode: missing id parameter for %q" .Inner }}
+{{- end }}
+
+{{- $class := .Get "class" }}
+{{- $title := .Get "title" | default (printf "YouTube video: %s" $id) }}
+
+{{/* --- MODIFIED LINE BELOW --- */}}
+<div class="youtube-embed-wrapper {{ with $class }} {{ . }}{{ end }}">
+  {{- if $cdn }}
+  <lite-youtube videoid="{{ $id }}" playlabel="{{ $title }}"></lite-youtube>
+  {{- else }}
+  <iframe src="https://www.youtube-nocookie.com/embed/{{ $id }}"
+    title="{{ $title }}"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    allowfullscreen></iframe>
+  {{- end }}
+</div>
