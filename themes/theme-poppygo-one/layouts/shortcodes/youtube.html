@@ -1,61 +1,14 @@
-{{- /* youtube.html - Always renders a standard YouTube iframe */ -}}
-
+{{- /* youtube.html - Minimal iframe for debugging */ -}}
 {{- $id := .Get "id" }}
 {{- if not $id }}
   {{- errorf "youtube shortcode: missing id parameter for %q" .Inner }}
 {{- end }}
-
-{{- $class := .Get "class" }}
 {{- $title := .Get "title" | default (printf "YouTube video: %s" $id) }}
 
-{{- /* New variables for additional arguments */ -}}
-{{- $allowFullScreen := .Get "allowFullScreen" | default true }}
-{{- $autoplay := .Get "autoplay" | default false }}
-{{- $controls := .Get "controls" | default true }}
-{{- $end := .Get "end" | default 0 }} {{- /* Ensure integer */ -}}
-{{- $loading := .Get "loading" | default "eager" }}
-{{- $loop := .Get "loop" | default false }}
-{{- $mute := .Get "mute" | default false }}
-{{- $start := .Get "start" | default 0 }} {{- /* Ensure integer */ -}}
-
-{{- /* Construct the YouTube URL with parameters */ -}}
+{{- /* Simplest possible YouTube URL */ -}}
 {{- $youtubeURL := printf "https://www.youtube-nocookie.com/embed/%s" $id }}
 
-{{- $queryParams := slice }}
-
-{{- if $autoplay }}
-    {{ $queryParams = $queryParams | append "autoplay=1" }}
-    {{ $queryParams = $queryParams | append "mute=1" }} {{/* Autoplay implies mute */ -}}
-{{- else if $mute }}
-    {{ $queryParams = $queryParams | append "mute=1" }}
-{{- end }}
-
-{{- if eq $controls false }} {{- /* Check for explicit false, not just existence */ -}}
-    {{ $queryParams = $queryParams | append "controls=0" }}
-{{- end }}
-
-{{- if gt $end 0 }} {{- /* Only add if end is specified and greater than 0 */ -}}
-    {{ $queryParams = $queryParams | append (printf "end=%d" $end) }}
-{{- end }}
-
-{{- if $loop }}
-    {{ $queryParams = $queryParams | append "loop=1" }}
-{{- end }}
-
-{{- if gt $start 0 }} {{- /* Only add if start is specified and greater than 0 */ -}}
-    {{ $queryParams = $queryParams | append (printf "start=%d" $start) }}
-{{- end }}
-
-{{- if gt (len $queryParams) 0 }}
-    {{- $youtubeURL = printf "%s?%s" $youtubeURL (delimit $queryParams "&") }}
-{{- end }}
-
-<div class="force-16-9-ratio youtube-video-center {{ with $class }} {{ . }}{{ end }}">
-  <iframe src="{{ $youtubeURL }}"
-    title="{{ $title }}"
-    frameborder="0"
-    allow="accelerometer; {{ if $autoplay }}autoplay;{{ end }} clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-    {{ if not $allowFullScreen }}allowfullscreen="false"{{ else }}allowfullscreen="true"{{ end }}
-    loading="{{ $loading }}">
+<div class="force-16-9-ratio youtube-video-center">
+  <iframe src="{{ $youtubeURL }}" title="{{ $title }}">
   </iframe>
 </div>
