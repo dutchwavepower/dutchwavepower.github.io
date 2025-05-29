@@ -178,7 +178,7 @@ title: Roadmap
 # Overview
 Dutch Wave Power follows a structured validation process. In this 5-phase process we will gradually 'de-risk' our concept and we will continue to look for 'degree of evidence' in terms of survivability, performance, reliability and, not unimportantly, the economics. Each stage maximizes risk reduction at minimal cost.
 
-{{< svgimage "roadmap_stages.svg" >}}
+{{< svgimage "roadmap_stages.svg" "center" >}}
 
 # Stage 1 
 
@@ -187,14 +187,14 @@ Almost all initiatives start with affinity with the subject: Sten in particular 
 
 This led to deepening into the sea, into the waves and a way of converting this wave power into a sustainable usable energy form such as electricity and hydrogen. After an extensive study of the pros and cons of the main existing concepts within all categories (> 100 units) and also studying research reports on the opportunities and risks of wave energy, we started testing and validating ten different wave energy concepts. These tests on a scale of 1: 100 and 1:50 were carried out in a wave flume laboratory set-up.
 
-{{< image past_idea_validation 50 >}} 
+{{< image past_idea_validation 50 "center" >}} 
 
 **2019: Promising concept and first investor**
 A promising concept emerged from these tests in 2019. We have further developed this concept and started testing with 1:15 scale prototypes. The design has been improved and refined based on these tests. In addition, the concept has been modeled in the form of calculation models and simulations. On the basis of this modeling, the dimensions, movement dynamics and loads are optimized and we are able to make good predictions with regard to energy generation.
 
 At the end of 2019, we attracted our first investor: Koninklijke Martens group. An investor with a green heart, own sustainable generation and with the same standards and values. Thanks to this partner we have been able to realize our concept validation on a scale of 1:4. At this scale, the dimensions, weights and required tools are so large that strengthening our team with the right knowledge, resources and financial support was necessary.
 
-{{< image logo_martens 30 >}}
+{{< image logo_martens 30 "center" >}}
 
 # Stage 2
 
