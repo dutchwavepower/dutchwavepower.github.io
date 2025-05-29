@@ -1,4 +1,4 @@
-{{- /* youtube.html - Minimal iframe for debugging */ -}}
+{{- /* youtube.html - Minimal iframe, no surrounding div for debugging */ -}}
 {{- $id := .Get "id" }}
 {{- if not $id }}
   {{- errorf "youtube shortcode: missing id parameter for %q" .Inner }}
@@ -8,7 +8,5 @@
 {{- /* Simplest possible YouTube URL */ -}}
 {{- $youtubeURL := printf "https://www.youtube-nocookie.com/embed/%s" $id }}
 
-<div class="force-16-9-ratio youtube-video-center">
-  <iframe src="{{ $youtubeURL }}" title="{{ $title }}">
-  </iframe>
-</div>
+<iframe src="{{ $youtubeURL }}" title="{{ $title }}">
+</iframe>
