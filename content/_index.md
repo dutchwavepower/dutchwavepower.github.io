@@ -369,7 +369,7 @@ page_sections:
         link: ''
         name: our-unique-technology
         title: 'Our Unique Technology'
-        video: Dutch_Wave_Power_Animation_Vertical_1080_1920p
+        video: Dutch_Wave_Power_Animation_Vertical_720_1280p
       - bodytext: |-
           - Simple design, few components
           - Off-the-shelf components
