@@ -24,16 +24,32 @@
 
 {{/* Construct the YouTube URL with parameters */}}
 {{- $youtubeURL := printf "https://www.youtube-nocookie.com/embed/%s" $id }}
-{{- $query := newScratch }}
-{{- if $autoplay }}{{ $query.Add "autoplay=1&" }}{{ $query.Set "mute" "1&" }}{{ end }} {{/* autoplay forces mute=true */}}
-{{- if $controls }}{{ else }}{{ $query.Add "controls=0&" }}{{ end }}
-{{- if $end }}{{ $query.Add (printf "end=%d&" $end) }}{{ end }}
-{{- if $loop }}{{ $query.Add "loop=1&" }}{{ end }}
-{{- if $mute }}{{ $query.Add "mute=1&" }}{{ end }}
-{{- if $start }}{{ $query.Add (printf "start=%d&" $start) }}{{ end }}
-{{- if $query.Get }}
-    {{- $youtubeURL = printf "%s?%s" $youtubeURL ($query.Get | trimSuffix "&") }}
+
+{{/* --- MODIFIED LOGIC FOR QUERY STRING --- */}}
+{{- $queryParams := slice }}
+{{- if $autoplay }}
+    {{ $queryParams = $queryParams | append "autoplay=1" }}
+    {{ $queryParams = $queryParams | append "mute=1" }} {{/* autoplay forces mute=true */}}
+{{- else if $mute }}
+    {{ $queryParams = $queryParams | append "mute=1" }}
 {{- end }}
+{{- if not $controls }} {{/* only add if controls are disabled */}}
+    {{ $queryParams = $queryParams | append "controls=0" }}
+{{- end }}
+{{- if $end }}
+    {{ $queryParams = $queryParams | append (printf "end=%d" $end) }}
+{{- end }}
+{{- if $loop }}
+    {{ $queryParams = $queryParams | append "loop=1" }}
+{{- end }}
+{{- if $start }}
+    {{ $queryParams = $queryParams | append (printf "start=%d" $start) }}
+{{- end }}
+
+{{- if gt (len $queryParams) 0 }}
+    {{- $youtubeURL = printf "%s?%s" $youtubeURL (delimit $queryParams "&") }}
+{{- end }}
+{{/* --- END MODIFIED LOGIC --- */}}
 
 <div class="force-16-9-ratio youtube-video-center {{ with $class }} {{ . }}{{ end }}">
   {{- if $cdn }}
