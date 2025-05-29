@@ -12,44 +12,49 @@
 {{- $class := .Get "class" }}
 {{- $title := .Get "title" | default (printf "YouTube video: %s" $id) }}
 
-{{/* New variables for additional arguments */}}
+{{/* Extracting parameters, ensuring proper boolean/integer types */}}
 {{- $allowFullScreen := .Get "allowFullScreen" | default true }}
 {{- $autoplay := .Get "autoplay" | default false }}
 {{- $controls := .Get "controls" | default true }}
-{{- $end := .Get "end" }}
+{{- $end := .Get "end" | default 0 }} {{- /* Ensure integer */}}
 {{- $loading := .Get "loading" | default "eager" }}
 {{- $loop := .Get "loop" | default false }}
 {{- $mute := .Get "mute" | default false }}
-{{- $start := .Get "start" }}
+{{- $start := .Get "start" | default 0 }} {{- /* Ensure integer */}}
 
-{{/* Construct the YouTube URL with parameters */}}
+{{/* Base YouTube URL */}}
 {{- $youtubeURL := printf "https://www.youtube-nocookie.com/embed/%s" $id }}
 
-{{/* --- MODIFIED LOGIC FOR QUERY STRING --- */}}
+{{/* Build query parameters as a slice of strings */}}
 {{- $queryParams := slice }}
+
 {{- if $autoplay }}
     {{ $queryParams = $queryParams | append "autoplay=1" }}
-    {{ $queryParams = $queryParams | append "mute=1" }} {{/* autoplay forces mute=true */}}
+    {{ $queryParams = $queryParams | append "mute=1" }} {{/* Autoplay implies mute */}}
 {{- else if $mute }}
     {{ $queryParams = $queryParams | append "mute=1" }}
 {{- end }}
-{{- if not $controls }} {{/* only add if controls are disabled */}}
+
+{{- if eq $controls false }} {{- /* Check for explicit false, not just existence */}}
     {{ $queryParams = $queryParams | append "controls=0" }}
 {{- end }}
-{{- if $end }}
+
+{{- if gt $end 0 }} {{- /* Only add if end is specified and greater than 0 */}}
     {{ $queryParams = $queryParams | append (printf "end=%d" $end) }}
 {{- end }}
+
 {{- if $loop }}
     {{ $queryParams = $queryParams | append "loop=1" }}
 {{- end }}
-{{- if $start }}
+
+{{- if gt $start 0 }} {{- /* Only add if start is specified and greater than 0 */}}
     {{ $queryParams = $queryParams | append (printf "start=%d" $start) }}
 {{- end }}
 
+{{/* Append query string if parameters exist */}}
 {{- if gt (len $queryParams) 0 }}
     {{- $youtubeURL = printf "%s?%s" $youtubeURL (delimit $queryParams "&") }}
 {{- end }}
-{{/* --- END MODIFIED LOGIC --- */}}
 
 <div class="force-16-9-ratio youtube-video-center {{ with $class }} {{ . }}{{ end }}">
   {{- if $cdn }}
