@@ -1,0 +1,50 @@
+{{- $pc := .Page.Param "privacy_config" | default .Site.Params.privacy_config }}
+{{- $cdn := false }}
+{{- if (and ($pc) ($pc.youtube)) }}
+    {{- $cdn = $pc.youtube.cdn | default false }}
+{{- end }}
+
+{{- $id := .Get "id" }}
+{{- if not $id }}
+  {{- errorf "youtube shortcode: missing id parameter for %q" .Inner }}
+{{- end }}
+
+{{- $class := .Get "class" }}
+{{- $title := .Get "title" | default (printf "YouTube video: %s" $id) }}
+
+{{/* New variables for additional arguments */}}
+{{- $allowFullScreen := .Get "allowFullScreen" | default true }}
+{{- $autoplay := .Get "autoplay" | default false }}
+{{- $controls := .Get "controls" | default true }}
+{{- $end := .Get "end" }}
+{{- $loading := .Get "loading" | default "eager" }}
+{{- $loop := .Get "loop" | default false }}
+{{- $mute := .Get "mute" | default false }}
+{{- $start := .Get "start" }}
+
+{{/* Construct the YouTube URL with parameters */}}
+{{- $youtubeURL := printf "https://www.youtube-nocookie.com/embed/%s" $id }}
+{{- $query := newScratch }}
+{{- if $autoplay }}{{ $query.Add "autoplay=1&" }}{{ $query.Set "mute" "1&" }}{{ end }} {{/* autoplay forces mute=true */}}
+{{- if $controls }}{{ else }}{{ $query.Add "controls=0&" }}{{ end }}
+{{- if $end }}{{ $query.Add (printf "end=%d&" $end) }}{{ end }}
+{{- if $loop }}{{ $query.Add "loop=1&" }}{{ end }}
+{{- if $mute }}{{ $query.Add "mute=1&" }}{{ end }}
+{{- if $start }}{{ $query.Add (printf "start=%d&" $start) }}{{ end }}
+{{- if $query.Get }}
+    {{- $youtubeURL = printf "%s?%s" $youtubeURL ($query.Get | trimSuffix "&") }}
+{{- end }}
+
+<div class="force-16-9-ratio youtube-video-center {{ with $class }} {{ . }}{{ end }}">
+  {{- if $cdn }}
+  <lite-youtube videoid="{{ $id }}" playlabel="{{ $title }}"></lite-youtube>
+  {{- else }}
+  <iframe src="{{ $youtubeURL }}"
+    title="{{ $title }}"
+    frameborder="0"
+    allow="accelerometer; {{ if $autoplay }}autoplay;{{ end }} clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    {{ if not $allowFullScreen }}allowfullscreen="false"{{ else }}allowfullscreen="true"{{ end }}
+    loading="{{ $loading }}">
+  </iframe>
+  {{- end }}
+</div>
