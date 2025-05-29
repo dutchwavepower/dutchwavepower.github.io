@@ -186,7 +186,7 @@ Dutch Wave Power developed multiple  systems of suspensions for the full spectru
 - intermediate depth locations - near shore 
 - location at shore (harbour heads, dams) - shore line
 
-{{< youtube id="vfl7XYkvUoE?version=3&vq=hd1080&rel=0" >}}
+{{< video src="Dutch Wave Power Concept Validation @MARIN.mp4" autoplay="true" muted="true" loop="true" width="50%" >}}
 
 
 
