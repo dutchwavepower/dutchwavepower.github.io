@@ -12,8 +12,8 @@
 {{- $class := .Get "class" }}
 {{- $title := .Get "title" | default (printf "YouTube video: %s" $id) }}
 
-{{/* --- MODIFIED LINE BELOW --- */}}
-<div class="youtube-embed-wrapper {{ with $class }} {{ . }}{{ end }}">
+{{/* IMPORTANT CHANGE: Use force-16-9-ratio directly on the wrapper */}}
+<div class="force-16-9-ratio youtube-video-center {{ with $class }} {{ . }}{{ end }}">
   {{- if $cdn }}
   <lite-youtube videoid="{{ $id }}" playlabel="{{ $title }}"></lite-youtube>
   {{- else }}
