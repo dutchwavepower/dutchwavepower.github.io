@@ -24,41 +24,17 @@ Renders an embedded YouTube video.
 {{- $pc := .Page.Site.Config.Privacy.YouTube }}
 {{- $remoteErrID := "err-youtube-remote" }}
 {{- if not $pc.Disable }}
-  {{- with $id := or (.Get "id") (.Get 0) }}
+  {{- with $id := or (.Get "id") (.Get 0) }}
 
-    {{- /* Set defaults. */}}
-    {{- $allowFullScreen := true }}
-    {{- $autoplay := 0 }}
-    {{- $class := "" }}
-    {{- $controls := 1 }}
-    {{- $end := 0 }}
-    {{- $loading := "eager" }}
-    {{- $loop := 0 }}
-    {{- $mute := 0 }}
-    {{- $start := 0 }}
-    {{- $title := "YouTube video" }}
-    {{- <span class="math-inline">iframeAllowList \:\= "accelerometer; autoplay; clipboard\-write; encrypted\-media; gyroscope; picture\-in\-picture; web\-share" \}\}
-\{\{\- /\* Get arguments\. \*/\}\}
-\{\{\- if in \(slice "true" true 1\) \(</span>.Get "allowFullScreen") }}
-      {{- <span class="math-inline">allowFullScreen \= true \}\}
-\{\{\- else if in \(slice "false" false 0\) \(</span>.Get "allowFullScreen") }}
-      {{- <span class="math-inline">allowFullScreen \= false \}\}
-\{\{\- end \}\}
-\{\{\- if in \(slice "true" true 1\) \(</span>.Get "autoplay") }}
-      {{- <span class="math-inline">autoplay \= 1 \}\}
-\{\{\- else if in \(slice "false" false 0\) \(</span>.Get "autoplay") }}
-      {{- <span class="math-inline">autoplay \= 0 \}\}
-\{\{\- end \}\}
-\{\{\- if in \(slice "true" true 1\) \(</span>.Get "controls") }}
-      {{- <span class="math-inline">controls \= 1 \}\}
-\{\{\- else if in \(slice "false" false 0\) \(</span>.Get "controls") }}
-      {{- <span class="math-inline">controls \= 0 \}\}
-\{\{\- end \}\}
-\{\{\- if in \(slice "true" true 1\) \(</span>.Get "loop") }}
-      {{- <span class="math-inline">loop \= 1 \}\}
-\{\{\- else if in \(slice "false" false 0\) \(</span>.Get "loop") }}
-      {{- <span class="math-inline">loop \= 0 \}\}
-\{\{\- end \}\}
-\{\{\- if or \(in \(slice "true" true 1\) \(</span>.Get "mute")) $autoplay }}
-      {{- $mute = 1 }}
-    {{- else if in (
+    {{- /* Set defaults. */}}
+    {{- $allowFullScreen := true }}
+    {{- $autoplay := 0 }}
+    {{- $class := "" }}
+    {{- $controls := 1 }}
+    {{- $end := 0 }}
+    {{- $loading := "eager" }}
+    {{- $loop := 0 }}
+    {{- $mute := 0 }}
+    {{- $start := 0 }}
+    {{- $title := "YouTube video" }}
+    {{- <span class="math-inline">iframeAllowList \:\= "accelerometer; autoplay; clipboard\-write; encrypted\-media; gyroscope; picture\-in\-picture; web\-share" \}\}
