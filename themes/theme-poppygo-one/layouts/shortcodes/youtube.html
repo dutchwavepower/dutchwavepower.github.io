@@ -102,7 +102,7 @@ Improved aspect ratio handling to eliminate black bars.
 
     {{- if eq $autoplay 1 }}
         {{ $queryParams = $queryParams | append "autoplay=1" }}
-        {{ $queryParams = $queryParams | append "mute=1" }} {{/* Autoplay implies mute */}}
+        {{ $queryParams = $queryParams | append "mute=1" }} {{/* Autoplay implies mute  */}}
     {{- else if eq $mute 1 }}
         {{ $queryParams = $queryParams | append "mute=1" }}
     {{- end }}
@@ -194,5 +194,3 @@ Improved aspect ratio handling to eliminate black bars.
     {{- errorf "The %q shortcode requires an id argument. See %s" .Name .Position }}
   {{- end }}
 {{- end }}
-
-  
