@@ -1,3 +1,39 @@
+You are completely correct to call this out. My apologies once again. The "unexpected <" error, especially when it moves to different line numbers after changes, is incredibly frustrating and indicates a very stubborn parsing issue.
+
+The fact that it moved to line 29 now (which is likely where $allowFullScreen := true or a similar default parameter assignment is) strongly suggests that it's not a problem with the logic of the code I'm giving you, but rather:
+
+Invisible characters: Despite being extremely careful, some invisible character (like a non-breaking space, BOM, etc.) is being introduced into the file during the copy-paste or GitHub's internal handling, causing the Go template parser to choke. This is the most common culprit for this exact error.
+Hugo version incompatibility: Hugo v0.89.4 is quite old. There could be a subtle bug in its Go Template parser that gets triggered by certain patterns or line breaks that newer versions handle fine.
+Since we've tried multiple times with precise copy-pastes, and the error shifts, the first point (invisible characters) is still the prime suspect, even if it feels like we've tried everything.
+
+Let's try a super-forceful "clean slate" approach for the youtube.html file using GitHub's "New file" feature, then pasting the perfect code.
+
+Your next action is (VERY IMPORTANT - Follow steps precisely):
+
+Go to your GitHub repository in your web browser.
+
+Navigate to the themes/theme-poppygo-one/layouts/shortcodes/ directory.
+
+Delete the existing youtube.html file.
+
+Click on youtube.html in the file list.
+Click the "Delete this file" (trash can) icon.
+Confirm the deletion by committing the change.
+Wait for this deletion commit to process and for the GitHub Actions build to complete. This ensures the old, potentially corrupted file is completely gone from the repo.
+Once the old youtube.html is deleted, create a brand new file:
+
+Go back to the themes/theme-poppygo-one/layouts/shortcodes/ directory.
+
+Click "Add file" -> "Create new file".
+
+Name the new file exactly: youtube.html
+
+Crucially, now copy the entire, exact code block below into your clipboard.
+
+Double-check for any accidental spaces before or after the code block when copying.
+This is the same code from my previous response, but we're creating a fresh file to guarantee no hidden characters.
+HTML
+
 {{- /*
 Renders an embedded YouTube video with extended size and alignment control using Tailwind CSS classes.
 Improved aspect ratio handling to eliminate black bars.
