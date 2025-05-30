@@ -203,14 +203,14 @@ At the end of 2019, we attracted our first investor: Koninklijke Martens group. 
 We tested the 1:4 prototype in the Delta Flume at knowledge institute Deltares. The test went extremely well and the results were very encouraging: the operation and launching in accordance with expectations, but above all the efficiency, ie the power generated, were significantly exceeded! The latter offers prospects for a positive cost-benefit outcome.
 
 
-{{< youtube id="oe5T6Q-YNp8" loading=lazy autoplay=true loop=true controls=false >}}
+{{< youtube id="oe5T6Q-YNp8" loading=lazy autoplay=true loop=true >}}
 
 
 **2021: Additional wave flume tests at MARIN**
 To validate and de-risk every aspect of our wave energy converter concept we conducted a large amount of tests at a wave flume at the marine research centre MARIN. 
 
 
-{{< youtube id="lBRg8wFgsjo" loading=lazy autoplay=true loop=true controls=false  >}}
+{{< youtube id="lBRg8wFgsjo" loading=lazy autoplay=true loop=true >}}
 
 
 
