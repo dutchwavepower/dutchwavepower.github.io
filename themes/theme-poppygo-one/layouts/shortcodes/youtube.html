@@ -22,13 +22,7 @@ Improved aspect ratio handling to eliminate black bars.
 @reference https://developers.google.com/youtube/player_parameters
 @reference https://tailwindcss.com/docs/margin
 @reference https://tailwindcss.com/docs/aspect-ratio (for pb-[56.25%])
-
-@example {{< youtube 0RKpf3rK57I >}}
-@example {{< youtube id=0RKpf3rK57I loading=lazy start=30 >}}
-@example {{< youtube id="0RKpf3rK57I" width="w-3/4" align="center" >}} {{/* Responsive 16:9, 75% width, centered */}}
-@example {{< youtube id="0RKpf3rK57I" width="800px" align="center" >}} {{/* Fixed 800px width, responsive 16:9, centered */}}
-@example {{< youtube id="0RKpf3rK57I" width="800px" height="450px" align="center" >}} {{/* Fixed width/height, centered */}}
-*/}}
+*/ -}}
 
 {{- $pc := .Page.Site.Config.Privacy.YouTube }}
 {{- $remoteErrID := "err-youtube-remote" }}
@@ -102,7 +96,7 @@ Improved aspect ratio handling to eliminate black bars.
 
     {{- if eq $autoplay 1 }}
         {{ $queryParams = $queryParams | append "autoplay=1" }}
-        {{ $queryParams = $queryParams | append "mute=1" }} {{/* Autoplay implies mute  */}}
+        {{ $queryParams = $queryParams | append "mute=1" }} {{/* Autoplay implies mute */}}
     {{- else if eq $mute 1 }}
         {{ $queryParams = $queryParams | append "mute=1" }}
     {{- end }}
