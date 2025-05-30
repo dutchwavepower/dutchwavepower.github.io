@@ -112817,49 +112817,52 @@ svg {
 
 /* --- YouTube Video Styling --- */
 
-/* Basic styling for the container div for custom sizes/alignments */
-.align-left,
-.align-center,
-.align-right {
+/* Basic styling for the wrapper div for custom sizes/alignments */
+.youtube-wrapper {
     margin-bottom: 1.5em; /* Add some space below the video */
     max-width: 100%; /* Ensure it doesn't overflow its parent */
+    /* Add any other common styles here if needed */
 }
 
 /* Alignment rules for the wrapping div */
-.align-left {
+.youtube-align-left {
     display: block; /* Important for margin to work */
     margin-right: auto;
     margin-left: 0;
 }
 
-.align-center {
+.youtube-align-center {
     display: block; /* Important for margin: auto to work */
     margin-left: auto;
     margin-right: auto;
 }
 
-.align-right {
+.youtube-align-right {
     display: block; /* Important for margin to work */
     margin-left: auto;
     margin-right: 0;
 }
 
-/* Styles for the default 16:9 responsive ratio (if no custom width/height/align is specified) */
-.force-16-9-ratio {
+/* Styles for the default 16:9 responsive ratio container */
+.youtube-responsive-container {
     position: relative;
     padding-bottom: 56.25%; /* 16:9 aspect ratio */
     height: 0;
     overflow: hidden;
-    margin-left: auto; /* Default to center */
-    margin-right: auto; /* Default to center */
-    margin-bottom: 1.5em; /* Add some space below the video */
-    max-width: 100%; /* Ensure it doesn't overflow */
 }
-.force-16-9-ratio iframe {
+
+/* Styles for the iframe inside the responsive container */
+.youtube-responsive-container iframe {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     border: 0;
+}
+
+/* Styles for the iframe when explicitly sized (not using 16:9 responsive container) */
+.youtube-sized-iframe {
+    display: block; /* Ensures it behaves like a block element for margin:auto to work */
+    border: 0; /* Ensures no default border */
 }
