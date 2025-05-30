@@ -204,7 +204,7 @@ We tested the 1:4 prototype in the Delta Flume at knowledge institute Deltares. 
 
 
 **2021: Additional wave flume tests at MARIN**
-To validate and de-risk every aspect of our wave energy converter concept we conducted a large amount of tests at a wave flume at the marine research centre MARIN. The tests were be performed at a scale of 1:7.
+To validate and de-risk every aspect of our wave energy converter concept we conducted a large amount of tests at a wave flume at the marine research centre MARIN. 
 
 {{< video src="test.mp4" autoplay="true" muted="true" loop="true" width="80%" >}}
 
@@ -216,7 +216,7 @@ At the moment we are lining up for our first relevant environment: the North Sea
 # Stage 4
 
 **2026 - 2027: Demonstration and certification**
-In 2024 we plan to install the near full scale 1:2 or full scale 1:1 demonstration models at sea for demonstration and certification purposes.
+After stage 3 demonstration models will be deployed at sea for demonstration and certification purposes.
 
 # Stage 5
 
