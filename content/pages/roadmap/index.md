@@ -176,6 +176,7 @@ title: Roadmap
 
 
 # Overview
+
 Dutch Wave Power follows a structured validation process. In this 5-phase process we will gradually 'de-risk' our concept and we will continue to look for 'degree of evidence' in terms of survivability, performance, reliability and, not unimportantly, the economics. Each stage maximizes risk reduction at minimal cost.
 
 {{< svgimage "roadmap_stages.svg" >}}
@@ -202,16 +203,10 @@ At the end of 2019, we attracted our first investor: Koninklijke Martens group. 
 We tested the 1:4 prototype in the Delta Flume at knowledge institute Deltares. The test went extremely well and the results were very encouraging: the operation and launching in accordance with expectations, but above all the efficiency, ie the power generated, were significantly exceeded! The latter offers prospects for a positive cost-benefit outcome.
 
 
-{{< youtube id="oe5T6Q-YNp8?version=3&vq=hd1080&rel=0" >}}
-
-
-
-
 **2021: Additional wave flume tests at MARIN**
 To validate and de-risk every aspect of our wave energy converter concept we conducted a large amount of tests at a wave flume at the marine research centre MARIN. The tests were be performed at a scale of 1:7.
 
 {{< video src="test.mp4" autoplay="true" muted="true" loop="true" width="80%" >}}
-
 
 # Stage 3
 
