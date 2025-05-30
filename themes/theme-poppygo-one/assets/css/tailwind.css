@@ -112814,3 +112814,52 @@ svg {
     animation-play-state: paused;
 }
 /* --- End Poppy Logo Banner Styles --- */
+
+/* --- YouTube Video Styling --- */
+
+/* Basic styling for the container div for custom sizes/alignments */
+.align-left,
+.align-center,
+.align-right {
+    margin-bottom: 1.5em; /* Add some space below the video */
+    max-width: 100%; /* Ensure it doesn't overflow its parent */
+}
+
+/* Alignment rules for the wrapping div */
+.align-left {
+    display: block; /* Important for margin to work */
+    margin-right: auto;
+    margin-left: 0;
+}
+
+.align-center {
+    display: block; /* Important for margin: auto to work */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.align-right {
+    display: block; /* Important for margin to work */
+    margin-left: auto;
+    margin-right: 0;
+}
+
+/* Styles for the default 16:9 responsive ratio (if no custom width/height/align is specified) */
+.force-16-9-ratio {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    height: 0;
+    overflow: hidden;
+    margin-left: auto; /* Default to center */
+    margin-right: auto; /* Default to center */
+    margin-bottom: 1.5em; /* Add some space below the video */
+    max-width: 100%; /* Ensure it doesn't overflow */
+}
+.force-16-9-ratio iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
