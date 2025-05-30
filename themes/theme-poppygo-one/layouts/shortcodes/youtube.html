@@ -1,5 +1,5 @@
 {{- /*
-Renders an embedded YouTube video.
+Renders an embedded YouTube video with extended size and alignment control.
 
 @param {bool} [allowFullScreen=true] Whether the iframe element can activate full screen mode.
 @param {bool} [autoplay=false] Whether to automatically play the video. Forces mute to be true.
@@ -12,6 +12,9 @@ Renders an embedded YouTube video.
 @param {bool} [mute=false] Whether to mute the video. Always true when autoplay is true.
 @param {int} [start] The time, measured in seconds from the start of the video, when the player should start playing the video.
 @param {string} [title] The title attribute of the iframe element. Defaults to "YouTube video".
+@param {string} [width] The width of the video. E.g., "560", "100%".
+@param {string} [height] The height of the video. E.g., "315", "auto".
+@param {string} [align] The alignment of the video: "left", "center", "right".
 
 @returns {template.HTML}
 
@@ -19,6 +22,8 @@ Renders an embedded YouTube video.
 
 @example {{< youtube 0RKpf3rK57I >}}
 @example {{< youtube id=0RKpf3rK57I loading=lazy start=30 >}}
+@example {{< youtube id="0RKpf3rK57I" width="800" height="450" align="center" >}}
+@example {{< youtube id="0RKpf3rK57I" width="100%" align="left" >}}
 */}}
 
 {{- $pc := .Page.Site.Config.Privacy.YouTube }}
@@ -38,6 +43,9 @@ Renders an embedded YouTube video.
     {{- $start := 0 }}
     {{- $title := "YouTube video" }}
     {{- $iframeAllowList := "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" }}
+    {{- $width := "" }}
+    {{- $height := "" }}
+    {{- $align := "" }}
 
     {{- /* Get arguments. */}}
     {{- if in (slice "true" true 1) ($.Get "allowFullScreen") }}
@@ -70,6 +78,10 @@ Renders an embedded YouTube video.
     {{- $loading = or ($.Get "loading") $loading }}
     {{- $start = or ($.Get "start") $start }}
     {{- $title = or ($.Get "title") $title }}
+    {{- $width = or ($.Get "width") $width }}   {{/* Get new width parameter */}}
+    {{- $height = or ($.Get "height") $height }} {{/* Get new height parameter */}}
+    {{- $align = or ($.Get "align") $align }}   {{/* Get new align parameter */}}
+
 
     {{- /* Adjust iframeAllowList. */}}
     {{- if $allowFullScreen }}
@@ -110,30 +122,58 @@ Renders an embedded YouTube video.
         {{- $src = printf "%s?%s" $src (delimit $queryParams "&") }}
     {{- end }}
 
-    {{- /* Set div attributes. */}}
-    {{- $divStyle := "position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;" }}
-    {{- if $class }}
-      {{- $divStyle = "" }}
+    {{- /* Build custom inline styles for div and iframe based on new parameters */}}
+    {{- $divExtraStyle := "" }}
+    {{- $iframeExtraStyle := "" }}
+    {{- $wrapperClasses := slice }}
+
+    {{- if $width }}
+        {{- $divExtraStyle = printf "width: %s;" $width }}
+        {{- $iframeExtraStyle = printf "width: %s; height: %s;" $width (default "auto" $height) }}
+        {{- if not $height }}
+            {{- /* If only width is set, calculate responsive height for 16:9 aspect ratio */}}
+            {{- $divExtraStyle = printf "%s position: relative; padding-bottom: calc(%s * 0.5625);" $divExtraStyle $width }}
+            {{- $iframeExtraStyle = printf "%s position: absolute; top: 0; left: 0;" $iframeExtraStyle }}
+        {{- end }}
     {{- end }}
 
-    {{- /* Set iframe attributes. */}}
-    {{- $iframeStyle := "position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" }}
-    {{- if $class }}
-      {{- $iframeStyle = "" }}
+    {{- if $height }}
+        {{- $iframeExtraStyle = printf "%s height: %s;" $iframeExtraStyle $height }}
     {{- end }}
-    {{- $referrerpolicy := "strict-origin-when-cross-origin" }}
+
+
+    {{- /* Set text alignment for the wrapper based on 'align' parameter */}}
+    {{- if eq $align "left" }}
+        {{- $wrapperClasses = $wrapperClasses | append "align-left" }}
+    {{- else if eq $align "right" }}
+        {{- $wrapperClasses = $wrapperClasses | append "align-right" }}
+    {{- else if eq $align "center" }}
+        {{- $wrapperClasses = $wrapperClasses | append "align-center" }}
+    {{- else }}
+        {{- /* Default if align parameter is not specified or invalid */}}
+        {{- $wrapperClasses = $wrapperClasses | append "force-16-9-ratio" }} {{/* Keep original if no custom alignment */}}
+    {{- end }}
+
+    {{- if $class }}
+        {{- $wrapperClasses = $wrapperClasses | append $class }}
+        {{- $divExtraStyle = "" }} {{/* If custom class is provided, it's assumed to handle styling */}}
+        {{- $iframeExtraStyle = "" }}
+    {{- end }}
+
+    {{- $finalWrapperClasses := delimit $wrapperClasses " " }}
+
 
     {{- /* Render. */ -}}
     <div
-      {{- with $class }} class="{{ . }}" {{- end }}
-      {{- with $divStyle }} style="{{ . | safeCSS }}" {{- end -}}
+      {{- with $finalWrapperClasses }} class="{{ . }}" {{- end }}
+      {{- if $divExtraStyle }} style="{{ $divExtraStyle | safeCSS }}" {{- end -}}
     >
       <iframe
         {{- with $iframeAllowList }} allow="{{ . }}" {{- end }}
         {{- with $loading }} loading="{{ . }}" {{- end }}
         {{- with $referrerpolicy }} referrerpolicy="{{ . }}" {{- end }}
         {{- with $src }} src="{{ . }}" {{- end }}
-        {{- with $iframeStyle}} style="{{ . | safeCSS }}" {{- end }}
+        {{- if $iframeExtraStyle }} style="{{ $iframeExtraStyle | safeCSS }}" {{- end }}
         {{- with $title }} title="{{ . }}" {{- end -}}
       ></iframe>
     </div>
