@@ -1,3 +1,15 @@
+You got it. Here is the fully updated youtube.html code with the playsinline=1 query parameter added and the allowfullscreen attribute explicitly set on the <iframe> tag.
+
+This aims to address potential browser restrictions that might be causing the black boxes, even with a valid src and correct styling.
+
+Action:
+
+Go to your GitHub repository.
+Navigate to themes/theme-poppygo-one/layouts/shortcodes/youtube.html.
+Click the "Edit this file" (pencil) icon.
+Replace its entire content with the code below. Ensure you copy from the very first {{- /* to the very last {{- end }}.
+HTML
+
 {{- /*
 Renders an embedded YouTube video with extended size and alignment control using Tailwind CSS classes.
 Improved aspect ratio handling to eliminate black bars.
@@ -105,6 +117,8 @@ Improved aspect ratio handling to eliminate black bars.
         {{ $queryParams = $queryParams | append "controls=0" }}
     {{- end }}
 
+    {{ $queryParams = $queryParams | append "playsinline=1" }} {{/* ADDED: For better mobile/fullscreen compatibility */}}
+
     {{- if gt $end 0 }}
         {{ $queryParams = $queryParams | append (printf "end=%d" $end) }}
     {{- end }}
@@ -175,6 +189,7 @@ Improved aspect ratio handling to eliminate black bars.
       {{- if $divExtraStyle }} style="{{ $divExtraStyle | safeCSS }}" {{- end -}}
     >
       <iframe
+        {{- if $allowFullScreen }} allowfullscreen {{- end }} {{/* ADDED: Explicit allowfullscreen attribute */}}
         {{- with $iframeAllowList }} allow="{{ . }}" {{- end }}
         {{- with $loading }} loading="{{ . }}" {{- end }}
         {{- with $referrerpolicy }} referrerpolicy="{{ . }}" {{- end }}
