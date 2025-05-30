@@ -1,9 +1,10 @@
 {{- /*
-Renders an embedded YouTube video with extended size and alignment control.
+Renders an embedded YouTube video with extended size and alignment control using Tailwind CSS classes.
+Improved aspect ratio handling to eliminate black bars.
 
 @param {bool} [allowFullScreen=true] Whether the iframe element can activate full screen mode.
 @param {bool} [autoplay=false] Whether to automatically play the video. Forces mute to be true.
-@param {string} [class] The class attribute of the wrapping div element. When specified, removes the style attributes from the iframe element and its wrapping div element.
+@param {string} [class] Additional CSS classes for the wrapping div element.
 @param {bool} [controls=true] Whether to display the video controls.
 @param {int} [end] The time, measured in seconds from the start of the video, when the player should stop playing the video.
 @param {string} [id] The video id. Optional if the id is the first and only positional argument.
@@ -12,23 +13,26 @@ Renders an embedded YouTube video with extended size and alignment control.
 @param {bool} [mute=false] Whether to mute the video. Always true when autoplay is true.
 @param {int} [start] The time, measured in seconds from the start of the video, when the player should start playing the video.
 @param {string} [title] The title attribute of the iframe element. Defaults to "YouTube video".
-@param {string} [width] The width of the video. E.g., "560", "100%".
-@param {string} [height] The height of the video. E.g., "315", "auto".
-@param {string} [align] The alignment of the video: "left", "center", "right".
+@param {string} [width] The width of the video. E.g., "560px", "100%", "w-full", "w-3/4".
+@param {string} [height] The height of the video. E.g., "315px", "h-auto". If provided, overrides 16:9 aspect ratio.
+@param {string} [align] The alignment of the video: "left", "center", "right". Translates to Tailwind 'margin' classes.
 
 @returns {template.HTML}
 
 @reference https://developers.google.com/youtube/player_parameters
+@reference https://tailwindcss.com/docs/margin
+@reference https://tailwindcss.com/docs/aspect-ratio (for pb-[56.25%])
 
 @example {{< youtube 0RKpf3rK57I >}}
 @example {{< youtube id=0RKpf3rK57I loading=lazy start=30 >}}
-@example {{< youtube id="0RKpf3rK57I" width="800" height="450" align="center" >}}
-@example {{< youtube id="0RKpf3rK57I" width="100%" align="left" >}}
+@example {{< youtube id="0RKpf3rK57I" width="w-3/4" align="center" >}} {{/* Responsive 16:9, 75% width, centered */}}
+@example {{< youtube id="0RKpf3rK57I" width="800px" align="center" >}} {{/* Fixed 800px width, responsive 16:9, centered */}}
+@example {{< youtube id="0RKpf3rK57I" width="800px" height="450px" align="center" >}} {{/* Fixed width/height, centered */}}
 */}}
 
 {{- $pc := .Page.Site.Config.Privacy.YouTube }}
 {{- $remoteErrID := "err-youtube-remote" }}
-{{- $referrerpolicy := "strict-origin-when-cross-origin" }} {{/* Moved this definition here */}}
+{{- $referrerpolicy := "strict-origin-when-cross-origin" }}
 
 {{- if not $pc.Disable }}
   {{- with $id := or (.Get "id") (.Get 0) }}
@@ -75,14 +79,14 @@ Renders an embedded YouTube video with extended size and alignment control.
     {{- else if in (slice "false" false 0) ($.Get "mute") }}
       {{- $mute = 0 }}
     {{- end }}
-    {{- $class = or ($.Get "class") $class }}
-    {{- $end = or ($.Get "end") $end }}
-    {{- $loading = or ($.Get "loading") $loading }}
-    {{- $start = or ($.Get "start") $start }}
-    {{- $title = or ($.Get "title") $title }}
-    {{- $width = or ($.Get "width") $width }}
-    {{- $height = or ($.Get "height") $height }}
-    {{- $align = or ($.Get "align") $align }}
+    {{- $class := or ($.Get "class") $class }}
+    {{- $end := or ($.Get "end") $end }}
+    {{- $loading := or ($.Get "loading") $loading }}
+    {{- $start := or ($.Get "start") $start }}
+    {{- $title := or ($.Get "title") $title }}
+    {{- $width := or ($.Get "width") $width }}
+    {{- $height := or ($.Get "height") $height }}
+    {{- $align := or ($.Get "align") $align }}
 
 
     {{- /* Adjust iframeAllowList. */}}
@@ -124,50 +128,56 @@ Renders an embedded YouTube video with extended size and alignment control.
         {{- $src = printf "%s?%s" $src (delimit $queryParams "&") }}
     {{- end }}
 
-    {{- /* Build custom inline styles for div and iframe based on new parameters */}}
+    {{- /* Build Tailwind and custom inline styles for div and iframe based on new parameters */}}
     {{- $divExtraStyle := "" }}
     {{- $iframeExtraStyle := "" }}
-    {{- $wrapperClasses := slice }}
+    {{- $wrapperClasses := slice "block" "mb-6" }} {{/* Always display:block and add margin-bottom */}}
+    {{- $iframeClasses := slice "absolute top-0 left-0 w-full h-full border-0" }}
 
     {{- if $width }}
-        {{- $divExtraStyle = printf "width: %s;" $width }}
-        {{- $iframeExtraStyle = printf "width: %s; height: %s;" $width (default "auto" $height) }}
-        {{- if not $height }}
-            {{- /* If only width is set, calculate responsive height for 16:9 aspect ratio */}}
-            {{- $divExtraStyle = printf "%s position: relative; padding-bottom: calc(%s * 0.5625);" $divExtraStyle $width }}
-            {{- $iframeExtraStyle = printf "%s position: absolute; top: 0; left: 0;" $iframeExtraStyle }}
+        {{- if hasPrefix $width "w-" }} {{/* Tailwind width utility like w-3/4 */}}
+            {{- $wrapperClasses = $wrapperClasses | append $width }}
+        {{- else }} {{/* Custom pixel/percentage width like 800px, 100% */}}
+            {{- $divExtraStyle = printf "%s width: %s;" $divExtraStyle $width }}
         {{- end }}
     {{- end }}
 
+    {{- /* Aspect Ratio Logic */}}
     {{- if $height }}
-        {{- $iframeExtraStyle = printf "%s height: %s;" $iframeExtraStyle $height }}
+        {{- if hasPrefix $height "h-" }} {{/* Tailwind height utility like h-64 */}}
+            {{- $wrapperClasses = $wrapperClasses | append $height }}
+            {{- $wrapperClasses = $wrapperClasses | append "relative" }} {{/* Ensure relative for absolute iframe */}}
+        {{- else }} {{/* Custom pixel height like 450px */}}
+            {{- $iframeExtraStyle = printf "%s height: %s;" $iframeExtraStyle $height }}
+            {{- $wrapperClasses = $wrapperClasses | append "relative" }} {{/* Ensure relative for absolute iframe */}}
+        {{- end }}
+    {{- else }} {{/* No height specified, apply 16:9 aspect ratio */}}
+        {{- $wrapperClasses = $wrapperClasses | append "relative pb-[56.25%]" }} {{/* Tailwind for 16:9 aspect ratio */}}
     {{- end }}
 
-
-    {{- /* Set text alignment for the wrapper based on 'align' parameter */}}
+    {{- /* Handle Alignment - use Tailwind classes directly */}}
     {{- if eq $align "left" }}
-        {{- $wrapperClasses = $wrapperClasses | append "align-left" }}
+        {{- $wrapperClasses = $wrapperClasses | append "mr-auto ml-0" }}
     {{- else if eq $align "right" }}
-        {{- $wrapperClasses = $wrapperClasses | append "align-right" }}
+        {{- $wrapperClasses = $wrapperClasses | append "ml-auto mr-0" }}
     {{- else if eq $align "center" }}
-        {{- $wrapperClasses = $wrapperClasses | append "align-center" }}
-    {{- else }}
-        {{- /* Default if align parameter is not specified or invalid */}}
-        {{- $wrapperClasses = $wrapperClasses | append "force-16-9-ratio" }} {{/* Keep original if no custom alignment */}}
+        {{- $wrapperClasses = $wrapperClasses | append "mx-auto" }}
     {{- end }}
 
     {{- if $class }}
         {{- $wrapperClasses = $wrapperClasses | append $class }}
-        {{- $divExtraStyle = "" }} {{/* If custom class is provided, it's assumed to handle styling */}}
+        {{- $divExtraStyle = "" }} {{/* If custom class is provided, assume it handles all styling */}}
         {{- $iframeExtraStyle = "" }}
+        {{- $iframeClasses = slice "" }} {{/* Remove default iframe classes if custom class takes over */}}
     {{- end }}
 
     {{- $finalWrapperClasses := delimit $wrapperClasses " " }}
+    {{- $finalIframeClasses := delimit $iframeClasses " " }}
 
 
     {{- /* Render. */ -}}
     <div
-      {{- with $finalWrapperClasses }} class="{{ . }}" {{- end }}
+      class="{{ $finalWrapperClasses }}"
       {{- if $divExtraStyle }} style="{{ $divExtraStyle | safeCSS }}" {{- end -}}
     >
       <iframe
@@ -175,6 +185,7 @@ Renders an embedded YouTube video with extended size and alignment control.
         {{- with $loading }} loading="{{ . }}" {{- end }}
         {{- with $referrerpolicy }} referrerpolicy="{{ . }}" {{- end }}
         {{- with $src }} src="{{ . }}" {{- end }}
+        class="{{ $finalIframeClasses }}"
         {{- if $iframeExtraStyle }} style="{{ $iframeExtraStyle | safeCSS }}" {{- end }}
         {{- with $title }} title="{{ . }}" {{- end -}}
       ></iframe>
