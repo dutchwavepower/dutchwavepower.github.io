@@ -1,12 +1,11 @@
 {{- /*
-A simplified shortcode to embed a YouTube video.
-It focuses on basic embedding and centering.
+A shortcode to embed a responsive YouTube video, centered and defaulting to 16:9 aspect ratio.
+Allows specifying a width.
 
 @param {string} id - The YouTube video ID. (Required, can be positional arg 0)
 @param {string} [title="YouTube video"] - The title for accessibility.
 @param {string} [loading="eager"] - The loading attribute of the iframe.
-@param {string} [width="560px"] - The width of the video (e.g., "560px", "100%"). Default to "560px".
-@param {string} [height="315px"] - The height of the video (e.g., "315px", "auto"). Default to "315px".
+@param {string} [width="100%"] - The width of the video (e.g., "560px", "100%"). Default to "100%".
 */ -}}
 
 {{- $pc := .Page.Site.Config.Privacy.YouTube }}
@@ -29,11 +28,8 @@ It focuses on basic embedding and centering.
     {{- $loading := "eager" }}
     {{- if .IsNamedParams }}{{- $loading = or (.Get "loading") $loading }}{{- end }}
 
-    {{- $width := "560px" }} {{/* Default width */}}
+    {{- $width := "100%" }} {{/* Default width for responsiveness */}}
     {{- if .IsNamedParams }}{{- $width = or (.Get "width") $width }}{{- end }}
-
-    {{- $height := "315px" }} {{/* Default height (16:9 aspect ratio for 560px width) */}}
-    {{- if .IsNamedParams }}{{- $height = or (.Get "height") $height }}{{- end }}
 
     {{- $allowFullScreen := true }}
     {{- $controls := 1 }}
@@ -55,103 +51,22 @@ It focuses on basic embedding and centering.
       {{- $src = printf "%s?%s" $src (delimit $queryParams "&") }}
     {{- end }}
 
-    {{- /* Render the iframe wrapped in a div for centering. */ -}}
+    {{- /* Render the responsive video wrapper for 16:9 aspect ratio and centering. */ -}}
     <div style="width: {{ $width }}; margin: 0 auto; max-width: 100%;">
-      <iframe
-        {{- if $allowFullScreen }} allowfullscreen {{- end }}
-        loading="{{ $loading }}"
-        referrerpolicy="{{ $referrerpolicy }}"
-        src="{{ $src }}"
-        title="{{ $title }}"
-        frameborder="0"
-        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        style="width: 100%; height: {{ $height }}; display: block;" {{/* Make iframe take full width of parent div */}}
-      ></iframe>
+      <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;"> {{/* 16:9 aspect ratio (height is 56.25% of width) */}}
+        <iframe
+          {{- if $allowFullScreen }} allowfullscreen {{- end }}
+          loading="{{ $loading }}"
+          referrerpolicy="{{ $referrerpolicy }}"
+          src="{{ $src }}"
+          title="{{ $title }}"
+          frameborder="0"
+          allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: block;"
+        ></iframe>
+      </div>
     </div>
   {{- else }}
     {{- errorf "The %q shortcode requires an id argument. See %s" .Name .Position }}
   {{- end }}
 {{- end }}
-
-
-
-
-
-<!-- {{- /*
-A simplified shortcode to embed a YouTube video.
-It focuses on basic embedding without advanced styling or alignment.
-
-@param {string} id - The YouTube video ID. (Required, can be positional arg 0)
-@param {string} [title="YouTube video"] - The title for accessibility.
-@param {string} [loading="eager"] - The loading attribute of the iframe.
-*/ -}}
-
-{{- $pc := .Page.Site.Config.Privacy.YouTube }}
-{{- $referrerpolicy := "strict-origin-when-cross-origin" }}
-
-{{- if not $pc.Disable }}
-  {{- /* Get the video ID, either from 'id' named param or first positional arg */}}
-  {{- $id := "" }}
-  {{- if .IsNamedParams }}
-    {{- $id = .Get "id" }}
-  {{- else }}
-    {{- $id = .Get 0 }}
-  {{- end }}
-
-  {{- if $id }}
-    {{- /* Set defaults. Use .Get only if it's a valid shortcode context, otherwise hardcode */}}
-    {{- $title := "" }}
-    {{- if .IsNamedParams }}
-      {{- $title = or (.Get "title") "YouTube video" }}
-    {{- else }}
-      {{- $title = "YouTube video" }} {{/* Fallback if not named params, as .Get for 'title' won't exist */}}
-    {{- end }}
-    {{- if not $title }}
-      {{- $title = "YouTube video" }}
-    {{- end }}
-
-    {{- $loading := "" }}
-    {{- if .IsNamedParams }}
-      {{- $loading = or (.Get "loading") "eager" }}
-    {{- else }}
-      {{- $loading = "eager" }} {{/* Fallback */}}
-    {{- end }}
-    {{- if not $loading }}
-      {{- $loading = "eager" }}
-    {{- end }}
-
-
-    {{- $allowFullScreen := true }}
-    {{- $controls := 1 }}
-    {{- $playsinline := 1 }}
-
-    {{- /* Define src attribute and query parameters. */}}
-    {{- $host := cond $pc.PrivacyEnhanced "www.youtube-nocookie.com" "www.youtube.com" }}
-    {{- $src := printf "https://%s/embed/%s" $host $id }}
-
-    {{- $queryParams := slice }}
-
-    {{- if eq $controls 0 }}
-      {{ $queryParams = $queryParams | append "controls=0" }}
-    {{- end }}
-
-    {{ $queryParams = $queryParams | append (printf "playsinline=%d" $playsinline) }}
-
-    {{- if gt (len $queryParams) 0 }}
-      {{- $src = printf "%s?%s" $src (delimit $queryParams "&") }}
-    {{- end }}
-
-    {{- /* Render the basic iframe. No custom CSS classes for sizing here. */ -}}
-    <iframe
-      {{- if $allowFullScreen }} allowfullscreen {{- end }}
-      loading="{{ $loading }}"
-      referrerpolicy="{{ $referrerpolicy }}"
-      src="{{ $src }}"
-      title="{{ $title }}"
-      frameborder="0"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-    ></iframe>
-  {{- else }}
-    {{- errorf "The %q shortcode requires an id argument. See %s" .Name .Position }}
-  {{- end }}
-{{- end }} -->
