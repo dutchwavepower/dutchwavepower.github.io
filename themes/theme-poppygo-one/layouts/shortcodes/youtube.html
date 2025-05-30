@@ -2,21 +2,46 @@
 A simplified shortcode to embed a YouTube video.
 It focuses on basic embedding without advanced styling or alignment.
 
-@param {string} id - The YouTube video ID. (Required)
+@param {string} id - The YouTube video ID. (Required, can be positional arg 0)
 @param {string} [title="YouTube video"] - The title for accessibility.
 @param {string} [loading="eager"] - The loading attribute of the iframe.
 */ -}}
 
 {{- $pc := .Page.Site.Config.Privacy.YouTube }}
-{{- $remoteErrID := "err-youtube-remote" }}
 {{- $referrerpolicy := "strict-origin-when-cross-origin" }}
 
 {{- if not $pc.Disable }}
-  {{- with $id := or (.Get "id") (.Get 0) }}
+  {{- /* Get the video ID, either from 'id' named param or first positional arg */}}
+  {{- $id := "" }}
+  {{- if .IsNamedParams }}
+    {{- $id = .Get "id" }}
+  {{- else }}
+    {{- $id = .Get 0 }}
+  {{- end }}
 
-    {{- /* Set defaults. */}}
-    {{- $title := or (.Get "title") "YouTube video" }}
-    {{- $loading := or (.Get "loading") "eager" }}
+  {{- if $id }}
+    {{- /* Set defaults. Use .Get only if it's a valid shortcode context, otherwise hardcode */}}
+    {{- $title := "" }}
+    {{- if .IsNamedParams }}
+      {{- $title = or (.Get "title") "YouTube video" }}
+    {{- else }}
+      {{- $title = "YouTube video" }} {{/* Fallback if not named params, as .Get for 'title' won't exist */}}
+    {{- end }}
+    {{- if not $title }}
+      {{- $title = "YouTube video" }}
+    {{- end }}
+
+    {{- $loading := "" }}
+    {{- if .IsNamedParams }}
+      {{- $loading = or (.Get "loading") "eager" }}
+    {{- else }}
+      {{- $loading = "eager" }} {{/* Fallback */}}
+    {{- end }}
+    {{- if not $loading }}
+      {{- $loading = "eager" }}
+    {{- end }}
+
+
     {{- $allowFullScreen := true }}
     {{- $controls := 1 }}
     {{- $playsinline := 1 }}
@@ -44,7 +69,7 @@ It focuses on basic embedding without advanced styling or alignment.
       referrerpolicy="{{ $referrerpolicy }}"
       src="{{ $src }}"
       title="{{ $title }}"
-      frameborder="0" {{/* Explicitly set frameborder to 0 */}}
+      frameborder="0"
       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
     ></iframe>
   {{- else }}
