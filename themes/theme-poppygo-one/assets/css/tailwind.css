@@ -112965,3 +112965,86 @@ svg {
         grid-column: span 2;
     }
 }
+
+/* --- SVG Image Shortcode Styling (svgimage.html) --- */
+
+/* Base styling for the wrapper div that contains the grid. */
+/* This div also gets the alignment classes (image-align-left/center/right) and width */
+.svg-image-wrapper {
+    margin-bottom: 1.5em; /* Add some space below the grid */
+    max-width: 100%; /* Ensure it doesn't overflow */
+}
+
+/* Alignment rules for the main .svg-image-wrapper div (re-using general image alignment classes) */
+.image-align-left {
+    float: left;
+    margin-right: 10px; /* Space to the right when floating left */
+    margin-left: 0;
+    display: block;
+}
+
+.image-align-center {
+    display: block; /* Important for margin: auto to work */
+    margin-left: auto;
+    margin-right: auto;
+    float: none; /* No float for centering */
+}
+
+.image-align-right {
+    float: right;
+    margin-left: 10px; /* Space to the left when floating right */
+    margin-right: 0;
+    display: block;
+}
+
+/* Styles for the inner grid container that handles column layout */
+.svg-image-grid {
+    width: 100%;
+    display: grid;
+    grid-auto-flow: row;
+    justify-items: stretch;
+    justify-content: stretch;
+    grid-gap: 10px;
+    grid-template-columns: repeat(12, 1fr);
+}
+
+/* Column span definitions for grid items */
+.svg-oneCol, .svg-twoCols, .svg-threeCols {
+    grid-column: span 12;
+}
+
+.svg-fourCols, .svg-sixCols {
+    grid-column: span 6;
+}
+
+/* Media queries for responsiveness */
+@media (min-width: 768px) {
+    .svg-twoCols, .svg-threeCols {
+        grid-column: span 6;
+    }
+    .svg-fourCols, .svg-sixCols {
+        grid-column: span 3;
+    }
+}
+
+@media (min-width: 992px) {
+    .svg-twoCols {
+        grid-column: span 6;
+    }
+    .svg-threeCols {
+        grid-column: span 4;
+    }
+    .svg-sixCols {
+        grid-column: span 2;
+    }
+}
+
+/* Styling for the SVG element itself or its direct container */
+/* When SVGs are directly embedded (readFile), their root <svg> element
+   needs styling for width/height/centering. */
+.svg-image-container svg {
+    display: block; /* Ensure SVG is a block element for margin: auto */
+    width: 100%; /* Make SVG fill its column */
+    height: auto; /* Maintain aspect ratio */
+    margin: 0 auto; /* Center SVG within its column */
+}
