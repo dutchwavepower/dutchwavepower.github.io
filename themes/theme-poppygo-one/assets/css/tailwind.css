@@ -112866,3 +112866,102 @@ svg {
     display: block; /* Ensures it behaves like a block element for margin:auto to work */
     border: 0; /* Ensures no default border */
 }
+
+
+/* --- Image Shortcode Styling (image.html) --- */
+
+/* Base styling for the image wrapper div created by the shortcode */
+/* This div gets the 'imagegrid-COLUMNS' class (e.g., imagegrid-oneCol) */
+/* and now also image-wrapper-alignment classes */
+.image-wrapper {
+    margin-bottom: 1.5em; /* Default spacing below the image grid */
+    max-width: 100%; /* Ensure it doesn't overflow */
+}
+
+/* Alignment classes for the main image wrapper div */
+.image-align-left {
+    float: left;
+    margin-right: 10px; /* Space to the right when floating left */
+    margin-left: 0;
+    display: block; /* Ensure it's a block for float to work consistently */
+}
+
+.image-align-center {
+    display: block; /* Important for margin: auto to work */
+    margin-left: auto;
+    margin-right: auto;
+    float: none; /* No float for centering */
+}
+
+.image-align-right {
+    float: right;
+    margin-left: 10px; /* Space to the left when floating right */
+    margin-right: 0;
+    display: block; /* Ensure it's a block for float to work consistently */
+}
+
+/* Styles for actual <img> and <svg> elements within the shortcode */
+.pogoimage-item {
+    width: 100%; /* Image should fill its grid column */
+    height: auto; /* Maintain aspect ratio */
+    display: block; /* Important for margin: auto centering and consistent display */
+    margin: 0 auto; /* Center the image within its grid column */
+}
+
+/* Specific styling for SVG elements if they need different handling */
+.pogoimage-item.svg-image {
+    /* SVGs often don't need additional styling here if they are 'display: block' and 'width: 100%' */
+    /* They might need specific `max-width` or `height` if their viewBox is very large/small */
+}
+
+
+/* --- Existing Grid-related CSS (keep these as they are, but put them outside the inline <style> tag if possible) --- */
+/* It's better if these are in a static CSS file too, not dynamically generated */
+/* Assuming 'imagegrid-NAME' and 'oneCol', 'twoCols' etc. are still used by your shortcode */
+
+/* Base grid styling for the imagegrid-NAME class */
+[class^="imagegrid-"] {
+    width: 100%;
+    display: grid;
+    grid-auto-flow: row;
+    justify-items: stretch;
+    justify-content: stretch;
+    grid-gap: 10px;
+    grid-template-columns: repeat(12, 1fr);
+}
+
+.oneCol, .twoCols, .threeCols {
+    grid-column: span 12;
+}
+.fourCols, .sixCols {
+    grid-column: span 6;
+}
+
+@media (min-width: 768px) {
+    /* These specific classes from your original shortcode would ideally be
+       applied to the image-wrapper based on number of images if that's what you want.
+       I'm putting them here as a fallback if they are still inline.
+       Otherwise, replace `$classname` with `.imagegrid-COLUMNS` in the CSS. */
+    [class^="imagegrid-"] {
+        /* margin and float will be handled by .image-align-XXX classes now */
+        /* width is now handled by the image-wrapper itself for alignment */
+    }
+    .twoCols, .threeCols {
+        grid-column: span 6;
+    }
+    .fourCols, .sixCols {
+        grid-column: span 3;
+    }
+}
+
+@media (min-width: 992px) {
+    .twoCols {
+        grid-column: span 6;
+    }
+    .threeCols {
+        grid-column: span 4;
+    }
+    .sixCols {
+        grid-column: span 2;
+    }
+}
