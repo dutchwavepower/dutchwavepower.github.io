@@ -208,6 +208,8 @@ To validate and de-risk every aspect of our wave energy converter concept we con
 
 {{< video src="test.mp4" autoplay="true" muted="true" loop="true" width="80%" >}}
 
+{{< youtube id="lBRg8wFgsjo" >}}
+
 # Stage 3
 
 **2022 - 2026: Pilot system validation in a relevant environment: the North Sea**
