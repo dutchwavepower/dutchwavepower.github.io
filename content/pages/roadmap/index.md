@@ -179,7 +179,7 @@ title: Roadmap
 
 Dutch Wave Power follows a structured validation process. In this 5-phase process we will gradually 'de-risk' our concept and we will continue to look for 'degree of evidence' in terms of survivability, performance, reliability and, not unimportantly, the economics. Each stage maximizes risk reduction at minimal cost.
 
-{{< svgimage roadmap_stages "center" >}}
+{{< svgimage roadmap_stages >}}
 
 # Stage 1 
 
