@@ -399,7 +399,7 @@ page_sections:
         buttons: []
         icon: ''
         icon_type: ''
-        image: 
+        image: flexible_positioning
         link: ''
         name: 
         title: ''
