@@ -385,8 +385,16 @@ page_sections:
         title: 'Costeffective'
         video: ''
       - bodytext: |-
-          **Patented technology**
-        
+          
+        buttons: []
+        icon: ''
+        icon_type: ''
+        image: patented_photo
+        link: ''
+        name: patented
+        title: 'Patented'
+        video: ''
+      - bodytext: |-
           **Flexible positioning at any location**
           - Onshore
           - Near Shore
