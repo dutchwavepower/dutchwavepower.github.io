@@ -385,32 +385,38 @@ page_sections:
         title: 'Costeffective'
         video: ''
       - bodytext: |-
-          
-        buttons: []
-        icon: ''
-        icon_type: ''
-        image: patented_photo
-        link: ''
-        name: patented
-        title: 'Patented'
-        video: ''
-      - bodytext: |-
-          **Flexible positioning at any location**
           - Onshore
           - Near Shore
           - Offshore
-    
-          **Robust & Efficient**
+        buttons: []
+        icon: ''
+        icon_type: ''
+        image: flexible_positioning
+        link: ''
+        name: flexible_positioning
+        title: 'Flexible positioning at any location'
+        video: ''
+      - bodytext: |-
           - Submerges in extreme waves
           - Resonant in full wave spectrum
           - Relative high efficiency
         buttons: []
         icon: ''
         icon_type: ''
-        image: flexible_positioning
+        image: robust_efficient
         link: ''
-        name: 
-        title: ''
+        name: robust_efficient
+        title: 'Robust & Efficient'
+        video: ''
+      - bodytext: |-
+          
+        buttons: []
+        icon: ''
+        icon_type: ''
+        image: patented
+        link: ''
+        name: patented
+        title: 'Patented'
         video: ''
     list: ''
     name: how-do-we-do-it
