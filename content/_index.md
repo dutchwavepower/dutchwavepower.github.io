@@ -203,7 +203,7 @@ page_sections:
         link: https://www.water2energy.nl
         name: Water2Energy
         title: ''
-        logo_style: "height: 40px;" 
+        logo_style: "height: 80px;" 
       - bodytext: ''
         buttons: []
         icon: ''
@@ -257,7 +257,7 @@ page_sections:
         link: https://www.ugent.be
         name: UGent
         title: ''
-        logo_style: "height: 40px;"
+        logo_style: "height: 100px;"
       - bodytext: ''
         buttons: []
         icon: ''
@@ -266,7 +266,7 @@ page_sections:
         link: https://www.tudelft.nl
         name: TUDelft
         title: ''
-        logo_style: "height: 40px;" 
+        logo_style: "height: 60px;" 
       - bodytext: ''
         buttons: []
         icon: ''
