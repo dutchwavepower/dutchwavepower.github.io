@@ -203,7 +203,7 @@ page_sections:
         link: https://www.water2energy.nl
         name: Water2Energy
         title: ''
-        logo_style: "height: 120px;" 
+        logo_style: "height: 140px;" 
       - bodytext: ''
         buttons: []
         icon: ''
@@ -230,7 +230,7 @@ page_sections:
         link: https://www.northseafarmers.org/
         name: NorthSeaFarmers
         title: ''
-        logo_style: "height: 50px;"
+        logo_style: "height: 35px;"
       - bodytext: ''
         buttons: []
         icon: ''
@@ -239,7 +239,7 @@ page_sections:
         link: https://www.dutchmarineenergy.com
         name: DMEC
         title: ''
-        logo_style: "height: 40px;"
+        logo_style: "height: 30px;"
       - bodytext: ''
         buttons: []
         icon: ''
