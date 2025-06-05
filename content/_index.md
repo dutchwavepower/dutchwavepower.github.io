@@ -203,7 +203,7 @@ page_sections:
         link: https://www.water2energy.nl
         name: Water2Energy
         title: ''
-        logo_style: "height: 100px;" 
+        logo_style: "height: 120px;" 
       - bodytext: ''
         buttons: []
         icon: ''
