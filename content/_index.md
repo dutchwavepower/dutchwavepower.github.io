@@ -136,15 +136,6 @@ page_sections:
         buttons: []
         icon: ''
         icon_type: ''
-        image: logo_rometal
-        link: https://rometal.nl
-        name: Rometal
-        title: ''
-        logo_style: "height: 80px;" 
-      - bodytext: ''
-        buttons: []
-        icon: ''
-        icon_type: ''
         image: logo_interreg
         link: https://interregvlaned.eu/en/offshore-for-sure-o4s/about-us
         name: Interreg
@@ -181,6 +172,15 @@ page_sections:
         buttons: []
         icon: ''
         icon_type: ''
+        image: logo_rometal
+        link: https://rometal.nl
+        name: Rometal
+        title: ''
+        logo_style: "height: 80px;" 
+      - bodytext: ''
+        buttons: []
+        icon: ''
+        icon_type: ''
         image: logo_hillebrand
         link: https://hillebrandbv.nl/
         name: Hillebrand
@@ -203,7 +203,7 @@ page_sections:
         link: https://www.water2energy.nl
         name: Water2Energy
         title: ''
-        logo_style: "height: 80px;" 
+        logo_style: "height: 100px;" 
       - bodytext: ''
         buttons: []
         icon: ''
@@ -266,7 +266,7 @@ page_sections:
         link: https://www.tudelft.nl
         name: TUDelft
         title: ''
-        logo_style: "height: 60px;" 
+        logo_style: "height: 2000px;" 
       - bodytext: ''
         buttons: []
         icon: ''
