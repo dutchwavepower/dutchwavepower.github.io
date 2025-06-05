@@ -212,7 +212,7 @@ page_sections:
         link: https://www.campusatsea.nl/
         name: Campus@Sea
         title: ''
-        logo_style: "height: 40px;" 
+        logo_style: "height: 30px;" 
       - bodytext: ''
         buttons: []
         icon: ''
@@ -230,7 +230,7 @@ page_sections:
         link: https://www.northseafarmers.org/
         name: NorthSeaFarmers
         title: ''
-        logo_style: "height: 60px;"
+        logo_style: "height: 50px;"
       - bodytext: ''
         buttons: []
         icon: ''
@@ -248,7 +248,7 @@ page_sections:
         link: https://proeftuinopdenoordzee.nl
         name: Proeftuin_op_de_Noordzee
         title: ''
-        logo_style: "height: 80px;"
+        logo_style: "height: 60px;"
       - bodytext: ''
         buttons: []
         icon: ''
