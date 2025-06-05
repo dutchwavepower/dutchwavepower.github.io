@@ -194,7 +194,16 @@ page_sections:
         link: https://vanmelsenengineering.nl
         name: Van_Melsen_engineering
         title: ''
-        logo_style: "height: 80px;" 
+        logo_style: "height: 80px;"
+      - bodytext: ''
+        buttons: []
+        icon: ''
+        icon_type: ''
+        image: logo_water2energy
+        link: https://www.water2energy.nl
+        name: Water2Energy
+        title: ''
+        logo_style: "height: 40px;" 
       - bodytext: ''
         buttons: []
         icon: ''
@@ -239,7 +248,25 @@ page_sections:
         link: https://proeftuinopdenoordzee.nl
         name: Proeftuin_op_de_Noordzee
         title: ''
-        logo_style: "height: 80px;" 
+        logo_style: "height: 80px;"
+      - bodytext: ''
+        buttons: []
+        icon: ''
+        icon_type: ''
+        image: logo_ugent
+        link: https://www.ugent.be
+        name: UGent
+        title: ''
+        logo_style: "height: 40px;"
+      - bodytext: ''
+        buttons: []
+        icon: ''
+        icon_type: ''
+        image: logo_tudelft
+        link: https://www.tudelft.nl
+        name: TUDelft
+        title: ''
+        logo_style: "height: 40px;" 
       - bodytext: ''
         buttons: []
         icon: ''
