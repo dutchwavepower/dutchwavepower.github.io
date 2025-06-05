@@ -266,7 +266,7 @@ page_sections:
         link: https://www.tudelft.nl
         name: TUDelft
         title: ''
-        logo_style: "height: 2000px;" 
+        logo_style: "height: 100px;" 
       - bodytext: ''
         buttons: []
         icon: ''
