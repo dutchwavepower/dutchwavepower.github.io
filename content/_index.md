@@ -495,7 +495,7 @@ page_sections:
         link: 
         name:  robust_efficient
         title: 'Robust & Efficient'
-        - bodytext: |-
+      - bodytext: |
 
         buttons: []
         icon: ''
