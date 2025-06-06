@@ -443,7 +443,7 @@ page_sections:
     poppy_variant: cards-standard
     subtitle: none
     texture: texture_underwater
-    title:
+    title: ''
   - bg_color: baby-blue-eyes
     bg_image: none
     buttons: []
@@ -480,7 +480,7 @@ page_sections:
     poppy_variant: cards-standard
     subtitle: none
     texture: texture_underwater
-    title: 
+    title: ''
   - bg_color: baby-blue-eyes
     bg_image: none
     buttons:
