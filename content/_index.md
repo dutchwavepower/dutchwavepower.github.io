@@ -438,9 +438,11 @@ page_sections:
         name:  flexible_positioning
         title: 'Flexible positioning'
       - bodytext: |-
-          - Submerges in extreme waves
+          - The system moves with the waves to limit peak loads
+          - Fully submerged in extreme waves
+       
+          - High efficiency in full wave spectrum
           - Resonant in full wave spectrum
-          - Relative high efficiency
         buttons: []
         icon: ''
         icon_type: ''
