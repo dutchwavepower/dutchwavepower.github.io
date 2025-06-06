@@ -4,6 +4,56 @@
 
 {{- $amount := 0 -}}
 {{ if $content.items }}
+    {{ $amount = len $content.items }}
+{{ end }}
+
+{{- with $design -}}
+<div class="{{.vertical_space}} ">
+  <h3 class=" {{.title }}">{{ $content.title }}</h3>
+  <p class=" {{.subtitle}}">{{ $content.subtitle }}</p>
+  <div class=" grid grid-flow-row-dense grid-cols-12 {{.gridgap}}">
+      {{- range $index, $item := $content.items -}}
+          {{- $span := partial "poppy-elements/standard-columns" (dict "amount" $amount "index" $index) -}}
+          <div  class="{{$span}} flex flex-col w-full h-full overflow-hidden {{ $design.rounded }} {{$design.shadow}} {{$design.border}} {{$content.item_bg_color}}">
+            {{/* <div class = "{{$design.itemtitle}}" >{{.title}}</div> */}}
+            <a href="{{.link }}">
+                {{- /* START: Changes for 16:9 aspect ratio */ -}}
+              <div class="relative w-full" style="padding-top: 56.25%;">
+                {{- partial "poppy-elements/image" (dict "resource_page" $content.fg_resource_page "name" .image "class" "absolute inset-0 w-full h-full object-cover") -}}
+              </div>
+                {{- /* END: Changes for 16:9 aspect ratio */ -}}
+            </a>
+            {{- if or .title .buttons (gt (len .bodytext) 2 ) -}}
+              <div class="flex flex-col p-4 h-full">
+                {{- with .icon -}}
+                  {{- if not (eq . "none") -}}
+                    <div class="relative w-8 md:w-12 {{$design.itemtitle}} py-0 -mt-1 md:-mt-2 mr-5">
+                      {{- partial "poppy-elements/icon" (dict "icon" . "icontype" "outline") -}}
+                    </div>
+                  {{- end -}}
+                {{- end -}}
+                <div class="flex flex-col h-full">
+                  <div class = "{{$design.itemtitle}}" >{{.title}}</div>
+                  <div class=" prose mx-auto {{$design.rounded}} {{$design.itembody}} flex-1 mb-5">{{.bodytext | markdownify }}</div>
+                  <div class="{{$design.itembody}}">
+                      {{- partial "poppy-elements/buttons" (dict "design" $design "buttons" .buttons ) -}}
+                  </div>
+                </div>
+              </div>
+            {{- end -}}
+          </div>
+
+      {{- end -}}
+  </div>
+</div>
+{{- end -}}
+
+<!-- {{- $page := .page -}}
+{{- $content := .content -}}
+{{- $design := .design -}}
+
+{{- $amount := 0 -}}
+{{ if $content.items }}
     {{ $amount = len $content.items }}
 {{ end }}
 
@@ -44,3 +94,4 @@
 </div>
 {{- end -}}
 
+ -->
