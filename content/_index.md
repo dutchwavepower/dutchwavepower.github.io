@@ -403,7 +403,7 @@ page_sections:
     subtitle: ''
     texture: texture_underwater
     title: How do we do it?
-  - bg_color: charcoal
+  - bg_color: baby-blue-eyes
     bg_image: none
     buttons: []
     component: cards-standard
@@ -442,9 +442,9 @@ page_sections:
     poppy_type: poppy-shortlist
     poppy_variant: cards-standard
     subtitle: none
-    texture: texture_underwater
+    texture: ''
     title: '  '
-  - bg_color: charcoal
+  - bg_color: baby-blue-eyes
     bg_image: none
     buttons: []
     component: cards-standard
@@ -479,7 +479,7 @@ page_sections:
     poppy_type: poppy-shortlist
     poppy_variant: cards-standard
     subtitle: none
-    texture: texture_underwater
+    texture: ''
     title: '  '
   - bg_color: baby-blue-eyes
     bg_image: none
