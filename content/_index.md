@@ -397,54 +397,6 @@ page_sections:
         name: our-unique-technology
         title: 'Our Unique Technology'
         video: Dutch_Wave_Power_Animation_Vertical_1080_1920p
-      - bodytext: |-
-          - Simple design, few components
-          - Off-the-shelf components
-          - Low maintenance: sensitive parts totally shield of the environment
-          - Drop and connect installation
-          - Medium sized: production and transport in existing facilities
-        buttons: []
-        icon: ''
-        icon_type: ''
-        image: hero_banner_blue
-        link: ''
-        name: costeffective
-        title: 'Costeffective'
-        video: ''
-      - bodytext: |-
-          - Onshore
-          - Near Shore
-          - Offshore
-        buttons: []
-        icon: ''
-        icon_type: ''
-        image: flexible_positioning
-        link: ''
-        name: flexible_positioning
-        title: 'Flexible positioning at any location'
-        video: ''
-      - bodytext: |-
-          - Submerges in extreme waves
-          - Resonant in full wave spectrum
-          - Relative high efficiency
-        buttons: []
-        icon: ''
-        icon_type: ''
-        image: robust_wave
-        link: ''
-        name: robust_efficient
-        title: 'Robust & Efficient'
-        video: ''
-      - bodytext: |-
-          
-        buttons: []
-        icon: ''
-        icon_type: ''
-        image: patented_us_small
-        link: ''
-        name: patented
-        title: 'Patented'
-        video: ''
     list: ''
     name: how-do-we-do-it
     parallax: false
@@ -484,6 +436,23 @@ page_sections:
         link: 
         name: flexible_positioning
         title: 'Flexible positioning at any location'
+    list: ''
+    name: selling_points
+    parallax: false
+    poppy_type: poppy-shortlist
+    poppy_variant: cards-standard
+    subtitle: none
+    texture: texture_underwater
+    title:
+  - bg_color: baby-blue-eyes
+    bg_image: none
+    buttons: []
+    component: cards-standard
+    component_type: poppy-shortlist
+    count: ''
+    image: ''
+    item_bg_color: white
+    items:
       - bodytext: |-
           - Submerges in extreme waves
           - Resonant in full wave spectrum
