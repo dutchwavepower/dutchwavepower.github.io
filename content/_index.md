@@ -473,7 +473,7 @@ page_sections:
         link: 
         name: costeffective
         title: 'Costeffective'
-      - bodytext: |
+      - bodytext: |-
           - Onshore
           - Near Shore
           - Offshore
@@ -484,7 +484,7 @@ page_sections:
         link: 
         name: flexible_positioning
         title: 'Flexible positioning at any location'
-      - bodytext: |
+      - bodytext: |-
           - Submerges in extreme waves
           - Resonant in full wave spectrum
           - Relative high efficiency
@@ -495,7 +495,7 @@ page_sections:
         link: 
         name:  robust_efficient
         title: 'Robust & Efficient'
-        - bodytext: |
+        - bodytext: |-
 
         buttons: []
         icon: ''
