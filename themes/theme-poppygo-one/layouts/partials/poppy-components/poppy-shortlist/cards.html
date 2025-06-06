@@ -17,8 +17,9 @@
           <div  class="{{$span}} flex flex-col w-full h-full overflow-hidden {{ $design.rounded }} {{$design.shadow}} {{$design.border}} {{$content.item_bg_color}}">
             {{/* <div class = "{{$design.itemtitle}}" >{{.title}}</div> */}}
             <a href="{{.link }}">
-              <div class="relative w-full" style="padding-top: 56.25%;"> {{- /* This creates the 16:9 aspect ratio (9 / 16 = 0.5625) */ -}}
-                {{- partial "poppy-elements/image" (dict "resource_page" $content.fg_resource_page "name" .image "class" "absolute top-0 left-0 w-full h-full object-cover") -}}
+                {{- /* This wrapper div maintains the 16:9 aspect ratio */ -}}
+              <div class="relative w-full" style="padding-top: 56.25%;">
+                {{- partial "poppy-elements/image" (dict "resource_page" $content.fg_resource_page "name" .image "class" "absolute inset-0 w-full h-full object-cover") -}}
               </div>
             </a>
             {{- if or .title .buttons (gt (len .bodytext) 2 ) -}}
