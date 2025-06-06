@@ -440,7 +440,7 @@ page_sections:
         buttons: []
         icon: ''
         icon_type: ''
-        image: patented
+        image: patented_us
         link: ''
         name: patented
         title: 'Patented'
