@@ -436,7 +436,7 @@ page_sections:
         image: flexible_positioning
         link: 
         name: flexible_positioning
-        title: 'Flexible positioning at any location'
+        title: 'Flexible positioning'
       - bodytext: |-
           - Submerges in extreme waves
           - Resonant in full wave spectrum
