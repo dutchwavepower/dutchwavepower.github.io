@@ -430,7 +430,7 @@ page_sections:
         buttons: []
         icon: ''
         icon_type: ''
-        image: robust_efficient
+        image: robust_wave
         link: ''
         name: robust_efficient
         title: 'Robust & Efficient'
