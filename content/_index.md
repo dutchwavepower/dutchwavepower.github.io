@@ -403,7 +403,7 @@ page_sections:
     subtitle: ''
     texture: texture_underwater
     title: How do we do it?
-  - bg_color: baby-blue-eyes
+  - bg_color: charcoal
     bg_image: none
     buttons: []
     component: cards-standard
