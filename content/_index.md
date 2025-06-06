@@ -429,14 +429,13 @@ page_sections:
           - Onshore
           - Near Shore
           - Offshore
-            
           - Drop & Connect installation
         buttons: []
         icon: ''
         icon_type: ''
         image: flexible_positioning
         link: 
-        name: flexible_positioning
+        name:  flexible_positioning
         title: 'Flexible positioning'
       - bodytext: |-
           - Submerges in extreme waves
