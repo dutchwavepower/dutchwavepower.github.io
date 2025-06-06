@@ -415,10 +415,9 @@ page_sections:
       - bodytext: |-
           - Simple design
           - Just few off-the-shelf components
+          - Smart sized: production and transportation in existing facilities
           - Low maintenance
           - Sensitive parts completely shielded from the environment
-          - Drop & Connect installation
-          - Smart sized: production and transportation in existing facilities
         buttons: []
         icon: ''
         icon_type: ''
@@ -430,6 +429,8 @@ page_sections:
           - Onshore
           - Near Shore
           - Offshore
+            
+          - Drop & Connect installation
         buttons: []
         icon: ''
         icon_type: ''
