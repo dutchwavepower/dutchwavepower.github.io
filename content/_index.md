@@ -436,23 +436,6 @@ page_sections:
         link: 
         name: flexible_positioning
         title: 'Flexible positioning at any location'
-    list: ''
-    name: selling_points
-    parallax: false
-    poppy_type: poppy-shortlist
-    poppy_variant: cards-standard
-    subtitle: none
-    texture: ''
-    title: '  '
-  - bg_color: baby-blue-eyes
-    bg_image: none
-    buttons: []
-    component: cards-standard
-    component_type: poppy-shortlist
-    count: ''
-    image: ''
-    item_bg_color: white
-    items:
       - bodytext: |-
           - Submerges in extreme waves
           - Resonant in full wave spectrum
@@ -464,22 +447,13 @@ page_sections:
         link: 
         name:  robust_efficient
         title: 'Robust & Efficient'
-      - bodytext: |
-
-        buttons: []
-        icon: ''
-        icon_type: ''
-        image: patented_doc2
-        link: 
-        name:  patented
-        title: 'Patented'
     list: ''
     name: selling_points
     parallax: false
     poppy_type: poppy-shortlist
     poppy_variant: cards-standard
     subtitle: none
-    texture: ''
+    texture: texture_underwater
     title: '  '
   - bg_color: baby-blue-eyes
     bg_image: none
