@@ -426,9 +426,9 @@ page_sections:
         name: costeffective
         title: 'Costeffective'
       - bodytext: |-
-          - Onshore
-          - Near Shore
           - Offshore
+          - Near Shore
+          - Onshore
           - Drop & Connect installation
         buttons: []
         icon: ''
