@@ -413,11 +413,12 @@ page_sections:
     item_bg_color: white
     items:
       - bodytext: |-
-          - Simple design, few components
-          - Off-the-shelf components
-          - Low maintenance: sensitive parts totally shield of the environment
-          - Drop and connect installation
-          - Medium sized: production and transport in existing facilities
+          - Simple design
+          - Just few off-the-shelf components
+          - Low maintenance
+          - Sensitive parts completely shielded from the environment
+          - Drop & Connect installation
+          - Smart sized: production and transportation in existing facilities
         buttons: []
         icon: ''
         icon_type: ''
