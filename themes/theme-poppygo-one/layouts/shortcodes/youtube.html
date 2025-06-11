@@ -8,6 +8,146 @@ Allows specifying a width, and optionally autoplay with mute. Uses YouTube-speci
 @param {string} [width="100%"] - The width of the video (e.g., "560px", "100%"). Default to "100%".
 @param {bool} [autoplay=false] - Whether to automatically play the video. Will force mute to true.
 @param {bool} [mute=false] - Whether to mute the video. Always true when autoplay is true.
+@param {bool} [loop=false] - Whether to loop the video. Requires autoplay=true and playlist parameter.
+@param {string} [align="center"] - Alignment of the video (e.g., "left", "center", "right").
+@param {string} [height] - Optional fixed height. If provided, disables 16:9 ratio and uses fixed dimensions.
+*/ -}}
+
+{{- $pc := .Page.Site.Config.Privacy.YouTube }}
+{{- $referrerpolicy := "strict-origin-when-cross-origin" }}
+
+{{- if not $pc.Disable }}
+  {{- /* Get the video ID, either from 'id' named param or first positional arg */}}
+  {{- $id := "" }}
+  {{- if .IsNamedParams }}
+    {{- $id = .Get "id" }}
+  {{- else }}
+    {{- $id = .Get 0 }}
+  {{- end }}
+
+  {{- if $id }}
+    {{- /* Set defaults and get arguments. */}}
+    {{- $title := "YouTube video" }}
+    {{- if .IsNamedParams }}{{- $title = or (.Get "title") $title }}{{- end }}
+
+    {{- $loading := "eager" }}
+    {{- if .IsNamedParams }}{{- $loading = or (.Get "loading") $loading }}{{- end }}
+
+    {{- $width := "100%" }} {{/* Default width for responsiveness */}}
+    {{- if .IsNamedParams }}{{- $width = or (.Get "width") $width }}{{- end }}
+
+    {{- $autoplay := 0 }}
+    {{- if .IsNamedParams }}
+      {{- if in (slice "true" true 1) (.Get "autoplay") }}
+        {{- $autoplay = 1 }}
+      {{- end }}
+    {{- end }}
+
+    {{- $mute := 0 }}
+    {{- if or (in (slice "true" true 1) (.Get "mute")) (eq $autoplay 1) }} {{/* Mute if 'mute' is true or if 'autoplay' is true */}}
+      {{- $mute = 1 }}
+    {{- end }}
+
+    {{- $loop := 0 }}
+    {{- if .IsNamedParams }}
+      {{- if in (slice "true" true 1) (.Get "loop") }}
+        {{- $loop = 1 }}
+      {{- end }}
+    {{- end }}
+
+    {{- $align := "center" }} {{/* Default alignment */}}
+    {{- if .IsNamedParams }}{{- $align = or (.Get "align") $align }}{{- end }}
+
+    {{- $height := "" }} {{/* Optional fixed height */}}
+    {{- if .IsNamedParams }}{{- $height = .Get "height" }}{{- end }}
+
+    {{- $allowFullScreen := true }}
+    {{- $controls := 1 }} {{/* Default to showing controls */}}
+    {{- $playsinline := 1 }}
+
+    {{- /* Define src attribute and query parameters. */}}
+    {{- $host := cond $pc.PrivacyEnhanced "www.youtube-nocookie.com" "www.youtube.com" }} {{/* Corrected default host for standard YouTube */}}
+    {{- $src := printf "https://%s/embed/%s" $host $id }}
+
+    {{- $queryParams := slice }}
+
+    {{- if eq $autoplay 1 }}
+      {{ $queryParams = $queryParams | append "autoplay=1" }}
+      {{ $queryParams = $queryParams | append "mute=1" }} {{/* Autoplay implicitly requires mute for most browsers */}}
+    {{- else if eq $mute 1 }} {{/* Only add mute if it's explicitly set and autoplay isn't overriding it */}}
+      {{ $queryParams = $queryParams | append "mute=1" }}
+    {{- end }}
+
+    {{- if eq $controls 0 }}
+      {{ $queryParams = $queryParams | append "controls=0" }}
+    {{- end }}
+
+    {{ $queryParams = $queryParams | append (printf "playsinline=%d" $playsinline) }}
+
+    {{- if eq $loop 1 }}
+      {{ $queryParams = $queryParams | append "loop=1" }}
+      {{ $queryParams = $queryParams | append (printf "playlist=%s" $id) }} {{/* Crucial for YouTube loop to work */}}
+    {{- end }}
+
+    {{- if gt (len $queryParams) 0 }}
+      {{- $src = printf "%s?%s" $src (delimit $queryParams "&") }}
+    {{- end }}
+
+    {{- /* Determine wrapper classes based on alignment */}}
+    {{- $wrapperClasses := (slice "youtube-wrapper") }}
+    {{- if eq $align "left" }}
+      {{- $wrapperClasses = $wrapperClasses | append "youtube-align-left" }}
+    {{- else if eq $align "right" }}
+      {{- $wrapperClasses = $wrapperClasses | append "youtube-align-right" }}
+    {{- else }} {{/* Default to center */}}
+      {{- $wrapperClasses = $wrapperClasses | append "youtube-align-center" }}
+    {{- end }}
+
+    {{- /* Render the video wrapper with classes */ -}}
+    <div class="{{ delimit $wrapperClasses " " }}" style="width: {{ $width }};">
+      {{- if $height -}} {{/* If height is explicitly provided, use fixed height iframe */}}
+        <iframe
+          class="youtube-sized-iframe"
+          width="100%" {{/* iframe should take 100% of the parent div's width */}}
+          height="{{ $height }}"
+          {{- if $allowFullScreen }} allowfullscreen {{- end }}
+          loading="{{ $loading }}"
+          referrerpolicy="{{ $referrerpolicy }}"
+          src="{{ $src }}"
+          title="{{ $title }}"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        ></iframe>
+      {{- else -}} {{/* Default to 16:9 aspect ratio */}}
+        <div class="youtube-responsive-container">
+          <iframe
+            {{- if $allowFullScreen }} allowfullscreen {{- end }}
+            loading="{{ $loading }}"
+            referrerpolicy="{{ $referrerpolicy }}"
+            src="{{ $src }}"
+            title="{{ $title }}"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          ></iframe>
+        </div>
+      {{- end -}}
+    </div>
+  {{- else }}
+    {{- errorf "The %q shortcode requires an id argument. See %s" .Name .Position }}
+  {{- end }}
+{{- end }}
+
+
+
+
+<!-- {{- /*
+A shortcode to embed a responsive YouTube video, centered and defaulting to 16:9 aspect ratio.
+Allows specifying a width, and optionally autoplay with mute. Uses YouTube-specific CSS classes.
+
+@param {string} id - The YouTube video ID. (Required, can be positional arg 0)
+@param {string} [title="YouTube video"] - The title for accessibility.
+@param {string} [loading="eager"] - The loading attribute of the iframe.
+@param {string} [width="100%"] - The width of the video (e.g., "560px", "100%"). Default to "100%".
+@param {bool} [autoplay=false] - Whether to automatically play the video. Will force mute to true.
+@param {bool} [mute=false] - Whether to mute the video. Always true when autoplay is true.
 @param {string} [align="center"] - Alignment of the video (e.g., "left", "center", "right").
 @param {string} [height] - Optional fixed height. If provided, disables 16:9 ratio and uses fixed dimensions.
 */ -}}
@@ -121,3 +261,4 @@ Allows specifying a width, and optionally autoplay with mute. Uses YouTube-speci
     {{- errorf "The %q shortcode requires an id argument. See %s" .Name .Position }}
   {{- end }}
 {{- end }}
+ -->
