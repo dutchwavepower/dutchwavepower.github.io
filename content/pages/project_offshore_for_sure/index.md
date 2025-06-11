@@ -177,7 +177,7 @@ title: Project Offshore for Sure
 
 # Project Offshore for Sure
 
-{{< youtube id="TWSMjI_yqgc" align="center" autoplay=true >}}
+{{< youtube id="TWSMjI_yqgc" align="center" autoplay=true loop="true" >}}
 
 Five developers of promising offshore energy solutions are joining forces in Offshore For Sure (O4S), supported by specialists from Belgium and the Netherlands. These projects represent innovative solutions from technology developers with a proven track record in the fields of tidal energy, wave energy, offshore floating solar energy, and energy storage.
 
