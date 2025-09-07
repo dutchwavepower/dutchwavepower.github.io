@@ -10,7 +10,7 @@ subtitle: ''
 title: Build of platform is ready!
 weight: 0
 summary: |-
- Build of platform is ready! Check out our biggest component yet! This striking, not to miss, blue structure is the main platform for our wave energy device.
+ Check out our biggest component yet! This striking, not to miss, blue structure is the main platform for our wave energy device.
 
 ---
 # Build of platform is ready!
