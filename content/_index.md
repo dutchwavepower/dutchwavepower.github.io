@@ -185,6 +185,15 @@ page_sections:
         link: https://hillebrandbv.nl/
         name: Hillebrand
         title: ''
+        logo_style: "height: 80px;"
+      - bodytext: ''
+        buttons: []
+        icon: ''
+        icon_type: ''
+        image: logo_igus
+        link: https://www.igus.nl/
+        name: Igus
+        title: ''
         logo_style: "height: 80px;" 
       - bodytext: ''
         buttons: []
