@@ -194,7 +194,7 @@ page_sections:
         link: https://www.igus.nl/
         name: Igus
         title: ''
-        logo_style: "height: 80px;" 
+        logo_style: "height: 60px;" 
       - bodytext: ''
         buttons: []
         icon: ''
