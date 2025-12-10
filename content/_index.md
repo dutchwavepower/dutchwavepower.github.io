@@ -194,6 +194,15 @@ page_sections:
         link: https://www.igus.nl/
         name: Igus
         title: ''
+        logo_style: "height: 60px;"
+      - bodytext: ''
+        buttons: []
+        icon: ''
+        icon_type: ''
+        image: logo_finder
+        link: https://www.findernet.com/nl/nederland/
+        name: Finder
+        title: ''
         logo_style: "height: 60px;" 
       - bodytext: ''
         buttons: []
