@@ -221,7 +221,16 @@ page_sections:
         link: https://batterylabs.nl
         name: BatteryLabs
         title: ''
-        logo_style: "height: 30px;" 
+        logo_style: "height: 30px;"
+      - bodytext: ''
+        buttons: []
+        icon: ''
+        icon_type: ''
+        image: logo_eswa
+        link: https://www.northseafarmers.org/
+        name: NorthSeaFarmers
+        title: ''
+        logo_style: "height: 35px;"
       - bodytext: ''
         buttons: []
         icon: ''
@@ -258,15 +267,6 @@ page_sections:
         name: DoIoTfieldlab
         title: ''
         logo_style: "height: 50px;"
-      - bodytext: ''
-        buttons: []
-        icon: ''
-        icon_type: ''
-        image: logo_north_sea_farmers
-        link: https://www.northseafarmers.org/
-        name: NorthSeaFarmers
-        title: ''
-        logo_style: "height: 35px;"
       - bodytext: ''
         buttons: []
         icon: ''
