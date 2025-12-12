@@ -212,7 +212,16 @@ page_sections:
         link: https://www.findernet.com/nl/nederland/
         name: Finder
         title: ''
-        logo_style: "height: 40px;" 
+        logo_style: "height: 40px;"
+      - bodytext: ''
+        buttons: []
+        icon: ''
+        icon_type: ''
+        image: logo_batterylabs
+        link: https://batterylabs.nl
+        name: BatteryLabs
+        title: ''
+        logo_style: "height: 30px;" 
       - bodytext: ''
         buttons: []
         icon: ''
@@ -321,15 +330,6 @@ page_sections:
         name: Bluespring
         title: ''
         logo_style: "height: 70px;" 
-      - bodytext: ''
-        buttons: []
-        icon: ''
-        icon_type: ''
-        image: logo_batterylabs
-        link: https://batterylabs.nl
-        name: BatteryLabs
-        title: ''
-        logo_style: "height: 25px;" 
     list: ''
     name: partnerslist
     parallax: false
