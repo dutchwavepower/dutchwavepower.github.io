@@ -185,7 +185,7 @@ page_sections:
         link: https://hillebrandbv.nl/
         name: Hillebrand
         title: ''
-        logo_style: "height: 80px;"
+        logo_style: "height: 85px;"
       - bodytext: ''
         buttons: []
         icon: ''
@@ -194,7 +194,7 @@ page_sections:
         link: https://www.abb.com/global/en
         name: ABB
         title: ''
-        logo_style: "height: 50px;" 
+        logo_style: "height: 40px;" 
       - bodytext: ''
         buttons: []
         icon: ''
@@ -221,7 +221,7 @@ page_sections:
         link: https://batterylabs.nl
         name: BatteryLabs
         title: ''
-        logo_style: "height: 30px;"
+        logo_style: "height: 25px;"
       - bodytext: ''
         buttons: []
         icon: ''
@@ -230,7 +230,7 @@ page_sections:
         link: https://www.northseafarmers.org/
         name: NorthSeaFarmers
         title: ''
-        logo_style: "height: 40px;"
+        logo_style: "height: 45px;"
       - bodytext: ''
         buttons: []
         icon: ''
@@ -239,7 +239,7 @@ page_sections:
         link: https://vanmelsenengineering.nl
         name: Van_Melsen_engineering
         title: ''
-        logo_style: "height: 65px;"
+        logo_style: "height: 60px;"
       - bodytext: ''
         buttons: []
         icon: ''
@@ -284,7 +284,7 @@ page_sections:
         link: https://proeftuinopdenoordzee.nl
         name: Proeftuin_op_de_Noordzee
         title: ''
-        logo_style: "height: 60px;"
+        logo_style: "height: 50px;"
       - bodytext: ''
         buttons: []
         icon: ''
