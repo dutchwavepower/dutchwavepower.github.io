@@ -230,7 +230,7 @@ page_sections:
         link: https://www.northseafarmers.org/
         name: NorthSeaFarmers
         title: ''
-        logo_style: "height: 35px;"
+        logo_style: "height: 40px;"
       - bodytext: ''
         buttons: []
         icon: ''
@@ -239,7 +239,7 @@ page_sections:
         link: https://vanmelsenengineering.nl
         name: Van_Melsen_engineering
         title: ''
-        logo_style: "height: 80px;"
+        logo_style: "height: 65px;"
       - bodytext: ''
         buttons: []
         icon: ''
@@ -248,7 +248,7 @@ page_sections:
         link: https://www.water2energy.nl
         name: Water2Energy
         title: ''
-        logo_style: "height: 140px;" 
+        logo_style: "height: 120px;" 
       - bodytext: ''
         buttons: []
         icon: ''
