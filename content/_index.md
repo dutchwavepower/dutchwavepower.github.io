@@ -190,6 +190,15 @@ page_sections:
         buttons: []
         icon: ''
         icon_type: ''
+        image: logo_abb
+        link: https://www.abb.com/global/en
+        name: ABB
+        title: ''
+        logo_style: "height: 50px;" 
+      - bodytext: ''
+        buttons: []
+        icon: ''
+        icon_type: ''
         image: logo_igus
         link: https://www.igus.nl/
         name: Igus
@@ -203,7 +212,7 @@ page_sections:
         link: https://www.findernet.com/nl/nederland/
         name: Finder
         title: ''
-        logo_style: "height: 50px;" 
+        logo_style: "height: 40px;" 
       - bodytext: ''
         buttons: []
         icon: ''
